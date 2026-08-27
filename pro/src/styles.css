@@ -1,0 +1,901 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================================
+   nico66fx PRO — sistema visual claro + cristal
+   Lienzo gris azulado, tinta casi negra, un solo azul (#1544E0),
+   verde/rojo solo para dato y ámbar solo para avisos.
+   El cristal real vive en 6 elementos; el resto es blanco sólido.
+   ============================================================= */
+
+@layer base {
+    :root {
+        --canvas: #F2F5FA;
+        --canvas-alt: #E9EEF7;
+        --surface: #FFFFFF;
+        --ink: #08111F;
+        --ink-2: #46566B;
+        --ink-3: #5D6D84;
+        --brand: #1544E0;
+        --brand-600: #0F35B4;
+        --hair: rgba(8, 17, 31, .07);
+        --hair-strong: rgba(8, 17, 31, .12);
+        /* Sombras cortas. Nada por encima de 32 px de desenfoque. */
+        --sh-1: 0 1px 2px rgba(8, 17, 31, .04);
+        --sh-2: 0 1px 2px rgba(8, 17, 31, .04), 0 10px 28px -18px rgba(8, 17, 31, .14);
+        --sh-3: 0 1px 2px rgba(8, 17, 31, .05), 0 12px 32px -16px rgba(8, 17, 31, .18);
+
+        /* --- v2 --- */
+        /* Radios. El chaflán se reserva a superficies grandes SIN filete:
+           con clip-path un borde de 1px no sigue la diagonal y deja un
+           escalón en la esquina. Ahí se usa .chaflan, y solo ahí. */
+        --radio: 14px;
+        --radio-s: 10px;
+        --radio-l: 18px;
+        --chaflan-l: polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 0 100%);
+        /* Superficies con luz: plata cepillada, no blanco plano. */
+        --metal: linear-gradient(152deg, #FFFFFF 0%, #FBFCFF 46%, #EDF2FA 100%);
+        --metal-alto: linear-gradient(152deg, #FFFFFF 0%, #F3F7FD 100%);
+        --noche: linear-gradient(155deg, #101E38 0%, #0A1424 52%, #0D1A2E 100%);
+    }
+
+    html, body { font-feature-settings: "ss01", "cv11", "cv02"; }
+
+    body {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background-color: var(--canvas);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        letter-spacing: -0.005em;
+    }
+
+    h1, h2, h3, .display, .font-display {
+        font-family: 'Instrument Sans', Inter, ui-sans-serif, system-ui, sans-serif;
+        letter-spacing: -0.022em;
+        color: var(--ink);
+    }
+    h1 { letter-spacing: -0.035em; }
+
+    /* La jerarquía la lleva el tamaño, no el peso: sobre claro el 800/900 grita. */
+    .font-black { font-weight: 700; }
+    .font-extrabold { font-weight: 600; }
+    h1, h2 { font-weight: 700; }
+
+    /* Cifras que no bailan al actualizarse. */
+    .font-mono, .terminal, table, [class*="tabular"], .glow-num,
+    [data-counter], .eyebrow {
+        font-variant-numeric: tabular-nums;
+    }
+
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--canvas-alt); }
+    ::-webkit-scrollbar-thumb { background: #C2CDDE; border-radius: 10px; border: 2px solid var(--canvas-alt); }
+    ::-webkit-scrollbar-thumb:hover { background: #A9B7CD; }
+
+    ::selection { background: #B8CBFF; color: var(--ink); }
+
+    /* Foco visible en todo elemento interactivo (accesibilidad por teclado).
+       Doble anillo: se ve tanto sobre claro como sobre los insertos oscuros. */
+    :focus-visible {
+        outline: 2px solid var(--brand);
+        outline-offset: 2px;
+        border-radius: 4px;
+        box-shadow: 0 0 0 4px rgba(21, 68, 224, .18);
+    }
+    .terminal :focus-visible {
+        outline-color: #8AA8FF;
+        box-shadow: 0 0 0 4px rgba(138, 168, 255, .25);
+    }
+}
+
+@layer components {
+
+    /* ---------------------------------------------------------
+       FIRMA — el eje de medida
+       Cada eyebrow se apoya en una línea fina con una marca azul
+       a la izquierda, como el eje de un gráfico.
+       --------------------------------------------------------- */
+    .eyebrow {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: .7rem;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+    }
+    .eyebrow::before { content: none; }
+    .eyebrow::after {
+        content: ''; height: 1px; flex: 1; background: rgba(8, 17, 31, .09);
+    }
+    /* En cajas pequeñas la regla no cabe: queda solo la marca. */
+    .eyebrow-min::after { content: none; }
+    .eyebrow-min { font-size: .62rem; letter-spacing: .14em; gap: .4rem; }
+    /* Eyebrow centrado: regla a los dos lados, como un eje simétrico. */
+    .eyebrow-centro { justify-content: center; }
+    .eyebrow-centro::after { order: 3; }
+
+    /* Los eyebrow que son píldora (inline-flex / rounded-full) no llevan eje. */
+    .eyebrow.rounded-full::after, .eyebrow.inline-flex::after { content: none; }
+    /* Color propio del eyebrow por encima de las utilidades heredadas del tema oscuro. */
+    .eyebrow:not(.rounded-full):not(.inline-flex) { color: var(--ink-3); }
+
+    /* Saltar al contenido — primer tabulador de la página */
+    .skip-link {
+        position: absolute; left: 50%; top: 0; transform: translate(-50%, -120%);
+        z-index: 100; padding: .7rem 1.25rem; border-radius: 0 0 .75rem .75rem;
+        background: var(--brand); color: #fff; font-weight: 700; font-size: .9rem;
+        transition: transform .2s ease;
+    }
+    .skip-link:focus { transform: translate(-50%, 0); }
+
+    /* ---------------------------------------------------------
+       NIVEL 2 — superficie sólida. El 85 % de las tarjetas.
+       Sobre claro se ve impecable y no cuesta nada en móvil.
+       --------------------------------------------------------- */
+    .card-glass {
+        position: relative;
+        background: var(--metal);
+        border: 0;
+        border-radius: var(--radio);
+        padding: 1.5rem;
+        box-shadow: var(--sh-2);
+    }
+
+    /* Filete en degradado. Sobre un rectángulo redondeado el truco de la
+       máscara es exacto; sobre una diagonal no lo es. Por eso no hay
+       chaflán aquí. */
+    .card-glass::before, .glass::before, .glass-flat::before, .skool-card::before {
+        content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(152deg, rgba(8,17,31,.15), rgba(8,17,31,.06) 46%, rgba(21,68,224,.17));
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+    .card-glass > *, .glass > *, .skool-card > * { position: relative; z-index: 2; }
+
+    /* Las filas del FAQ y los contenedores sin padding llevan su propio radio. */
+    .card-glass.p-0 { border-radius: var(--radio); overflow: hidden; }
+
+    /* Tarjeta destacada: el mismo sistema, con el canto en azul de marca. */
+    .destacada::before {
+        background: linear-gradient(152deg, rgba(21,68,224,.45), rgba(21,68,224,.18) 45%, rgba(21,68,224,.5));
+        padding: 1.5px;
+    }
+    .destacada { box-shadow: var(--sh-2), 0 0 0 4px rgba(21, 68, 224, .07); }
+
+    /* Superficie translúcida sin backdrop-filter: cuesta cero y hermana
+       con el cristal de verdad. La usan los chips de dato del hero. */
+    .glass-flat {
+        position: relative;
+        background:
+            linear-gradient(180deg, rgba(255,255,255,.62) 0%, rgba(255,255,255,0) 52%),
+            linear-gradient(152deg, rgba(255,255,255,.84), rgba(255,255,255,.60));
+        border: 0;
+        border-radius: 9999px;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .85), var(--sh-1);
+    }
+    .glass-flat::before {
+        background: linear-gradient(152deg, rgba(255,255,255,.95), rgba(8,17,31,.11) 55%, rgba(21,68,224,.24));
+    }
+
+    /* Chaflán: solo para superficies grandes y SIN filete de 1px. */
+    .chaflan { clip-path: var(--chaflan-l); border-radius: 0; }
+    .chaflan::before { display: none; }
+
+    /* ---------------------------------------------------------
+       NIVEL 1 — cristal real. SOLO 6 elementos, y solo porque
+       tienen la capa .field detrás: desenfocar un color plano
+       no produce nada. saturate() no es opcional: blur da niebla,
+       blur + saturación da cristal.
+       --------------------------------------------------------- */
+    .glass {
+        position: relative;
+        border: 0;
+        border-radius: var(--radio);
+        /* Menos opacidad = se ve más lo de detrás. La saturación es lo que
+           convierte la niebla en cristal: intensifica el color que lo cruza.
+           El reflejo especular va como primera capa del fondo, no en ::after. */
+        background:
+            linear-gradient(180deg, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 44%),
+            linear-gradient(152deg, rgba(255,255,255,.54) 0%, rgba(255,255,255,.30) 55%, rgba(255,255,255,.46) 100%);
+        -webkit-backdrop-filter: blur(30px) saturate(215%) brightness(1.04);
+        backdrop-filter: blur(30px) saturate(215%) brightness(1.04);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .85), var(--sh-2);
+    }
+    /* Variante píldora: mismo cristal, radio completo. */
+    .glass.pastilla, .glass.pastilla::before { border-radius: 9999px; }
+
+    /* Canto refractivo: brillante arriba a la izquierda, azul abajo a la derecha. */
+    .glass::before {
+        background: linear-gradient(152deg,
+            rgba(255,255,255,.95) 0%,
+            rgba(255,255,255,.38) 38%,
+            rgba(21,68,224,.34) 100%);
+    }
+
+    /* Variante barra: nav y menú móvil. Sin radio, borde solo abajo. */
+    .glass-bar {
+        background: linear-gradient(180deg, rgba(255,255,255,.62), rgba(242,245,250,.46));
+        -webkit-backdrop-filter: blur(26px) saturate(210%) brightness(1.03);
+        backdrop-filter: blur(26px) saturate(210%) brightness(1.03);
+        border-bottom: 1px solid rgba(8, 17, 31, .06);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .75) inset;
+    }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+        .glass { background: var(--metal); }
+        .glass-bar { background: rgba(242, 245, 250, .97); }
+    }
+
+    /* ---------------------------------------------------------
+       CAPA DE FONDO — sin esto el cristal no existe.
+       Un solo tono de azul: en cuanto entra violeta o ámbar,
+       sobre claro se convierte en nube pastel sucia.
+       --------------------------------------------------------- */
+    .field { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .field > span { position: absolute; display: block; }
+
+    /* Nada de orbes desenfocados. La luz entra plana y direccional, desde las
+       esquinas: se siente como iluminación, no como una mancha flotando. */
+    .field .field-luz-a {
+        inset: 0;
+        background: linear-gradient(118deg,
+            rgba(21, 68, 224, .16) 0%,
+            rgba(21, 68, 224, .06) 26%,
+            rgba(21, 68, 224, 0) 52%);
+    }
+    .field .field-luz-b {
+        inset: 0;
+        background: linear-gradient(298deg,
+            rgba(78, 122, 247, .15) 0%,
+            rgba(78, 122, 247, .05) 24%,
+            rgba(78, 122, 247, 0) 50%);
+    }
+
+    /* Rejilla fina: papel técnico. Bordes nítidos = el cristal tiene qué desenfocar. */
+    .field .field-grid {
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(8, 17, 31, .09) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(8, 17, 31, .09) 1px, transparent 1px);
+        background-size: 52px 52px;
+        -webkit-mask-image: radial-gradient(ellipse 80% 74% at center, #000 30%, transparent 82%);
+        mask-image: radial-gradient(ellipse 80% 74% at center, #000 30%, transparent 82%);
+    }
+
+    /* Líneas de gráfico: verticales espaciadas, como la rejilla de una curva de equity. */
+    .field .field-lineas {
+        inset: 0;
+        background-image: repeating-linear-gradient(90deg,
+            rgba(8, 17, 31, .085) 0 1px, transparent 1px 148px);
+        -webkit-mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+        mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+    }
+
+    /* Marcas de eje: la regla graduada del borde superior. La firma del
+       sistema, en grande: geometría de instrumento de medida. */
+    .field .field-ticks {
+        top: 0; left: 0; right: 0; height: 14px;
+        background-image: repeating-linear-gradient(90deg,
+            rgba(21, 68, 224, .24) 0 1px,
+            transparent 1px 37px);
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+    }
+
+    .field .field-puntos {
+        inset: 0;
+        background-image: radial-gradient(rgba(8, 17, 31, .15) 1.1px, transparent 1.1px);
+        background-size: 22px 22px;
+        -webkit-mask-image: linear-gradient(180deg, #000, transparent 74%);
+        mask-image: linear-gradient(180deg, #000, transparent 74%);
+    }
+
+    /* Banda de canto DURO. Es el truco que hace legible el cristal: un borde
+       nítido que cruza por detrás aparece suave dentro y afilado fuera. */
+    .field .field-banda {
+        width: 190%; height: 190px; left: -45%; top: 8%;
+        transform: rotate(-11deg); transform-origin: center;
+        background: linear-gradient(90deg,
+            rgba(21, 68, 224, 0) 0%,
+            rgba(21, 68, 224, .08) 22%,
+            rgba(78, 122, 247, .10) 55%,
+            rgba(21, 68, 224, 0) 100%);
+        border-top: 1px solid rgba(21, 68, 224, .16);
+        border-bottom: 1px solid rgba(21, 68, 224, .11);
+    }
+    .field .field-banda-2 {
+        width: 190%; height: 120px; left: -45%; bottom: 14%;
+        transform: rotate(-11deg); transform-origin: center;
+        background: linear-gradient(90deg,
+            rgba(78, 122, 247, 0) 0%,
+            rgba(78, 122, 247, .09) 45%,
+            rgba(21, 68, 224, 0) 100%);
+        border-top: 1px solid rgba(21, 68, 224, .15);
+    }
+
+    @media (max-width: 767px) {
+        .field .field-banda-2, .field .field-ticks { display: none; }
+        .field .field-banda { height: 130px; }
+        .field .field-lineas { background-image: repeating-linear-gradient(90deg,
+            rgba(8, 17, 31, .07) 0 1px, transparent 1px 96px); }
+    }
+
+    /* Cristal solo en escritorio. En móvil estas superficies se quedan
+       translúcidas sin backdrop-filter: mismo aspecto, cero coste de scroll. */
+    @media (min-width: 768px) {
+        .glass-chip {
+            -webkit-backdrop-filter: blur(20px) saturate(200%);
+            backdrop-filter: blur(20px) saturate(200%);
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 50%),
+                linear-gradient(152deg, rgba(255,255,255,.58), rgba(255,255,255,.34));
+        }
+        .glass-md {
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 44%),
+                linear-gradient(152deg, rgba(255,255,255,.58) 0%, rgba(255,255,255,.34) 55%, rgba(255,255,255,.48) 100%);
+            -webkit-backdrop-filter: blur(26px) saturate(200%) brightness(1.03);
+            backdrop-filter: blur(26px) saturate(200%) brightness(1.03);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), var(--sh-2);
+        }
+        .glass-md::before {
+            background: linear-gradient(152deg, rgba(255,255,255,.9), rgba(255,255,255,.3) 40%, rgba(21,68,224,.26));
+        }
+    }
+
+    /* En móvil las tres píldoras del hero, apiladas y con el filete casi
+       invisible, se leían como un bloque sucio. Debajo de 640px pierden la
+       caja y quedan como tres líneas limpias. */
+    @media (max-width: 639px) {
+        .glass-chip {
+            background: none;
+            box-shadow: none;
+            padding-left: .25rem; padding-right: .25rem;
+        }
+        .glass-chip::before { content: none; }
+    }
+
+    /* ---------------------------------------------------------
+       BANDA NOCHE — el contrapunto oscuro.
+       El cristal sobre claro es sutil por definición. Sobre una banda
+       oscura con luz detrás, se ve. Y le da pulso a la página.
+       --------------------------------------------------------- */
+    .banda-noche {
+        background: var(--noche);
+        color: #C7D3E4;
+        --hair: rgba(255, 255, 255, .10);
+    }
+    .banda-noche h1, .banda-noche h2, .banda-noche h3,
+    .banda-noche .display, .banda-noche .font-display,
+    .banda-noche .text-white, .banda-noche strong { color: #F1F5F9; }
+    .banda-noche .text-gray-200 { color: #E2E8F0; }
+    .banda-noche .text-gray-300 { color: #C7D3E4; }
+    .banda-noche .text-gray-400 { color: #93A3B8; }
+    .banda-noche .text-gray-500 { color: #7D8EA6; }
+    .banda-noche .text-brand-100, .banda-noche .text-brand-200,
+    .banda-noche .text-brand-300, .banda-noche .text-brand-400,
+    .banda-noche .text-brand-500, .banda-noche .text-brand-600,
+    .banda-noche .text-violet-100, .banda-noche .text-violet-200,
+    .banda-noche .text-violet-300, .banda-noche .text-fuchsia-100,
+    .banda-noche .text-fuchsia-200, .banda-noche .text-fuchsia-300,
+    .banda-noche .text-sky-200, .banda-noche .text-sky-300 { color: #93B4FF; }
+    .banda-noche .text-emerald-100, .banda-noche .text-emerald-200,
+    .banda-noche .text-emerald-300, .banda-noche .text-emerald-400,
+    .banda-noche .text-emerald-200\/80,
+    .banda-noche .text-green-300, .banda-noche .text-green-400,
+    .banda-noche .text-green-500 { color: #34D399; }
+    .banda-noche .text-red-300, .banda-noche .text-red-400,
+    .banda-noche .text-rose-300 { color: #F87171; }
+    .banda-noche .text-amber-100, .banda-noche .text-amber-200,
+    .banda-noche .text-amber-300, .banda-noche .text-amber-100\/90 { color: #FCD34D; }
+    .banda-noche .text-brand-200\/90 { color: #93B4FF; }
+    /* Los tintes verdes/azules de fondo se aclaran para no perderse en la noche. */
+    .banda-noche .bg-emerald-500\/10, .banda-noche .bg-emerald-500\/15,
+    .banda-noche .bg-emerald-500\/20 { background-color: rgba(52, 211, 153, .16); }
+    .banda-noche .bg-brand-500\/5, .banda-noche .bg-brand-500\/10,
+    .banda-noche .bg-brand-500\/12, .banda-noche .bg-brand-500\/15,
+    .banda-noche .bg-brand-500\/18, .banda-noche .bg-brand-500\/20 { background-color: rgba(110, 150, 255, .16); }
+    .banda-noche .border-brand-400\/20, .banda-noche .border-brand-400\/25,
+    .banda-noche .border-brand-400\/30, .banda-noche .border-emerald-400\/25,
+    .banda-noche .border-emerald-400\/30 { border-color: rgba(147, 180, 255, .3); }
+    .banda-noche .eyebrow:not(.rounded-full):not(.inline-flex) { color: #8FA1B8; }
+    .banda-noche .eyebrow::after { background: rgba(255, 255, 255, .14); }
+    .banda-noche .border-white\/10 { border-color: rgba(255, 255, 255, .12); }
+    .banda-noche .border-white\/5 { border-color: rgba(255, 255, 255, .08); }
+    .banda-noche .bg-white\/5 { background-color: rgba(255, 255, 255, .06); }
+    .banda-noche .bg-black\/20 { background-color: rgba(0, 0, 0, .18); }
+    .banda-noche .bg-black\/30 { background-color: rgba(0, 0, 0, .24); }
+    .banda-noche .bg-black\/40 { background-color: rgba(0, 0, 0, .3); }
+
+    /* Las tarjetas de la banda son cristal oscuro, no plata. */
+    .banda-noche .card-glass {
+        background: linear-gradient(152deg, rgba(255, 255, 255, .085), rgba(255, 255, 255, .028));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12);
+    }
+    /* El blur de las tarjetas de la banda, solo en escritorio: en móvil son
+       superficies translúcidas y el scroll no lo nota. */
+    @media (min-width: 768px) {
+        .banda-noche .card-glass {
+            -webkit-backdrop-filter: blur(18px) saturate(160%);
+            backdrop-filter: blur(18px) saturate(160%);
+        }
+    }
+    .banda-noche .card-glass::before,
+    .banda-noche .glass::before,
+    .banda-noche .glass-md::before {
+        background: linear-gradient(152deg, rgba(255,255,255,.36), rgba(255,255,255,.07) 45%, rgba(110,150,255,.42));
+    }
+    .banda-noche .card-glass, .banda-noche .glass-md { box-shadow: inset 0 1px 0 rgba(255,255,255,.12); }
+    .banda-noche .lift:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 18px 34px -20px rgba(0,0,0,.6); }
+    .banda-noche .lift.card-glass:hover::before, .banda-noche .lift.glass-md:hover::before {
+        background: linear-gradient(152deg, rgba(147,180,255,.55), rgba(147,180,255,.14) 46%, rgba(110,150,255,.6));
+    }
+    /* En el pie los puntos suben desde abajo, no bajan desde arriba. */
+    footer.banda-noche .field-puntos {
+        -webkit-mask-image: linear-gradient(0deg, #000, transparent 72%);
+        mask-image: linear-gradient(0deg, #000, transparent 72%);
+    }
+    .banda-noche .btn-glow {
+        background: rgba(255, 255, 255, .07);
+        border-color: rgba(255, 255, 255, .16);
+        color: #E7EDF6;
+    }
+    .banda-noche .btn-glow:hover { background: rgba(255,255,255,.12); border-color: rgba(147,180,255,.45); }
+    .banda-noche .btn-glow .glow-dot { background: #6E96FF; }
+    .banda-noche .btn-secondary {
+        background: rgba(255, 255, 255, .08);
+        border-color: rgba(255, 255, 255, .18);
+        color: #F1F5F9;
+    }
+    .banda-noche .btn-secondary:hover { background: rgba(255, 255, 255, .14); border-color: rgba(147, 180, 255, .5); }
+    .banda-noche .field-grid { background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px); }
+    .banda-noche .field-lineas { background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 1px, transparent 1px 148px); }
+    .banda-noche .field-puntos { background-image: radial-gradient(rgba(255,255,255,.12) 1.1px, transparent 1.1px); }
+    .banda-noche .field-ticks { background-image: repeating-linear-gradient(90deg, rgba(147,180,255,.32) 0 1px, transparent 1px 37px); }
+    .banda-noche .field-luz-a { background: linear-gradient(118deg, rgba(21,68,224,.36) 0%, rgba(21,68,224,.12) 28%, rgba(21,68,224,0) 56%); }
+    .banda-noche .field-luz-b { background: linear-gradient(298deg, rgba(78,122,247,.28) 0%, rgba(78,122,247,.08) 26%, rgba(78,122,247,0) 52%); }
+    .banda-noche .field-banda {
+        background: linear-gradient(90deg, rgba(78,122,247,0), rgba(78,122,247,.20) 45%, rgba(78,122,247,0));
+        border-top-color: rgba(147, 180, 255, .28); border-bottom-color: rgba(147, 180, 255, .18);
+    }
+    .banda-noche .field-banda-2 {
+        background: linear-gradient(90deg, rgba(147,180,255,0), rgba(147,180,255,.14) 45%, rgba(147,180,255,0));
+        border-top-color: rgba(147, 180, 255, .20);
+    }
+    :where(.banda-noche) :focus-visible { outline-color: #93B4FF; box-shadow: 0 0 0 4px rgba(147,180,255,.25); }
+    /* El titular a dos tonos: sobre noche el azul sube, no baja. */
+    .banda-noche .bg-clip-text { background-image: linear-gradient(90deg, #6E96FF, #A9C2FF); }
+    .banda-noche .glass {
+        background:
+            linear-gradient(180deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,0) 44%),
+            linear-gradient(152deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.045) 55%, rgba(255,255,255,.10) 100%);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16);
+    }
+
+    /* ---------------------------------------------------------
+       CIFRA FANTASMA — el número gigante que se desvanece detrás
+       del contenido. Da escala sin gritar.
+       --------------------------------------------------------- */
+    .cifra-fantasma {
+        position: absolute; pointer-events: none; user-select: none; z-index: 0;
+        font-family: 'Instrument Sans', Inter, sans-serif;
+        font-weight: 700; letter-spacing: -.045em; line-height: .78;
+        font-size: clamp(7rem, 19vw, 17rem);
+        font-variant-numeric: tabular-nums;
+        background: linear-gradient(180deg, rgba(8, 17, 31, .11) 0%, rgba(8, 17, 31, 0) 76%);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+        white-space: nowrap;
+    }
+    .banda-noche .cifra-fantasma {
+        background: linear-gradient(180deg, rgba(255, 255, 255, .17) 0%, rgba(255, 255, 255, 0) 76%);
+        -webkit-background-clip: text; background-clip: text;
+    }
+    @media (max-width: 767px) { .cifra-fantasma { font-size: clamp(5rem, 26vw, 9rem); } }
+
+    /* ---------------------------------------------------------
+       BOTONES — planos. Sobre claro el degradado envejece mal.
+       --------------------------------------------------------- */
+    .btn-primary {
+        display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+        border-radius: 9999px;
+        background: var(--brand);
+        color: #fff; font-weight: 600; padding: .85rem 1.7rem;
+        min-height: 44px;
+        transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+        box-shadow: 0 1px 2px rgba(8, 17, 31, .06), 0 8px 20px -12px rgba(21, 68, 224, .5);
+        letter-spacing: -0.005em;
+    }
+    .btn-primary::after { display: none; }
+    .btn-primary:hover {
+        background: var(--brand-600);
+        transform: translateY(-1px);
+        box-shadow: 0 1px 2px rgba(8, 17, 31, .06), 0 10px 24px -12px rgba(21, 68, 224, .55);
+    }
+    .btn-primary, .btn-primary * { color: #fff; }
+
+    .btn-secondary {
+        display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(8, 17, 31, .14);
+        background: var(--surface);
+        color: var(--ink); font-weight: 600;
+        padding: .85rem 1.45rem;
+        min-height: 44px;
+        box-shadow: var(--sh-1);
+        transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+    }
+    .btn-secondary:hover {
+        background: var(--canvas);
+        border-color: rgba(21, 68, 224, .3);
+        transform: translateY(-1px);
+    }
+
+    /* Crédito de diseño. Sin glowPulse: sobre claro el neón no existe. */
+    .btn-glow {
+        display: inline-flex; align-items: center; gap: .5rem;
+        padding: .6rem 1.05rem; border-radius: 9999px;
+        color: var(--ink); font-weight: 600; font-size: .83rem;
+        min-height: 44px;
+        background: var(--surface);
+        border: 1px solid rgba(8, 17, 31, .12);
+        box-shadow: var(--sh-1);
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .btn-glow:hover {
+        transform: translateY(-1px);
+        border-color: rgba(21, 68, 224, .35);
+        box-shadow: var(--sh-2);
+    }
+    .btn-glow .glow-dot {
+        width: 6px; height: 6px; border-radius: 9999px;
+        background: var(--brand); box-shadow: none;
+    }
+
+    .pulse-delay { animation-delay: 1.5s; }
+
+    /* Scroll Reveal — sin cambios de comportamiento */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity .9s ease, transform .9s ease; }
+    .reveal-left.in { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity .9s ease, transform .9s ease; }
+    .reveal-right.in { opacity: 1; transform: translateX(0); }
+    .reveal-zoom { opacity: 0; transform: scale(.92); transition: opacity .9s ease, transform .9s ease; }
+    .reveal-zoom.in { opacity: 1; transform: scale(1); }
+    .reveal-delay-1 { transition-delay: .08s; }
+    .reveal-delay-2 { transition-delay: .16s; }
+    .reveal-delay-3 { transition-delay: .24s; }
+    .reveal-delay-4 { transition-delay: .32s; }
+
+    .img-parallax { will-change: transform; transition: transform .12s linear; }
+
+    #scroll-progress {
+        position: fixed; top: 0; left: 0; height: 3px; width: 0%; z-index: 60;
+        background: var(--brand);
+        transition: width .08s linear;
+    }
+
+    /* Marquee */
+    .marquee-mask { mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+    .marquee-track { display: flex; gap: 2.5rem; width: max-content; }
+    .marquee-mask:hover .marquee-track,
+    .marquee-mask:focus-within .marquee-track { animation-play-state: paused; }
+
+    /* ---------------------------------------------------------
+       CARRUSEL — en móvil, esperar a que pase la captura que te
+       interesa es absurdo. Debajo de 768px la cinta deja de moverse
+       sola y pasa a deslizarse con el dedo, con encaje por captura.
+       CSS puro: ni una línea de JS.
+       --------------------------------------------------------- */
+    @media (max-width: 767px) {
+        .carrusel, .carrusel.overflow-hidden {
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-padding-inline: 1rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -webkit-mask-image: none; mask-image: none;
+            padding-inline: 1rem;
+        }
+        .carrusel::-webkit-scrollbar { display: none; }
+        .carrusel .marquee-track {
+            animation: none !important;
+            width: max-content;
+            gap: .75rem;
+        }
+        /* La copia espejo solo existe para que el bucle no se note.
+           Deslizando a mano sobra: verías todo dos veces. */
+        .carrusel .copia-espejo { display: none; }
+        .carrusel .flex.gap-8 { gap: .75rem; }
+        .carrusel figure,
+        .carrusel .marquee-track > div > div {
+            width: 74vw; max-width: 300px;
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+        }
+        /* Pista de que hay más a la derecha, sin texto que estorbe. */
+        .carrusel-envoltura { position: relative; }
+        .carrusel-envoltura::after {
+            content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 42px;
+            pointer-events: none; z-index: 2;
+            background: linear-gradient(90deg, rgba(242,245,250,0), rgba(242,245,250,.9));
+        }
+    }
+    /* Sugerencia de deslizar: solo en móvil, y se va al primer toque. */
+    .pista-desliza { display: none; }
+    @media (max-width: 767px) {
+        .pista-desliza {
+            display: flex; align-items: center; justify-content: center; gap: .45rem;
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            font-size: .66rem; letter-spacing: .16em; text-transform: uppercase;
+            color: var(--ink-3); margin-top: .85rem;
+        }
+        .pista-desliza svg { animation: empuja 1.8s ease-in-out infinite; }
+        @keyframes empuja { 0%,100% { transform: translateX(0) } 50% { transform: translateX(5px) } }
+    }
+
+    /* ---------------------------------------------------------
+       NIVEL 3 — inserto oscuro deliberado.
+       Un terminal claro parece un terminal roto. Y así las 8
+       capturas oscuras dejan de desentonar: pasan a leerse como
+       parte del sistema.
+       --------------------------------------------------------- */
+    .terminal {
+        background: linear-gradient(180deg, #111C2E, #08111F);
+        border: 0;
+        border-radius: 0;
+        clip-path: var(--chaflan-l);
+        box-shadow: none;
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        overflow: hidden;
+        color: #E2E8F0;
+    }
+    /* Dentro del inserto oscuro se restauran los valores de tema oscuro.
+       Especificidad (0,2,0): gana a las utilidades remapeadas. */
+    .terminal .text-white { color: #F1F5F9; }
+    .terminal .text-gray-200 { color: #E2E8F0; }
+    .terminal .text-gray-300 { color: #CBD5E1; }
+    .terminal .text-gray-400 { color: #94A3B8; }
+    .terminal .text-gray-500 { color: #7C8CA3; }
+    .terminal .text-emerald-300, .terminal .text-emerald-200 { color: #6EE7B7; }
+    .terminal .text-amber-300, .terminal .text-amber-300\/90 { color: #FCD34D; }
+    .terminal .text-brand-300, .terminal .text-brand-400 { color: #8AA8FF; }
+    .terminal .bg-black\/30 { background-color: rgba(0, 0, 0, .28); }
+    .terminal .bg-black\/20 { background-color: rgba(0, 0, 0, .2); }
+    .terminal .bg-white\/5 { background-color: rgba(255, 255, 255, .07); }
+    .terminal .border-white\/5 { border-color: rgba(255, 255, 255, .07); }
+    .terminal .border-white\/10 { border-color: rgba(255, 255, 255, .1); }
+    .terminal .bg-emerald-500\/15 { background-color: rgba(16, 185, 129, .18); }
+    .terminal a { color: #8AA8FF; }
+
+    /* Puntos de cabecera: la convención de ventana, en tono discreto.
+       El rojo/ámbar/verde de juguete distraía del dato. */
+    .term-dot {
+        width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+        background: rgba(8, 17, 31, .16);
+    }
+    .terminal .term-dot, .banda-noche .term-dot { background: rgba(255, 255, 255, .18); }
+
+    .pnl-up { color: #047857; }
+    .pnl-down { color: #DC2626; }
+    .terminal .pnl-up { color: #34D399; }
+    .terminal .pnl-down { color: #F87171; }
+    .ticker-row td { padding: .42rem .65rem; border-bottom: 1px dashed rgba(255, 255, 255, .07); font-size: .82rem; }
+
+    /* Aviso de contenido simulado — legible, no decorativo */
+    .sim-notice {
+        display: flex; align-items: flex-start; gap: .5rem;
+        border: 1px solid rgba(180, 83, 9, .28);
+        background: #FFFBEB;
+        color: #7C3D06;
+        border-radius: .6rem;
+        padding: .6rem .75rem;
+        font-size: .78rem;
+        line-height: 1.45;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    }
+    .terminal .sim-notice {
+        border-color: rgba(252, 211, 77, .32);
+        background: rgba(245, 158, 11, .1);
+        color: #FDE68A;
+    }
+
+    /* Pestañas del panel demo */
+    .tab-btn {
+        display: flex; align-items: center; gap: .5rem;
+        padding: .65rem .9rem; border-radius: .75rem;
+        font-weight: 600; font-size: .85rem;
+        color: var(--ink-2);
+        border: 1px solid transparent;
+        transition: background .25s ease, color .25s ease, border-color .25s ease;
+        cursor: pointer; background: transparent; min-height: 44px;
+    }
+    .tab-btn:hover { background: rgba(21, 68, 224, .06); color: var(--ink); }
+    .tab-btn.active {
+        background: var(--surface);
+        border-color: rgba(21, 68, 224, .28);
+        color: var(--brand-600);
+        box-shadow: var(--sh-1);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: rise .55s ease both; }
+
+    /* FAQ — el chevron gira al abrir */
+    .faq-toggle { min-height: 44px; }
+    /* Especificidad (0,2,0)/(0,3,0): gana a las utilidades del tema oscuro. */
+    .faq-toggle.bg-gray-800\/50 { background-color: #fff; }
+    .faq-toggle.hover\:bg-gray-800:hover { background-color: var(--canvas); }
+    .faq-content.bg-gray-900\/30 { background-color: #FAFBFD; }
+    .faq-toggle[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform .25s ease; }
+
+    /* Sin text-shadow: la cifra manda por tamaño y color, no por brillo. */
+    .glow-num { text-shadow: none; color: var(--ink); }
+
+    .live-dot { width: 8px; height: 8px; border-radius: 9999px; background: #047857; box-shadow: 0 0 0 0 rgba(4, 120, 87, .5); animation: livePulse 1.6s infinite; display: inline-block; }
+    @keyframes livePulse {
+        0% { box-shadow: 0 0 0 0 rgba(4, 120, 87, .45); }
+        70% { box-shadow: 0 0 0 8px rgba(4, 120, 87, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(4, 120, 87, 0); }
+    }
+
+    /* Sin barrido de brillo: sobre claro es un destello sucio. */
+    .shine-wrap { position: relative; overflow: hidden; border-radius: 1rem; }
+    .shine-wrap::after { content: none; }
+
+    #sticky-cta {
+        position: fixed; left: 0; right: 0; bottom: 0; z-index: 45;
+        transform: translateY(120%);
+        transition: transform .45s cubic-bezier(.2, .7, .2, 1);
+    }
+    #sticky-cta.in { transform: translateY(0); }
+
+    .lift { transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+    .lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 2px 4px rgba(8, 17, 31, .05), 0 16px 32px -18px rgba(8, 17, 31, .26);
+    }
+    .lift.card-glass:hover::before, .lift.glass:hover::before {
+        background: linear-gradient(152deg, rgba(21,68,224,.4), rgba(21,68,224,.14) 46%, rgba(21,68,224,.42));
+    }
+
+    /* Logos de plataforma */
+    .logo-row {
+        display: flex; align-items: center; gap: 3.25rem; padding: .25rem 0;
+        color: var(--ink-3);
+    }
+    .logo-row svg { height: 28px; width: auto; filter: grayscale(1) opacity(.6); transition: filter .25s ease, transform .25s ease; flex-shrink: 0; }
+    .logo-row .logo-item { display: flex; align-items: center; gap: .6rem; min-height: 44px; }
+    .logo-row .logo-item span { font-weight: 600; font-size: 1rem; white-space: nowrap; letter-spacing: -.01em; }
+    .logo-row .logo-item:hover svg { filter: grayscale(0) opacity(1); transform: translateY(-2px); }
+    .logo-row .logo-item:hover span { color: var(--ink); }
+
+    /* Skool dashboard — mismo sistema, sin el degradado ámbar del tema oscuro */
+    .skool-card {
+        position: relative;
+        border: 0;
+        background: var(--metal);
+        border-radius: var(--radio-l);
+        padding: 1.5rem;
+        box-shadow: var(--sh-3);
+    }
+
+    /* Capturas de Skool/Telegram: marco para que no floten. */
+    .shot {
+        border-radius: .75rem;
+        border: 1px solid var(--hair);
+        box-shadow: var(--sh-2);
+        background: #0F172A;
+    }
+
+    /* Panel de preferencias de cookies */
+    .cookie-switch {
+        position: relative; display: inline-flex; align-items: center;
+        width: 44px; height: 24px; border-radius: 9999px;
+        background: #CBD5E1; transition: background .2s ease;
+        flex-shrink: 0; cursor: pointer; border: none; padding: 0;
+    }
+    .cookie-switch::after {
+        content: ""; position: absolute; left: 3px; top: 3px;
+        width: 18px; height: 18px; border-radius: 9999px; background: #fff;
+        box-shadow: 0 1px 2px rgba(8, 17, 31, .25);
+        transition: transform .2s ease, background .2s ease;
+    }
+    .cookie-switch[aria-checked="true"] { background: var(--brand); }
+    .cookie-switch[aria-checked="true"]::after { transform: translateX(20px); background: #fff; }
+    .cookie-switch[disabled] { opacity: .55; cursor: not-allowed; }
+
+    /* Páginas legales: la misma luz de fondo, sin adornos que distraigan. */
+    body.legal-doc {
+        background-image:
+            radial-gradient(900px 520px at 10% -8%, rgba(21, 68, 224, .11), transparent 62%),
+            radial-gradient(760px 460px at 96% 104%, rgba(78, 122, 247, .10), transparent 62%);
+        background-attachment: fixed;
+    }
+    /* Páginas legales */
+    .legal-doc h1, .legal-doc h2, .legal-doc h3 { color: var(--ink); margin-top: 2rem; margin-bottom: 1rem; font-weight: 700; }
+    .legal-doc h1 { font-size: 2.5rem; margin-top: 0; }
+    .legal-doc h2 { font-size: 1.5rem; }
+    .legal-doc p { margin-bottom: 1rem; line-height: 1.7; color: var(--ink-2); }
+    .legal-doc ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; color: var(--ink-2); }
+    .legal-doc li { margin-bottom: 0.5rem; }
+    .legal-doc strong { color: var(--ink); }
+    /* Solo los enlaces del cuerpo del documento: la nav y el pie no se subrayan. */
+    .legal-doc main a { color: var(--brand-600); text-decoration: underline; text-underline-offset: 3px; }
+    .legal-doc main a:hover { color: var(--brand); }
+    .legal-doc .card-glass { padding: 2.5rem; }
+}
+
+/* =============================================================
+   REMAPEO — las 729 clases de color del HTML no se reescriben a
+   mano: son 729 oportunidades de romper algo. Aquí se redefine
+   lo que la inversión de paleta del config no cubre.
+   ============================================================= */
+@layer utilities {
+
+    /* Blanco: sobre claro es tinta. Las excepciones van abajo. */
+    .text-white { color: #08111F; }
+    .border-white\/10 { border-color: rgba(8, 17, 31, .07); }
+    .border-white\/5  { border-color: rgba(8, 17, 31, .05); }
+    .bg-white\/5      { background-color: rgba(8, 17, 31, .035); }
+    .from-white       { --tw-gradient-from: #08111F var(--tw-gradient-from-position); --tw-gradient-to: rgb(8 17 31 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+
+    /* Negros translúcidos: paneles insertos. El /70 es el velo del
+       modal de cookies y se queda oscuro a propósito. */
+    .bg-black\/20 { background-color: rgba(8, 17, 31, .025); }
+    .bg-black\/30 { background-color: rgba(8, 17, 31, .035); }
+    .bg-black\/40 { background-color: rgba(8, 17, 31, .05); }
+
+    /* Regla dura de contraste: todo texto de color usa el stop 600
+       o superior. Los -100 a -400 están calculados para brillar
+       sobre negro; sobre claro no pasan AA. */
+    .text-brand-100, .text-brand-200, .text-brand-300, .text-brand-400, .text-brand-500,
+    .text-brand-200\/90,
+    .text-violet-100, .text-violet-200, .text-violet-300, .text-violet-400,
+    .text-fuchsia-100, .text-fuchsia-200, .text-fuchsia-300,
+    .text-sky-100, .text-sky-200, .text-sky-300, .text-sky-400,
+    .text-cyan-200, .text-cyan-300, .text-indigo-300 { color: #0F35B4; }
+
+    .text-emerald-100, .text-emerald-200, .text-emerald-300, .text-emerald-400,
+    .text-emerald-200\/80,
+    .text-green-300, .text-green-400, .text-green-500 { color: #047857; }
+
+    .text-red-300, .text-red-400, .text-rose-300, .text-rose-400 { color: #DC2626; }
+
+    .text-amber-100, .text-amber-200, .text-amber-300, .text-amber-400,
+    .text-amber-100\/90, .text-amber-300\/90,
+    .text-yellow-300, .text-yellow-400 { color: #B45309; }
+
+    /* Sombras cortas. Una sombra de 80 px sobre fondo claro es la
+       señal inequívoca de un tema oscuro mal portado. */
+    .shadow-2xl { box-shadow: 0 1px 2px rgba(8, 17, 31, .04), 0 14px 32px -18px rgba(8, 17, 31, .22); }
+    .shadow-xl  { box-shadow: 0 1px 2px rgba(8, 17, 31, .04), 0 12px 28px -18px rgba(8, 17, 31, .18); }
+    .shadow-lg  { box-shadow: 0 1px 2px rgba(8, 17, 31, .04), 0 8px 20px -12px rgba(8, 17, 31, .16); }
+
+    /* EXCEPCIONES OBLIGATORIAS — texto blanco sobre fondo de marca.
+       Si el remapeo les entra, el botón queda con texto invisible. */
+    .btn-primary, .btn-primary *,
+    .skip-link, .skip-link *,
+    .on-brand, .on-brand * { color: #fff !important; }
+
+    /* Cualquier superficie de marca sólida lleva texto blanco. Sin esto, el
+       texto hereda la tinta del body y queda azul oscuro sobre azul. */
+    .bg-brand-500, .bg-brand-500 *,
+    .bg-brand-600, .bg-brand-600 *,
+    .bg-brand-700, .bg-brand-700 * { color: #fff !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal, .reveal-left, .reveal-right, .reveal-zoom { opacity: 1 !important; transform: none !important; }
+}
