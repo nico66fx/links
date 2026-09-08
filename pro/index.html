@@ -319,7 +319,7 @@
                     </div>
                     <div class="flex items-center gap-2 px-3 py-1.5 rounded-full glass-flat glass-chip">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send w-4 h-4 text-sky-300" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /> <path d="m21.854 2.147-10.94 10.939" /></svg>
-                        <strong class="text-white">8.500+</strong>&nbsp;en Telegram free
+                        <strong class="text-white">9.000+</strong>&nbsp;en Telegram free
                     </div>
                     <div class="flex items-center gap-2 px-3 py-1.5 rounded-full glass-flat glass-chip">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check w-4 h-4 text-emerald-400" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="m9 12 2 2 4-4" /></svg>
@@ -768,7 +768,11 @@
             </div>
         </section>
 
-        <!-- RESULTADOS REALES — MARQUEE -->
+        <!-- RESULTADOS REALES — MURO DE CAPTURAS
+             DATOS: cada <li class="muro-item"> es un testimonio. Es la fuente
+             única: el muro (CSS) y el visor (galeria.js) leen de aquí. Para
+             añadir otro testimonio se copia un <li>, se cambian las dos rutas
+             y el alt. Nada más: ni layout, ni contadores, ni JS. -->
         <section id="social" class="py-14 md:py-20 relative overflow-hidden bg-gray-900/40">
             <div class="field" aria-hidden="true">
                 <span class="field-luz-b"></span>
@@ -776,7 +780,7 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-10">
+                <div class="text-center mb-8 md:mb-10">
                     <div class="reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 eyebrow mb-4">
                         <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span> Logros y profits
                     </div>
@@ -784,63 +788,174 @@
                     <p class="reveal reveal-delay-2 text-gray-400 max-w-2xl mx-auto">
                         Capturas directas del canal "Logros y profits" de la Skool privada. Sin filtros, sin actores, sin testimonios fabricados.
                     </p>
+                    <p class="reveal reveal-delay-3 muro-resumen">
+                        <span><strong data-muro-total>24</strong> capturas sin retocar</span>
+                        <span class="muro-sep" aria-hidden="true"></span>
+                        <span>Skool privada y mensajes directos</span>
+                    </p>
                 </div>
 
-                <div class="carrusel-envoltura">
-                <div class="marquee-mask carrusel overflow-hidden py-2">
-                    <div class="marquee-track animate-marquee-rev gap-8">
-                        <!-- copia 1 -->
-                        <div class="flex gap-8 pr-8">
-                            <figure class="shrink-0 w-[240px] md:w-[280px] relative group">
-                                <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-sky-400 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-500"></div>
-                                <picture><source srcset="./assets/skool1.webp" type="image/webp"><img src="./assets/skool1.jpg" loading="lazy" decoding="async" width="415" height="900" class="relative w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt="Francisco Medina compartiendo resultados del Bot Scalping EURUSD en la Skool"></picture>
-                            </figure>
-                            <figure class="shrink-0 w-[240px] md:w-[280px] relative group">
-                                <div class="absolute -inset-1 bg-gradient-to-r from-sky-400 to-brand-500 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-500"></div>
-                                <picture><source srcset="./assets/skool2.webp" type="image/webp"><img src="./assets/skool2.jpg" loading="lazy" decoding="async" width="415" height="900" class="relative w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt="Marc Enfedaque mostrando profit con RAW XAU en cuenta funded de 15k"></picture>
-                            </figure>
-                            <figure class="shrink-0 w-[240px] md:w-[280px] relative group">
-                                <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-500"></div>
-                                <picture><source srcset="./assets/skool3.webp" type="image/webp"><img src="./assets/skool3.jpg" loading="lazy" decoding="async" width="415" height="900" class="relative w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt="Michael López compartiendo su primera operación en profit con RAW XAU"></picture>
-                            </figure>
-                            <figure class="shrink-0 w-[240px] md:w-[280px] relative group">
-                                <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-cyan-400 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-500"></div>
-                                <picture><source srcset="./assets/skool4.webp" type="image/webp"><img src="./assets/skool4.jpg" loading="lazy" decoding="async" width="415" height="900" class="relative w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt="Francisco Medina activando el Bot RAW XAU con primeros resultados"></picture>
-                            </figure>
-                            <figure class="shrink-0 w-[240px] md:w-[280px] relative group">
-                                <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-brand-400 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-500"></div>
-                                <picture><source srcset="./assets/skool5.webp" type="image/webp"><img src="./assets/skool5.jpg" loading="lazy" decoding="async" width="415" height="900" class="relative w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt="Ruben Ortega mostrando progresión de 50$ con varios bots de la comunidad"></picture>
-                            </figure>
-                            <figure class="shrink-0 w-[240px] md:w-[280px] relative group">
-                                <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-sky-400 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-500"></div>
-                                <picture><source srcset="./assets/tg1.webp" type="image/webp"><img src="./assets/tg1.jpg" loading="lazy" decoding="async" width="415" height="900" class="relative w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt="Mensaje real de alumno en la comunidad de nico66fx PRO"></picture>
-                            </figure>
-                            <figure class="shrink-0 w-[240px] md:w-[280px] relative group">
-                                <div class="absolute -inset-1 bg-gradient-to-r from-sky-400 to-brand-500 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-500"></div>
-                                <picture><source srcset="./assets/tg2.webp" type="image/webp"><img src="./assets/tg2.jpg" loading="lazy" decoding="async" width="415" height="900" class="relative w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt="Mensaje real de alumno en la comunidad de nico66fx PRO"></picture>
-                            </figure>
-                            <figure class="shrink-0 w-[240px] md:w-[280px] relative group">
-                                <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-sky-400 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-500"></div>
-                                <picture><source srcset="./assets/tg3.webp" type="image/webp"><img src="./assets/tg3.jpg" loading="lazy" decoding="async" width="415" height="900" class="relative w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt="Mensaje real de alumno en la comunidad de nico66fx PRO"></picture>
-                            </figure>
-                        </div>
-                        <!-- copia 2 (loop seamless) -->
-                        <div class="flex gap-8 pr-8 copia-espejo" aria-hidden="true">
-                            <div class="shrink-0 w-[240px] md:w-[280px]"><picture><source srcset="./assets/skool1.webp" type="image/webp"><img src="./assets/skool1.jpg" loading="lazy" decoding="async" width="415" height="900" class="w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt=""></picture></div>
-                            <div class="shrink-0 w-[240px] md:w-[280px]"><picture><source srcset="./assets/skool2.webp" type="image/webp"><img src="./assets/skool2.jpg" loading="lazy" decoding="async" width="415" height="900" class="w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt=""></picture></div>
-                            <div class="shrink-0 w-[240px] md:w-[280px]"><picture><source srcset="./assets/skool3.webp" type="image/webp"><img src="./assets/skool3.jpg" loading="lazy" decoding="async" width="415" height="900" class="w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt=""></picture></div>
-                            <div class="shrink-0 w-[240px] md:w-[280px]"><picture><source srcset="./assets/skool4.webp" type="image/webp"><img src="./assets/skool4.jpg" loading="lazy" decoding="async" width="415" height="900" class="w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt=""></picture></div>
-                            <div class="shrink-0 w-[240px] md:w-[280px]"><picture><source srcset="./assets/skool5.webp" type="image/webp"><img src="./assets/skool5.jpg" loading="lazy" decoding="async" width="415" height="900" class="w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt=""></picture></div>
-                            <div class="shrink-0 w-[240px] md:w-[280px]"><picture><source srcset="./assets/tg1.webp" type="image/webp"><img src="./assets/tg1.jpg" loading="lazy" decoding="async" width="415" height="900" class="w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt=""></picture></div>
-                            <div class="shrink-0 w-[240px] md:w-[280px]"><picture><source srcset="./assets/tg2.webp" type="image/webp"><img src="./assets/tg2.jpg" loading="lazy" decoding="async" width="415" height="900" class="w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt=""></picture></div>
-                            <div class="shrink-0 w-[240px] md:w-[280px]"><picture><source srcset="./assets/tg3.webp" type="image/webp"><img src="./assets/tg3.jpg" loading="lazy" decoding="async" width="415" height="900" class="w-full rounded-2xl border border-white/10 shadow-2xl bg-gray-900 object-cover" alt=""></picture></div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <p class="pista-desliza" aria-hidden="true">Desliza para ver más <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-3.5 h-3.5" aria-hidden="true"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></svg></p>
+                <p class="muro-pista">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5" aria-hidden="true"><circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /> <path d="M11 8v6" /> <path d="M8 11h6" /></svg>
+                    <span class="muro-pista-movil">Toca una captura para ampliarla</span>
+                    <span class="muro-pista-escritorio">Haz clic en cualquier captura para verla completa</span>
+                </p>
 
-                <div class="mt-6 flex justify-center">
+                <ul class="muro reveal" id="muro-testimonios">
+                    <li class="muro-item muro-item--destacada">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool6.webp" data-visor-jpg="./assets/skool6.jpg" aria-label="Ampliar captura: Ruben Ortega anuncia su primer retiro en la Skool: empezó con 50 $ el 6 de enero, retira de una cuenta de 1.700 $ y se lo ingresan en menos de 24 horas">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 600px, (min-width: 700px) 520px, 96vw" srcset="./assets/skool6-sm.webp 640w, ./assets/skool6.webp 1240w"><img src="./assets/skool6-sm.jpg" srcset="./assets/skool6-sm.jpg 640w, ./assets/skool6.jpg 1240w" sizes="(min-width: 1024px) 600px, (min-width: 700px) 520px, 96vw" loading="lazy" decoding="async" width="640" height="425" alt="Ruben Ortega anuncia su primer retiro en la Skool: empezó con 50 $ el 6 de enero, retira de una cuenta de 1.700 $ y se lo ingresan en menos de 24 horas"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--destacada">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool7.webp" data-visor-jpg="./assets/skool7.jpg" aria-label="Ampliar captura: Dany Fuentes comparte su primer pago: certificado de pago mensual de Axi Select por 289,80 $">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 600px, (min-width: 700px) 520px, 96vw" srcset="./assets/skool7-sm.webp 640w, ./assets/skool7.webp 1240w"><img src="./assets/skool7-sm.jpg" srcset="./assets/skool7-sm.jpg 640w, ./assets/skool7.jpg 1240w" sizes="(min-width: 1024px) 600px, (min-width: 700px) 520px, 96vw" loading="lazy" decoding="async" width="640" height="379" alt="Dany Fuentes comparte su primer pago: certificado de pago mensual de Axi Select por 289,80 $"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool8.webp" data-visor-jpg="./assets/skool8.jpg" aria-label="Ampliar captura: Dany Fuentes alcanza el 7 % que Axi exige para pasar de fase usando los bots GPT y SNIPER XAU, con 5.419,82 $ de patrimonio y 419,82 $ de ganancia">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool8-sm.webp 640w, ./assets/skool8.webp 1240w"><img src="./assets/skool8-sm.jpg" srcset="./assets/skool8-sm.jpg 640w, ./assets/skool8.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="486" alt="Dany Fuentes alcanza el 7 % que Axi exige para pasar de fase usando los bots GPT y SNIPER XAU, con 5.419,82 $ de patrimonio y 419,82 $ de ganancia"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool9.webp" data-visor-jpg="./assets/skool9.jpg" aria-label="Ampliar captura: Francisco Medina publica los resultados de la semana del bot EURUSD scalping sobre una cuenta de 3.000 dólares">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool9-sm.webp 640w, ./assets/skool9.webp 1240w"><img src="./assets/skool9-sm.jpg" srcset="./assets/skool9-sm.jpg 640w, ./assets/skool9.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="486" alt="Francisco Medina publica los resultados de la semana del bot EURUSD scalping sobre una cuenta de 3.000 dólares"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool10.webp" data-visor-jpg="./assets/skool10.jpg" aria-label="Ampliar captura: Jheyson Cuadrado muestra su progresión en Axi Select: 28 días en fase Seed y 1.064,84 $ de patrimonio">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool10-sm.webp 640w, ./assets/skool10.webp 1240w"><img src="./assets/skool10-sm.jpg" srcset="./assets/skool10-sm.jpg 640w, ./assets/skool10.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="379" alt="Jheyson Cuadrado muestra su progresión en Axi Select: 28 días en fase Seed y 1.064,84 $ de patrimonio"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool11.webp" data-visor-jpg="./assets/skool11.jpg" aria-label="Ampliar captura: Jorge Eider Vasquez pasa a la etapa Incubation de Axi Select, con financiación máxima de 20.000 $">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool11-sm.webp 640w, ./assets/skool11.webp 1240w"><img src="./assets/skool11-sm.jpg" srcset="./assets/skool11-sm.jpg 640w, ./assets/skool11.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="408" alt="Jorge Eider Vasquez pasa a la etapa Incubation de Axi Select, con financiación máxima de 20.000 $"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool12.webp" data-visor-jpg="./assets/skool12.jpg" aria-label="Ampliar captura: Miguel Briones comparte el último mes completo del bot Raw Xau con 61,90 € de ganancia, incluyendo las operaciones perdedoras">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool12-sm.webp 640w, ./assets/skool12.webp 1240w"><img src="./assets/skool12-sm.jpg" srcset="./assets/skool12-sm.jpg 640w, ./assets/skool12.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="408" alt="Miguel Briones comparte el último mes completo del bot Raw Xau con 61,90 € de ganancia, incluyendo las operaciones perdedoras"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1168" data-visor-webp="./assets/skool13.webp" data-visor-jpg="./assets/skool13.jpg" aria-label="Ampliar captura: Miguel Briones pasa la primera fase de una cuenta real de 10K con Dual Xau y 637,10 de beneficio">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool13-sm.webp 640w, ./assets/skool13.webp 1240w"><img src="./assets/skool13-sm.jpg" srcset="./assets/skool13-sm.jpg 640w, ./assets/skool13.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="484" alt="Miguel Briones pasa la primera fase de una cuenta real de 10K con Dual Xau y 637,10 de beneficio"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool14.webp" data-visor-jpg="./assets/skool14.jpg" aria-label="Ampliar captura: Daniel Hernandez muestra el detalle de operaciones del bot Raw Xau con 284,90 de profit acumulado">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool14-sm.webp 640w, ./assets/skool14.webp 1240w"><img src="./assets/skool14-sm.jpg" srcset="./assets/skool14-sm.jpg 640w, ./assets/skool14.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="408" alt="Daniel Hernandez muestra el detalle de operaciones del bot Raw Xau con 284,90 de profit acumulado"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool15.webp" data-visor-jpg="./assets/skool15.jpg" aria-label="Ampliar captura: Miguel Mevo comparte tres días del bot scalper EURUSD con drawdown mínimo en cuenta demo de AXI">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool15-sm.webp 640w, ./assets/skool15.webp 1240w"><img src="./assets/skool15-sm.jpg" srcset="./assets/skool15-sm.jpg 640w, ./assets/skool15.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="413" alt="Miguel Mevo comparte tres días del bot scalper EURUSD con drawdown mínimo en cuenta demo de AXI"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool16.webp" data-visor-jpg="./assets/skool16.jpg" aria-label="Ampliar captura: Angel Eduardo Vega muestra tres cuentas con el bot RAW XAU v3.2 acumulando 849,83, 912,60 y 1.133,92 USC">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool16-sm.webp 640w, ./assets/skool16.webp 1240w"><img src="./assets/skool16-sm.jpg" srcset="./assets/skool16-sm.jpg 640w, ./assets/skool16.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="400" alt="Angel Eduardo Vega muestra tres cuentas con el bot RAW XAU v3.2 acumulando 849,83, 912,60 y 1.133,92 USC"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool17.webp" data-visor-jpg="./assets/skool17.jpg" aria-label="Ampliar captura: Miguel Briones comparte dos cuentas operadas por Dual Xau con 301,97 y 168,41 de beneficio">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool17-sm.webp 640w, ./assets/skool17.webp 1240w"><img src="./assets/skool17-sm.jpg" srcset="./assets/skool17-sm.jpg 640w, ./assets/skool17.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="408" alt="Miguel Briones comparte dos cuentas operadas por Dual Xau con 301,97 y 168,41 de beneficio"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool18.webp" data-visor-jpg="./assets/skool18.jpg" aria-label="Ampliar captura: Lenny Carta llega a la fase Semilla de Axi Select con el bot GPT y 529,91 $ de capital">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool18-sm.webp 640w, ./assets/skool18.webp 1240w"><img src="./assets/skool18-sm.jpg" srcset="./assets/skool18-sm.jpg 640w, ./assets/skool18.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="408" alt="Lenny Carta llega a la fase Semilla de Axi Select con el bot GPT y 529,91 $ de capital"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1168" data-visor-webp="./assets/skool19.webp" data-visor-jpg="./assets/skool19.jpg" aria-label="Ampliar captura: Angel Eduardo Vega muestra dos cuentas con el bot RAW XAU v3.1 y 362,10 y 219,03 USD de P&amp;L">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool19-sm.webp 640w, ./assets/skool19.webp 1240w"><img src="./assets/skool19-sm.jpg" srcset="./assets/skool19-sm.jpg 640w, ./assets/skool19.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="457" alt="Angel Eduardo Vega muestra dos cuentas con el bot RAW XAU v3.1 y 362,10 y 219,03 USD de P&amp;L"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool20.webp" data-visor-jpg="./assets/skool20.jpg" aria-label="Ampliar captura: Miguel Briones comparte el profit del bot Raw Xau en una cuenta propia en real, con 315,70 de balance">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool20-sm.webp 640w, ./assets/skool20.webp 1240w"><img src="./assets/skool20-sm.jpg" srcset="./assets/skool20-sm.jpg 640w, ./assets/skool20.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="408" alt="Miguel Briones comparte el profit del bot Raw Xau en una cuenta propia en real, con 315,70 de balance"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item muro-item--ancha">
+                        <button type="button" class="muro-btn" data-visor-w="1240" data-visor-webp="./assets/skool21.webp" data-visor-jpg="./assets/skool21.jpg" aria-label="Ampliar captura: Federico Boibo publica su primera operación con el bot RAW en XAUUSD">
+                            <picture><source type="image/webp" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" srcset="./assets/skool21-sm.webp 640w, ./assets/skool21.webp 1240w"><img src="./assets/skool21-sm.jpg" srcset="./assets/skool21-sm.jpg 640w, ./assets/skool21.jpg 1240w" sizes="(min-width: 1024px) 400px, (min-width: 700px) 400px, 96vw" loading="lazy" decoding="async" width="640" height="408" alt="Federico Boibo publica su primera operación con el bot RAW en XAUUSD"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item">
+                        <button type="button" class="muro-btn" data-visor-w="415" aria-label="Ampliar captura: Mensaje real de alumno en la comunidad de nico66fx PRO">
+                            <picture><source srcset="./assets/tg2.webp" type="image/webp" sizes="(min-width: 1024px) 200px, (min-width: 700px) 170px, 47vw"><img src="./assets/tg2.jpg" loading="lazy" decoding="async" width="415" height="900" alt="Mensaje real de alumno en la comunidad de nico66fx PRO"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item">
+                        <button type="button" class="muro-btn" data-visor-w="415" aria-label="Ampliar captura: Ruben Ortega mostrando progresión de 50$ con varios bots de la comunidad">
+                            <picture><source srcset="./assets/skool5.webp" type="image/webp" sizes="(min-width: 1024px) 200px, (min-width: 700px) 170px, 47vw"><img src="./assets/skool5.jpg" loading="lazy" decoding="async" width="415" height="900" alt="Ruben Ortega mostrando progresión de 50$ con varios bots de la comunidad"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item">
+                        <button type="button" class="muro-btn" data-visor-w="415" aria-label="Ampliar captura: Marc Enfedaque mostrando profit con RAW XAU en cuenta funded de 15k">
+                            <picture><source srcset="./assets/skool2.webp" type="image/webp" sizes="(min-width: 1024px) 200px, (min-width: 700px) 170px, 47vw"><img src="./assets/skool2.jpg" loading="lazy" decoding="async" width="415" height="900" alt="Marc Enfedaque mostrando profit con RAW XAU en cuenta funded de 15k"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item">
+                        <button type="button" class="muro-btn" data-visor-w="415" aria-label="Ampliar captura: Michael López compartiendo su primera operación en profit con RAW XAU">
+                            <picture><source srcset="./assets/skool3.webp" type="image/webp" sizes="(min-width: 1024px) 200px, (min-width: 700px) 170px, 47vw"><img src="./assets/skool3.jpg" loading="lazy" decoding="async" width="415" height="900" alt="Michael López compartiendo su primera operación en profit con RAW XAU"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item">
+                        <button type="button" class="muro-btn" data-visor-w="415" aria-label="Ampliar captura: Francisco Medina compartiendo resultados del Bot Scalping EURUSD en la Skool">
+                            <picture><source srcset="./assets/skool1.webp" type="image/webp" sizes="(min-width: 1024px) 200px, (min-width: 700px) 170px, 47vw"><img src="./assets/skool1.jpg" loading="lazy" decoding="async" width="415" height="900" alt="Francisco Medina compartiendo resultados del Bot Scalping EURUSD en la Skool"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item">
+                        <button type="button" class="muro-btn" data-visor-w="415" aria-label="Ampliar captura: Francisco Medina activando el Bot RAW XAU con primeros resultados">
+                            <picture><source srcset="./assets/skool4.webp" type="image/webp" sizes="(min-width: 1024px) 200px, (min-width: 700px) 170px, 47vw"><img src="./assets/skool4.jpg" loading="lazy" decoding="async" width="415" height="900" alt="Francisco Medina activando el Bot RAW XAU con primeros resultados"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item">
+                        <button type="button" class="muro-btn" data-visor-w="415" aria-label="Ampliar captura: Mensaje real de alumno en la comunidad de nico66fx PRO">
+                            <picture><source srcset="./assets/tg1.webp" type="image/webp" sizes="(min-width: 1024px) 200px, (min-width: 700px) 170px, 47vw"><img src="./assets/tg1.jpg" loading="lazy" decoding="async" width="415" height="900" alt="Mensaje real de alumno en la comunidad de nico66fx PRO"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                    <li class="muro-item">
+                        <button type="button" class="muro-btn" data-visor-w="415" aria-label="Ampliar captura: Mensaje real de alumno en la comunidad de nico66fx PRO">
+                            <picture><source srcset="./assets/tg3.webp" type="image/webp" sizes="(min-width: 1024px) 200px, (min-width: 700px) 170px, 47vw"><img src="./assets/tg3.jpg" loading="lazy" decoding="async" width="415" height="900" alt="Mensaje real de alumno en la comunidad de nico66fx PRO"></picture>
+                            <span class="muro-lupa" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 3h6v6" /> <path d="M9 21H3v-6" /> <path d="M21 3l-7 7" /> <path d="M3 21l7-7" /></svg></span>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="muro-mas-envoltura">
+                    <button type="button" class="muro-mas" id="muro-mas" aria-expanded="false" aria-controls="muro-testimonios">
+                        <span class="muro-mas-txt">Ver las <strong data-muro-total>24</strong> capturas</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+                    </button>
+                </div>
+
+                <div class="mt-8 flex justify-center">
                     <div class="flex items-center gap-2 text-sm text-gray-500 bg-gray-900/50 px-4 py-2 rounded-full border border-gray-800">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info w-4 h-4 text-brand-400" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></svg>
                         <p>Capturas reales publicadas por alumnos en la Skool privada</p>
@@ -1755,6 +1870,44 @@
         </div>
     </div>
 
+    <!-- VISOR DE CAPTURAS — modal del muro de resultados.
+         Sin contenido propio: galeria.js lo rellena leyendo el muro. -->
+    <div id="visor-testimonios" class="visor" hidden role="dialog" aria-modal="true" aria-labelledby="visor-titulo">
+        <h2 id="visor-titulo" class="sr-only">Capturas de resultados de alumnos</h2>
+        <div class="visor-velo" data-visor-cerrar></div>
+
+        <div class="visor-barra">
+            <p class="visor-contador"><span data-visor-indice>1</span><span class="visor-barra-sep">/</span><span data-visor-total>24</span></p>
+            <button type="button" class="visor-cerrar" data-visor-cerrar aria-label="Cerrar visor de capturas">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></svg>
+            </button>
+        </div>
+
+        <div class="visor-escena">
+            <button type="button" class="visor-nav visor-prev" data-visor-ir="-1" aria-label="Captura anterior">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+            </button>
+
+            <figure class="visor-marco">
+                <picture>
+                    <source data-visor-webp type="image/webp">
+                    <img data-visor-img alt="" width="415" height="900" decoding="async">
+                </picture>
+            </figure>
+
+            <button type="button" class="visor-nav visor-next" data-visor-ir="1" aria-label="Captura siguiente">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
+        </div>
+
+        <p class="visor-pie" data-visor-pie></p>
+
+        <div class="visor-tiras">
+            <div class="visor-tiras-interior" data-visor-tiras></div>
+        </div>
+    </div>
+
     <script src="./assets/scripts.js" defer></script>
+    <script src="./assets/galeria.js" defer></script>
 </body>
 </html>
