@@ -159,10 +159,12 @@
     let ctaHeroVisible = true;
 
     if (ctaHero) {
+        /* Cuenta como visible solo si se ve ENTERO: en pantallas cortas (iPhone SE) el
+           boton queda cortado por el pliegue, y ahi el CTA fijo debe aparecer igual. */
         new IntersectionObserver((entradas) => {
-            ctaHeroVisible = entradas[0].isIntersecting;
+            ctaHeroVisible = entradas[0].intersectionRatio >= 0.99;
             actualizarSticky();
-        }, { threshold: 0 }).observe(ctaHero);
+        }, { threshold: [0, 0.99, 1] }).observe(ctaHero);
     } else {
         ctaHeroVisible = false;
     }
