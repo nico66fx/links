@@ -152,10 +152,43 @@
         }, { threshold: 0, rootMargin: '0px 0px -120px 0px' }).observe(footer);
     }
 
+    /* El CTA fijo se gobierna por la visibilidad REAL de los botones del hero, via
+       IntersectionObserver: nada de umbrales de scroll, que fallaban en pantallas
+       cortas. Mientras los botones de verdad se ven, el fijo no aparece. */
+    const ctaHero = document.querySelector('#hero a[href="#pricing"]');
+    let ctaHeroVisible = true;
+
+    if (ctaHero) {
+        new IntersectionObserver((entradas) => {
+            ctaHeroVisible = entradas[0].isIntersecting;
+            actualizarSticky();
+        }, { threshold: 0 }).observe(ctaHero);
+    } else {
+        ctaHeroVisible = false;
+    }
+
     function actualizarSticky() {
         if (!sticky) return;
-        const debeVerse = window.scrollY > window.innerHeight * 0.85 && !footerVisible && !bannerAbierto;
-        sticky.classList.toggle('in', debeVerse);
+        const mostrar = !ctaHeroVisible && !footerVisible;
+        sticky.classList.toggle('in', mostrar);
+
+        /* Oculto no es solo invisible: fuera de pantalla seguia siendo enfocable con
+           el tabulador, asi que el teclado caia en un boton que nadie ve. */
+        sticky.inert = !mostrar;
+        sticky.setAttribute('aria-hidden', String(!mostrar));
+
+        /* El banner de cookies vive pegado abajo y tapaba el CTA. Antes se resolvia
+           ocultando el CTA entero mientras el banner estuviese abierto, de modo que en
+           una primera visita no aparecia nunca. Ahora se apoya encima del banner y los
+           dos siguen siendo usables. Sin banner, respeta el area segura de iOS. */
+        const cookies = document.getElementById('cookie-banner');
+        const altoBanner = bannerAbierto && cookies ? cookies.offsetHeight : 0;
+        /* El desplazamiento SOLO se aplica cuando el CTA se muestra: oculto debe quedar
+           pegado a bottom:0, porque el translateY(120%) que lo esconde se mide sobre su
+           propia altura y con un bottom alto se quedaria flotando sobre el contenido. */
+        sticky.style.bottom = mostrar
+            ? (altoBanner ? altoBanner + 'px' : 'env(safe-area-inset-bottom, 0px)')
+            : '0px';
     }
 
     let pendiente = false;
