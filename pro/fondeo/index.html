@@ -1,257 +1,364 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
 <meta charset="utf-8">
-<title>DUAL XAU 2.1 · prepara tu setup de fondeo</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Configura tu evaluacion de prop firm con DUAL XAU 2.1: elige plan, tamano de cuenta y riesgo, y mira cuantos fondeos saca al ano. Cifras estimadas por simulacion sobre el historico 2022-2026; no garantizan resultados.">
+<title>DUAL XAU 2.2 · prepara tu setup de fondeo | nico66fx PRO</title>
+<meta name="description" content="Configura tu evaluación de prop firm con DUAL XAU 2.2: elige plan, tamaño de cuenta y riesgo, y mira cuántos fondeos saca al año. Cifras estimadas por simulación sobre el histórico 2022-2026; no garantizan resultados.">
 <meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F2F5FA">
+<link rel="canonical" href="https://nico66fx.com/pro/fondeo/">
+
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="nico66fx">
+<meta property="og:site_name" content="nico66fx PRO">
 <meta property="og:locale" content="es_ES">
-<meta property="og:title" content="Prepara tu setup del nuevo DUAL XAU 2.1">
-<meta property="og:description" content="Elige plan, cuenta y riesgo y mira cuantos fondeos saca al ano. Estimaciones por simulacion sobre datos 2022-2026; no son una promesa de resultados.">
+<meta property="og:title" content="Prepara tu setup del nuevo DUAL XAU 2.2">
+<meta property="og:description" content="Elige plan, cuenta y riesgo y mira cuántos fondeos saca al año. Estimaciones por simulación sobre datos 2022-2026; no son una promesa de resultados.">
 <meta property="og:url" content="https://nico66fx.com/pro/fondeo/">
+<meta property="og:image" content="https://nico66fx.com/pro/assets/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Prepara tu setup del nuevo DUAL XAU 2.1">
-<meta name="twitter:description" content="Elige plan, cuenta y riesgo y mira cuantos fondeos saca al ano. Estimaciones sobre datos 2022-2026.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%AF%3C/text%3E%3C/svg%3E">
-<style>html,body{margin:0;padding:0}</style>
-</head>
-<body><style>
-:root{
-  --bg:#0A0E14; --surf:#111721; --surf2:#161E2A; --ink:#E9EEF4; --ink2:#B9C6D4;
-  --muted:#788A9E; --hair:#1E2836; --amber:#F0A63C; --amber-dim:#5A4118;
-  --teal:#34C1AE; --teal-dim:#12403C; --red:#E4685E; --grid:#18202C;
-  --a:#F0A63C; --b:#6791DD;
-  --mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
-  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-}
-@media (prefers-color-scheme:light){
-  :root{ --bg:#F4F6F8; --surf:#FFF; --surf2:#EDF1F4; --ink:#0F141B; --ink2:#334155;
-    --muted:#61707F; --hair:#DDE4EA; --amber:#9A5F06; --amber-dim:#F5E4C8;
-    --teal:#0B7D70; --teal-dim:#D5EDE9; --red:#B33A30; --grid:#E4EAEF;
-    --a:#9A5F06; --b:#2F5EB5; }
-}
-:root[data-theme="light"]{ --bg:#F4F6F8; --surf:#FFF; --surf2:#EDF1F4; --ink:#0F141B;
-  --ink2:#334155; --muted:#61707F; --hair:#DDE4EA; --amber:#9A5F06;
-  --amber-dim:#F5E4C8; --teal:#0B7D70; --teal-dim:#D5EDE9; --red:#B33A30;
-  --grid:#E4EAEF; --a:#9A5F06; --b:#2F5EB5; }
-:root[data-theme="dark"]{ --bg:#0A0E14; --surf:#111721; --surf2:#161E2A; --ink:#E9EEF4;
-  --ink2:#B9C6D4; --muted:#788A9E; --hair:#1E2836; --amber:#F0A63C;
-  --amber-dim:#5A4118; --teal:#34C1AE; --teal-dim:#12403C; --red:#E4685E;
-  --grid:#18202C; --a:#F0A63C; --b:#6791DD; }
+<meta name="twitter:title" content="Prepara tu setup del nuevo DUAL XAU 2.2">
+<meta name="twitter:description" content="Elige plan, cuenta y riesgo y mira cuántos fondeos saca al año. Estimaciones sobre datos 2022-2026.">
+<meta name="twitter:image" content="https://nico66fx.com/pro/assets/og-cover.png">
 
-.aviso-riesgo-top{background:var(--amber-dim);border:1px solid var(--amber);
- border-radius:10px;padding:13px 15px;margin:18px 0 0;font-size:15px;
- line-height:1.55;color:var(--ink)}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/output.css">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<style>
+/* ==================================================================
+   Página de fondeo. Hereda el sistema de /pro por ../assets/output.css:
+   tokens, tipografía, :focus-visible, nav y pie.
+   Aquí solo vive lo que Tailwind no genera: la calculadora, el range,
+   la rejilla .res, el interruptor y la tabla.
+   Esta hoja va DESPUÉS del <link>, así que gana la cascada.
+   PROHIBIDO añadir una regla prefers-color-scheme: PRO es solo claro.
+   ================================================================== */
+
+/* Puente de tokens. Los nombres viejos siguen vivos porque draw() los
+   emite desde JS dentro de atributos SVG; se remapean en vez de
+   renombrarlos. Va en .fondeo y no en :root para no pisar los tokens
+   que consumen el nav y el pie. */
+.fondeo{
+  --surf:#FFFFFF;             /* PLANO a propósito: lo consumen el stroke del
+                                 SVG y el borde del pulgar del range, y ninguno
+                                 de los dos admite un degradado */
+  --ink2:var(--ink-2);
+  --muted:var(--ink-3);
+  --amber:var(--brand);       /* el acento pasa a azul de marca, como en PRO */
+  --teal:#047857;
+  --red:#DC2626;
+  --grid:rgba(8,17,31,.10);
+  /* el ámbar de verdad queda reservado a los avisos, como en todo el sitio */
+  --aviso-borde:rgba(180,83,9,.28);
+  --aviso-fondo:#FFFBEB;
+  --aviso-tinta:#7C3D06;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --display:'Instrument Sans',Inter,ui-sans-serif,system-ui,sans-serif;
+  display:block;
+  font-size:15px;
+  line-height:1.5;
+}
+
+/* ---------- tipografía ---------- */
+/* La familia de h1-h3 la pone output.css; el peso NO, porque su preflight
+   deja h1..h6 en font-weight:inherit. Sin esto el titular sale en 400. */
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 18px 70px}
+.fondeo h1{font-size:clamp(28px,4.6vw,44px);font-weight:700;line-height:1.05;margin:10px 0}
+.fondeo h2{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:0 0 4px}
+.fondeo p{color:var(--ink-2);margin:0 0 10px;max-width:64ch}
+.fondeo .tiny{font-size:12.5px;color:var(--ink-3)}
+.fondeo b{color:var(--ink);font-weight:600}
+
+/* ---------- aviso de riesgo obligatorio ----------
+   Banda a sangre completa bajo el nav, igual que en nico66fx.com: no es
+   cerrable ni colapsable y va antes que el contenido. Es el ÚNICO sitio de
+   la página, junto con .warn.amber, donde queda ámbar. */
+.aviso-riesgo-top{position:relative;z-index:2;
+  background:linear-gradient(180deg,rgba(255,255,255,.74),rgba(255,255,255,.40)),
+             linear-gradient(152deg,rgba(198,134,16,.17),rgba(198,134,16,.09));
+  border-bottom:1px solid rgba(198,134,16,.32);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+  margin:0;padding:14px 20px;font-size:15px;line-height:1.55;
+  color:var(--ink);font-weight:500}
+.aviso-riesgo-top > div{max-width:1080px;margin:0 auto}
 .aviso-riesgo-top b{color:var(--ink)}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;
-  line-height:1.5;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1080px;margin:0 auto;padding:0 18px 70px}
-.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--muted)}
-h1{font-size:clamp(26px,4.4vw,40px);font-weight:750;letter-spacing:-.035em;
-  line-height:1.05;margin:10px 0}
-h2{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:0 0 4px}
-p{color:var(--ink2);margin:0 0 10px;max-width:64ch}
-.tiny{font-size:12.5px;color:var(--muted)}
-b{color:var(--ink);font-weight:650}
+.aviso-riesgo-top a{color:var(--aviso-tinta);text-decoration:underline;
+  text-underline-offset:2px}
 
-header{padding:40px 0 14px}
-h1 .hi{color:var(--amber)}
+/* ---------- cabecera ---------- */
+.fondeo header{padding:40px 0 14px}
+.fondeo h1 .hi{color:var(--brand)}
 .lead{font-size:16.5px;max-width:60ch;margin-bottom:16px}
+
 .pasos{list-style:none;counter-reset:s;display:grid;gap:8px;padding:0;margin:0;
   grid-template-columns:repeat(3,1fr)}
 @media(max-width:760px){.pasos{grid-template-columns:1fr}}
-.pasos li{counter-increment:s;position:relative;padding:11px 13px 11px 40px;
-  background:var(--surf);border:1px solid var(--hair);border-radius:9px;
-  font-size:13px;color:var(--ink2);line-height:1.4}
-.pasos li::before{content:counter(s);position:absolute;left:12px;top:11px;
-  width:19px;height:19px;border-radius:50%;background:var(--amber-dim);
-  color:var(--amber);font-family:var(--mono);font-size:11px;font-weight:700;
-  display:grid;place-items:center}
+.pasos li{counter-increment:s;position:relative;padding:12px 14px 12px 42px;
+  background:var(--metal);border:0;border-radius:var(--radio);
+  box-shadow:var(--sh-1);font-size:13px;color:var(--ink-2);line-height:1.4}
+/* el filete va en ::after porque ::before lo ocupa el contador */
+.pasos li::after{content:'';position:absolute;inset:0;pointer-events:none;
+  border-radius:inherit;padding:1px;
+  background:linear-gradient(152deg,rgba(8,17,31,.15),rgba(8,17,31,.06) 46%,rgba(21,68,224,.17));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude}
+.pasos li::before{content:counter(s);position:absolute;left:13px;top:12px;
+  width:20px;height:20px;border-radius:50%;background:rgba(21,68,224,.08);
+  color:var(--brand);font-family:var(--mono);font-size:11px;font-weight:700;
+  display:grid;place-items:center;z-index:2}
+
 .tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);
-  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);
-  background:var(--amber-dim);border-radius:99px;padding:5px 12px}
-.dot{width:5px;height:5px;border-radius:50%;background:var(--amber);
+  font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  color:var(--brand);background:rgba(21,68,224,.08);border-radius:9999px;
+  padding:6px 13px;font-variant-numeric:tabular-nums}
+/* no es .live-dot de PRO a propósito: ese es verde y significa «en vivo»,
+   y aquí son cifras de simulación */
+.dot{width:6px;height:6px;border-radius:9999px;background:var(--brand);
   animation:p 2.4s ease-in-out infinite}
 @keyframes p{0%,100%{opacity:1}50%{opacity:.25}}
 @media (prefers-reduced-motion:reduce){.dot{animation:none}}
 
-/* escena */
-.scene{background:var(--surf);border:1px solid var(--hair);border-radius:11px;
+/* ---------- escena ---------- */
+.scene{position:relative;background:var(--metal);border:0;
+  border-radius:var(--radio);box-shadow:var(--sh-2);
   margin:18px 0 26px;overflow:hidden}
 .scene svg{display:block;width:100%;height:auto}
-.scene-note{padding:9px 14px;border-top:1px solid var(--hair);font-size:12.5px;
-  color:var(--ink2);min-height:20px}
-.scene-note b{color:var(--amber)}
+.scene-note{padding:9px 14px;border-top:1px solid var(--hair-strong);font-size:12.5px;
+  color:var(--ink-2);min-height:20px}
+.scene-note b{color:var(--brand)}
 
-/* barra global */
+/* ---------- regla de consistencia ----------
+   Valores de .cookie-switch de PRO, no su markup: aquí es un checkbox real
+   con un span, y cambiarlo obligaría a reescribir $("cons").onchange. */
 .bar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
-  background:var(--surf);border:1px solid var(--hair);border-radius:11px;
-  padding:12px 15px;margin-bottom:14px}
-.sw{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink2);cursor:pointer}
+  position:relative;background:var(--metal);border:0;border-radius:var(--radio);
+  box-shadow:var(--sh-2);padding:13px 16px;margin-bottom:14px}
+.sw{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-2);
+  cursor:pointer;min-height:44px}
 .sw input{position:absolute;opacity:0;width:0;height:0}
-.track{width:40px;height:22px;border-radius:99px;background:var(--surf2);
-  border:1px solid var(--hair);position:relative;transition:.18s;flex-shrink:0}
-.track::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;
-  border-radius:50%;background:var(--muted);transition:.18s}
-input:checked + .track{background:var(--amber);border-color:var(--amber)}
-input:checked + .track::after{left:20px;background:var(--bg)}
-input:focus-visible + .track{outline:2px solid var(--teal);outline-offset:2px}
+.track{width:44px;height:24px;border-radius:9999px;background:#CBD5E1;
+  border:0;position:relative;transition:background .2s ease;flex-shrink:0}
+.track::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;
+  border-radius:9999px;background:#fff;box-shadow:0 1px 2px rgba(8,17,31,.25);
+  transition:transform .2s ease}
+input:checked + .track{background:var(--brand)}
+input:checked + .track::after{transform:translateX(20px)}
+/* el input real está oculto y el :focus-visible global no llega: el anillo
+   se pinta en el .track */
+input:focus-visible + .track{outline:2px solid var(--brand);outline-offset:2px;
+  box-shadow:0 0 0 4px rgba(21,68,224,.18)}
 
-/* comparador */
-.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:820px){.cmp{grid-template-columns:1fr}}
-.card{background:var(--surf);border:1px solid var(--hair);border-radius:11px;padding:16px}
-.card.A{border-top:3px solid var(--a)} .card.B{border-top:3px solid var(--b)}
-.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
-  text-transform:uppercase;margin:0 0 12px;display:flex;justify-content:space-between}
-.card.A h3{color:var(--a)} .card.B h3{color:var(--b)}
+/* ---------- panel único ----------
+   Una sola tarjeta: ni rejilla de dos columnas con hueco, ni estirada a
+   1080px. Por debajo de 600px es fluida sola. */
+.cmp{max-width:600px;margin:0 auto}
+/* la tarjeta protagonista es la .destacada de PRO: filete azul + halo */
+.card{position:relative;background:var(--metal);border:0;
+  border-radius:var(--radio);box-shadow:var(--sh-2),0 0 0 4px rgba(21,68,224,.07);
+  padding:18px}
+.card > *{position:relative;z-index:2}
+.card::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  border-radius:inherit;padding:1.5px;
+  background:linear-gradient(152deg,rgba(21,68,224,.45),rgba(21,68,224,.18) 45%,rgba(21,68,224,.5));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude}
+.card h3{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:500;color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+  margin:0 0 14px;display:flex;justify-content:space-between;gap:.6rem}
+.card h3 span:first-child{color:var(--brand)}
 
-select{width:100%;background:var(--surf2);color:var(--ink);border:1px solid var(--hair);
-  border-radius:7px;padding:8px 10px;font-family:var(--mono);font-size:12.5px;
-  margin-bottom:12px;cursor:pointer}
-select:focus-visible{outline:2px solid var(--teal);outline-offset:1px}
+/* output.css no estiliza select en ningún sitio: va a mano. El anillo de
+   foco sí sale gratis del :focus-visible global. */
+.fondeo select{width:100%;background-color:var(--surface);color:var(--ink);
+  border:1px solid rgba(8,17,31,.14);border-radius:var(--radio-s);
+  padding:11px 34px 11px 12px;font-family:var(--mono);font-size:12.5px;
+  margin-bottom:12px;cursor:pointer;min-height:44px;box-shadow:var(--sh-1);
+  -webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235D6D84' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 11px center;
+  transition:border-color .18s ease}
+.fondeo select:hover{border-color:rgba(21,68,224,.3)}
+
 .chips{display:flex;gap:6px;margin-bottom:12px}
-.chip{flex:1;font-family:var(--mono);font-size:11.5px;padding:7px 4px;border-radius:6px;
-  border:1px solid var(--hair);background:var(--surf2);color:var(--muted);cursor:pointer;
-  transition:.15s}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink);
-  font-weight:650}
-.chip:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.chip{flex:1;font-family:var(--mono);font-size:11.5px;padding:7px 4px;
+  border-radius:var(--radio-s);border:1px solid rgba(8,17,31,.14);
+  background:var(--surface);color:var(--ink-3);cursor:pointer;
+  min-height:44px;transition:border-color .18s ease,background .18s ease}
+.chip:hover{border-color:rgba(21,68,224,.3)}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;
+  border-color:var(--ink);font-weight:600}
 .pre{display:flex;gap:6px;margin-bottom:13px}
 .pre button{flex:1;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;
-  padding:7px 3px;border-radius:6px;border:1px dashed var(--hair);
-  background:transparent;color:var(--muted);cursor:pointer;transition:.15s}
-.pre button:hover{border-style:solid;color:var(--ink)}
-.card.A .pre button:hover{border-color:var(--a);color:var(--a)}
-.card.B .pre button:hover{border-color:var(--b);color:var(--b)}
-.pre button[aria-pressed="true"]{border-style:solid;font-weight:650}
-.card.A .pre button[aria-pressed="true"]{border-color:var(--a);color:var(--a);
-  background:var(--amber-dim)}
-.card.B .pre button[aria-pressed="true"]{border-color:var(--b);color:var(--b);
-  background:color-mix(in srgb,var(--b) 14%,transparent)}
-.pre button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-.rw{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
-.rw .v{font-family:var(--mono);font-size:17px;font-weight:600}
-.card.A .rw .v{color:var(--a)} .card.B .rw .v{color:var(--b)}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:22px;
-  background:transparent;cursor:pointer}
-input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;
-  background:var(--surf2);border:1px solid var(--hair)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;
-  border-radius:50%;background:currentColor;margin-top:-7px;border:3px solid var(--surf)}
-input[type=range]::-moz-range-track{height:4px;border-radius:2px;background:var(--surf2)}
-input[type=range]::-moz-range-thumb{width:12px;height:12px;border-radius:50%;
-  background:currentColor;border:3px solid var(--surf)}
-.card.A input[type=range]{color:var(--a)} .card.B input[type=range]{color:var(--b)}
-.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;
-  color:var(--muted)}
+  padding:7px 3px;border-radius:var(--radio-s);border:1px dashed rgba(8,17,31,.18);
+  background:transparent;color:var(--ink-3);cursor:pointer;min-height:44px;
+  transition:border-color .18s ease,color .18s ease,background .18s ease}
+.pre button:hover{border-style:solid;border-color:var(--brand);color:var(--brand)}
+.pre button[aria-pressed="true"]{border-style:solid;font-weight:600;
+  border-color:var(--brand);color:var(--brand-600);background:rgba(21,68,224,.08)}
 
-.res{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);
-  border:1px solid var(--hair);border-radius:8px;overflow:hidden;margin-top:14px}
-.cell{background:var(--surf);padding:10px 11px}
-.cell .k{font-family:var(--mono);font-size:9px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:3px}
-.cell .v{font-family:var(--sans);font-size:21px;font-weight:700;letter-spacing:-.03em;
-  font-variant-numeric:tabular-nums;line-height:1.1}
+.rw{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.rw .v{font-family:var(--mono);font-size:17px;font-weight:600;color:var(--brand);
+  font-variant-numeric:tabular-nums}
+/* output.css no trae nada para input[type=range]: todo esto es a mano.
+   El borde del pulgar es blanco PLANO a propósito, para recortarse contra
+   el metal de la tarjeta; un degradado no vale como borde. */
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:24px;
+  background:transparent;cursor:pointer;color:var(--brand)}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:9999px;
+  background:var(--canvas-alt);border:1px solid var(--hair-strong)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;
+  border-radius:9999px;background:currentColor;margin-top:-8px;border:3px solid #fff;
+  box-shadow:0 1px 2px rgba(8,17,31,.25)}
+input[type=range]::-moz-range-track{height:4px;border-radius:9999px;
+  background:var(--canvas-alt);border:1px solid var(--hair-strong)}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:9999px;
+  background:currentColor;border:3px solid #fff;
+  box-shadow:0 1px 2px rgba(8,17,31,.25)}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);
+  font-size:10px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+/* La rejilla se dibuja sola: gap de 1px + fondo de filete en el padre y
+   celdas OPACAS encima. Las celdas no pueden llevar --metal: si el fondo
+   de la celda es translúcido o degradado, las líneas desaparecen. */
+.res{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair-strong);
+  border:1px solid var(--hair-strong);border-radius:var(--radio-s);
+  overflow:hidden;margin-top:16px}
+.cell{background:var(--surface);padding:11px 12px}
+.cell .k{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:500;color:var(--ink-3);margin-bottom:3px}
+.cell .v{font-family:var(--display);font-size:21px;font-weight:700;
+  letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1.1;
+  color:var(--ink)}
 /* la unidad va debajo, no pegada al número: ahora son frases ("% del límite
    diario"), no un símbolo suelto, y en línea se leían mal */
-.cell .u{display:block;font-size:11px;color:var(--muted);font-weight:400;
+.cell .u{display:block;font-size:11px;color:var(--ink-3);font-weight:400;
   margin-top:3px;line-height:1.3;letter-spacing:0}
-.sum{margin-top:11px;font-size:13.5px;line-height:1.5;color:var(--ink2);
-  background:var(--surf2);border-radius:8px;padding:10px 12px}
+.sum{margin-top:12px;font-size:13.5px;line-height:1.5;color:var(--ink-2);
+  background:var(--canvas-alt);border-radius:var(--radio-s);padding:11px 13px}
 .sum b{color:var(--ink)}
-.warn{margin-top:11px;font-size:12.5px;border-radius:7px;padding:9px 11px;display:none;
-  border:1px solid var(--red);background:color-mix(in srgb,var(--red) 12%,transparent)}
+
+/* Los nombres warn / show / amber los escribe el JS (w.className="warn" y
+   classList.add). NO se renombran: si cambian, los avisos desaparecen sin
+   error en consola. */
+.warn{margin-top:12px;font-size:12.5px;line-height:1.45;border-radius:var(--radio-s);
+  padding:10px 12px;display:none;
+  border:1px solid rgba(220,38,38,.28);background:#FEF2F2;color:#991B1B}
+.warn b{color:#7F1D1D}
 .warn.show{display:block}
-.warn.amber{border-color:var(--amber);background:var(--amber-dim)}
+.warn.amber{border-color:var(--aviso-borde);background:var(--aviso-fondo);
+  color:var(--aviso-tinta)}
+.warn.amber b{color:var(--aviso-tinta)}
 
-/* veredicto */
-.vs{background:var(--surf);border:1px solid var(--hair);border-radius:11px;
-  padding:16px 18px;margin-top:14px}
+/* ---------- tabla de los mejores ---------- */
+.vs{position:relative;background:var(--metal);border:0;border-radius:var(--radio);
+  box-shadow:var(--sh-2);padding:18px 20px;margin-top:14px}
 .vs h2{margin-bottom:10px}
-.vsrow{display:grid;grid-template-columns:175px 1fr 1fr;gap:10px;align-items:center;
-  padding:7px 0;border-bottom:1px solid var(--hair);font-size:13.5px}
-@media(max-width:560px){.vsrow{grid-template-columns:110px 1fr 1fr}}
-.vsrow:last-child{border-bottom:0}
-.vsrow .n{color:var(--muted);font-size:12.5px}
-.vshead{padding-top:0;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
-  text-transform:uppercase}
-.vshead .la{color:var(--a)} .vshead .lb{color:var(--b)}
-.mini{position:relative;height:20px;background:var(--surf2);border-radius:4px;
-  overflow:hidden}
-.mini i{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
-.mini span{position:absolute;right:6px;top:50%;transform:translateY(-50%);
-  font-family:var(--mono);font-size:11.5px;font-weight:650;color:var(--ink)}
-
-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
-th,td{padding:7px 9px;text-align:right;border-bottom:1px solid var(--hair)}
-th:first-child,td:first-child{text-align:left}
-thead th{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--surf2)}
-tbody td{font-family:var(--mono);color:var(--ink2)}
-tbody td:first-child{font-family:var(--sans);color:var(--ink)}
-.tw{overflow-x:auto;border:1px solid var(--hair);border-radius:10px;margin:10px 0}
-.good{color:var(--teal)} .bad{color:var(--red)}
+.fondeo table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;
+  font-variant-numeric:tabular-nums}
+.fondeo th,.fondeo td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--hair-strong)}
+.fondeo th:first-child,.fondeo td:first-child{text-align:left}
+.fondeo thead th{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500;
+  background:var(--canvas-alt)}
+.fondeo tbody td{font-family:var(--mono);color:var(--ink-2)}
+.fondeo tbody td:first-child{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink)}
+/* las filas cargan el ajuste en la tarjeta al pulsarlas: que lo parezcan */
+.fondeo tbody tr{cursor:pointer}
+.fondeo tbody tr:hover{background:rgba(21,68,224,.04)}
+.tw{overflow-x:auto;border:1px solid var(--hair-strong);background:var(--surface);
+  border-radius:var(--radio-s);margin:10px 0}
+.good{color:#047857;font-weight:600}
 
 /* aviso legal: va ANTES del botón a propósito. Que nadie llegue a la llamada a
    la acción sin haber pasado por delante de las limitaciones. */
-.aviso{margin-top:22px;padding:16px 18px;border-radius:11px;
-  border:1px solid var(--hair);border-left:3px solid var(--red);
-  background:var(--surf)}
-.aviso .k{font-family:var(--mono);font-size:10px;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.aviso{margin-top:24px;padding:18px 20px;border-radius:var(--radio);
+  border:0;border-left:3px solid #DC2626;background:var(--metal);
+  box-shadow:var(--sh-2)}
+.aviso .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:500;color:#DC2626;margin-bottom:9px}
 .aviso p{font-size:13px;margin:0 0 8px;max-width:none}
-.aviso ul{margin:0;padding-left:17px;font-size:12.5px;color:var(--ink2)}
+/* el preflight de Tailwind quita las viñetas a ul: aquí hacen falta */
+.aviso ul{margin:0;padding-left:18px;font-size:12.5px;color:var(--ink-2);
+  list-style:disc}
 .aviso li{margin-bottom:5px}
 .aviso li:last-child{margin-bottom:0}
 
-/* llamada a la comunidad: es el único sitio de la página donde el ámbar va
-   relleno, para que el ojo lo encuentre sin competir con los datos */
-.cta{display:flex;gap:18px;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;text-decoration:none;color:inherit;margin-top:22px;
-  padding:20px 22px;border-radius:11px;border:1px solid var(--amber);
-  background:color-mix(in srgb,var(--amber) 8%,var(--surf));transition:.16s}
-.cta:hover{background:color-mix(in srgb,var(--amber) 14%,var(--surf))}
-.cta:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
-.cta .k{font-family:var(--mono);font-size:10px;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+/* llamada a la comunidad: la tarjeta destacada del sistema (filete azul de
+   1,5 px + halo) con el botón primario de PRO dentro */
+.cta{position:relative;display:flex;gap:18px;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;text-decoration:none;color:inherit;
+  margin-top:24px;padding:22px 24px;border:0;border-radius:var(--radio);
+  background:var(--metal);
+  box-shadow:var(--sh-2),0 0 0 4px rgba(21,68,224,.07);
+  transition:transform .18s ease,box-shadow .18s ease}
+.cta::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
+  border-radius:inherit;padding:1.5px;
+  background:linear-gradient(152deg,rgba(21,68,224,.45),rgba(21,68,224,.18) 45%,rgba(21,68,224,.5));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude}
+.cta > *{position:relative;z-index:2}
+.cta:hover{transform:translateY(-1px);
+  box-shadow:0 2px 4px rgba(8,17,31,.05),0 16px 32px -18px rgba(8,17,31,.26),0 0 0 4px rgba(21,68,224,.1)}
+.cta .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:500;color:var(--brand);margin-bottom:6px}
 .cta h2{margin-bottom:6px}
 .cta p{margin:0;font-size:13.5px;max-width:52ch}
 .cta .txt{flex:1 1 340px}
-.cta .btn{flex:0 0 auto;display:inline-flex;align-items:center;gap:9px;
-  background:var(--amber);color:var(--bg);font-weight:700;font-size:14.5px;
-  padding:12px 20px;border-radius:8px;white-space:nowrap}
+.cta .btn{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+  gap:.55rem;background:var(--brand);color:#fff;font-weight:600;font-size:14.5px;
+  padding:.85rem 1.7rem;min-height:44px;border-radius:9999px;white-space:nowrap;
+  box-shadow:0 1px 2px rgba(8,17,31,.06),0 8px 20px -12px rgba(21,68,224,.5);
+  transition:background .18s ease}
+.cta:hover .btn{background:var(--brand-600)}
 .cta:hover .btn .ar{transform:translateX(3px)}
 .cta .ar{transition:transform .16s}
-@media (prefers-reduced-motion:reduce){.cta,.cta .ar{transition:none}}
+@media (prefers-reduced-motion:reduce){.cta,.cta .ar,.cta .btn{transition:none}
+  .cta:hover{transform:none}}
 
-details{background:var(--surf);border:1px solid var(--hair);border-radius:10px;
-  padding:12px 15px;margin-top:26px}
-summary{cursor:pointer;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--muted)}
-summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-details[open] summary{margin-bottom:10px;color:var(--ink)}
-footer{border-top:1px solid var(--hair);margin-top:30px;padding-top:16px;
-  font-size:11.5px;color:var(--muted)}
+/* summary se queda en display:list-item para conservar el triángulo: con
+   flex el navegador se come el marcador y no se ve que se despliega */
+.fondeo details{position:relative;background:var(--metal);border:0;
+  border-radius:var(--radio);box-shadow:var(--sh-2);padding:6px 18px;margin-top:26px}
+.fondeo summary{cursor:pointer;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:500;color:var(--ink-3);padding:14px 0}
+.fondeo details[open]{padding-bottom:14px}
+.fondeo details[open] summary{color:var(--ink)}
 </style>
+</head>
+<body>
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
+    <nav class="fixed w-full z-50 top-0 left-0 glass-bar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="../" class="flex items-center gap-3">
+                    <span class="font-bold text-lg tracking-tight">nico66fx <span class="text-brand-400">PRO</span></span>
+                </a>
+                <a href="../" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Volver al inicio</a>
+            </div>
+        </div>
+    </nav>
 
-<div class="wrap">
+<main id="contenido" class="fondeo pt-16">
 
-<div class="aviso-riesgo-top" role="note">
+<div class="aviso-riesgo-top" role="note"><div>
   <b>Las cifras de esta página son estimaciones de una simulación, no resultados de cuentas reales
   ni una previsión.</b> Superar una evaluación de fondeo no está garantizado y puedes perder la cuota
   que pagues a la firma. Operar con apalancamiento conlleva un riesgo elevado de pérdida de capital:
   opera únicamente con capital que puedas permitirte perder. Esto es contenido educativo y no es
-  asesoramiento financiero. <a href="../divulgacion-de-riesgo.html" style="color:var(--amber)">Divulgación de riesgo completa</a>.
-</div>
+  asesoramiento financiero. <a href="../divulgacion-de-riesgo.html">Divulgación de riesgo completa</a>.
+</div></div>
+
+<div class="wrap">
 
 <header>
-  <div class="tag"><span class="dot"></span>DUAL XAU 2.1 · simulación sobre histórico 2022–2026</div>
-  <h1>Prepara tu setup del nuevo<br><span class="hi">DUAL XAU 2.1</span></h1>
+  <div class="tag"><span class="dot"></span>DUAL XAU 2.2 · simulación sobre histórico 2022–2026</div>
+  <h1>Prepara tu setup del nuevo<br><span class="hi">DUAL XAU 2.2</span></h1>
   <p class="lead">Antes de pagar una cuota, mira lo que hace tu combinación:
   <b>cuántos fondeos saca al año</b>, cuántos intentos necesita para lograr uno
   y cuánto te cuesta llegar. Son <b>estimaciones</b> salidas de simular el
@@ -262,7 +369,8 @@ footer{border-top:1px solid var(--hair);margin-top:30px;padding-top:16px;
       plan y riesgo para ese objetivo.</li>
     <li><b>Ajusta tu cuenta</b> — el tamaño que vayas a comprar y el riesgo que
       quieras llevar.</li>
-    <li><b>Compáralo</b> con otra opción y quédate con la que te encaje.</li>
+    <li><b>Contrástalo con la tabla</b> — abajo están los ajustes que más fondeos
+      sacan; pulsa una fila y se carga entera en tu setup.</li>
   </ol>
 </header>
 
@@ -295,28 +403,6 @@ footer{border-top:1px solid var(--hair);margin-top:30px;padding-top:16px;
     <div class="sum" id="sumA"></div>
     <div class="warn" id="wA"></div>
   </div>
-
-  <div class="card B" id="cardB">
-    <h3><span>Otra opción</span><span id="tagB"></span></h3>
-    <div class="pre" id="preB"></div>
-    <select id="pB" aria-label="Plan de la firma"></select>
-    <select id="tB" aria-label="Tamaño de cuenta"></select>
-    <div class="chips" id="mB"></div>
-    <div class="rw"><span class="tiny">Riesgo por operación</span><span class="v" id="rvB"></span></div>
-    <input type="range" id="rB" min="0" max="11" step="1" value="9" aria-label="Riesgo por operación">
-    <div class="scale" id="rsB"></div>
-    <div class="res" id="resB"></div>
-    <div class="sum" id="sumB"></div>
-    <div class="warn" id="wB"></div>
-  </div>
-</div>
-
-<div class="vs">
-  <h2>¿Cuál te conviene?</h2>
-  <p class="tiny" id="veredicto" style="margin-bottom:12px"></p>
-  <div class="vsrow vshead"><div class="n"></div>
-    <div class="la">Tu setup</div><div class="lb">Otra opción</div></div>
-  <div id="barras"></div>
 </div>
 
 <div class="vs" style="margin-top:14px">
@@ -356,10 +442,10 @@ footer{border-top:1px solid var(--hair);margin-top:30px;padding-top:16px;
   </ul>
 </div>
 
-<a class="cta" href="https://nico66fx.com/pro/" target="_blank" rel="noopener">
+<a class="cta" href="../">
   <div class="txt">
     <div class="k">¿Aún no lo tienes?</div>
-    <h2>DUAL XAU 2.1 está dentro de la comunidad</h2>
+    <h2>DUAL XAU 2.2 está dentro de la comunidad</h2>
     <p>El robot, la instalación paso a paso y los ajustes concretos para cada
     programa. Si ya estás dentro, esto ya lo tienes: sáltatelo y ve a montar tu
     cuenta.</p>
@@ -369,7 +455,7 @@ footer{border-top:1px solid var(--hair);margin-top:30px;padding-top:16px;
 
 <details>
   <summary>Cómo se calcula esto · y lo que no te vamos a vender</summary>
-  <p><b>Qué es DUAL XAU 2.1.</b> Un robot para MT5 hecho con un único objetivo:
+  <p><b>Qué es DUAL XAU 2.2.</b> Un robot para MT5 hecho con un único objetivo:
   <b>pasar evaluaciones de prop firm</b>. Opera la ruptura de la apertura europea
   en oro, DAX y Nasdaq, y cierra plano todas las noches. No deja nada abierto
   durante la madrugada y no puede saltarse tu límite diario: el tamaño de cada
@@ -402,15 +488,39 @@ footer{border-top:1px solid var(--hair);margin-top:30px;padding-top:16px;
   lo que cuesta una cuota y lo que vale una cuenta fondeada.</p>
 </details>
 
-<footer>
-  <b>Cifras estimadas mediante simulación</b> sobre datos propios reconstruidos
-  tick a tick, periodo 2022–2026. No constituyen una previsión de resultados ni
-  garantía de ningún tipo. Operar con apalancamiento conlleva riesgo de perder el
-  capital. Las rentabilidades pasadas no garantizan rentabilidades futuras. Las
-  condiciones y cuotas de las firmas son orientativas y cambian: consulta siempre
-  su contrato. Contenido educativo · no es asesoramiento financiero.
-</footer>
 </div>
+</main>
+
+    <footer class="bg-gray-950 border-t border-gray-800 pt-16 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <span class="font-bold text-lg">nico66fx <span class="text-brand-400">PRO</span></span>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 nico66fx PRO. Todos los derechos reservados.</p>
+                <div class="flex flex-wrap justify-center gap-4 mt-4 md:mt-0">
+                    <a href="../terminos.html" class="hover:text-gray-300 transition-colors">Términos y Condiciones</a>
+                    <a href="../privacidad.html" class="hover:text-gray-300 transition-colors">Política de Privacidad</a>
+                    <a href="../cookies.html" class="hover:text-gray-300 transition-colors">Política de Cookies</a>
+                    <a href="../politica-de-reembolso.html" class="hover:text-gray-300 transition-colors">Política de Reembolso</a>
+                    <a href="../divulgacion-de-riesgo.html" class="hover:text-gray-300 transition-colors">Divulgación de Riesgo</a>
+                    <a href="../disclaimer.html" class="hover:text-gray-300 transition-colors">Descargo de Responsabilidad</a>
+                    <a href="../aviso-legal.html" class="hover:text-gray-300 transition-colors">Aviso Legal</a>
+                </div>
+            </div>
+
+            <!-- text-gray-300 y no el gray-600 de terminos.html: sobre este pie
+                 blanco el 600 se queda en 2,56:1 y estos descargos se tienen que leer -->
+            <div class="mt-8 text-xs text-gray-300 text-center max-w-4xl mx-auto space-y-2">
+                <p><strong>Cifras estimadas mediante simulación</strong> sobre datos propios reconstruidos tick a tick, periodo 2022–2026. No constituyen una previsión de resultados ni garantía de ningún tipo. Las condiciones y cuotas de las firmas son orientativas y cambian: consulta siempre su contrato.</p>
+                <p>Contenido educativo y tecnológico. No constituye asesoramiento financiero. Operar con apalancamiento conlleva un riesgo elevado de pérdida de capital.</p>
+                <p>Exclusivo para mayores de 18 años. Los resultados pasados no garantizan resultados futuros.</p>
+            </div>
+        </div>
+    </footer>
 
 <script>
 const DATA = {"anos":4.59,"programas":{"t5hs":{"nombre":"The5ers High Stakes","obj":0.08,"dia":0.05,"mdd":0.1,"cuota":265,"cuenta":40000,"split":0.8,"tam":[[5000,39],[10000,75],[20000,145],[40000,265],[60000,385],[100000,595]]},"fn2f":{"nombre":"FundedNext Stellar 2F","obj":0.08,"dia":0.05,"mdd":0.1,"cuota":299,"cuenta":50000,"split":0.85,"tam":[[6000,59],[15000,99],[25000,169],[50000,299],[100000,549],[200000,999]]},"os810":{"nombre":"1-Step 8 % / 5 % / 10 %","obj":0.08,"dia":0.05,"mdd":0.1,"cuota":450,"cuenta":100000,"split":0.8,"tam":[[10000,89],[25000,189],[50000,289],[100000,450],[200000,799]]},"fn1f":{"nombre":"FundedNext Stellar 1F","obj":0.1,"dia":0.03,"mdd":0.06,"cuota":339,"cuenta":50000,"split":0.85,"tam":[[6000,65],[15000,109],[25000,189],[50000,339],[100000,599],[200000,1099]]},"t5hg":{"nombre":"The5ers Hyper Growth","obj":0.06,"dia":0.03,"mdd":0.05,"cuota":395,"cuenta":40000,"split":0.8,"tam":[[5000,59],[10000,115],[20000,215],[40000,395],[60000,575],[100000,895]]},"ftmo":{"nombre":"FTMO 2 fases","obj":0.1,"dia":0.05,"mdd":0.1,"cuota":540,"cuenta":100000,"split":0.8,"tam":[[10000,155],[25000,250],[50000,345],[100000,540],[200000,1080]]}},"mercados":{"oro":"Oro","dax":"DAX","ndx":"Nasdaq"},"instrumentos":{"oro":{"nombre":"Oro","min_usd":119.95},"dax":{"nombre":"DAX","min_usd":3.9},"ndx":{"nombre":"Nasdaq","min_usd":5.27}},"riesgos":[0.005,0.0075,0.01,0.0125,0.015,0.02,0.025,0.03,0.035,0.04,0.05,0.06],"rejilla":{"t5hs":{"oro":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1502,"ipf":1.0,"cf":265},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1502,"ipf":1.0,"cf":265}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":804,"ipf":1.0,"cf":265},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":804,"ipf":1.0,"cf":265}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":750,"ipf":1.0,"cf":265},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":750,"ipf":1.0,"cf":265}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":316,"ipf":1.25,"cf":331},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":318,"ipf":1.25,"cf":331}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":162,"ipf":1.43,"cf":379},"c30":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":165,"ipf":1.5,"cf":398}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":9,"q":4,"fa":1.96,"tasa":0.692,"d":99,"ipf":1.44,"cf":383},"c30":{"f":7,"q":5,"fa":1.52,"tasa":0.583,"d":164,"ipf":1.71,"cf":454}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":14,"q":7,"fa":3.05,"tasa":0.667,"d":74,"ipf":1.5,"cf":398},"c30":{"f":8,"q":7,"fa":1.74,"tasa":0.533,"d":111,"ipf":1.88,"cf":497}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":19,"q":13,"fa":4.14,"tasa":0.594,"d":41,"ipf":1.68,"cf":446},"c30":{"f":8,"q":7,"fa":1.74,"tasa":0.533,"d":80,"ipf":1.88,"cf":497}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":22,"q":14,"fa":4.79,"tasa":0.611,"d":39,"ipf":1.64,"cf":434},"c30":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":85,"ipf":2.0,"cf":530}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":28,"q":20,"fa":6.1,"tasa":0.583,"d":31,"ipf":1.71,"cf":454},"c30":{"f":8,"q":11,"fa":1.74,"tasa":0.421,"d":73,"ipf":2.38,"cf":629}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":56,"q":87,"fa":12.2,"tasa":0.392,"d":9,"ipf":2.55,"cf":677},"c30":{"f":10,"q":85,"fa":2.18,"tasa":0.105,"d":18,"ipf":9.5,"cf":2518}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":69,"q":134,"fa":15.03,"tasa":0.34,"d":6,"ipf":2.94,"cf":780},"c30":{"f":11,"q":132,"fa":2.4,"tasa":0.077,"d":16,"ipf":13.0,"cf":3445}}],"dax":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":361,"ipf":1.0,"cf":265},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":361,"ipf":1.0,"cf":265}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":314,"ipf":1.5,"cf":398},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":314,"ipf":1.5,"cf":398}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":182,"ipf":1.5,"cf":398},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":182,"ipf":1.5,"cf":398}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":191,"ipf":1.67,"cf":442},"c30":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":191,"ipf":1.67,"cf":442}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":189,"ipf":1.6,"cf":424},"c30":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":255,"ipf":1.75,"cf":464}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":9,"q":6,"fa":1.96,"tasa":0.6,"d":99,"ipf":1.67,"cf":442},"c30":{"f":5,"q":4,"fa":1.09,"tasa":0.556,"d":158,"ipf":1.8,"cf":477}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":12,"q":8,"fa":2.61,"tasa":0.6,"d":71,"ipf":1.67,"cf":442},"c30":{"f":7,"q":8,"fa":1.52,"tasa":0.467,"d":143,"ipf":2.14,"cf":568}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":20,"q":15,"fa":4.36,"tasa":0.571,"d":47,"ipf":1.75,"cf":464},"c30":{"f":5,"q":8,"fa":1.09,"tasa":0.385,"d":195,"ipf":2.6,"cf":689}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":22,"q":18,"fa":4.79,"tasa":0.55,"d":44,"ipf":1.82,"cf":482},"c30":{"f":8,"q":12,"fa":1.74,"tasa":0.4,"d":115,"ipf":2.5,"cf":662}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":27,"q":23,"fa":5.88,"tasa":0.54,"d":36,"ipf":1.85,"cf":491},"c30":{"f":8,"q":17,"fa":1.74,"tasa":0.32,"d":103,"ipf":3.12,"cf":828}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":45,"q":76,"fa":9.8,"tasa":0.372,"d":11,"ipf":2.69,"cf":713},"c30":{"f":9,"q":75,"fa":1.96,"tasa":0.107,"d":36,"ipf":9.33,"cf":2473}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":62,"q":127,"fa":13.5,"tasa":0.328,"d":8,"ipf":3.05,"cf":808},"c30":{"f":11,"q":124,"fa":2.4,"tasa":0.081,"d":21,"ipf":12.27,"cf":3252}}],"ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null},"c30":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":274,"ipf":1.5,"cf":398},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":274,"ipf":1.5,"cf":398}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":129,"ipf":1.33,"cf":353},"c30":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":129,"ipf":1.33,"cf":353}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":4,"q":2,"fa":0.87,"tasa":0.667,"d":103,"ipf":1.5,"cf":398},"c30":{"f":4,"q":2,"fa":0.87,"tasa":0.667,"d":103,"ipf":1.5,"cf":398}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":98,"ipf":1.5,"cf":398},"c30":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":107,"ipf":1.6,"cf":424}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":11,"q":8,"fa":2.4,"tasa":0.579,"d":53,"ipf":1.73,"cf":458},"c30":{"f":7,"q":6,"fa":1.52,"tasa":0.538,"d":63,"ipf":1.86,"cf":492}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":15,"q":11,"fa":3.27,"tasa":0.577,"d":33,"ipf":1.73,"cf":459},"c30":{"f":8,"q":8,"fa":1.74,"tasa":0.5,"d":56,"ipf":2.0,"cf":530}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":18,"q":14,"fa":3.92,"tasa":0.562,"d":37,"ipf":1.78,"cf":471},"c30":{"f":7,"q":10,"fa":1.52,"tasa":0.412,"d":70,"ipf":2.43,"cf":644}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":25,"q":19,"fa":5.44,"tasa":0.568,"d":26,"ipf":1.76,"cf":466},"c30":{"f":9,"q":14,"fa":1.96,"tasa":0.391,"d":62,"ipf":2.56,"cf":677}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":40,"q":32,"fa":8.71,"tasa":0.556,"d":18,"ipf":1.8,"cf":477},"c30":{"f":10,"q":17,"fa":2.18,"tasa":0.37,"d":44,"ipf":2.7,"cf":716}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":55,"q":95,"fa":11.98,"tasa":0.367,"d":9,"ipf":2.73,"cf":723},"c30":{"f":11,"q":91,"fa":2.4,"tasa":0.108,"d":20,"ipf":9.27,"cf":2457}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":66,"q":143,"fa":14.37,"tasa":0.316,"d":7,"ipf":3.17,"cf":839},"c30":{"f":10,"q":142,"fa":2.18,"tasa":0.066,"d":17,"ipf":15.2,"cf":4028}}],"oro+dax":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":336,"ipf":1.0,"cf":265},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":336,"ipf":1.0,"cf":265}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":208,"ipf":1.25,"cf":331},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":208,"ipf":1.25,"cf":331}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":5,"q":1,"fa":1.09,"tasa":0.833,"d":324,"ipf":1.2,"cf":318},"c30":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":141,"ipf":1.4,"cf":371}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":7,"q":2,"fa":1.52,"tasa":0.778,"d":129,"ipf":1.29,"cf":341},"c30":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":137,"ipf":1.4,"cf":371}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":11,"q":5,"fa":2.4,"tasa":0.688,"d":70,"ipf":1.45,"cf":385},"c30":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":143,"ipf":1.4,"cf":371}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":14,"q":4,"fa":3.05,"tasa":0.778,"d":78,"ipf":1.29,"cf":341},"c30":{"f":8,"q":3,"fa":1.74,"tasa":0.727,"d":151,"ipf":1.38,"cf":364}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":17,"q":7,"fa":3.7,"tasa":0.708,"d":59,"ipf":1.41,"cf":374},"c30":{"f":9,"q":6,"fa":1.96,"tasa":0.6,"d":113,"ipf":1.67,"cf":442}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":21,"q":10,"fa":4.57,"tasa":0.677,"d":42,"ipf":1.48,"cf":391},"c30":{"f":11,"q":9,"fa":2.4,"tasa":0.55,"d":75,"ipf":1.82,"cf":482}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":30,"q":18,"fa":6.53,"tasa":0.625,"d":34,"ipf":1.6,"cf":424},"c30":{"f":11,"q":11,"fa":2.4,"tasa":0.5,"d":74,"ipf":2.0,"cf":530}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":39,"q":24,"fa":8.49,"tasa":0.619,"d":23,"ipf":1.62,"cf":428},"c30":{"f":13,"q":16,"fa":2.83,"tasa":0.448,"d":54,"ipf":2.23,"cf":591}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":60,"q":86,"fa":13.07,"tasa":0.411,"d":11,"ipf":2.43,"cf":645},"c30":{"f":17,"q":87,"fa":3.7,"tasa":0.163,"d":24,"ipf":6.12,"cf":1621}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":85,"q":136,"fa":18.51,"tasa":0.385,"d":7,"ipf":2.6,"cf":689},"c30":{"f":17,"q":136,"fa":3.7,"tasa":0.111,"d":19,"ipf":9.0,"cf":2385}}],"oro+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":800,"ipf":1.0,"cf":265},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":800,"ipf":1.0,"cf":265}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":305,"ipf":1.25,"cf":331},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":305,"ipf":1.25,"cf":331}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":5,"q":1,"fa":1.09,"tasa":0.833,"d":273,"ipf":1.2,"cf":318},"c30":{"f":6,"q":2,"fa":1.31,"tasa":0.75,"d":240,"ipf":1.33,"cf":353}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":9,"q":3,"fa":1.96,"tasa":0.75,"d":128,"ipf":1.33,"cf":353},"c30":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":153,"ipf":1.43,"cf":379}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":12,"q":5,"fa":2.61,"tasa":0.706,"d":109,"ipf":1.42,"cf":375},"c30":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":157,"ipf":1.43,"cf":379}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":15,"q":8,"fa":3.27,"tasa":0.652,"d":73,"ipf":1.53,"cf":406},"c30":{"f":10,"q":6,"fa":2.18,"tasa":0.625,"d":92,"ipf":1.6,"cf":424}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":21,"q":12,"fa":4.57,"tasa":0.636,"d":42,"ipf":1.57,"cf":416},"c30":{"f":10,"q":10,"fa":2.18,"tasa":0.5,"d":98,"ipf":2.0,"cf":530}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":27,"q":16,"fa":5.88,"tasa":0.628,"d":33,"ipf":1.59,"cf":422},"c30":{"f":12,"q":14,"fa":2.61,"tasa":0.462,"d":58,"ipf":2.17,"cf":574}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":31,"q":20,"fa":6.75,"tasa":0.608,"d":26,"ipf":1.65,"cf":436},"c30":{"f":12,"q":17,"fa":2.61,"tasa":0.414,"d":78,"ipf":2.42,"cf":640}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":38,"q":26,"fa":8.28,"tasa":0.594,"d":23,"ipf":1.68,"cf":446},"c30":{"f":12,"q":19,"fa":2.61,"tasa":0.387,"d":80,"ipf":2.58,"cf":685}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":61,"q":100,"fa":13.29,"tasa":0.379,"d":9,"ipf":2.64,"cf":699},"c30":{"f":11,"q":99,"fa":2.4,"tasa":0.1,"d":21,"ipf":10.0,"cf":2650}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":77,"q":157,"fa":16.77,"tasa":0.329,"d":5,"ipf":3.04,"cf":805},"c30":{"f":16,"q":155,"fa":3.48,"tasa":0.094,"d":17,"ipf":10.69,"cf":2832}}],"dax+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":323,"ipf":1.0,"cf":265},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":323,"ipf":1.0,"cf":265}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":289,"ipf":1.33,"cf":353},"c30":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":119,"ipf":1.6,"cf":424}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":7,"q":4,"fa":1.52,"tasa":0.636,"d":120,"ipf":1.57,"cf":416},"c30":{"f":7,"q":5,"fa":1.52,"tasa":0.583,"d":142,"ipf":1.71,"cf":454}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":10,"q":6,"fa":2.18,"tasa":0.625,"d":110,"ipf":1.6,"cf":424},"c30":{"f":8,"q":6,"fa":1.74,"tasa":0.571,"d":109,"ipf":1.75,"cf":464}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":12,"q":8,"fa":2.61,"tasa":0.6,"d":88,"ipf":1.67,"cf":442},"c30":{"f":7,"q":6,"fa":1.52,"tasa":0.538,"d":143,"ipf":1.86,"cf":492}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":11,"q":8,"fa":2.4,"tasa":0.579,"d":83,"ipf":1.73,"cf":458},"c30":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":110,"ipf":2.0,"cf":530}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":14,"q":12,"fa":3.05,"tasa":0.538,"d":57,"ipf":1.86,"cf":492},"c30":{"f":8,"q":11,"fa":1.74,"tasa":0.421,"d":102,"ipf":2.38,"cf":629}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":19,"q":17,"fa":4.14,"tasa":0.528,"d":44,"ipf":1.89,"cf":502},"c30":{"f":8,"q":14,"fa":1.74,"tasa":0.364,"d":102,"ipf":2.75,"cf":729}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":24,"q":20,"fa":5.23,"tasa":0.545,"d":39,"ipf":1.83,"cf":486},"c30":{"f":8,"q":16,"fa":1.74,"tasa":0.333,"d":88,"ipf":3.0,"cf":795}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":31,"q":28,"fa":6.75,"tasa":0.525,"d":28,"ipf":1.9,"cf":504},"c30":{"f":9,"q":22,"fa":1.96,"tasa":0.29,"d":82,"ipf":3.44,"cf":913}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":52,"q":94,"fa":11.33,"tasa":0.356,"d":11,"ipf":2.81,"cf":744},"c30":{"f":10,"q":90,"fa":2.18,"tasa":0.1,"d":30,"ipf":10.0,"cf":2650}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":68,"q":145,"fa":14.81,"tasa":0.319,"d":7,"ipf":3.13,"cf":830},"c30":{"f":12,"q":144,"fa":2.61,"tasa":0.077,"d":20,"ipf":13.0,"cf":3445}}],"oro+dax+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":297,"ipf":1.25,"cf":331},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":297,"ipf":1.25,"cf":331}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":6,"q":2,"fa":1.31,"tasa":0.75,"d":178,"ipf":1.33,"cf":353},"c30":{"f":5,"q":1,"fa":1.09,"tasa":0.833,"d":151,"ipf":1.2,"cf":318}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":10,"q":4,"fa":2.18,"tasa":0.714,"d":98,"ipf":1.4,"cf":371},"c30":{"f":9,"q":5,"fa":1.96,"tasa":0.643,"d":90,"ipf":1.56,"cf":412}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":11,"q":4,"fa":2.4,"tasa":0.733,"d":79,"ipf":1.36,"cf":361},"c30":{"f":8,"q":3,"fa":1.74,"tasa":0.727,"d":116,"ipf":1.38,"cf":364}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":15,"q":6,"fa":3.27,"tasa":0.714,"d":68,"ipf":1.4,"cf":371},"c30":{"f":10,"q":5,"fa":2.18,"tasa":0.667,"d":88,"ipf":1.5,"cf":398}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":13,"q":6,"fa":2.83,"tasa":0.684,"d":64,"ipf":1.46,"cf":387},"c30":{"f":9,"q":7,"fa":1.96,"tasa":0.562,"d":101,"ipf":1.78,"cf":471}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":19,"q":12,"fa":4.14,"tasa":0.613,"d":44,"ipf":1.63,"cf":432},"c30":{"f":9,"q":9,"fa":1.96,"tasa":0.5,"d":112,"ipf":2.0,"cf":530}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":26,"q":17,"fa":5.66,"tasa":0.605,"d":37,"ipf":1.65,"cf":438},"c30":{"f":11,"q":13,"fa":2.4,"tasa":0.458,"d":86,"ipf":2.18,"cf":578}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":30,"q":21,"fa":6.53,"tasa":0.588,"d":29,"ipf":1.7,"cf":450},"c30":{"f":12,"q":15,"fa":2.61,"tasa":0.444,"d":61,"ipf":2.25,"cf":596}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":41,"q":32,"fa":8.93,"tasa":0.562,"d":20,"ipf":1.78,"cf":472},"c30":{"f":11,"q":18,"fa":2.4,"tasa":0.379,"d":55,"ipf":2.64,"cf":699}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":62,"q":94,"fa":13.5,"tasa":0.397,"d":11,"ipf":2.52,"cf":667},"c30":{"f":17,"q":94,"fa":3.7,"tasa":0.153,"d":20,"ipf":6.53,"cf":1730}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":79,"q":149,"fa":17.21,"tasa":0.346,"d":7,"ipf":2.89,"cf":765},"c30":{"f":17,"q":148,"fa":3.7,"tasa":0.103,"d":18,"ipf":9.71,"cf":2572}}]},"fn2f":{"oro":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1502,"ipf":1.0,"cf":299},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1502,"ipf":1.0,"cf":299}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":804,"ipf":1.0,"cf":299},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":804,"ipf":1.0,"cf":299}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":750,"ipf":1.0,"cf":299},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":750,"ipf":1.0,"cf":299}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":316,"ipf":1.25,"cf":374},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":318,"ipf":1.25,"cf":374}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":162,"ipf":1.43,"cf":427},"c30":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":165,"ipf":1.5,"cf":448}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":9,"q":4,"fa":1.96,"tasa":0.692,"d":99,"ipf":1.44,"cf":432},"c30":{"f":7,"q":5,"fa":1.52,"tasa":0.583,"d":164,"ipf":1.71,"cf":513}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":14,"q":7,"fa":3.05,"tasa":0.667,"d":74,"ipf":1.5,"cf":448},"c30":{"f":8,"q":7,"fa":1.74,"tasa":0.533,"d":111,"ipf":1.88,"cf":561}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":19,"q":13,"fa":4.14,"tasa":0.594,"d":41,"ipf":1.68,"cf":504},"c30":{"f":8,"q":7,"fa":1.74,"tasa":0.533,"d":80,"ipf":1.88,"cf":561}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":22,"q":14,"fa":4.79,"tasa":0.611,"d":39,"ipf":1.64,"cf":489},"c30":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":85,"ipf":2.0,"cf":598}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":28,"q":20,"fa":6.1,"tasa":0.583,"d":31,"ipf":1.71,"cf":513},"c30":{"f":8,"q":11,"fa":1.74,"tasa":0.421,"d":73,"ipf":2.38,"cf":710}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":56,"q":87,"fa":12.2,"tasa":0.392,"d":9,"ipf":2.55,"cf":764},"c30":{"f":10,"q":85,"fa":2.18,"tasa":0.105,"d":18,"ipf":9.5,"cf":2840}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":69,"q":134,"fa":15.03,"tasa":0.34,"d":6,"ipf":2.94,"cf":880},"c30":{"f":11,"q":132,"fa":2.4,"tasa":0.077,"d":16,"ipf":13.0,"cf":3887}}],"dax":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":361,"ipf":1.0,"cf":299},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":361,"ipf":1.0,"cf":299}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":314,"ipf":1.5,"cf":448},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":314,"ipf":1.5,"cf":448}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":182,"ipf":1.5,"cf":448},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":182,"ipf":1.5,"cf":448}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":191,"ipf":1.67,"cf":498},"c30":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":191,"ipf":1.67,"cf":498}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":189,"ipf":1.6,"cf":478},"c30":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":255,"ipf":1.75,"cf":523}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":9,"q":6,"fa":1.96,"tasa":0.6,"d":99,"ipf":1.67,"cf":498},"c30":{"f":5,"q":4,"fa":1.09,"tasa":0.556,"d":158,"ipf":1.8,"cf":538}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":12,"q":8,"fa":2.61,"tasa":0.6,"d":71,"ipf":1.67,"cf":498},"c30":{"f":7,"q":8,"fa":1.52,"tasa":0.467,"d":143,"ipf":2.14,"cf":641}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":20,"q":15,"fa":4.36,"tasa":0.571,"d":47,"ipf":1.75,"cf":523},"c30":{"f":5,"q":8,"fa":1.09,"tasa":0.385,"d":195,"ipf":2.6,"cf":777}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":22,"q":18,"fa":4.79,"tasa":0.55,"d":44,"ipf":1.82,"cf":544},"c30":{"f":8,"q":12,"fa":1.74,"tasa":0.4,"d":115,"ipf":2.5,"cf":748}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":27,"q":23,"fa":5.88,"tasa":0.54,"d":36,"ipf":1.85,"cf":554},"c30":{"f":8,"q":17,"fa":1.74,"tasa":0.32,"d":103,"ipf":3.12,"cf":934}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":45,"q":76,"fa":9.8,"tasa":0.372,"d":11,"ipf":2.69,"cf":804},"c30":{"f":9,"q":75,"fa":1.96,"tasa":0.107,"d":36,"ipf":9.33,"cf":2791}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":62,"q":127,"fa":13.5,"tasa":0.328,"d":8,"ipf":3.05,"cf":911},"c30":{"f":11,"q":124,"fa":2.4,"tasa":0.081,"d":21,"ipf":12.27,"cf":3670}}],"ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null},"c30":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":274,"ipf":1.5,"cf":448},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":274,"ipf":1.5,"cf":448}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":129,"ipf":1.33,"cf":399},"c30":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":129,"ipf":1.33,"cf":399}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":4,"q":2,"fa":0.87,"tasa":0.667,"d":103,"ipf":1.5,"cf":448},"c30":{"f":4,"q":2,"fa":0.87,"tasa":0.667,"d":103,"ipf":1.5,"cf":448}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":98,"ipf":1.5,"cf":448},"c30":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":107,"ipf":1.6,"cf":478}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":11,"q":8,"fa":2.4,"tasa":0.579,"d":53,"ipf":1.73,"cf":516},"c30":{"f":7,"q":6,"fa":1.52,"tasa":0.538,"d":63,"ipf":1.86,"cf":555}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":15,"q":11,"fa":3.27,"tasa":0.577,"d":33,"ipf":1.73,"cf":518},"c30":{"f":8,"q":8,"fa":1.74,"tasa":0.5,"d":56,"ipf":2.0,"cf":598}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":18,"q":14,"fa":3.92,"tasa":0.562,"d":37,"ipf":1.78,"cf":532},"c30":{"f":7,"q":10,"fa":1.52,"tasa":0.412,"d":70,"ipf":2.43,"cf":726}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":25,"q":19,"fa":5.44,"tasa":0.568,"d":26,"ipf":1.76,"cf":526},"c30":{"f":9,"q":14,"fa":1.96,"tasa":0.391,"d":62,"ipf":2.56,"cf":764}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":40,"q":32,"fa":8.71,"tasa":0.556,"d":18,"ipf":1.8,"cf":538},"c30":{"f":10,"q":17,"fa":2.18,"tasa":0.37,"d":44,"ipf":2.7,"cf":807}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":55,"q":95,"fa":11.98,"tasa":0.367,"d":9,"ipf":2.73,"cf":815},"c30":{"f":11,"q":91,"fa":2.4,"tasa":0.108,"d":20,"ipf":9.27,"cf":2773}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":66,"q":143,"fa":14.37,"tasa":0.316,"d":7,"ipf":3.17,"cf":947},"c30":{"f":10,"q":142,"fa":2.18,"tasa":0.066,"d":17,"ipf":15.2,"cf":4545}}],"oro+dax":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":336,"ipf":1.0,"cf":299},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":336,"ipf":1.0,"cf":299}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":208,"ipf":1.25,"cf":374},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":208,"ipf":1.25,"cf":374}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":5,"q":1,"fa":1.09,"tasa":0.833,"d":324,"ipf":1.2,"cf":359},"c30":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":141,"ipf":1.4,"cf":419}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":7,"q":2,"fa":1.52,"tasa":0.778,"d":129,"ipf":1.29,"cf":384},"c30":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":137,"ipf":1.4,"cf":419}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":11,"q":5,"fa":2.4,"tasa":0.688,"d":70,"ipf":1.45,"cf":435},"c30":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":143,"ipf":1.4,"cf":419}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":14,"q":4,"fa":3.05,"tasa":0.778,"d":78,"ipf":1.29,"cf":384},"c30":{"f":8,"q":3,"fa":1.74,"tasa":0.727,"d":151,"ipf":1.38,"cf":411}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":17,"q":7,"fa":3.7,"tasa":0.708,"d":59,"ipf":1.41,"cf":422},"c30":{"f":9,"q":6,"fa":1.96,"tasa":0.6,"d":113,"ipf":1.67,"cf":498}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":21,"q":10,"fa":4.57,"tasa":0.677,"d":42,"ipf":1.48,"cf":441},"c30":{"f":11,"q":9,"fa":2.4,"tasa":0.55,"d":75,"ipf":1.82,"cf":544}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":30,"q":18,"fa":6.53,"tasa":0.625,"d":34,"ipf":1.6,"cf":478},"c30":{"f":11,"q":11,"fa":2.4,"tasa":0.5,"d":74,"ipf":2.0,"cf":598}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":39,"q":24,"fa":8.49,"tasa":0.619,"d":23,"ipf":1.62,"cf":483},"c30":{"f":13,"q":16,"fa":2.83,"tasa":0.448,"d":54,"ipf":2.23,"cf":667}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":60,"q":86,"fa":13.07,"tasa":0.411,"d":11,"ipf":2.43,"cf":728},"c30":{"f":17,"q":87,"fa":3.7,"tasa":0.163,"d":24,"ipf":6.12,"cf":1829}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":85,"q":136,"fa":18.51,"tasa":0.385,"d":7,"ipf":2.6,"cf":777},"c30":{"f":17,"q":136,"fa":3.7,"tasa":0.111,"d":19,"ipf":9.0,"cf":2691}}],"oro+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":800,"ipf":1.0,"cf":299},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":800,"ipf":1.0,"cf":299}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":305,"ipf":1.25,"cf":374},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":305,"ipf":1.25,"cf":374}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":5,"q":1,"fa":1.09,"tasa":0.833,"d":273,"ipf":1.2,"cf":359},"c30":{"f":6,"q":2,"fa":1.31,"tasa":0.75,"d":240,"ipf":1.33,"cf":399}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":9,"q":3,"fa":1.96,"tasa":0.75,"d":128,"ipf":1.33,"cf":399},"c30":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":153,"ipf":1.43,"cf":427}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":12,"q":5,"fa":2.61,"tasa":0.706,"d":109,"ipf":1.42,"cf":424},"c30":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":157,"ipf":1.43,"cf":427}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":15,"q":8,"fa":3.27,"tasa":0.652,"d":73,"ipf":1.53,"cf":458},"c30":{"f":10,"q":6,"fa":2.18,"tasa":0.625,"d":92,"ipf":1.6,"cf":478}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":21,"q":12,"fa":4.57,"tasa":0.636,"d":42,"ipf":1.57,"cf":470},"c30":{"f":10,"q":10,"fa":2.18,"tasa":0.5,"d":98,"ipf":2.0,"cf":598}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":27,"q":16,"fa":5.88,"tasa":0.628,"d":33,"ipf":1.59,"cf":476},"c30":{"f":12,"q":14,"fa":2.61,"tasa":0.462,"d":58,"ipf":2.17,"cf":648}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":31,"q":20,"fa":6.75,"tasa":0.608,"d":26,"ipf":1.65,"cf":492},"c30":{"f":12,"q":17,"fa":2.61,"tasa":0.414,"d":78,"ipf":2.42,"cf":723}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":38,"q":26,"fa":8.28,"tasa":0.594,"d":23,"ipf":1.68,"cf":504},"c30":{"f":12,"q":19,"fa":2.61,"tasa":0.387,"d":80,"ipf":2.58,"cf":772}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":61,"q":100,"fa":13.29,"tasa":0.379,"d":9,"ipf":2.64,"cf":789},"c30":{"f":11,"q":99,"fa":2.4,"tasa":0.1,"d":21,"ipf":10.0,"cf":2990}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":77,"q":157,"fa":16.77,"tasa":0.329,"d":5,"ipf":3.04,"cf":909},"c30":{"f":16,"q":155,"fa":3.48,"tasa":0.094,"d":17,"ipf":10.69,"cf":3196}}],"dax+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":323,"ipf":1.0,"cf":299},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":323,"ipf":1.0,"cf":299}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":289,"ipf":1.33,"cf":399},"c30":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":119,"ipf":1.6,"cf":478}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":7,"q":4,"fa":1.52,"tasa":0.636,"d":120,"ipf":1.57,"cf":470},"c30":{"f":7,"q":5,"fa":1.52,"tasa":0.583,"d":142,"ipf":1.71,"cf":513}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":10,"q":6,"fa":2.18,"tasa":0.625,"d":110,"ipf":1.6,"cf":478},"c30":{"f":8,"q":6,"fa":1.74,"tasa":0.571,"d":109,"ipf":1.75,"cf":523}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":12,"q":8,"fa":2.61,"tasa":0.6,"d":88,"ipf":1.67,"cf":498},"c30":{"f":7,"q":6,"fa":1.52,"tasa":0.538,"d":143,"ipf":1.86,"cf":555}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":11,"q":8,"fa":2.4,"tasa":0.579,"d":83,"ipf":1.73,"cf":516},"c30":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":110,"ipf":2.0,"cf":598}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":14,"q":12,"fa":3.05,"tasa":0.538,"d":57,"ipf":1.86,"cf":555},"c30":{"f":8,"q":11,"fa":1.74,"tasa":0.421,"d":102,"ipf":2.38,"cf":710}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":19,"q":17,"fa":4.14,"tasa":0.528,"d":44,"ipf":1.89,"cf":567},"c30":{"f":8,"q":14,"fa":1.74,"tasa":0.364,"d":102,"ipf":2.75,"cf":822}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":24,"q":20,"fa":5.23,"tasa":0.545,"d":39,"ipf":1.83,"cf":548},"c30":{"f":8,"q":16,"fa":1.74,"tasa":0.333,"d":88,"ipf":3.0,"cf":897}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":31,"q":28,"fa":6.75,"tasa":0.525,"d":28,"ipf":1.9,"cf":569},"c30":{"f":9,"q":22,"fa":1.96,"tasa":0.29,"d":82,"ipf":3.44,"cf":1030}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":52,"q":94,"fa":11.33,"tasa":0.356,"d":11,"ipf":2.81,"cf":839},"c30":{"f":10,"q":90,"fa":2.18,"tasa":0.1,"d":30,"ipf":10.0,"cf":2990}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":68,"q":145,"fa":14.81,"tasa":0.319,"d":7,"ipf":3.13,"cf":937},"c30":{"f":12,"q":144,"fa":2.61,"tasa":0.077,"d":20,"ipf":13.0,"cf":3887}}],"oro+dax+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":297,"ipf":1.25,"cf":374},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":297,"ipf":1.25,"cf":374}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":6,"q":2,"fa":1.31,"tasa":0.75,"d":178,"ipf":1.33,"cf":399},"c30":{"f":5,"q":1,"fa":1.09,"tasa":0.833,"d":151,"ipf":1.2,"cf":359}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":10,"q":4,"fa":2.18,"tasa":0.714,"d":98,"ipf":1.4,"cf":419},"c30":{"f":9,"q":5,"fa":1.96,"tasa":0.643,"d":90,"ipf":1.56,"cf":465}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":11,"q":4,"fa":2.4,"tasa":0.733,"d":79,"ipf":1.36,"cf":408},"c30":{"f":8,"q":3,"fa":1.74,"tasa":0.727,"d":116,"ipf":1.38,"cf":411}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":15,"q":6,"fa":3.27,"tasa":0.714,"d":68,"ipf":1.4,"cf":419},"c30":{"f":10,"q":5,"fa":2.18,"tasa":0.667,"d":88,"ipf":1.5,"cf":448}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":13,"q":6,"fa":2.83,"tasa":0.684,"d":64,"ipf":1.46,"cf":437},"c30":{"f":9,"q":7,"fa":1.96,"tasa":0.562,"d":101,"ipf":1.78,"cf":532}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":19,"q":12,"fa":4.14,"tasa":0.613,"d":44,"ipf":1.63,"cf":488},"c30":{"f":9,"q":9,"fa":1.96,"tasa":0.5,"d":112,"ipf":2.0,"cf":598}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":26,"q":17,"fa":5.66,"tasa":0.605,"d":37,"ipf":1.65,"cf":494},"c30":{"f":11,"q":13,"fa":2.4,"tasa":0.458,"d":86,"ipf":2.18,"cf":652}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":30,"q":21,"fa":6.53,"tasa":0.588,"d":29,"ipf":1.7,"cf":508},"c30":{"f":12,"q":15,"fa":2.61,"tasa":0.444,"d":61,"ipf":2.25,"cf":673}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":41,"q":32,"fa":8.93,"tasa":0.562,"d":20,"ipf":1.78,"cf":532},"c30":{"f":11,"q":18,"fa":2.4,"tasa":0.379,"d":55,"ipf":2.64,"cf":788}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":62,"q":94,"fa":13.5,"tasa":0.397,"d":11,"ipf":2.52,"cf":752},"c30":{"f":17,"q":94,"fa":3.7,"tasa":0.153,"d":20,"ipf":6.53,"cf":1952}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":79,"q":149,"fa":17.21,"tasa":0.346,"d":7,"ipf":2.89,"cf":863},"c30":{"f":17,"q":148,"fa":3.7,"tasa":0.103,"d":18,"ipf":9.71,"cf":2902}}]},"os810":{"oro":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1502,"ipf":1.0,"cf":450},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1502,"ipf":1.0,"cf":450}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":804,"ipf":1.0,"cf":450},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":804,"ipf":1.0,"cf":450}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":750,"ipf":1.0,"cf":450},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":750,"ipf":1.0,"cf":450}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":316,"ipf":1.25,"cf":562},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":318,"ipf":1.25,"cf":562}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":162,"ipf":1.43,"cf":643},"c30":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":165,"ipf":1.5,"cf":675}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":9,"q":4,"fa":1.96,"tasa":0.692,"d":99,"ipf":1.44,"cf":650},"c30":{"f":7,"q":5,"fa":1.52,"tasa":0.583,"d":164,"ipf":1.71,"cf":771}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":14,"q":7,"fa":3.05,"tasa":0.667,"d":74,"ipf":1.5,"cf":675},"c30":{"f":8,"q":7,"fa":1.74,"tasa":0.533,"d":111,"ipf":1.88,"cf":844}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":19,"q":13,"fa":4.14,"tasa":0.594,"d":41,"ipf":1.68,"cf":758},"c30":{"f":8,"q":7,"fa":1.74,"tasa":0.533,"d":80,"ipf":1.88,"cf":844}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":22,"q":14,"fa":4.79,"tasa":0.611,"d":39,"ipf":1.64,"cf":736},"c30":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":85,"ipf":2.0,"cf":900}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":28,"q":20,"fa":6.1,"tasa":0.583,"d":31,"ipf":1.71,"cf":771},"c30":{"f":8,"q":11,"fa":1.74,"tasa":0.421,"d":73,"ipf":2.38,"cf":1069}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":53,"q":86,"fa":11.54,"tasa":0.381,"d":10,"ipf":2.62,"cf":1180},"c30":{"f":10,"q":85,"fa":2.18,"tasa":0.105,"d":18,"ipf":9.5,"cf":4275}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":67,"q":134,"fa":14.59,"tasa":0.333,"d":7,"ipf":3.0,"cf":1350},"c30":{"f":11,"q":132,"fa":2.4,"tasa":0.077,"d":16,"ipf":13.0,"cf":5850}}],"dax":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":361,"ipf":1.0,"cf":450},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":361,"ipf":1.0,"cf":450}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":314,"ipf":1.5,"cf":675},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":314,"ipf":1.5,"cf":675}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":182,"ipf":1.5,"cf":675},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":182,"ipf":1.5,"cf":675}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":191,"ipf":1.67,"cf":750},"c30":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":191,"ipf":1.67,"cf":750}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":189,"ipf":1.6,"cf":720},"c30":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":255,"ipf":1.75,"cf":788}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":9,"q":6,"fa":1.96,"tasa":0.6,"d":99,"ipf":1.67,"cf":750},"c30":{"f":5,"q":4,"fa":1.09,"tasa":0.556,"d":158,"ipf":1.8,"cf":810}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":12,"q":8,"fa":2.61,"tasa":0.6,"d":71,"ipf":1.67,"cf":750},"c30":{"f":7,"q":8,"fa":1.52,"tasa":0.467,"d":143,"ipf":2.14,"cf":964}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":20,"q":15,"fa":4.36,"tasa":0.571,"d":47,"ipf":1.75,"cf":788},"c30":{"f":5,"q":8,"fa":1.09,"tasa":0.385,"d":195,"ipf":2.6,"cf":1170}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":22,"q":18,"fa":4.79,"tasa":0.55,"d":44,"ipf":1.82,"cf":818},"c30":{"f":8,"q":12,"fa":1.74,"tasa":0.4,"d":115,"ipf":2.5,"cf":1125}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":27,"q":23,"fa":5.88,"tasa":0.54,"d":36,"ipf":1.85,"cf":833},"c30":{"f":8,"q":17,"fa":1.74,"tasa":0.32,"d":103,"ipf":3.12,"cf":1406}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":44,"q":76,"fa":9.58,"tasa":0.367,"d":12,"ipf":2.73,"cf":1227},"c30":{"f":9,"q":75,"fa":1.96,"tasa":0.107,"d":36,"ipf":9.33,"cf":4200}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":60,"q":127,"fa":13.07,"tasa":0.321,"d":8,"ipf":3.12,"cf":1402},"c30":{"f":11,"q":124,"fa":2.4,"tasa":0.081,"d":21,"ipf":12.27,"cf":5523}}],"ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null},"c30":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":274,"ipf":1.5,"cf":675},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":274,"ipf":1.5,"cf":675}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":129,"ipf":1.33,"cf":600},"c30":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":129,"ipf":1.33,"cf":600}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":4,"q":2,"fa":0.87,"tasa":0.667,"d":103,"ipf":1.5,"cf":675},"c30":{"f":4,"q":2,"fa":0.87,"tasa":0.667,"d":103,"ipf":1.5,"cf":675}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":98,"ipf":1.5,"cf":675},"c30":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":107,"ipf":1.6,"cf":720}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":11,"q":8,"fa":2.4,"tasa":0.579,"d":53,"ipf":1.73,"cf":777},"c30":{"f":7,"q":6,"fa":1.52,"tasa":0.538,"d":63,"ipf":1.86,"cf":836}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":15,"q":11,"fa":3.27,"tasa":0.577,"d":33,"ipf":1.73,"cf":780},"c30":{"f":8,"q":8,"fa":1.74,"tasa":0.5,"d":56,"ipf":2.0,"cf":900}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":18,"q":14,"fa":3.92,"tasa":0.562,"d":37,"ipf":1.78,"cf":800},"c30":{"f":7,"q":10,"fa":1.52,"tasa":0.412,"d":70,"ipf":2.43,"cf":1093}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":25,"q":19,"fa":5.44,"tasa":0.568,"d":26,"ipf":1.76,"cf":792},"c30":{"f":9,"q":14,"fa":1.96,"tasa":0.391,"d":62,"ipf":2.56,"cf":1150}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":40,"q":32,"fa":8.71,"tasa":0.556,"d":18,"ipf":1.8,"cf":810},"c30":{"f":10,"q":17,"fa":2.18,"tasa":0.37,"d":44,"ipf":2.7,"cf":1215}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":55,"q":95,"fa":11.98,"tasa":0.367,"d":9,"ipf":2.73,"cf":1227},"c30":{"f":11,"q":91,"fa":2.4,"tasa":0.108,"d":20,"ipf":9.27,"cf":4173}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":65,"q":143,"fa":14.16,"tasa":0.312,"d":7,"ipf":3.2,"cf":1440},"c30":{"f":10,"q":142,"fa":2.18,"tasa":0.066,"d":17,"ipf":15.2,"cf":6840}}],"oro+dax":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":336,"ipf":1.0,"cf":450},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":336,"ipf":1.0,"cf":450}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":208,"ipf":1.25,"cf":562},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":208,"ipf":1.25,"cf":562}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":5,"q":1,"fa":1.09,"tasa":0.833,"d":324,"ipf":1.2,"cf":540},"c30":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":141,"ipf":1.4,"cf":630}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":7,"q":2,"fa":1.52,"tasa":0.778,"d":129,"ipf":1.29,"cf":579},"c30":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":137,"ipf":1.4,"cf":630}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":11,"q":5,"fa":2.4,"tasa":0.688,"d":70,"ipf":1.45,"cf":655},"c30":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":143,"ipf":1.4,"cf":630}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":14,"q":4,"fa":3.05,"tasa":0.778,"d":78,"ipf":1.29,"cf":579},"c30":{"f":8,"q":3,"fa":1.74,"tasa":0.727,"d":151,"ipf":1.38,"cf":619}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":17,"q":7,"fa":3.7,"tasa":0.708,"d":59,"ipf":1.41,"cf":635},"c30":{"f":9,"q":6,"fa":1.96,"tasa":0.6,"d":113,"ipf":1.67,"cf":750}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":21,"q":10,"fa":4.57,"tasa":0.677,"d":42,"ipf":1.48,"cf":664},"c30":{"f":11,"q":9,"fa":2.4,"tasa":0.55,"d":75,"ipf":1.82,"cf":818}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":30,"q":18,"fa":6.53,"tasa":0.625,"d":34,"ipf":1.6,"cf":720},"c30":{"f":11,"q":11,"fa":2.4,"tasa":0.5,"d":74,"ipf":2.0,"cf":900}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":39,"q":24,"fa":8.49,"tasa":0.619,"d":23,"ipf":1.62,"cf":727},"c30":{"f":13,"q":16,"fa":2.83,"tasa":0.448,"d":54,"ipf":2.23,"cf":1004}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":60,"q":86,"fa":13.07,"tasa":0.411,"d":11,"ipf":2.43,"cf":1095},"c30":{"f":17,"q":87,"fa":3.7,"tasa":0.163,"d":24,"ipf":6.12,"cf":2753}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":84,"q":136,"fa":18.3,"tasa":0.382,"d":7,"ipf":2.62,"cf":1179},"c30":{"f":17,"q":136,"fa":3.7,"tasa":0.111,"d":19,"ipf":9.0,"cf":4050}}],"oro+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":800,"ipf":1.0,"cf":450},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":800,"ipf":1.0,"cf":450}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":305,"ipf":1.25,"cf":562},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":305,"ipf":1.25,"cf":562}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":5,"q":1,"fa":1.09,"tasa":0.833,"d":273,"ipf":1.2,"cf":540},"c30":{"f":6,"q":2,"fa":1.31,"tasa":0.75,"d":240,"ipf":1.33,"cf":600}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":9,"q":3,"fa":1.96,"tasa":0.75,"d":128,"ipf":1.33,"cf":600},"c30":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":153,"ipf":1.43,"cf":643}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":12,"q":5,"fa":2.61,"tasa":0.706,"d":109,"ipf":1.42,"cf":638},"c30":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":157,"ipf":1.43,"cf":643}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":15,"q":8,"fa":3.27,"tasa":0.652,"d":73,"ipf":1.53,"cf":690},"c30":{"f":10,"q":6,"fa":2.18,"tasa":0.625,"d":92,"ipf":1.6,"cf":720}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":21,"q":12,"fa":4.57,"tasa":0.636,"d":42,"ipf":1.57,"cf":707},"c30":{"f":10,"q":10,"fa":2.18,"tasa":0.5,"d":98,"ipf":2.0,"cf":900}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":27,"q":16,"fa":5.88,"tasa":0.628,"d":33,"ipf":1.59,"cf":717},"c30":{"f":12,"q":14,"fa":2.61,"tasa":0.462,"d":58,"ipf":2.17,"cf":975}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":31,"q":20,"fa":6.75,"tasa":0.608,"d":26,"ipf":1.65,"cf":740},"c30":{"f":12,"q":17,"fa":2.61,"tasa":0.414,"d":78,"ipf":2.42,"cf":1088}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":38,"q":26,"fa":8.28,"tasa":0.594,"d":23,"ipf":1.68,"cf":758},"c30":{"f":12,"q":19,"fa":2.61,"tasa":0.387,"d":80,"ipf":2.58,"cf":1162}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":60,"q":100,"fa":13.07,"tasa":0.375,"d":9,"ipf":2.67,"cf":1200},"c30":{"f":11,"q":99,"fa":2.4,"tasa":0.1,"d":21,"ipf":10.0,"cf":4500}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":76,"q":157,"fa":16.55,"tasa":0.326,"d":5,"ipf":3.07,"cf":1380},"c30":{"f":16,"q":155,"fa":3.48,"tasa":0.094,"d":17,"ipf":10.69,"cf":4809}}],"dax+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":323,"ipf":1.0,"cf":450},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":323,"ipf":1.0,"cf":450}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":289,"ipf":1.33,"cf":600},"c30":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":119,"ipf":1.6,"cf":720}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":7,"q":4,"fa":1.52,"tasa":0.636,"d":120,"ipf":1.57,"cf":707},"c30":{"f":7,"q":5,"fa":1.52,"tasa":0.583,"d":142,"ipf":1.71,"cf":771}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":10,"q":6,"fa":2.18,"tasa":0.625,"d":110,"ipf":1.6,"cf":720},"c30":{"f":8,"q":6,"fa":1.74,"tasa":0.571,"d":109,"ipf":1.75,"cf":788}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":12,"q":8,"fa":2.61,"tasa":0.6,"d":88,"ipf":1.67,"cf":750},"c30":{"f":7,"q":6,"fa":1.52,"tasa":0.538,"d":143,"ipf":1.86,"cf":836}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":11,"q":8,"fa":2.4,"tasa":0.579,"d":83,"ipf":1.73,"cf":777},"c30":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":110,"ipf":2.0,"cf":900}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":14,"q":12,"fa":3.05,"tasa":0.538,"d":57,"ipf":1.86,"cf":836},"c30":{"f":8,"q":11,"fa":1.74,"tasa":0.421,"d":102,"ipf":2.38,"cf":1069}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":19,"q":17,"fa":4.14,"tasa":0.528,"d":44,"ipf":1.89,"cf":853},"c30":{"f":8,"q":14,"fa":1.74,"tasa":0.364,"d":102,"ipf":2.75,"cf":1238}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":24,"q":20,"fa":5.23,"tasa":0.545,"d":39,"ipf":1.83,"cf":825},"c30":{"f":8,"q":16,"fa":1.74,"tasa":0.333,"d":88,"ipf":3.0,"cf":1350}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":31,"q":28,"fa":6.75,"tasa":0.525,"d":28,"ipf":1.9,"cf":856},"c30":{"f":9,"q":22,"fa":1.96,"tasa":0.29,"d":82,"ipf":3.44,"cf":1550}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":52,"q":94,"fa":11.33,"tasa":0.356,"d":11,"ipf":2.81,"cf":1263},"c30":{"f":10,"q":90,"fa":2.18,"tasa":0.1,"d":30,"ipf":10.0,"cf":4500}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":66,"q":145,"fa":14.37,"tasa":0.313,"d":7,"ipf":3.2,"cf":1439},"c30":{"f":12,"q":144,"fa":2.61,"tasa":0.077,"d":20,"ipf":13.0,"cf":5850}}],"oro+dax+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":297,"ipf":1.25,"cf":562},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":297,"ipf":1.25,"cf":562}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":6,"q":2,"fa":1.31,"tasa":0.75,"d":178,"ipf":1.33,"cf":600},"c30":{"f":5,"q":1,"fa":1.09,"tasa":0.833,"d":151,"ipf":1.2,"cf":540}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":10,"q":4,"fa":2.18,"tasa":0.714,"d":98,"ipf":1.4,"cf":630},"c30":{"f":9,"q":5,"fa":1.96,"tasa":0.643,"d":90,"ipf":1.56,"cf":700}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":11,"q":4,"fa":2.4,"tasa":0.733,"d":79,"ipf":1.36,"cf":614},"c30":{"f":8,"q":3,"fa":1.74,"tasa":0.727,"d":116,"ipf":1.38,"cf":619}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":15,"q":6,"fa":3.27,"tasa":0.714,"d":68,"ipf":1.4,"cf":630},"c30":{"f":10,"q":5,"fa":2.18,"tasa":0.667,"d":88,"ipf":1.5,"cf":675}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":13,"q":6,"fa":2.83,"tasa":0.684,"d":64,"ipf":1.46,"cf":658},"c30":{"f":9,"q":7,"fa":1.96,"tasa":0.562,"d":101,"ipf":1.78,"cf":800}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":19,"q":12,"fa":4.14,"tasa":0.613,"d":44,"ipf":1.63,"cf":734},"c30":{"f":9,"q":9,"fa":1.96,"tasa":0.5,"d":112,"ipf":2.0,"cf":900}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":26,"q":17,"fa":5.66,"tasa":0.605,"d":37,"ipf":1.65,"cf":744},"c30":{"f":11,"q":13,"fa":2.4,"tasa":0.458,"d":86,"ipf":2.18,"cf":982}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":30,"q":21,"fa":6.53,"tasa":0.588,"d":29,"ipf":1.7,"cf":765},"c30":{"f":12,"q":15,"fa":2.61,"tasa":0.444,"d":61,"ipf":2.25,"cf":1012}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":41,"q":32,"fa":8.93,"tasa":0.562,"d":20,"ipf":1.78,"cf":801},"c30":{"f":11,"q":18,"fa":2.4,"tasa":0.379,"d":55,"ipf":2.64,"cf":1186}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":60,"q":94,"fa":13.07,"tasa":0.39,"d":11,"ipf":2.57,"cf":1155},"c30":{"f":17,"q":94,"fa":3.7,"tasa":0.153,"d":20,"ipf":6.53,"cf":2938}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":77,"q":149,"fa":16.77,"tasa":0.341,"d":7,"ipf":2.94,"cf":1321},"c30":{"f":17,"q":148,"fa":3.7,"tasa":0.103,"d":18,"ipf":9.71,"cf":4368}}]},"fn1f":{"oro":[{"r":0.005,"cap":3,"st":11,"pd":17,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1602,"ipf":1.0,"cf":339},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1602,"ipf":1.0,"cf":339}},{"r":0.0075,"cap":2,"st":7,"pd":25,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":639,"ipf":1.5,"cf":508},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":639,"ipf":1.5,"cf":508}},{"r":0.01,"cap":1,"st":5,"pd":33,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":800,"ipf":1.0,"cf":339},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":800,"ipf":1.0,"cf":339}},{"r":0.0125,"cap":1,"st":4,"pd":42,"c0":{"f":5,"q":4,"fa":1.09,"tasa":0.556,"d":163,"ipf":1.8,"cf":610},"c30":{"f":5,"q":4,"fa":1.09,"tasa":0.556,"d":163,"ipf":1.8,"cf":610}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":113,"ipf":2.0,"cf":678},"c30":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":113,"ipf":2.0,"cf":678}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":78,"ipf":2.0,"cf":678},"c30":{"f":7,"q":9,"fa":1.52,"tasa":0.438,"d":86,"ipf":2.29,"cf":775}},{"r":0.025,"cap":1,"st":2,"pd":83,"c0":{"f":15,"q":19,"fa":3.27,"tasa":0.441,"d":47,"ipf":2.27,"cf":768},"c30":{"f":8,"q":14,"fa":1.74,"tasa":0.364,"d":83,"ipf":2.75,"cf":932}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":15,"q":85,"fa":3.27,"tasa":0.15,"d":18,"ipf":6.67,"cf":2260},"c30":{"f":9,"q":85,"fa":1.96,"tasa":0.096,"d":20,"ipf":10.44,"cf":3541}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":22,"q":123,"fa":4.79,"tasa":0.152,"d":11,"ipf":6.59,"cf":2234},"c30":{"f":9,"q":123,"fa":1.96,"tasa":0.068,"d":18,"ipf":14.67,"cf":4972}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":25,"q":161,"fa":5.44,"tasa":0.134,"d":9,"ipf":7.44,"cf":2522},"c30":{"f":8,"q":161,"fa":1.74,"tasa":0.047,"d":16,"ipf":21.12,"cf":7161}},{"r":0.05,"cap":1,"st":1,"pd":167,"c0":{"f":38,"q":257,"fa":8.28,"tasa":0.129,"d":7,"ipf":7.76,"cf":2632},"c30":{"f":7,"q":256,"fa":1.52,"tasa":0.027,"d":12,"ipf":37.57,"cf":12737}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":44,"q":329,"fa":9.58,"tasa":0.118,"d":5,"ipf":8.48,"cf":2874},"c30":{"f":3,"q":329,"fa":0.65,"tasa":0.009,"d":7,"ipf":110.67,"cf":37516}}],"dax":[{"r":0.005,"cap":3,"st":11,"pd":17,"c0":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null},"c30":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null}},{"r":0.0075,"cap":2,"st":7,"pd":25,"c0":{"f":1,"q":2,"fa":0.22,"tasa":0.333,"d":346,"ipf":3.0,"cf":1017},"c30":{"f":1,"q":2,"fa":0.22,"tasa":0.333,"d":346,"ipf":3.0,"cf":1017}},{"r":0.01,"cap":1,"st":5,"pd":33,"c0":{"f":2,"q":2,"fa":0.44,"tasa":0.5,"d":317,"ipf":2.0,"cf":678},"c30":{"f":2,"q":2,"fa":0.44,"tasa":0.5,"d":317,"ipf":2.0,"cf":678}},{"r":0.0125,"cap":1,"st":4,"pd":42,"c0":{"f":3,"q":3,"fa":0.65,"tasa":0.5,"d":300,"ipf":2.0,"cf":678},"c30":{"f":3,"q":3,"fa":0.65,"tasa":0.5,"d":300,"ipf":2.0,"cf":678}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":5,"q":6,"fa":1.09,"tasa":0.455,"d":140,"ipf":2.2,"cf":746},"c30":{"f":5,"q":6,"fa":1.09,"tasa":0.455,"d":140,"ipf":2.2,"cf":746}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":10,"q":15,"fa":2.18,"tasa":0.4,"d":90,"ipf":2.5,"cf":848},"c30":{"f":6,"q":11,"fa":1.31,"tasa":0.353,"d":118,"ipf":2.83,"cf":960}},{"r":0.025,"cap":1,"st":2,"pd":83,"c0":{"f":13,"q":23,"fa":2.83,"tasa":0.361,"d":73,"ipf":2.77,"cf":939},"c30":{"f":8,"q":20,"fa":1.74,"tasa":0.286,"d":102,"ipf":3.5,"cf":1186}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":17,"q":75,"fa":3.7,"tasa":0.185,"d":28,"ipf":5.41,"cf":1835},"c30":{"f":8,"q":75,"fa":1.74,"tasa":0.096,"d":45,"ipf":10.38,"cf":3517}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":19,"q":118,"fa":4.14,"tasa":0.139,"d":16,"ipf":7.21,"cf":2444},"c30":{"f":8,"q":117,"fa":1.74,"tasa":0.064,"d":33,"ipf":15.62,"cf":5297}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":20,"q":160,"fa":4.36,"tasa":0.111,"d":13,"ipf":9.0,"cf":3051},"c30":{"f":5,"q":159,"fa":1.09,"tasa":0.03,"d":22,"ipf":32.8,"cf":11119}},{"r":0.05,"cap":1,"st":1,"pd":167,"c0":{"f":29,"q":242,"fa":6.32,"tasa":0.107,"d":9,"ipf":9.34,"cf":3168},"c30":{"f":6,"q":239,"fa":1.31,"tasa":0.024,"d":18,"ipf":40.83,"cf":13842}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":40,"q":314,"fa":8.71,"tasa":0.113,"d":5,"ipf":8.85,"cf":3000},"c30":{"f":6,"q":314,"fa":1.31,"tasa":0.019,"d":13,"ipf":53.33,"cf":18080}}],"ndx":[{"r":0.005,"cap":3,"st":11,"pd":17,"c0":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null},"c30":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null}},{"r":0.0075,"cap":2,"st":7,"pd":25,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1414,"ipf":1.0,"cf":339},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1414,"ipf":1.0,"cf":339}},{"r":0.01,"cap":1,"st":5,"pd":33,"c0":{"f":2,"q":2,"fa":0.44,"tasa":0.5,"d":220,"ipf":2.0,"cf":678},"c30":{"f":2,"q":2,"fa":0.44,"tasa":0.5,"d":220,"ipf":2.0,"cf":678}},{"r":0.0125,"cap":1,"st":4,"pd":42,"c0":{"f":5,"q":7,"fa":1.09,"tasa":0.417,"d":92,"ipf":2.4,"cf":814},"c30":{"f":5,"q":7,"fa":1.09,"tasa":0.417,"d":92,"ipf":2.4,"cf":814}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":5,"q":7,"fa":1.09,"tasa":0.417,"d":95,"ipf":2.4,"cf":814},"c30":{"f":5,"q":7,"fa":1.09,"tasa":0.417,"d":95,"ipf":2.4,"cf":814}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":9,"q":13,"fa":1.96,"tasa":0.409,"d":64,"ipf":2.44,"cf":829},"c30":{"f":7,"q":11,"fa":1.52,"tasa":0.389,"d":90,"ipf":2.57,"cf":872}},{"r":0.025,"cap":1,"st":2,"pd":83,"c0":{"f":14,"q":22,"fa":3.05,"tasa":0.389,"d":36,"ipf":2.57,"cf":872},"c30":{"f":10,"q":20,"fa":2.18,"tasa":0.333,"d":52,"ipf":3.0,"cf":1017}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":20,"q":93,"fa":4.36,"tasa":0.177,"d":19,"ipf":5.65,"cf":1915},"c30":{"f":10,"q":91,"fa":2.18,"tasa":0.099,"d":23,"ipf":10.1,"cf":3424}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":20,"q":134,"fa":4.36,"tasa":0.13,"d":14,"ipf":7.7,"cf":2610},"c30":{"f":7,"q":133,"fa":1.52,"tasa":0.05,"d":20,"ipf":20.0,"cf":6780}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":31,"q":176,"fa":6.75,"tasa":0.15,"d":9,"ipf":6.68,"cf":2264},"c30":{"f":5,"q":176,"fa":1.09,"tasa":0.028,"d":15,"ipf":36.2,"cf":12272}},{"r":0.05,"cap":1,"st":1,"pd":167,"c0":{"f":37,"q":263,"fa":8.06,"tasa":0.123,"d":7,"ipf":8.11,"cf":2749},"c30":{"f":6,"q":264,"fa":1.31,"tasa":0.022,"d":14,"ipf":45.0,"cf":15255}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":42,"q":336,"fa":9.15,"tasa":0.111,"d":4,"ipf":9.0,"cf":3051},"c30":{"f":6,"q":336,"fa":1.31,"tasa":0.018,"d":11,"ipf":57.0,"cf":19323}}],"oro+dax":[{"r":0.005,"cap":3,"st":11,"pd":17,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":404,"ipf":1.5,"cf":508},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":404,"ipf":1.5,"cf":508}},{"r":0.0075,"cap":2,"st":7,"pd":25,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":208,"ipf":1.5,"cf":508},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":208,"ipf":1.5,"cf":508}},{"r":0.01,"cap":1,"st":5,"pd":33,"c0":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":195,"ipf":1.6,"cf":542},"c30":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":195,"ipf":1.6,"cf":542}},{"r":0.0125,"cap":1,"st":4,"pd":42,"c0":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":199,"ipf":1.5,"cf":508},"c30":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":199,"ipf":1.5,"cf":508}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":8,"q":6,"fa":1.74,"tasa":0.571,"d":132,"ipf":1.75,"cf":593},"c30":{"f":8,"q":6,"fa":1.74,"tasa":0.571,"d":132,"ipf":1.75,"cf":593}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":12,"q":13,"fa":2.61,"tasa":0.48,"d":74,"ipf":2.08,"cf":706},"c30":{"f":9,"q":10,"fa":1.96,"tasa":0.474,"d":91,"ipf":2.11,"cf":716}},{"r":0.025,"cap":1,"st":2,"pd":83,"c0":{"f":17,"q":20,"fa":3.7,"tasa":0.459,"d":49,"ipf":2.18,"cf":738},"c30":{"f":10,"q":17,"fa":2.18,"tasa":0.37,"d":76,"ipf":2.7,"cf":915}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":23,"q":87,"fa":5.01,"tasa":0.209,"d":20,"ipf":4.78,"cf":1621},"c30":{"f":13,"q":87,"fa":2.83,"tasa":0.13,"d":28,"ipf":7.69,"cf":2608}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":30,"q":128,"fa":6.53,"tasa":0.19,"d":14,"ipf":5.27,"cf":1785},"c30":{"f":12,"q":128,"fa":2.61,"tasa":0.086,"d":19,"ipf":11.67,"cf":3955}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":31,"q":167,"fa":6.75,"tasa":0.157,"d":13,"ipf":6.39,"cf":2165},"c30":{"f":12,"q":167,"fa":2.61,"tasa":0.067,"d":21,"ipf":14.92,"cf":5057}},{"r":0.05,"cap":1,"st":1,"pd":167,"c0":{"f":41,"q":259,"fa":8.93,"tasa":0.137,"d":8,"ipf":7.32,"cf":2480},"c30":{"f":11,"q":259,"fa":2.4,"tasa":0.041,"d":14,"ipf":24.55,"cf":8321}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":57,"q":346,"fa":12.41,"tasa":0.141,"d":5,"ipf":7.07,"cf":2397},"c30":{"f":9,"q":345,"fa":1.96,"tasa":0.025,"d":11,"ipf":39.33,"cf":13334}}],"oro+ndx":[{"r":0.005,"cap":3,"st":11,"pd":17,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":611,"ipf":1.5,"cf":508},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":611,"ipf":1.5,"cf":508}},{"r":0.0075,"cap":2,"st":7,"pd":25,"c0":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":287,"ipf":1.75,"cf":593},"c30":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":287,"ipf":1.75,"cf":593}},{"r":0.01,"cap":1,"st":5,"pd":33,"c0":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":294,"ipf":1.75,"cf":593},"c30":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":294,"ipf":1.75,"cf":593}},{"r":0.0125,"cap":1,"st":4,"pd":42,"c0":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":173,"ipf":2.0,"cf":678},"c30":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":173,"ipf":2.0,"cf":678}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":9,"q":11,"fa":1.96,"tasa":0.45,"d":113,"ipf":2.22,"cf":753},"c30":{"f":9,"q":11,"fa":1.96,"tasa":0.45,"d":113,"ipf":2.22,"cf":753}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":13,"q":15,"fa":2.83,"tasa":0.464,"d":66,"ipf":2.15,"cf":730},"c30":{"f":11,"q":15,"fa":2.4,"tasa":0.423,"d":85,"ipf":2.36,"cf":801}},{"r":0.025,"cap":1,"st":2,"pd":83,"c0":{"f":20,"q":30,"fa":4.36,"tasa":0.4,"d":39,"ipf":2.5,"cf":848},"c30":{"f":11,"q":21,"fa":2.4,"tasa":0.344,"d":84,"ipf":2.91,"cf":986}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":25,"q":99,"fa":5.44,"tasa":0.202,"d":15,"ipf":4.96,"cf":1681},"c30":{"f":10,"q":99,"fa":2.18,"tasa":0.092,"d":23,"ipf":10.9,"cf":3695}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":29,"q":150,"fa":6.32,"tasa":0.162,"d":12,"ipf":6.17,"cf":2092},"c30":{"f":14,"q":150,"fa":3.05,"tasa":0.085,"d":19,"ipf":11.71,"cf":3971}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":32,"q":193,"fa":6.97,"tasa":0.142,"d":9,"ipf":7.03,"cf":2384},"c30":{"f":10,"q":193,"fa":2.18,"tasa":0.049,"d":15,"ipf":20.3,"cf":6882}},{"r":0.05,"cap":1,"st":1,"pd":167,"c0":{"f":40,"q":291,"fa":8.71,"tasa":0.121,"d":5,"ipf":8.28,"cf":2805},"c30":{"f":7,"q":291,"fa":1.52,"tasa":0.023,"d":11,"ipf":42.57,"cf":14432}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":51,"q":365,"fa":11.11,"tasa":0.123,"d":4,"ipf":8.16,"cf":2765},"c30":{"f":4,"q":365,"fa":0.87,"tasa":0.011,"d":8,"ipf":92.25,"cf":31273}}],"dax+ndx":[{"r":0.005,"cap":3,"st":11,"pd":17,"c0":{"f":1,"q":1,"fa":0.22,"tasa":0.5,"d":346,"ipf":2.0,"cf":678},"c30":{"f":1,"q":1,"fa":0.22,"tasa":0.5,"d":346,"ipf":2.0,"cf":678}},{"r":0.0075,"cap":2,"st":7,"pd":25,"c0":{"f":4,"q":5,"fa":0.87,"tasa":0.444,"d":244,"ipf":2.25,"cf":763},"c30":{"f":4,"q":5,"fa":0.87,"tasa":0.444,"d":244,"ipf":2.25,"cf":763}},{"r":0.01,"cap":1,"st":5,"pd":33,"c0":{"f":3,"q":4,"fa":0.65,"tasa":0.429,"d":227,"ipf":2.33,"cf":791},"c30":{"f":3,"q":4,"fa":0.65,"tasa":0.429,"d":227,"ipf":2.33,"cf":791}},{"r":0.0125,"cap":1,"st":4,"pd":42,"c0":{"f":3,"q":5,"fa":0.65,"tasa":0.375,"d":185,"ipf":2.67,"cf":904},"c30":{"f":3,"q":5,"fa":0.65,"tasa":0.375,"d":185,"ipf":2.67,"cf":904}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":6,"q":11,"fa":1.31,"tasa":0.353,"d":137,"ipf":2.83,"cf":960},"c30":{"f":6,"q":11,"fa":1.31,"tasa":0.353,"d":137,"ipf":2.83,"cf":960}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":9,"q":14,"fa":1.96,"tasa":0.391,"d":79,"ipf":2.56,"cf":866},"c30":{"f":8,"q":15,"fa":1.74,"tasa":0.348,"d":102,"ipf":2.88,"cf":975}},{"r":0.025,"cap":1,"st":2,"pd":83,"c0":{"f":13,"q":26,"fa":2.83,"tasa":0.333,"d":61,"ipf":3.0,"cf":1017},"c30":{"f":9,"q":26,"fa":1.96,"tasa":0.257,"d":79,"ipf":3.89,"cf":1318}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":18,"q":91,"fa":3.92,"tasa":0.165,"d":25,"ipf":6.06,"cf":2053},"c30":{"f":10,"q":90,"fa":2.18,"tasa":0.1,"d":33,"ipf":10.0,"cf":3390}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":22,"q":134,"fa":4.79,"tasa":0.141,"d":15,"ipf":7.09,"cf":2404},"c30":{"f":12,"q":134,"fa":2.61,"tasa":0.082,"d":20,"ipf":12.17,"cf":4124}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":26,"q":187,"fa":5.66,"tasa":0.122,"d":10,"ipf":8.19,"cf":2777},"c30":{"f":10,"q":187,"fa":2.18,"tasa":0.051,"d":18,"ipf":19.7,"cf":6678}},{"r":0.05,"cap":1,"st":1,"pd":167,"c0":{"f":37,"q":271,"fa":8.06,"tasa":0.12,"d":7,"ipf":8.32,"cf":2822},"c30":{"f":8,"q":271,"fa":1.74,"tasa":0.029,"d":18,"ipf":34.88,"cf":11823}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":45,"q":359,"fa":9.8,"tasa":0.111,"d":5,"ipf":8.98,"cf":3043},"c30":{"f":6,"q":359,"fa":1.31,"tasa":0.016,"d":13,"ipf":60.83,"cf":20622}}],"oro+dax+ndx":[{"r":0.005,"cap":3,"st":11,"pd":17,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":312,"ipf":1.5,"cf":508},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":312,"ipf":1.5,"cf":508}},{"r":0.0075,"cap":2,"st":7,"pd":25,"c0":{"f":4,"q":2,"fa":0.87,"tasa":0.667,"d":231,"ipf":1.5,"cf":508},"c30":{"f":4,"q":2,"fa":0.87,"tasa":0.667,"d":231,"ipf":1.5,"cf":508}},{"r":0.01,"cap":1,"st":5,"pd":33,"c0":{"f":4,"q":4,"fa":0.87,"tasa":0.5,"d":270,"ipf":2.0,"cf":678},"c30":{"f":4,"q":4,"fa":0.87,"tasa":0.5,"d":270,"ipf":2.0,"cf":678}},{"r":0.0125,"cap":1,"st":4,"pd":42,"c0":{"f":6,"q":6,"fa":1.31,"tasa":0.5,"d":152,"ipf":2.0,"cf":678},"c30":{"f":6,"q":6,"fa":1.31,"tasa":0.5,"d":152,"ipf":2.0,"cf":678}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":8,"q":9,"fa":1.74,"tasa":0.471,"d":129,"ipf":2.12,"cf":720},"c30":{"f":8,"q":9,"fa":1.74,"tasa":0.471,"d":129,"ipf":2.12,"cf":720}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":12,"q":15,"fa":2.61,"tasa":0.444,"d":61,"ipf":2.25,"cf":763},"c30":{"f":9,"q":14,"fa":1.96,"tasa":0.391,"d":104,"ipf":2.56,"cf":866}},{"r":0.025,"cap":1,"st":2,"pd":83,"c0":{"f":15,"q":25,"fa":3.27,"tasa":0.375,"d":54,"ipf":2.67,"cf":904},"c30":{"f":9,"q":21,"fa":1.96,"tasa":0.3,"d":78,"ipf":3.33,"cf":1130}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":24,"q":94,"fa":5.23,"tasa":0.203,"d":18,"ipf":4.92,"cf":1667},"c30":{"f":14,"q":94,"fa":3.05,"tasa":0.13,"d":24,"ipf":7.71,"cf":2615}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":28,"q":140,"fa":6.1,"tasa":0.167,"d":14,"ipf":6.0,"cf":2034},"c30":{"f":16,"q":140,"fa":3.48,"tasa":0.103,"d":19,"ipf":9.75,"cf":3305}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":32,"q":184,"fa":6.97,"tasa":0.148,"d":11,"ipf":6.75,"cf":2288},"c30":{"f":14,"q":184,"fa":3.05,"tasa":0.071,"d":19,"ipf":14.14,"cf":4794}},{"r":0.05,"cap":1,"st":1,"pd":167,"c0":{"f":41,"q":277,"fa":8.93,"tasa":0.129,"d":7,"ipf":7.76,"cf":2629},"c30":{"f":10,"q":277,"fa":2.18,"tasa":0.035,"d":13,"ipf":28.7,"cf":9729}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":54,"q":359,"fa":11.76,"tasa":0.131,"d":5,"ipf":7.65,"cf":2593},"c30":{"f":7,"q":359,"fa":1.52,"tasa":0.019,"d":11,"ipf":52.29,"cf":17725}}]},"t5hg":{"oro":[{"r":0.005,"cap":3,"st":9,"pd":17,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":980,"ipf":1.0,"cf":395},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":980,"ipf":1.0,"cf":395}},{"r":0.0075,"cap":2,"st":6,"pd":25,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":750,"ipf":1.0,"cf":395},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":750,"ipf":1.0,"cf":395}},{"r":0.01,"cap":1,"st":4,"pd":33,"c0":{"f":6,"q":4,"fa":1.31,"tasa":0.6,"d":111,"ipf":1.67,"cf":658},"c30":{"f":6,"q":4,"fa":1.31,"tasa":0.6,"d":140,"ipf":1.67,"cf":658}},{"r":0.0125,"cap":1,"st":3,"pd":42,"c0":{"f":9,"q":6,"fa":1.96,"tasa":0.6,"d":124,"ipf":1.67,"cf":658},"c30":{"f":7,"q":6,"fa":1.52,"tasa":0.538,"d":108,"ipf":1.86,"cf":734}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":11,"q":9,"fa":2.4,"tasa":0.55,"d":87,"ipf":1.82,"cf":718},"c30":{"f":7,"q":8,"fa":1.52,"tasa":0.467,"d":78,"ipf":2.14,"cf":846}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":19,"q":17,"fa":4.14,"tasa":0.528,"d":41,"ipf":1.89,"cf":748},"c30":{"f":8,"q":9,"fa":1.74,"tasa":0.471,"d":72,"ipf":2.12,"cf":839}},{"r":0.025,"cap":1,"st":1,"pd":83,"c0":{"f":27,"q":29,"fa":5.88,"tasa":0.482,"d":29,"ipf":2.07,"cf":819},"c30":{"f":9,"q":15,"fa":1.96,"tasa":0.375,"d":64,"ipf":2.67,"cf":1053}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":40,"q":90,"fa":8.71,"tasa":0.308,"d":12,"ipf":3.25,"cf":1284},"c30":{"f":10,"q":85,"fa":2.18,"tasa":0.105,"d":18,"ipf":9.5,"cf":3752}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":50,"q":130,"fa":10.89,"tasa":0.278,"d":9,"ipf":3.6,"cf":1422},"c30":{"f":12,"q":128,"fa":2.61,"tasa":0.086,"d":16,"ipf":11.67,"cf":4608}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":59,"q":167,"fa":12.85,"tasa":0.261,"d":7,"ipf":3.83,"cf":1513},"c30":{"f":12,"q":167,"fa":2.61,"tasa":0.067,"d":14,"ipf":14.92,"cf":5892}},{"r":0.05,"cap":1,"st":0,"pd":167,"c0":{"f":64,"q":261,"fa":13.94,"tasa":0.197,"d":5,"ipf":5.08,"cf":2006},"c30":{"f":7,"q":256,"fa":1.52,"tasa":0.027,"d":10,"ipf":37.57,"cf":14841}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":76,"q":333,"fa":16.55,"tasa":0.186,"d":4,"ipf":5.38,"cf":2126},"c30":{"f":3,"q":332,"fa":0.65,"tasa":0.009,"d":7,"ipf":111.67,"cf":44108}}],"dax":[{"r":0.005,"cap":3,"st":9,"pd":17,"c0":{"f":1,"q":1,"fa":0.22,"tasa":0.5,"d":329,"ipf":2.0,"cf":790},"c30":{"f":1,"q":1,"fa":0.22,"tasa":0.5,"d":329,"ipf":2.0,"cf":790}},{"r":0.0075,"cap":2,"st":6,"pd":25,"c0":{"f":4,"q":4,"fa":0.87,"tasa":0.5,"d":201,"ipf":2.0,"cf":790},"c30":{"f":4,"q":4,"fa":0.87,"tasa":0.5,"d":201,"ipf":2.0,"cf":790}},{"r":0.01,"cap":1,"st":4,"pd":33,"c0":{"f":6,"q":5,"fa":1.31,"tasa":0.545,"d":163,"ipf":1.83,"cf":724},"c30":{"f":4,"q":4,"fa":0.87,"tasa":0.5,"d":224,"ipf":2.0,"cf":790}},{"r":0.0125,"cap":1,"st":3,"pd":42,"c0":{"f":7,"q":6,"fa":1.52,"tasa":0.538,"d":99,"ipf":1.86,"cf":734},"c30":{"f":5,"q":6,"fa":1.09,"tasa":0.455,"d":245,"ipf":2.2,"cf":869}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":11,"q":13,"fa":2.4,"tasa":0.458,"d":80,"ipf":2.18,"cf":862},"c30":{"f":5,"q":8,"fa":1.09,"tasa":0.385,"d":195,"ipf":2.6,"cf":1027}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":17,"q":19,"fa":3.7,"tasa":0.472,"d":53,"ipf":2.12,"cf":836},"c30":{"f":7,"q":12,"fa":1.52,"tasa":0.368,"d":119,"ipf":2.71,"cf":1072}},{"r":0.025,"cap":1,"st":1,"pd":83,"c0":{"f":23,"q":30,"fa":5.01,"tasa":0.434,"d":39,"ipf":2.3,"cf":910},"c30":{"f":8,"q":23,"fa":1.74,"tasa":0.258,"d":117,"ipf":3.88,"cf":1531}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":33,"q":82,"fa":7.19,"tasa":0.287,"d":18,"ipf":3.48,"cf":1377},"c30":{"f":8,"q":80,"fa":1.74,"tasa":0.091,"d":39,"ipf":11.0,"cf":4345}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":40,"q":123,"fa":8.71,"tasa":0.245,"d":12,"ipf":4.08,"cf":1610},"c30":{"f":12,"q":120,"fa":2.61,"tasa":0.091,"d":26,"ipf":11.0,"cf":4345}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":48,"q":167,"fa":10.45,"tasa":0.223,"d":8,"ipf":4.48,"cf":1769},"c30":{"f":9,"q":164,"fa":1.96,"tasa":0.052,"d":17,"ipf":19.22,"cf":7593}},{"r":0.05,"cap":1,"st":0,"pd":167,"c0":{"f":61,"q":241,"fa":13.29,"tasa":0.202,"d":6,"ipf":4.95,"cf":1956},"c30":{"f":7,"q":239,"fa":1.52,"tasa":0.028,"d":16,"ipf":35.14,"cf":13881}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":71,"q":316,"fa":15.46,"tasa":0.183,"d":5,"ipf":5.45,"cf":2153},"c30":{"f":6,"q":315,"fa":1.31,"tasa":0.019,"d":12,"ipf":53.5,"cf":21132}}],"ndx":[{"r":0.005,"cap":3,"st":9,"pd":17,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":652,"ipf":1.5,"cf":592},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":652,"ipf":1.5,"cf":592}},{"r":0.0075,"cap":2,"st":6,"pd":25,"c0":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":94,"ipf":1.75,"cf":691},"c30":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":94,"ipf":1.75,"cf":691}},{"r":0.01,"cap":1,"st":4,"pd":33,"c0":{"f":6,"q":5,"fa":1.31,"tasa":0.545,"d":71,"ipf":1.83,"cf":724},"c30":{"f":5,"q":5,"fa":1.09,"tasa":0.5,"d":99,"ipf":2.0,"cf":790}},{"r":0.0125,"cap":1,"st":3,"pd":42,"c0":{"f":9,"q":9,"fa":1.96,"tasa":0.5,"d":56,"ipf":2.0,"cf":790},"c30":{"f":6,"q":7,"fa":1.31,"tasa":0.462,"d":84,"ipf":2.17,"cf":856}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":11,"q":12,"fa":2.4,"tasa":0.478,"d":49,"ipf":2.09,"cf":826},"c30":{"f":7,"q":10,"fa":1.52,"tasa":0.412,"d":75,"ipf":2.43,"cf":959}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":21,"q":23,"fa":4.57,"tasa":0.477,"d":29,"ipf":2.1,"cf":828},"c30":{"f":10,"q":16,"fa":2.18,"tasa":0.385,"d":44,"ipf":2.6,"cf":1027}},{"r":0.025,"cap":1,"st":1,"pd":83,"c0":{"f":29,"q":36,"fa":6.32,"tasa":0.446,"d":21,"ipf":2.24,"cf":885},"c30":{"f":12,"q":29,"fa":2.61,"tasa":0.293,"d":46,"ipf":3.42,"cf":1350}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":40,"q":96,"fa":8.71,"tasa":0.294,"d":12,"ipf":3.4,"cf":1343},"c30":{"f":11,"q":93,"fa":2.4,"tasa":0.106,"d":21,"ipf":9.45,"cf":3735}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":49,"q":138,"fa":10.67,"tasa":0.262,"d":8,"ipf":3.82,"cf":1507},"c30":{"f":10,"q":138,"fa":2.18,"tasa":0.068,"d":17,"ipf":14.8,"cf":5846}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":55,"q":182,"fa":11.98,"tasa":0.232,"d":6,"ipf":4.31,"cf":1702},"c30":{"f":7,"q":182,"fa":1.52,"tasa":0.037,"d":13,"ipf":27.0,"cf":10665}},{"r":0.05,"cap":1,"st":0,"pd":167,"c0":{"f":63,"q":267,"fa":13.72,"tasa":0.191,"d":5,"ipf":5.24,"cf":2069},"c30":{"f":8,"q":268,"fa":1.74,"tasa":0.029,"d":13,"ipf":34.5,"cf":13628}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":64,"q":336,"fa":13.94,"tasa":0.16,"d":4,"ipf":6.25,"cf":2469},"c30":{"f":6,"q":336,"fa":1.31,"tasa":0.018,"d":10,"ipf":57.0,"cf":22515}}],"oro+dax":[{"r":0.005,"cap":3,"st":9,"pd":17,"c0":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":518,"ipf":1.33,"cf":527},"c30":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":518,"ipf":1.33,"cf":527}},{"r":0.0075,"cap":2,"st":6,"pd":25,"c0":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":141,"ipf":1.4,"cf":553},"c30":{"f":6,"q":4,"fa":1.31,"tasa":0.6,"d":166,"ipf":1.67,"cf":658}},{"r":0.01,"cap":1,"st":4,"pd":33,"c0":{"f":8,"q":3,"fa":1.74,"tasa":0.727,"d":122,"ipf":1.38,"cf":543},"c30":{"f":8,"q":4,"fa":1.74,"tasa":0.667,"d":143,"ipf":1.5,"cf":592}},{"r":0.0125,"cap":1,"st":3,"pd":42,"c0":{"f":12,"q":7,"fa":2.61,"tasa":0.632,"d":77,"ipf":1.58,"cf":625},"c30":{"f":9,"q":5,"fa":1.96,"tasa":0.643,"d":105,"ipf":1.56,"cf":614}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":15,"q":10,"fa":3.27,"tasa":0.6,"d":58,"ipf":1.67,"cf":658},"c30":{"f":10,"q":8,"fa":2.18,"tasa":0.556,"d":88,"ipf":1.8,"cf":711}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":28,"q":24,"fa":6.1,"tasa":0.538,"d":31,"ipf":1.86,"cf":734},"c30":{"f":11,"q":13,"fa":2.4,"tasa":0.458,"d":91,"ipf":2.18,"cf":862}},{"r":0.025,"cap":1,"st":1,"pd":83,"c0":{"f":37,"q":37,"fa":8.06,"tasa":0.5,"d":21,"ipf":2.0,"cf":790},"c30":{"f":15,"q":26,"fa":3.27,"tasa":0.366,"d":61,"ipf":2.73,"cf":1080}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":48,"q":92,"fa":10.45,"tasa":0.343,"d":13,"ipf":2.92,"cf":1152},"c30":{"f":16,"q":92,"fa":3.48,"tasa":0.148,"d":25,"ipf":6.75,"cf":2666}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":58,"q":133,"fa":12.63,"tasa":0.304,"d":9,"ipf":3.29,"cf":1301},"c30":{"f":15,"q":131,"fa":3.27,"tasa":0.103,"d":20,"ipf":9.73,"cf":3845}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":70,"q":175,"fa":15.25,"tasa":0.286,"d":8,"ipf":3.5,"cf":1382},"c30":{"f":15,"q":173,"fa":3.27,"tasa":0.08,"d":18,"ipf":12.53,"cf":4951}},{"r":0.05,"cap":1,"st":0,"pd":167,"c0":{"f":77,"q":265,"fa":16.77,"tasa":0.225,"d":5,"ipf":4.44,"cf":1754},"c30":{"f":12,"q":262,"fa":2.61,"tasa":0.044,"d":13,"ipf":22.83,"cf":9019}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":85,"q":348,"fa":18.51,"tasa":0.196,"d":4,"ipf":5.09,"cf":2012},"c30":{"f":9,"q":346,"fa":1.96,"tasa":0.025,"d":11,"ipf":39.44,"cf":15581}}],"oro+ndx":[{"r":0.005,"cap":3,"st":9,"pd":17,"c0":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":270,"ipf":1.6,"cf":632},"c30":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":270,"ipf":1.6,"cf":632}},{"r":0.0075,"cap":2,"st":6,"pd":25,"c0":{"f":7,"q":4,"fa":1.52,"tasa":0.636,"d":141,"ipf":1.57,"cf":621},"c30":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":181,"ipf":1.5,"cf":592}},{"r":0.01,"cap":1,"st":4,"pd":33,"c0":{"f":10,"q":7,"fa":2.18,"tasa":0.588,"d":89,"ipf":1.7,"cf":672},"c30":{"f":9,"q":7,"fa":1.96,"tasa":0.562,"d":100,"ipf":1.78,"cf":702}},{"r":0.0125,"cap":1,"st":3,"pd":42,"c0":{"f":14,"q":11,"fa":3.05,"tasa":0.56,"d":60,"ipf":1.79,"cf":705},"c30":{"f":10,"q":10,"fa":2.18,"tasa":0.5,"d":102,"ipf":2.0,"cf":790}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":14,"q":12,"fa":3.05,"tasa":0.538,"d":63,"ipf":1.86,"cf":734},"c30":{"f":12,"q":15,"fa":2.61,"tasa":0.444,"d":62,"ipf":2.25,"cf":889}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":27,"q":24,"fa":5.88,"tasa":0.529,"d":30,"ipf":1.89,"cf":746},"c30":{"f":11,"q":18,"fa":2.4,"tasa":0.379,"d":84,"ipf":2.64,"cf":1041}},{"r":0.025,"cap":1,"st":1,"pd":83,"c0":{"f":35,"q":40,"fa":7.62,"tasa":0.467,"d":20,"ipf":2.14,"cf":846},"c30":{"f":14,"q":27,"fa":3.05,"tasa":0.341,"d":47,"ipf":2.93,"cf":1157}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":47,"q":103,"fa":10.24,"tasa":0.313,"d":11,"ipf":3.19,"cf":1261},"c30":{"f":10,"q":103,"fa":2.18,"tasa":0.088,"d":22,"ipf":11.3,"cf":4464}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":58,"q":157,"fa":12.63,"tasa":0.27,"d":7,"ipf":3.71,"cf":1464},"c30":{"f":16,"q":151,"fa":3.48,"tasa":0.096,"d":18,"ipf":10.44,"cf":4123}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":66,"q":198,"fa":14.37,"tasa":0.25,"d":6,"ipf":4.0,"cf":1580},"c30":{"f":12,"q":196,"fa":2.61,"tasa":0.058,"d":14,"ipf":17.33,"cf":6847}},{"r":0.05,"cap":1,"st":0,"pd":167,"c0":{"f":78,"q":295,"fa":16.99,"tasa":0.209,"d":5,"ipf":4.78,"cf":1889},"c30":{"f":7,"q":294,"fa":1.52,"tasa":0.023,"d":11,"ipf":43.0,"cf":16985}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":88,"q":368,"fa":19.17,"tasa":0.193,"d":4,"ipf":5.18,"cf":2047},"c30":{"f":4,"q":368,"fa":0.87,"tasa":0.011,"d":8,"ipf":93.0,"cf":36735}}],"dax+ndx":[{"r":0.005,"cap":3,"st":9,"pd":17,"c0":{"f":5,"q":4,"fa":1.09,"tasa":0.556,"d":175,"ipf":1.8,"cf":711},"c30":{"f":5,"q":4,"fa":1.09,"tasa":0.556,"d":175,"ipf":1.8,"cf":711}},{"r":0.0075,"cap":2,"st":6,"pd":25,"c0":{"f":8,"q":7,"fa":1.74,"tasa":0.533,"d":123,"ipf":1.88,"cf":741},"c30":{"f":8,"q":8,"fa":1.74,"tasa":0.5,"d":114,"ipf":2.0,"cf":790}},{"r":0.01,"cap":1,"st":4,"pd":33,"c0":{"f":7,"q":8,"fa":1.52,"tasa":0.467,"d":123,"ipf":2.14,"cf":846},"c30":{"f":6,"q":7,"fa":1.31,"tasa":0.462,"d":125,"ipf":2.17,"cf":856}},{"r":0.0125,"cap":1,"st":3,"pd":42,"c0":{"f":7,"q":8,"fa":1.52,"tasa":0.467,"d":102,"ipf":2.14,"cf":846},"c30":{"f":8,"q":11,"fa":1.74,"tasa":0.421,"d":100,"ipf":2.38,"cf":938}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":13,"q":15,"fa":2.83,"tasa":0.464,"d":63,"ipf":2.15,"cf":851},"c30":{"f":8,"q":14,"fa":1.74,"tasa":0.364,"d":102,"ipf":2.75,"cf":1086}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":21,"q":25,"fa":4.57,"tasa":0.457,"d":38,"ipf":2.19,"cf":865},"c30":{"f":9,"q":18,"fa":1.96,"tasa":0.333,"d":82,"ipf":3.0,"cf":1185}},{"r":0.025,"cap":1,"st":1,"pd":83,"c0":{"f":27,"q":36,"fa":5.88,"tasa":0.429,"d":30,"ipf":2.33,"cf":922},"c30":{"f":11,"q":32,"fa":2.4,"tasa":0.256,"d":68,"ipf":3.91,"cf":1544}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":37,"q":97,"fa":8.06,"tasa":0.276,"d":12,"ipf":3.62,"cf":1431},"c30":{"f":10,"q":93,"fa":2.18,"tasa":0.097,"d":30,"ipf":10.3,"cf":4069}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":45,"q":141,"fa":9.8,"tasa":0.242,"d":10,"ipf":4.13,"cf":1633},"c30":{"f":11,"q":138,"fa":2.4,"tasa":0.074,"d":20,"ipf":13.55,"cf":5350}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":57,"q":194,"fa":12.41,"tasa":0.227,"d":7,"ipf":4.4,"cf":1739},"c30":{"f":10,"q":191,"fa":2.18,"tasa":0.05,"d":17,"ipf":20.1,"cf":7940}},{"r":0.05,"cap":1,"st":0,"pd":167,"c0":{"f":67,"q":275,"fa":14.59,"tasa":0.196,"d":5,"ipf":5.1,"cf":2016},"c30":{"f":8,"q":272,"fa":1.74,"tasa":0.029,"d":18,"ipf":35.0,"cf":13825}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":76,"q":361,"fa":16.55,"tasa":0.174,"d":4,"ipf":5.75,"cf":2271},"c30":{"f":6,"q":360,"fa":1.31,"tasa":0.016,"d":13,"ipf":61.0,"cf":24095}}],"oro+dax+ndx":[{"r":0.005,"cap":3,"st":9,"pd":17,"c0":{"f":6,"q":4,"fa":1.31,"tasa":0.6,"d":138,"ipf":1.67,"cf":658},"c30":{"f":6,"q":4,"fa":1.31,"tasa":0.6,"d":172,"ipf":1.67,"cf":658}},{"r":0.0075,"cap":2,"st":6,"pd":25,"c0":{"f":9,"q":5,"fa":1.96,"tasa":0.643,"d":107,"ipf":1.56,"cf":614},"c30":{"f":9,"q":6,"fa":1.96,"tasa":0.6,"d":105,"ipf":1.67,"cf":658}},{"r":0.01,"cap":1,"st":4,"pd":33,"c0":{"f":8,"q":5,"fa":1.74,"tasa":0.615,"d":144,"ipf":1.62,"cf":642},"c30":{"f":8,"q":6,"fa":1.74,"tasa":0.571,"d":129,"ipf":1.75,"cf":691}},{"r":0.0125,"cap":1,"st":3,"pd":42,"c0":{"f":12,"q":9,"fa":2.61,"tasa":0.571,"d":80,"ipf":1.75,"cf":691},"c30":{"f":8,"q":7,"fa":1.74,"tasa":0.533,"d":96,"ipf":1.88,"cf":741}},{"r":0.015,"cap":1,"st":3,"pd":50,"c0":{"f":14,"q":12,"fa":3.05,"tasa":0.538,"d":58,"ipf":1.86,"cf":734},"c30":{"f":9,"q":11,"fa":1.96,"tasa":0.45,"d":102,"ipf":2.22,"cf":878}},{"r":0.02,"cap":1,"st":2,"pd":67,"c0":{"f":25,"q":24,"fa":5.44,"tasa":0.51,"d":33,"ipf":1.96,"cf":774},"c30":{"f":10,"q":15,"fa":2.18,"tasa":0.4,"d":68,"ipf":2.5,"cf":988}},{"r":0.025,"cap":1,"st":1,"pd":83,"c0":{"f":35,"q":40,"fa":7.62,"tasa":0.467,"d":23,"ipf":2.14,"cf":846},"c30":{"f":13,"q":28,"fa":2.83,"tasa":0.317,"d":45,"ipf":3.15,"cf":1246}},{"r":0.03,"cap":1,"st":1,"pd":100,"c0":{"f":47,"q":109,"fa":10.24,"tasa":0.301,"d":11,"ipf":3.32,"cf":1311},"c30":{"f":17,"q":109,"fa":3.7,"tasa":0.135,"d":20,"ipf":7.41,"cf":2928}},{"r":0.035,"cap":1,"st":1,"pd":117,"c0":{"f":59,"q":148,"fa":12.85,"tasa":0.285,"d":9,"ipf":3.51,"cf":1386},"c30":{"f":18,"q":146,"fa":3.92,"tasa":0.11,"d":19,"ipf":9.11,"cf":3599}},{"r":0.04,"cap":1,"st":1,"pd":133,"c0":{"f":66,"q":188,"fa":14.37,"tasa":0.26,"d":8,"ipf":3.85,"cf":1520},"c30":{"f":15,"q":187,"fa":3.27,"tasa":0.074,"d":17,"ipf":13.47,"cf":5319}},{"r":0.05,"cap":1,"st":0,"pd":167,"c0":{"f":81,"q":282,"fa":17.64,"tasa":0.223,"d":5,"ipf":4.48,"cf":1770},"c30":{"f":11,"q":280,"fa":2.4,"tasa":0.038,"d":12,"ipf":26.45,"cf":10450}},{"r":0.06,"cap":1,"st":0,"pd":200,"c0":{"f":88,"q":361,"fa":19.17,"tasa":0.196,"d":4,"ipf":5.1,"cf":2015},"c30":{"f":7,"q":361,"fa":1.52,"tasa":0.019,"d":11,"ipf":52.57,"cf":20766}}]},"ftmo":{"oro":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1602,"ipf":1.0,"cf":540},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1602,"ipf":1.0,"cf":540}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":998,"ipf":1.0,"cf":540},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":998,"ipf":1.0,"cf":540}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":800,"ipf":1.0,"cf":540},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":800,"ipf":1.0,"cf":540}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":750,"ipf":1.0,"cf":540},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":750,"ipf":1.0,"cf":540}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":330,"ipf":1.25,"cf":675},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":330,"ipf":1.25,"cf":675}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":8,"q":6,"fa":1.74,"tasa":0.571,"d":129,"ipf":1.75,"cf":945},"c30":{"f":7,"q":5,"fa":1.52,"tasa":0.583,"d":130,"ipf":1.71,"cf":926}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":11,"q":7,"fa":2.4,"tasa":0.611,"d":87,"ipf":1.64,"cf":884},"c30":{"f":8,"q":7,"fa":1.74,"tasa":0.533,"d":111,"ipf":1.88,"cf":1012}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":12,"q":8,"fa":2.61,"tasa":0.6,"d":92,"ipf":1.67,"cf":900},"c30":{"f":8,"q":7,"fa":1.74,"tasa":0.533,"d":80,"ipf":1.88,"cf":1012}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":21,"q":16,"fa":4.57,"tasa":0.568,"d":33,"ipf":1.76,"cf":951},"c30":{"f":7,"q":7,"fa":1.52,"tasa":0.5,"d":85,"ipf":2.0,"cf":1080}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":21,"q":20,"fa":4.57,"tasa":0.512,"d":32,"ipf":1.95,"cf":1054},"c30":{"f":8,"q":11,"fa":1.74,"tasa":0.421,"d":73,"ipf":2.38,"cf":1282}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":39,"q":86,"fa":8.49,"tasa":0.312,"d":13,"ipf":3.21,"cf":1731},"c30":{"f":10,"q":85,"fa":2.18,"tasa":0.105,"d":18,"ipf":9.5,"cf":5130}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":47,"q":132,"fa":10.24,"tasa":0.263,"d":8,"ipf":3.81,"cf":2057},"c30":{"f":11,"q":132,"fa":2.4,"tasa":0.077,"d":16,"ipf":13.0,"cf":7020}}],"dax":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null},"c30":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":1,"q":1,"fa":0.22,"tasa":0.5,"d":346,"ipf":2.0,"cf":1080},"c30":{"f":1,"q":1,"fa":0.22,"tasa":0.5,"d":346,"ipf":2.0,"cf":1080}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":1,"q":1,"fa":0.22,"tasa":0.5,"d":311,"ipf":2.0,"cf":1080},"c30":{"f":1,"q":1,"fa":0.22,"tasa":0.5,"d":311,"ipf":2.0,"cf":1080}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":292,"ipf":1.67,"cf":900},"c30":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":292,"ipf":1.67,"cf":900}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":284,"ipf":1.67,"cf":900},"c30":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":284,"ipf":1.67,"cf":900}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":6,"q":5,"fa":1.31,"tasa":0.545,"d":148,"ipf":1.83,"cf":990},"c30":{"f":5,"q":5,"fa":1.09,"tasa":0.5,"d":213,"ipf":2.0,"cf":1080}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":10,"q":9,"fa":2.18,"tasa":0.526,"d":83,"ipf":1.9,"cf":1026},"c30":{"f":6,"q":8,"fa":1.31,"tasa":0.429,"d":152,"ipf":2.33,"cf":1260}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":12,"q":11,"fa":2.61,"tasa":0.522,"d":65,"ipf":1.92,"cf":1035},"c30":{"f":5,"q":8,"fa":1.09,"tasa":0.385,"d":195,"ipf":2.6,"cf":1404}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":16,"q":15,"fa":3.48,"tasa":0.516,"d":60,"ipf":1.94,"cf":1046},"c30":{"f":6,"q":9,"fa":1.31,"tasa":0.4,"d":121,"ipf":2.5,"cf":1350}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":19,"q":20,"fa":4.14,"tasa":0.487,"d":43,"ipf":2.05,"cf":1108},"c30":{"f":8,"q":17,"fa":1.74,"tasa":0.32,"d":103,"ipf":3.12,"cf":1688}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":32,"q":75,"fa":6.97,"tasa":0.299,"d":17,"ipf":3.34,"cf":1806},"c30":{"f":9,"q":75,"fa":1.96,"tasa":0.107,"d":37,"ipf":9.33,"cf":5040}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":42,"q":127,"fa":9.15,"tasa":0.249,"d":11,"ipf":4.02,"cf":2173},"c30":{"f":11,"q":124,"fa":2.4,"tasa":0.081,"d":21,"ipf":12.27,"cf":6627}}],"ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null},"c30":{"f":0,"q":0,"fa":0.0,"tasa":0,"d":null,"ipf":null,"cf":null}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1414,"ipf":1.0,"cf":540},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":1414,"ipf":1.0,"cf":540}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":184,"ipf":1.67,"cf":900},"c30":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":184,"ipf":1.67,"cf":900}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":151,"ipf":1.67,"cf":900},"c30":{"f":3,"q":2,"fa":0.65,"tasa":0.6,"d":151,"ipf":1.67,"cf":900}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":4,"q":2,"fa":0.87,"tasa":0.667,"d":112,"ipf":1.5,"cf":810},"c30":{"f":4,"q":2,"fa":0.87,"tasa":0.667,"d":112,"ipf":1.5,"cf":810}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":9,"q":8,"fa":1.96,"tasa":0.529,"d":65,"ipf":1.89,"cf":1020},"c30":{"f":6,"q":6,"fa":1.31,"tasa":0.5,"d":69,"ipf":2.0,"cf":1080}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":11,"q":10,"fa":2.4,"tasa":0.524,"d":49,"ipf":1.91,"cf":1031},"c30":{"f":6,"q":7,"fa":1.31,"tasa":0.462,"d":81,"ipf":2.17,"cf":1170}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":12,"q":11,"fa":2.61,"tasa":0.522,"d":51,"ipf":1.92,"cf":1035},"c30":{"f":8,"q":11,"fa":1.74,"tasa":0.421,"d":68,"ipf":2.38,"cf":1282}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":17,"q":16,"fa":3.7,"tasa":0.515,"d":29,"ipf":1.94,"cf":1048},"c30":{"f":9,"q":14,"fa":1.96,"tasa":0.391,"d":62,"ipf":2.56,"cf":1380}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":26,"q":26,"fa":5.66,"tasa":0.5,"d":26,"ipf":2.0,"cf":1080},"c30":{"f":10,"q":17,"fa":2.18,"tasa":0.37,"d":44,"ipf":2.7,"cf":1458}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":39,"q":93,"fa":8.49,"tasa":0.295,"d":13,"ipf":3.38,"cf":1828},"c30":{"f":11,"q":91,"fa":2.4,"tasa":0.108,"d":21,"ipf":9.27,"cf":5007}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":47,"q":142,"fa":10.24,"tasa":0.249,"d":8,"ipf":4.02,"cf":2171},"c30":{"f":10,"q":142,"fa":2.18,"tasa":0.066,"d":17,"ipf":15.2,"cf":8208}}],"oro+dax":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":442,"ipf":1.0,"cf":540},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":442,"ipf":1.0,"cf":540}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":792,"ipf":1.0,"cf":540},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":792,"ipf":1.0,"cf":540}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":237,"ipf":1.33,"cf":720},"c30":{"f":3,"q":1,"fa":0.65,"tasa":0.75,"d":237,"ipf":1.33,"cf":720}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":179,"ipf":1.5,"cf":810},"c30":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":145,"ipf":1.4,"cf":756}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":132,"ipf":1.43,"cf":771},"c30":{"f":5,"q":2,"fa":1.09,"tasa":0.714,"d":143,"ipf":1.4,"cf":756}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":11,"q":4,"fa":2.4,"tasa":0.733,"d":102,"ipf":1.36,"cf":736},"c30":{"f":8,"q":3,"fa":1.74,"tasa":0.727,"d":120,"ipf":1.38,"cf":742}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":13,"q":6,"fa":2.83,"tasa":0.684,"d":80,"ipf":1.46,"cf":789},"c30":{"f":8,"q":5,"fa":1.74,"tasa":0.615,"d":137,"ipf":1.62,"cf":878}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":17,"q":8,"fa":3.7,"tasa":0.68,"d":54,"ipf":1.47,"cf":794},"c30":{"f":9,"q":6,"fa":1.96,"tasa":0.6,"d":99,"ipf":1.67,"cf":900}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":24,"q":17,"fa":5.23,"tasa":0.585,"d":35,"ipf":1.71,"cf":922},"c30":{"f":11,"q":11,"fa":2.4,"tasa":0.5,"d":66,"ipf":2.0,"cf":1080}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":30,"q":24,"fa":6.53,"tasa":0.556,"d":32,"ipf":1.8,"cf":972},"c30":{"f":12,"q":14,"fa":2.61,"tasa":0.462,"d":50,"ipf":2.17,"cf":1170}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":48,"q":88,"fa":10.45,"tasa":0.353,"d":14,"ipf":2.83,"cf":1530},"c30":{"f":17,"q":87,"fa":3.7,"tasa":0.163,"d":24,"ipf":6.12,"cf":3304}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":57,"q":136,"fa":12.41,"tasa":0.295,"d":9,"ipf":3.39,"cf":1828},"c30":{"f":17,"q":136,"fa":3.7,"tasa":0.111,"d":19,"ipf":9.0,"cf":4860}}],"oro+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":915,"ipf":1.0,"cf":540},"c30":{"f":1,"q":0,"fa":0.22,"tasa":1.0,"d":915,"ipf":1.0,"cf":540}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":784,"ipf":1.0,"cf":540},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":784,"ipf":1.0,"cf":540}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":318,"ipf":1.25,"cf":675},"c30":{"f":4,"q":1,"fa":0.87,"tasa":0.8,"d":318,"ipf":1.25,"cf":675}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":6,"q":2,"fa":1.31,"tasa":0.75,"d":220,"ipf":1.33,"cf":720},"c30":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":174,"ipf":1.5,"cf":810}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":179,"ipf":1.43,"cf":771},"c30":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":179,"ipf":1.5,"cf":810}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":12,"q":7,"fa":2.61,"tasa":0.632,"d":85,"ipf":1.58,"cf":855},"c30":{"f":10,"q":8,"fa":2.18,"tasa":0.556,"d":80,"ipf":1.8,"cf":972}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":19,"q":16,"fa":4.14,"tasa":0.543,"d":44,"ipf":1.84,"cf":995},"c30":{"f":10,"q":10,"fa":2.18,"tasa":0.5,"d":99,"ipf":2.0,"cf":1080}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":19,"q":13,"fa":4.14,"tasa":0.594,"d":52,"ipf":1.68,"cf":909},"c30":{"f":12,"q":14,"fa":2.61,"tasa":0.462,"d":58,"ipf":2.17,"cf":1170}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":26,"q":22,"fa":5.66,"tasa":0.542,"d":29,"ipf":1.85,"cf":997},"c30":{"f":12,"q":17,"fa":2.61,"tasa":0.414,"d":78,"ipf":2.42,"cf":1305}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":30,"q":23,"fa":6.53,"tasa":0.566,"d":29,"ipf":1.77,"cf":954},"c30":{"f":12,"q":19,"fa":2.61,"tasa":0.387,"d":80,"ipf":2.58,"cf":1395}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":43,"q":99,"fa":9.37,"tasa":0.303,"d":12,"ipf":3.3,"cf":1783},"c30":{"f":10,"q":99,"fa":2.18,"tasa":0.092,"d":22,"ipf":10.9,"cf":5886}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":57,"q":157,"fa":12.41,"tasa":0.266,"d":8,"ipf":3.75,"cf":2027},"c30":{"f":16,"q":155,"fa":3.48,"tasa":0.094,"d":17,"ipf":10.69,"cf":5771}}],"dax+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":342,"ipf":1.5,"cf":810},"c30":{"f":2,"q":1,"fa":0.44,"tasa":0.667,"d":342,"ipf":1.5,"cf":810}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":256,"ipf":1.75,"cf":945},"c30":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":256,"ipf":1.75,"cf":945}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":5,"q":3,"fa":1.09,"tasa":0.625,"d":153,"ipf":1.6,"cf":864},"c30":{"f":4,"q":3,"fa":0.87,"tasa":0.571,"d":196,"ipf":1.75,"cf":945}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":6,"q":4,"fa":1.31,"tasa":0.6,"d":133,"ipf":1.67,"cf":900},"c30":{"f":7,"q":5,"fa":1.52,"tasa":0.583,"d":124,"ipf":1.71,"cf":926}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":12,"q":11,"fa":2.61,"tasa":0.522,"d":69,"ipf":1.92,"cf":1035},"c30":{"f":6,"q":6,"fa":1.31,"tasa":0.5,"d":159,"ipf":2.0,"cf":1080}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":8,"q":8,"fa":1.74,"tasa":0.5,"d":86,"ipf":2.0,"cf":1080},"c30":{"f":5,"q":6,"fa":1.09,"tasa":0.455,"d":149,"ipf":2.2,"cf":1188}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":11,"q":11,"fa":2.4,"tasa":0.5,"d":79,"ipf":2.0,"cf":1080},"c30":{"f":8,"q":11,"fa":1.74,"tasa":0.421,"d":102,"ipf":2.38,"cf":1282}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":15,"q":16,"fa":3.27,"tasa":0.484,"d":53,"ipf":2.07,"cf":1116},"c30":{"f":8,"q":14,"fa":1.74,"tasa":0.364,"d":102,"ipf":2.75,"cf":1485}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":19,"q":19,"fa":4.14,"tasa":0.5,"d":43,"ipf":2.0,"cf":1080},"c30":{"f":8,"q":16,"fa":1.74,"tasa":0.333,"d":88,"ipf":3.0,"cf":1620}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":23,"q":25,"fa":5.01,"tasa":0.479,"d":36,"ipf":2.09,"cf":1127},"c30":{"f":9,"q":22,"fa":1.96,"tasa":0.29,"d":82,"ipf":3.44,"cf":1860}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":35,"q":94,"fa":7.62,"tasa":0.271,"d":14,"ipf":3.69,"cf":1990},"c30":{"f":10,"q":90,"fa":2.18,"tasa":0.1,"d":30,"ipf":10.0,"cf":5400}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":49,"q":146,"fa":10.67,"tasa":0.251,"d":10,"ipf":3.98,"cf":2149},"c30":{"f":12,"q":144,"fa":2.61,"tasa":0.077,"d":20,"ipf":13.0,"cf":7020}}],"oro+dax+ndx":[{"r":0.005,"cap":6,"st":19,"pd":10,"c0":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":810,"ipf":1.0,"cf":540},"c30":{"f":2,"q":0,"fa":0.44,"tasa":1.0,"d":810,"ipf":1.0,"cf":540}},{"r":0.0075,"cap":4,"st":13,"pd":15,"c0":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":136,"ipf":1.5,"cf":810},"c30":{"f":6,"q":3,"fa":1.31,"tasa":0.667,"d":136,"ipf":1.5,"cf":810}},{"r":0.01,"cap":3,"st":9,"pd":20,"c0":{"f":7,"q":3,"fa":1.52,"tasa":0.7,"d":160,"ipf":1.43,"cf":771},"c30":{"f":7,"q":4,"fa":1.52,"tasa":0.636,"d":96,"ipf":1.57,"cf":849}},{"r":0.0125,"cap":2,"st":7,"pd":25,"c0":{"f":9,"q":4,"fa":1.96,"tasa":0.692,"d":121,"ipf":1.44,"cf":780},"c30":{"f":8,"q":4,"fa":1.74,"tasa":0.667,"d":124,"ipf":1.5,"cf":810}},{"r":0.015,"cap":2,"st":6,"pd":30,"c0":{"f":12,"q":6,"fa":2.61,"tasa":0.667,"d":85,"ipf":1.5,"cf":810},"c30":{"f":9,"q":5,"fa":1.96,"tasa":0.643,"d":91,"ipf":1.56,"cf":840}},{"r":0.02,"cap":1,"st":4,"pd":40,"c0":{"f":9,"q":5,"fa":1.96,"tasa":0.643,"d":83,"ipf":1.56,"cf":840},"c30":{"f":8,"q":6,"fa":1.74,"tasa":0.571,"d":123,"ipf":1.75,"cf":945}},{"r":0.025,"cap":1,"st":3,"pd":50,"c0":{"f":14,"q":10,"fa":3.05,"tasa":0.583,"d":62,"ipf":1.71,"cf":926},"c30":{"f":8,"q":8,"fa":1.74,"tasa":0.5,"d":122,"ipf":2.0,"cf":1080}},{"r":0.03,"cap":1,"st":3,"pd":60,"c0":{"f":19,"q":15,"fa":4.14,"tasa":0.559,"d":52,"ipf":1.79,"cf":966},"c30":{"f":11,"q":13,"fa":2.4,"tasa":0.458,"d":87,"ipf":2.18,"cf":1178}},{"r":0.035,"cap":1,"st":2,"pd":70,"c0":{"f":25,"q":21,"fa":5.44,"tasa":0.543,"d":38,"ipf":1.84,"cf":994},"c30":{"f":9,"q":12,"fa":1.96,"tasa":0.429,"d":85,"ipf":2.33,"cf":1260}},{"r":0.04,"cap":1,"st":2,"pd":80,"c0":{"f":30,"q":28,"fa":6.53,"tasa":0.517,"d":29,"ipf":1.93,"cf":1044},"c30":{"f":11,"q":18,"fa":2.4,"tasa":0.379,"d":55,"ipf":2.64,"cf":1424}},{"r":0.05,"cap":1,"st":1,"pd":100,"c0":{"f":43,"q":94,"fa":9.37,"tasa":0.314,"d":12,"ipf":3.19,"cf":1720},"c30":{"f":16,"q":94,"fa":3.48,"tasa":0.145,"d":21,"ipf":6.88,"cf":3712}},{"r":0.06,"cap":1,"st":1,"pd":120,"c0":{"f":53,"q":148,"fa":11.54,"tasa":0.264,"d":9,"ipf":3.79,"cf":2048},"c30":{"f":17,"q":148,"fa":3.7,"tasa":0.103,"d":18,"ipf":9.71,"cf":5241}}]}}};
@@ -424,7 +534,6 @@ const pcv = (v,d=1) => v.toFixed(d).replace(".",",");   // decimal con coma
 let S = {
   cons:false,
   A:{p:"t5hs", m:{oro:1,dax:1,ndx:0}, ri:2, ti:3, preset:null},
-  B:{p:"t5hs", m:{oro:1,dax:1,ndx:0}, ri:9, ti:3, preset:null},
 };
 const tam = lado => {
   const t = DATA.programas[S[lado].p].tam;
@@ -651,60 +760,6 @@ function pinta(lado){
   }
 }
 
-function resumen(lado){
-  const c = cell(lado), t = tam(lado), d = c.d;
-  const coste = d.ipf ? d.ipf * t[1] : null;
-  return { fa:d.fa, tasa:d.tasa*100, dias:d.d||0,
-           coste: coste!=null ? Math.round(coste) : 0,
-           cuentas: d.ipf || 0, cuenta: t[0] };
-}
-
-const METRICAS = [
-  ["Fondeos al año", r=>r.fa, 1, v=>v.toFixed(2).replace(".",",")],
-  ["Intentos que aprueba", r=>r.tasa, 1, v=>v.toFixed(0)+" %"],
-  ["Días hasta el fondeo", r=>r.dias, -1, v=>v?v+" d":"—"],
-  ["Cuentas que compras", r=>r.cuentas, -1, v=>v?v.toFixed(1).replace(".",","):"—"],
-  ["Cuotas por fondeo", r=>r.coste, -1, v=>v?fmt(v)+" $":"—"],
-];
-
-function pintaVs(){
-  const A = resumen("A"), B = resumen("B");
-  const cont = $("barras"); cont.innerHTML = "";
-  METRICAS.forEach(([nom, get, sentido, f])=>{
-    const a = get(A), b = get(B), mx = Math.max(a,b,0.0001);
-    const mejorA = sentido>0 ? a>b : (a&&b? a<b : !!a);
-    const row = document.createElement("div");
-    row.className = "vsrow";
-    row.innerHTML = `<div class="n">${nom}</div>
-      <div class="mini"><i style="width:${a/mx*100}%;background:var(--a);opacity:${mejorA?1:.45}"></i>
-        <span>${f(a)}</span></div>
-      <div class="mini"><i style="width:${b/mx*100}%;background:var(--b);opacity:${mejorA?.45:1}"></i>
-        <span>${f(b)}</span></div>`;
-    cont.appendChild(row);
-  });
-
-  const dfa = A.fa - B.fa;
-  let t;
-  if(Math.abs(dfa) < 0.05){
-    t = "Los dos consiguen prácticamente los mismos fondeos al año.";
-  } else {
-    const g = dfa>0 ? "Tu setup" : "La otra opción";
-    const p = dfa>0 ? "la otra opción" : "tu setup";
-    const gd = dfa>0?A:B, pd = dfa>0?B:A;
-    t = `<b>${g} consigue ${pcv(Math.abs(dfa),2)} fondeos más al año</b> que ${p}`;
-    const dt = gd.tasa - pd.tasa;
-    if(dt < -3) t += `, pero aprueba <b>${Math.abs(dt).toFixed(0)} puntos menos</b> de sus intentos`;
-    if(gd.coste && pd.coste && gd.coste > pd.coste*1.15)
-      t += ` y cada fondeo le cuesta <b>${fmt(gd.coste-pd.coste)} $ más</b> en cuotas`;
-    t += ".";
-  }
-  if(A.cuenta !== B.cuenta)
-    t += ` Ojo: estás comparando una cuenta de <b>${fmt(A.cuenta)} $</b> con otra
-      de <b>${fmt(B.cuenta)} $</b>, así que las cifras en dólares no son
-      equivalentes entre las dos.`;
-  $("veredicto").innerHTML = t;
-}
-
 function pintaTop(){
   const filas = [];
   for(const pk in DATA.rejilla)
@@ -736,8 +791,8 @@ function pintaTop(){
 }
 
 function render(){
-  ["A","B"].forEach(pinta);
-  pintaVs(); pintaTop();
+  pinta("A");
+  pintaTop();
   $("consHint").textContent = S.cons
     ? "Activada: aprobar en dos operaciones ya no cuenta, así que el riesgo alto pierde casi todo su sentido."
     : "Búscala en tu contrato antes de pagar: cambia mucho el resultado, y muchas firmas la aplican.";
@@ -789,21 +844,18 @@ function loop(){
 }
 
 // Al activar o quitar la regla de consistencia cambia cuál es el mejor setup de
-// cada perfil, así que los lados que tengan un perfil puesto se recalculan.
+// cada perfil, así que si tienes un perfil puesto se recalcula solo.
 $("cons").onchange = e => {
   S.cons = e.target.checked;
-  ["A","B"].forEach(l=>{
-    const p = PRESETS.find(x=>x.k===S[l].preset);
-    if(p) aplicarPreset(l, p);
-  });
+  const p = PRESETS.find(x=>x.k===S.A.preset);
+  if(p) aplicarPreset("A", p);
   render();
 };
-// arranque: A con el perfil recomendado y B con el rápido, para que la
-// comparación que más importa esté a la vista desde el primer segundo
+// arranque: se entra con el perfil recomendado puesto, para que la página
+// enseñe un setup sensato desde el primer segundo
 $("anosAviso").textContent = pcv(DATA.anos, 2);
-build("A"); build("B");
+build("A");
 aplicarPreset("A", PRESETS[1]);
-aplicarPreset("B", PRESETS[2]);
 mkPath(); loop();
 </script>
 
