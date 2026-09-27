@@ -182,6 +182,22 @@
 .rawnas .noche .met .et{color:#93A3B8}
 .rawnas .noche .apunte{color:#93A3B8}
 
+/* ---- paso siguiente: CTA discreto hacia PRO ----
+   Va DENTRO del bloque oscuro y no como franja aparte. Esta pagina es un
+   informe de investigacion, no una landing de venta: el enlace tiene que
+   leerse como el siguiente paso natural de quien acaba de leer los datos,
+   no como una interrupcion. Sin precio, sin urgencia y sin promesa de
+   rendimiento, igual que el resto de la pagina. El boton reutiliza las
+   utilidades que output.css ya trae para el CTA de /pro, asi que es el
+   mismo boton que en el resto del sitio y no hay que recompilar la hoja. */
+.rawnas .paso{
+  display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem;
+  margin-top:2.4rem;padding-top:1.8rem;
+  border-top:1px solid rgba(255,255,255,.12)
+}
+.rawnas .paso p{margin:0;font-size:.9rem;color:#C7D3E4;flex:1 1 24ch;line-height:1.55}
+.rawnas .paso a svg{flex:none}
+
 /* ---- aparicion suave, con mejora progresiva ----
    El contenido se ve SIEMPRE por defecto. La animacion solo se activa si el
    JS ha podido anadir .anim al contenedor: si el script falla o no llega,
@@ -498,6 +514,14 @@
         Su resultado propio es más contenido que el del estudio, con una caída del 30,3 %, porque la versión medida usaba
         riesgo fijo. El ajuste de riesgo por volatilidad ya está incorporado y su medición está en curso.
       </p>
+
+      <div class="paso sube">
+        <p>RAW NASDAQ estará disponible en el <strong>Experimental Hub</strong> de nico66fx PRO, con su documentación técnica.</p>
+        <a href="../#pricing" class="on-brand bg-brand-500 hover:bg-brand-600 text-white inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-lg">
+          Acceder a PRO
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
