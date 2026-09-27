@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAW NASDAQ · informe de investigación cuantitativa | nico66fx PRO</title>
+<meta name="description" content="Estudio de una estrategia de momentum en el NASDAQ: 12 años de ticks reales, 2.697 operaciones y pruebas de robustez. Resultados de backtest, no una previsión.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F2F5FA">
+<link rel="canonical" href="https://nico66fx.com/pro/rawnasdaq/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="nico66fx PRO">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="RAW NASDAQ · informe de investigación">
+<meta property="og:description" content="12 años de datos, 2.697 operaciones y pruebas de robustez para estudiar si existe un comportamiento estadísticamente consistente.">
+<meta property="og:url" content="https://nico66fx.com/pro/rawnasdaq/">
+<meta property="og:image" content="https://nico66fx.com/pro/assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RAW NASDAQ · informe de investigación">
+<meta name="twitter:description" content="12 años de datos, 2.697 operaciones y pruebas de robustez.">
+<meta name="twitter:image" content="https://nico66fx.com/pro/assets/og-cover.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/output.css">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<style>
+/* ==================================================================
+   RAW NASDAQ. Hereda el sistema de /pro por ../assets/output.css:
+   tokens de :root, tipografia, :focus-visible, .glass-bar y el pie.
+
+   Por que casi todo el layout vive aqui y no en clases de Tailwind:
+   el glob de content de tailwind.config.js es ["./*.html",
+   "./tools/**/*.html", "./assets/**/*.js"], que NO cubre subcarpetas.
+   Las utilidades que esta pagina necesitaria (grid-cols, rounded-3xl,
+   tabular-nums) no estan generadas en output.css. Mismo criterio que
+   /pro/fondeo/: reutilizar lo que existe y escribir el resto a mano,
+   sin recompilar la hoja compartida ni tocar otras paginas.
+
+   Esta hoja va DESPUES del <link>, asi que gana la cascada.
+   PROHIBIDO anadir prefers-color-scheme: PRO es solo claro.
+   ================================================================== */
+
+.rawnas{
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --display:'Instrument Sans',Inter,ui-sans-serif,system-ui,sans-serif;
+  --pos:#047857; --pos-soft:#ECFDF5;
+  --neg:#DC2626; --neg-soft:#FEF2F2;
+  --warn:#B45309; --warn-soft:#FFFBEB; --warn-borde:rgba(180,83,9,.28);
+  display:block;
+  color:var(--ink);
+  background:var(--canvas);
+}
+
+/* ---- ritmo vertical y contenedor ---- */
+.rawnas .env{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+.rawnas section{padding:5.5rem 0}
+.rawnas section+section{border-top:1px solid var(--hair)}
+@media (max-width:640px){
+  .rawnas section{padding:3.5rem 0}
+  .rawnas .env{padding:0 1.1rem}
+}
+
+/* ---- tipografia ---- */
+.rawnas h1,.rawnas h2,.rawnas h3{font-family:var(--display);letter-spacing:-.022em;font-weight:600}
+.rawnas h1{font-size:clamp(2.5rem,7.5vw,4.5rem);line-height:1.02;font-weight:700}
+.rawnas h2{font-size:clamp(1.65rem,3.6vw,2.4rem);line-height:1.12;margin:0 0 .85rem}
+.rawnas h3{font-size:1.06rem;line-height:1.35;margin:0 0 .4rem}
+.rawnas p{color:var(--ink-2);line-height:1.66;margin:0 0 1rem;max-width:65ch}
+.rawnas .entradilla{font-size:clamp(1.02rem,2.1vw,1.2rem);color:var(--ink-2);max-width:60ch}
+.rawnas .apunte{font-size:.82rem;color:var(--ink-3);line-height:1.55}
+
+/* ---- hero ---- */
+.rawnas .hero{position:relative;overflow:hidden;padding:7rem 0 4.5rem}
+@media (max-width:640px){.rawnas .hero{padding:4.5rem 0 3rem}}
+.rawnas .hero .env{position:relative;z-index:2}
+.rawnas .marca{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--brand);background:#fff;border:1px solid var(--hair-strong);
+  padding:.4rem .8rem;border-radius:9999px;box-shadow:var(--sh-1);margin-bottom:1.6rem
+}
+.rawnas .marca span{width:6px;height:6px;border-radius:9999px;background:var(--brand)}
+.rawnas .lema{font-size:clamp(1.1rem,2.6vw,1.45rem);color:var(--ink);font-weight:500;
+  letter-spacing:-.012em;max-width:34ch;margin:1.4rem 0 1rem;line-height:1.35}
+
+/* ---- rejilla de metricas ---- */
+.rawnas .metricas{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;margin-top:2.6rem}
+@media (min-width:860px){.rawnas .metricas{grid-template-columns:repeat(4,1fr);gap:1rem}}
+.rawnas .met{
+  background:var(--metal);border:1px solid var(--hair-strong);border-radius:var(--radio-l);
+  padding:1.35rem 1.2rem;box-shadow:var(--sh-2)
+}
+.rawnas .met .cifra{
+  font-family:var(--display);font-weight:700;letter-spacing:-.03em;
+  font-size:clamp(1.8rem,5.2vw,2.5rem);line-height:1;color:var(--ink);
+  font-variant-numeric:tabular-nums
+}
+.rawnas .met .cifra.up{color:var(--pos)}
+.rawnas .met .et{
+  display:block;margin-top:.5rem;font-size:.74rem;letter-spacing:.055em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500
+}
+
+/* ---- tarjetas ---- */
+.rawnas .rejilla{display:grid;gap:1rem}
+@media (min-width:760px){.rawnas .rejilla.c2{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:880px){.rawnas .rejilla.c3{grid-template-columns:repeat(3,1fr)}}
+.rawnas .tarjeta{
+  background:var(--surface);border:1px solid var(--hair-strong);border-radius:var(--radio-l);
+  padding:1.5rem;box-shadow:var(--sh-1)
+}
+.rawnas .tarjeta p:last-child{margin-bottom:0}
+.rawnas .tarjeta .icono{
+  width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  background:#EEF3FF;color:var(--brand);margin-bottom:.85rem;font-family:var(--mono);
+  font-size:.8rem;font-weight:500
+}
+
+/* ---- graficos ---- */
+.rawnas .lienzo{
+  background:var(--surface);border:1px solid var(--hair-strong);border-radius:var(--radio-l);
+  padding:1.5rem 1.25rem 1.1rem;box-shadow:var(--sh-2)
+}
+.rawnas .lienzo svg{display:block;width:100%;height:auto}
+.rawnas .lienzo .cab{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:baseline;
+  justify-content:space-between;margin-bottom:1.1rem}
+.rawnas .lienzo .cab h3{margin:0}
+.rawnas .eje{font-family:var(--mono);font-size:10px;fill:var(--ink-3)}
+/* En movil el SVG se reduce y 10px del viewBox quedan en ~5px reales.
+   Se sube en el viewBox para que el eje siga leyendose en un telefono. */
+@media (max-width:640px){.rawnas .eje{font-size:15px}}
+.rawnas .malla{stroke:rgba(8,17,31,.08);stroke-width:1}
+.rawnas .cero{stroke:rgba(8,17,31,.22);stroke-width:1}
+
+/* ---- tabla de datos ---- */
+.rawnas .tabla{width:100%;border-collapse:collapse;font-size:.88rem}
+.rawnas .tabla th,.rawnas .tabla td{
+  padding:.7rem .6rem;text-align:right;border-bottom:1px solid var(--hair)
+}
+.rawnas .tabla th:first-child,.rawnas .tabla td:first-child{text-align:left}
+.rawnas .tabla thead th{
+  font-size:.7rem;letter-spacing:.055em;text-transform:uppercase;color:var(--ink-3);font-weight:600
+}
+.rawnas .tabla td{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
+.rawnas .tabla td:first-child{font-family:inherit;color:var(--ink-2)}
+.rawnas .tabla tbody tr:last-child td{border-bottom:none}
+.rawnas .marco-tabla{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* ---- distintivos ---- */
+.rawnas .pill{
+  display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:600;
+  letter-spacing:.02em;padding:.24rem .6rem;border-radius:9999px;white-space:nowrap
+}
+.rawnas .pill.ok{background:var(--pos-soft);color:var(--pos)}
+.rawnas .pill.no{background:var(--neg-soft);color:var(--neg)}
+.rawnas .pill.dud{background:var(--warn-soft);color:var(--warn)}
+
+/* ---- barras de robustez ---- */
+.rawnas .barra{display:grid;grid-template-columns:1fr;gap:.45rem;padding:.9rem 0;
+  border-bottom:1px solid var(--hair)}
+.rawnas .barra:last-child{border-bottom:none}
+.rawnas .barra .fila{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.rawnas .barra .nom{font-size:.92rem;color:var(--ink);font-weight:500}
+.rawnas .barra .val{font-family:var(--mono);font-size:.88rem;color:var(--ink-2);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.rawnas .pista{height:8px;border-radius:9999px;background:#E9EEF7;overflow:hidden}
+.rawnas .pista i{display:block;height:100%;border-radius:9999px;background:var(--brand);
+  transform-origin:left;transform:scaleX(var(--f,0));transition:transform .9s cubic-bezier(.22,.7,.2,1)}
+.rawnas .pista i.flojo{background:#8AA8FF}
+
+/* ---- aviso ---- */
+.rawnas .aviso{
+  border:1px solid var(--warn-borde);background:var(--warn-soft);
+  border-radius:var(--radio-l);padding:1.35rem 1.4rem
+}
+.rawnas .aviso h3{color:#7C3D06}
+.rawnas .aviso p{color:#7C3D06;max-width:none}
+.rawnas .aviso p:last-child{margin-bottom:0}
+
+/* ---- banda oscura para el bloque de RAW NASDAQ ---- */
+.rawnas .noche{background:var(--noche);border-radius:22px;padding:2.6rem 1.6rem;color:#F1F5F9}
+@media (min-width:760px){.rawnas .noche{padding:3.2rem 2.6rem}}
+.rawnas .noche h2,.rawnas .noche h3{color:#F1F5F9}
+.rawnas .noche p{color:#C7D3E4}
+.rawnas .noche .met{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.14);
+  box-shadow:none}
+.rawnas .noche .met .cifra{color:#F1F5F9}
+.rawnas .noche .met .cifra.up{color:#6EE7B7}
+.rawnas .noche .met .et{color:#93A3B8}
+.rawnas .noche .apunte{color:#93A3B8}
+
+/* ---- aparicion suave, con mejora progresiva ----
+   El contenido se ve SIEMPRE por defecto. La animacion solo se activa si el
+   JS ha podido anadir .anim al contenedor: si el script falla o no llega,
+   la pagina queda legible en vez de invisible. Una landing no puede
+   depender de JavaScript para mostrar texto. */
+.rawnas.anim .sube{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.7,.2,1)}
+.rawnas.anim .sube.visto{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rawnas.anim .sube{opacity:1;transform:none;transition:none}
+  .rawnas .pista i{transition:none}
+}
+</style>
+</head>
+<body>
+<a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+<nav class="fixed w-full z-50 top-0 left-0 glass-bar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="../" class="flex items-center gap-3">
+                <span class="font-bold text-lg tracking-tight">nico66fx <span class="text-brand-400">PRO</span></span>
+            </a>
+            <a href="../" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Volver al inicio</a>
+        </div>
+    </div>
+</nav>
+
+<main id="contenido" class="rawnas pt-16">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="field" aria-hidden="true">
+    <span class="field-luz-a"></span><span class="field-luz-b"></span>
+    <span class="field-grid"></span><span class="field-banda"></span>
+  </div>
+  <div class="env">
+    <span class="marca"><span></span>Informe de investigación</span>
+    <h1>RAW NASDAQ</h1>
+    <p class="lema">Una estrategia de momentum estudiada con datos históricos y validada bajo distintas condiciones.</p>
+    <p class="entradilla">12 años de datos, 2.697 operaciones y pruebas de robustez para estudiar si existe un comportamiento estadísticamente consistente.</p>
+
+    <div class="metricas">
+      <div class="met"><div class="cifra up">+996 %</div><span class="et">Resultado histórico</span></div>
+      <div class="met"><div class="cifra">1,24</div><span class="et">Profit factor</span></div>
+      <div class="met"><div class="cifra">2.697</div><span class="et">Operaciones</span></div>
+      <div class="met"><div class="cifra">11 / 12</div><span class="et">Años positivos</span></div>
+    </div>
+
+    <p class="apunte" style="margin-top:1.1rem;max-width:70ch">
+      Cifras del <strong>estudio de la estrategia</strong> sobre 2015–2026 con ticks reales.
+      La implementación propia, RAW NASDAQ, tiene sus propias cifras verificadas
+      <a href="#implementacion" style="color:var(--brand);text-decoration:underline;text-underline-offset:2px">más abajo</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ======================= QUE ENCONTRAMOS ======================= -->
+<section>
+  <div class="env">
+    <h2 class="sube">¿Qué hemos encontrado?</h2>
+    <p class="sube">Una regla mecánica, sencilla de describir y siempre igual. Nada que intente predecir el mercado.</p>
+
+    <div class="rejilla c3" style="margin-top:2rem">
+      <div class="tarjeta sube">
+        <div class="icono" aria-hidden="true">01</div>
+        <h3>Opera el NASDAQ</h3>
+        <p>Un solo índice. Sin cartera, sin saltar de mercado en mercado buscando dónde encaja.</p>
+      </div>
+      <div class="tarjeta sube">
+        <div class="icono" aria-hidden="true">02</div>
+        <h3>Momentum en la apertura de Nueva York</h3>
+        <p>Mira cómo arranca la sesión americana y toma una decisión al día. Una sola.</p>
+      </div>
+      <div class="tarjeta sube">
+        <div class="icono" aria-hidden="true">03</div>
+        <h3>Largos y cortos</h3>
+        <p>Opera en las dos direcciones, y en el estudio las dos aportan resultado positivo por separado.</p>
+      </div>
+      <div class="tarjeta sube">
+        <div class="icono" aria-hidden="true">04</div>
+        <h3>Deja correr las ganadoras</h3>
+        <p>No cierra en un objetivo fijo. Mantiene la operación mientras el movimiento continúa y la acompaña con un stop que sube.</p>
+      </div>
+      <div class="tarjeta sube">
+        <div class="icono" aria-hidden="true">05</div>
+        <h3>Sin martingala ni grid</h3>
+        <p>No dobla tras perder, no acumula posiciones en contra, no promedia a la baja. Una posición a la vez.</p>
+      </div>
+      <div class="tarjeta sube">
+        <div class="icono" aria-hidden="true">06</div>
+        <h3>Riesgo definido antes de entrar</h3>
+        <p>Cada operación lleva su stop calculado a partir de la volatilidad del momento, y el tamaño se ajusta a él.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESULTADOS HISTORICOS ==================== -->
+<section>
+  <div class="env">
+    <h2 class="sube">Resultados históricos</h2>
+    <p class="sube">Backtest sobre <strong>656 millones de ticks reales</strong> del periodo 2015–2026, con una cuenta de partida de 10.000&nbsp;€ y el coste de financiación ya descontado.</p>
+
+    <div class="lienzo sube" style="margin-top:2rem">
+      <div class="cab">
+        <h3>Crecimiento de una cuenta de 10.000 €</h3>
+        <span class="apunte">Escala logarítmica · cierre de cada año</span>
+      </div>
+      <svg viewBox="0 0 1000 380" role="img" aria-label="Curva de crecimiento de una cuenta de 10.000 euros entre 2015 y 2026, de 10.000 a 109.628 euros en escala logarítmica.">
+        <line class="malla" x1="70" y1="340" x2="960" y2="340"/>
+        <line class="malla" x1="70" y1="240" x2="960" y2="240"/>
+        <line class="malla" x1="70" y1="140" x2="960" y2="140"/>
+        <line class="malla" x1="70" y1="40"  x2="960" y2="40"/>
+        <text class="eje" x="8" y="344">10.000</text>
+        <text class="eje" x="8" y="244">21.500</text>
+        <text class="eje" x="8" y="144">46.400</text>
+        <text class="eje" x="8" y="44">100.000</text>
+        <defs>
+          <linearGradient id="rn-relleno" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1544E0" stop-opacity=".18"/>
+            <stop offset="100%" stop-color="#1544E0" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <polygon fill="url(#rn-relleno)" points="70,340 70,340 143,330 217,314 290,328 363,284 437,282 510,235 583,176 657,161 730,138 803,134 877,63 950,43 950,340"/>
+        <polyline fill="none" stroke="#1544E0" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"
+          points="70,340 143,330 217,314 290,328 363,284 437,282 510,235 583,176 657,161 730,138 803,134 877,63 950,43"/>
+        <circle cx="950" cy="43" r="4.5" fill="#1544E0"/>
+        <text class="eje" x="70"  y="366" text-anchor="middle">2015</text>
+        <text class="eje" x="290" y="366" text-anchor="middle">2018</text>
+        <text class="eje" x="510" y="366" text-anchor="middle">2021</text>
+        <text class="eje" x="730" y="366" text-anchor="middle">2024</text>
+        <text class="eje" x="950" y="366" text-anchor="end">2026</text>
+      </svg>
+      <p class="apunte" style="margin:.9rem 0 0">De 10.000 € a <strong>109.628 €</strong>. El eje es logarítmico a propósito: en una escala lineal los últimos años aplastarían visualmente a los primeros y parecerían planos.</p>
+    </div>
+
+    <div class="lienzo sube" style="margin-top:1rem">
+      <div class="cab">
+        <h3>Resultado de cada año</h3>
+        <span class="apunte">% sobre el capital al empezar el año</span>
+      </div>
+      <svg viewBox="0 0 1000 270" role="img" aria-label="Resultado porcentual por año: 2015 +8,1; 2016 +14,2; 2017 -10,6; 2018 +42,3; 2019 +1,8; 2020 +45,4; 2021 +60,9; 2022 +13,5; 2023 +20,1; 2024 +3,4; 2025 +76,4; 2026 +17,9 parcial.">
+        <line class="cero" x1="40" y1="210" x2="985" y2="210"/>
+        <g fill="#1544E0">
+          <rect x="52"  y="190.9" width="44" height="19.1" rx="3"/>
+          <rect x="130" y="176.5" width="44" height="33.5" rx="3"/>
+          <rect x="286" y="110.3" width="44" height="99.7" rx="3"/>
+          <rect x="364" y="205.8" width="44" height="4.2"  rx="3"/>
+          <rect x="442" y="103.0" width="44" height="107.0" rx="3"/>
+          <rect x="520" y="66.5"  width="44" height="143.5" rx="3"/>
+          <rect x="598" y="178.2" width="44" height="31.8" rx="3"/>
+          <rect x="676" y="162.6" width="44" height="47.4" rx="3"/>
+          <rect x="754" y="202.0" width="44" height="8.0"  rx="3"/>
+          <rect x="832" y="30.0"  width="44" height="180.0" rx="3"/>
+          <rect x="910" y="167.8" width="44" height="42.2" rx="3"/>
+        </g>
+        <rect x="208" y="210" width="44" height="25.0" rx="3" fill="#DC2626"/>
+        <g class="eje" text-anchor="middle">
+          <text x="74"  y="256">15</text><text x="152" y="256">16</text>
+          <text x="230" y="256">17</text><text x="308" y="256">18</text>
+          <text x="386" y="256">19</text><text x="464" y="256">20</text>
+          <text x="542" y="256">21</text><text x="620" y="256">22</text>
+          <text x="698" y="256">23</text><text x="776" y="256">24</text>
+          <text x="854" y="256">25</text><text x="932" y="256">26</text>
+        </g>
+        <text class="eje" x="985" y="214" text-anchor="end">0 %</text>
+      </svg>
+      <p class="apunte" style="margin:.9rem 0 0"><strong>Once años en positivo de doce.</strong> El único negativo es 2017, con un −10,6 %. 2026 es parcial, hasta septiembre.</p>
+    </div>
+
+    <div class="rejilla c2 sube" style="margin-top:1rem">
+      <div class="lienzo">
+        <h3 style="margin-bottom:1rem">Las cifras del estudio</h3>
+        <div class="marco-tabla">
+        <table class="tabla">
+          <caption class="apunte" style="text-align:left;padding-bottom:.6rem">Periodo 2015–2026 · calidad del dato: 100 % ticks reales</caption>
+          <tbody>
+            <tr><td>Operaciones</td><td>2.697</td></tr>
+            <tr><td>Operaciones ganadoras</td><td>55,02 %</td></tr>
+            <tr><td>Profit factor</td><td>1,244</td></tr>
+            <tr><td>Ratio de Sharpe</td><td>1,79</td></tr>
+            <tr><td>Resultado</td><td style="color:var(--pos)">+996 %</td></tr>
+            <tr><td>Caída máxima histórica</td><td style="color:var(--neg)">20,3 %</td></tr>
+            <tr><td>Años positivos</td><td>11 de 12</td></tr>
+            <tr><td>Operaciones al año</td><td>≈ 230</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div class="lienzo">
+        <h3 style="margin-bottom:1rem">Cómo leer esto</h3>
+        <p><strong>Profit factor 1,24</strong> significa que por cada 100 € perdidos ganó 124. Es un margen estrecho, no un chollo: el sistema gana porque acierta un poco más a menudo, no porque acierte en grande.</p>
+        <p><strong>Caída máxima 20,3 %</strong> es el peor bache del recorrido. Para conseguir ese crecimiento hubo que aguantarlo sin tocar nada.</p>
+        <p style="margin-bottom:0"><strong>230 operaciones al año</strong> es aproximadamente una por sesión. Ni sobreoperación ni cuatro señales sueltas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== ROBUSTEZ =========================== -->
+<section>
+  <div class="env">
+    <h2 class="sube">¿Funciona únicamente en condiciones perfectas?</h2>
+    <p class="sube">Un backtest sale bien con costes de laboratorio. La pregunta útil es qué queda cuando se ponen condiciones peores que las reales.</p>
+
+    <div class="rejilla c2" style="margin-top:2rem">
+      <div class="lienzo sube">
+        <div class="cab"><h3>Encareciendo la ejecución</h3><span class="apunte">Profit factor resultante</span></div>
+
+        <div class="barra">
+          <div class="fila"><span class="nom">Condiciones del estudio</span><span class="val">1,211 · positivo</span></div>
+          <div class="pista"><i style="--f:1"></i></div>
+        </div>
+        <div class="barra">
+          <div class="fila"><span class="nom">Spread ×1,5</span><span class="val">1,183 · positivo</span></div>
+          <div class="pista"><i style="--f:.87"></i></div>
+        </div>
+        <div class="barra">
+          <div class="fila"><span class="nom">Spread ×2</span><span class="val">1,157 · positivo</span></div>
+          <div class="pista"><i style="--f:.74"></i></div>
+        </div>
+        <div class="barra">
+          <div class="fila"><span class="nom">Spread ×2 + 2 puntos de deslizamiento</span><span class="val">1,105 · positivo</span></div>
+          <div class="pista"><i style="--f:.50"></i></div>
+        </div>
+        <div class="barra">
+          <div class="fila"><span class="nom">Spread ×2 + 5 puntos</span><span class="val">1,032 · al límite</span></div>
+          <div class="pista"><i class="flojo" style="--f:.16"></i></div>
+        </div>
+        <p class="apunte" style="margin:1rem 0 0">Aguanta el doble de spread y dos puntos de deslizamiento. En el escenario más adverso se queda <strong>a cero</strong>: ni gana ni pierde. Eso también se dice.</p>
+      </div>
+
+      <div class="lienzo sube">
+        <div class="cab"><h3>Reordenando la historia</h3><span class="apunte">10.000 simulaciones</span></div>
+        <p>Se reordenan las operaciones al azar miles de veces, manteniendo bloques para no romper las rachas. Sirve para ver cuánto del resultado depende del orden en que llegaron las cosas.</p>
+        <div class="marco-tabla">
+        <table class="tabla">
+          <thead><tr><th>Escenario</th><th>Resultado</th><th>Peor bache</th></tr></thead>
+          <tbody>
+            <tr><td>Malo (percentil 5)</td><td>219 R</td><td>—</td></tr>
+            <tr><td>Central (mediana)</td><td>428 R</td><td>66 R</td></tr>
+            <tr><td>Bueno (percentil 95)</td><td>646 R</td><td>112 R</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="apunte" style="margin:1rem 0 0">En <strong>el 99,99 % de las simulaciones el resultado es positivo</strong>. Pero fíjate en la última columna: el bache puede llegar a ser <strong>más del doble</strong> del que marcó el histórico.</p>
+      </div>
+    </div>
+
+    <div class="lienzo sube" style="margin-top:1rem">
+      <div class="cab"><h3>En trozos de tiempo distintos</h3><span class="apunte">Sin reajustar nada entre periodos</span></div>
+      <div class="rejilla c3" style="margin-top:.25rem">
+        <div>
+          <div class="fila" style="display:flex;justify-content:space-between;align-items:baseline">
+            <span class="nom" style="font-weight:500">2015 – 2018</span><span class="pill ok">positivo</span>
+          </div>
+          <p class="apunte" style="margin:.4rem 0 0">Profit factor 1,141 · 52,4 % de acierto</p>
+        </div>
+        <div>
+          <div class="fila" style="display:flex;justify-content:space-between;align-items:baseline">
+            <span class="nom" style="font-weight:500">2019 – 2022</span><span class="pill ok">positivo</span>
+          </div>
+          <p class="apunte" style="margin:.4rem 0 0">Profit factor 1,238 · 55,9 % de acierto</p>
+        </div>
+        <div>
+          <div class="fila" style="display:flex;justify-content:space-between;align-items:baseline">
+            <span class="nom" style="font-weight:500">2023 – 2026</span><span class="pill ok">positivo</span>
+          </div>
+          <p class="apunte" style="margin:.4rem 0 0">Profit factor 1,263 · 56,9 % de acierto</p>
+        </div>
+      </div>
+      <p class="apunte" style="margin:1.2rem 0 0">Los tres tramos salen positivos y el comportamiento <strong>no se degrada con el tiempo</strong>. Y hay una comprobación más: repartiendo la serie en 24 ventanas consecutivas, 19 son rentables.</p>
+    </div>
+
+    <div class="lienzo sube" style="margin-top:1rem">
+      <div class="cab"><h3>¿Podría ser simplemente suerte?</h3><span class="apunte">Contraste contra el azar</span></div>
+      <p>Se repitió el historial 10.000 veces con las mismas fechas y los mismos tamaños, pero <strong>decidiendo la dirección con una moneda</strong>. Si las decisiones del sistema no aportaran nada, su resultado caería dentro de esa nube.</p>
+      <p style="margin-bottom:0">El resultado real queda en el <strong>percentil 99,90</strong>: solo <strong>1 de cada 1.000</strong> historiales aleatorios lo iguala.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== LA PARTE IMPORTANTE ===================== -->
+<section>
+  <div class="env">
+    <h2 class="sube">Un buen backtest no garantiza el futuro</h2>
+    <p class="sube">Estos son los puntos que más pesan en contra. Van aquí porque forman parte del informe, no en una nota al pie.</p>
+
+    <div class="rejilla c2" style="margin-top:2rem">
+      <div class="aviso sube">
+        <h3>El resultado depende de pocas operaciones</h3>
+        <p>De 2.697 operaciones, <strong>las 53 mejores concentran más del 100 % del beneficio</strong>. Quitándolas, el resultado pasa a negativo.</p>
+        <p style="margin-bottom:0">Tiene una explicación: es un sistema que no cierra en un objetivo fijo y vive de unos pocos movimientos grandes. Le pasa a toda esta familia de estrategias. Pero el riesgo es real: <strong>si esos movimientos no se repiten, no hay resultado.</strong></p>
+      </div>
+      <div class="aviso sube">
+        <h3>El riesgo real puede superar el histórico</h3>
+        <p>La caída máxima del backtest fue del <strong>20,3 %</strong>. Las simulaciones de reordenación sitúan el escenario desfavorable en torno al <strong>45 %</strong>.</p>
+        <p style="margin-bottom:0">El histórico salió suave. Conviene planificar con la cifra mala, no con la que salió.</p>
+      </div>
+      <div class="aviso sube">
+        <h3>Quedan pruebas por hacer</h3>
+        <p>Falta medir la <strong>sensibilidad de los parámetros</strong>: si funciona solo con estos valores exactos o también con los de alrededor.</p>
+        <p style="margin-bottom:0">Y las pruebas formales de sobreajuste necesitan contar todas las variantes evaluadas. Están en curso y se publicarán aquí.</p>
+      </div>
+      <div class="aviso sube">
+        <h3>Esto es investigación</h3>
+        <p>No es una garantía de rentabilidad ni una previsión. Es el registro de un estudio, con sus números y sus límites.</p>
+        <p style="margin-bottom:0">Lo único que puede confirmar si el comportamiento se repite es <strong>el tiempo hacia delante</strong>, no más análisis del pasado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= RAW NASDAQ ============================ -->
+<section id="implementacion">
+  <div class="env">
+    <div class="noche sube">
+      <span class="marca" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#8AA8FF">
+        <span style="background:#8AA8FF"></span>Implementación propia
+      </span>
+      <h2>RAW NASDAQ</h2>
+      <p style="max-width:62ch">RAW NASDAQ es nuestra implementación propia, desarrollada desde cero a partir de la investigación de la estrategia. Código escrito íntegramente por nosotros, con su propia gestión de riesgo y su propia documentación técnica.</p>
+      <p style="max-width:62ch">Hacerlo así tiene un motivo práctico: <strong>solo con código propio se pueden contar las variantes probadas</strong>, y sin ese recuento las pruebas formales de sobreajuste no se pueden calcular.</p>
+
+      <div class="metricas" style="margin-top:2.2rem">
+        <div class="met"><div class="cifra">2.685</div><span class="et">Operaciones propias</span></div>
+        <div class="met"><div class="cifra">1,16</div><span class="et">Profit factor</span></div>
+        <div class="met"><div class="cifra">53,5 %</div><span class="et">Ganadoras</span></div>
+        <div class="met"><div class="cifra up">100 %</div><span class="et">Señales coincidentes</span></div>
+      </div>
+
+      <p class="apunte" style="margin-top:1.4rem;max-width:72ch">
+        Backtest propio sobre el mismo periodo y los mismos ticks reales: 2.685 operaciones frente a las 2.697 del estudio.
+        En los <strong>2.603 días</strong> en que ambos abrieron posición, la dirección elegida fue <strong>la misma en todos</strong>,
+        sin una sola discrepancia. La hipótesis se sostiene en una implementación independiente.
+      </p>
+      <p class="apunte" style="margin-top:.7rem;max-width:72ch">
+        Su resultado propio es más contenido que el del estudio, con una caída del 30,3 %, porque la versión medida usaba
+        riesgo fijo. El ajuste de riesgo por volatilidad ya está incorporado y su medición está en curso.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== METODOLOGIA ========================== -->
+<section>
+  <div class="env">
+    <h2 class="sube">Cómo se ha medido</h2>
+    <div class="rejilla c3" style="margin-top:2rem">
+      <div class="tarjeta sube">
+        <h3>Datos propios, tick a tick</h3>
+        <p>656 millones de ticks reales reconstruidos y verificados uno a uno. MT5 los reconoce como 100 % ticks reales, el modelado más exigente que existe.</p>
+      </div>
+      <div class="tarjeta sube">
+        <h3>Cada cifra reconcilia</h3>
+        <p>Ningún número de esta página se publica sin cuadrar contra una fuente independiente. Las cifras que no reconciliaron se descartaron.</p>
+      </div>
+      <div class="tarjeta sube">
+        <h3>Costes incluidos</h3>
+        <p>El coste de financiación por mantener posiciones abiertas está descontado del resultado, no añadido después como estimación.</p>
+      </div>
+      <div class="tarjeta sube">
+        <h3>Periodo elegido por el dato</h3>
+        <p>El estudio arranca en 2015 porque antes la densidad de ticks del índice es demasiado baja: un backtest anterior mediría los huecos del proveedor, no la estrategia.</p>
+      </div>
+      <div class="tarjeta sube">
+        <h3>Sin optimizar durante la validación</h3>
+        <p>Las reglas no se tocaron para mejorar ningún resultado. Las pruebas sirven para validar, no para maquillar.</p>
+      </div>
+      <div class="tarjeta sube">
+        <h3>Lo que falta, dicho</h3>
+        <p>Sensibilidad de parámetros y pruebas formales de sobreajuste siguen pendientes. Cuando estén, se publicarán con el mismo detalle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-gray-950 border-t border-gray-800 pt-16 pb-8 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <span class="font-bold text-lg">nico66fx <span class="text-brand-400">PRO</span></span>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <p>&copy; 2026 nico66fx PRO. Todos los derechos reservados.</p>
+            <div class="flex flex-wrap justify-center gap-4 mt-4 md:mt-0">
+                <a href="../terminos.html" class="hover:text-gray-300 transition-colors">Términos y Condiciones</a>
+                <a href="../privacidad.html" class="hover:text-gray-300 transition-colors">Política de Privacidad</a>
+                <a href="../cookies.html" class="hover:text-gray-300 transition-colors">Política de Cookies</a>
+                <a href="../politica-de-reembolso.html" class="hover:text-gray-300 transition-colors">Política de Reembolso</a>
+                <a href="../divulgacion-de-riesgo.html" class="hover:text-gray-300 transition-colors">Divulgación de Riesgo</a>
+                <a href="../disclaimer.html" class="hover:text-gray-300 transition-colors">Descargo de Responsabilidad</a>
+                <a href="../aviso-legal.html" class="hover:text-gray-300 transition-colors">Aviso Legal</a>
+            </div>
+        </div>
+
+        <div class="mt-8 text-xs text-gray-300 text-center max-w-4xl mx-auto space-y-2">
+            <p>Los resultados mostrados corresponden a <strong>backtests históricos</strong>. El rendimiento pasado no garantiza resultados futuros. Los datos y métricas representan investigación cuantitativa y no constituyen asesoramiento financiero.</p>
+            <p>Contenido educativo y tecnológico. Operar con apalancamiento conlleva un riesgo elevado de pérdida de capital.</p>
+            <p>Exclusivo para mayores de 18 años.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+/* Aparicion suave al entrar en pantalla y llenado de las barras.
+   Si el navegador no trae IntersectionObserver, todo queda visible:
+   nunca se esconde contenido por no poder animarlo. */
+(function () {
+  var raiz = document.querySelector('.rawnas');
+  if (!raiz) return;
+  var calma = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (calma || !('IntersectionObserver' in window)) return;   // se queda visible, sin animar
+
+  raiz.classList.add('anim');                                  // ahora si: oculta y revela
+  var objetivos = raiz.querySelectorAll('.sube');
+
+  /* Primera pasada inmediata: todo lo que ya este a menos de una ventana y
+     media de distancia se muestra sin esperar al observer. Evita que alguien
+     que baje rapido nada mas cargar se encuentre una seccion en blanco. */
+  var cerca = window.innerHeight * 1.5;
+  for (var i = 0; i < objetivos.length; i++) {
+    if (objetivos[i].getBoundingClientRect().top < cerca) objetivos[i].classList.add('visto');
+  }
+
+  var obs = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('visto'); obs.unobserve(e.target); }
+    });
+    /* El margen inferior del 30 % revela cada bloque ANTES de entrar en
+       pantalla, asi que la animacion se percibe suave y nunca tardia. */
+  }, { rootMargin: '0px 0px 30% 0px', threshold: 0 });
+
+  for (var j = 0; j < objetivos.length; j++) obs.observe(objetivos[j]);
+
+  /* Red de seguridad corta. Si el observer no dispara (scroll muy rapido, un
+     bloque mas alto que la ventana, un navegador raro), a los 900 ms se
+     muestra todo. Nunca debe haber texto invisible mas de un instante. */
+  window.setTimeout(function () {
+    for (var k = 0; k < objetivos.length; k++) objetivos[k].classList.add('visto');
+  }, 900);
+})();
+</script>
+</body>
+</html>
