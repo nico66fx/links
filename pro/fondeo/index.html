@@ -351,6 +351,22 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:9999px;
 .mes .t{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
   font-weight:500;color:var(--brand);margin-bottom:8px}
 .mes .res{margin-top:0}
+
+/* ---------- los dos ultimos meses: halo verde que late ---------- */
+.reciente{outline:1.5px solid rgba(4,120,87,.38);outline-offset:-1.5px;
+  animation:latido 2.8s ease-in-out infinite;transition:outline-color .2s ease}
+.reciente:hover{outline-color:rgba(4,120,87,.7)}
+@keyframes latido{
+  0%,100%{box-shadow:var(--sh-2),0 0 0 0 rgba(4,120,87,.22)}
+  50%{box-shadow:var(--sh-2),0 0 0 7px rgba(4,120,87,.07),0 0 26px 2px rgba(4,120,87,.20)}}
+@media (prefers-reduced-motion:reduce){.reciente{animation:none}}
+.cab-reciente{display:flex;align-items:center;justify-content:space-between;gap:8px 14px;flex-wrap:wrap;margin-bottom:4px}
+.cab-reciente h2{margin:0}
+.badge-reciente{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:600;color:#047857;background:rgba(4,120,87,.08);border:1px solid rgba(4,120,87,.28);
+  border-radius:9999px;padding:5px 10px;white-space:nowrap}
+.reciente .mes .t{color:#047857}
+.intro{margin-top:26px}
 </style>
 </head>
 <body>
@@ -381,6 +397,64 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:9999px;
 <header>
   <div class="tag"><span class="dot"></span>DUAL XAU 2.3 · simulación sobre histórico 2022–2026</div>
   <h1>Prepara tu setup del nuevo<br><span class="hi">DUAL XAU 2.3</span></h1>
+</header>
+
+<section class="vs curva" aria-labelledby="curva-h">
+  <h2 id="curva-h">La curva, 2022–2026</h2>
+  <p class="tiny">Backtest de <b>DUAL XAU 2.3</b> en MT5 con ticks reales: oro y DAX, una operación al día,
+  1.210 operaciones. Resultado acumulado <b>arriesgando 100 € en cada operación</b>, al cierre de cada mes.</p>
+  <svg viewBox="0 0 1000 400" role="img" aria-label="Resultado acumulado de DUAL XAU 2.3 en oro y DAX arriesgando 100 euros por operación, cierre de cada mes, de enero de 2022 a septiembre de 2026: de 0 a 3.845 €. Agosto y septiembre de 2026, en verde.">
+      <defs>
+        <linearGradient id="dx-relleno" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1544E0" stop-opacity=".16"/>
+          <stop offset="100%" stop-color="#1544E0" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <line class="cero" x1="16.0" y1="332.8" x2="984.0" y2="332.8"/><text class="eje" x="18.0" y="325.8">0 €</text><line class="malla" x1="16.0" y1="264.0" x2="984.0" y2="264.0"/><text class="eje" x="18.0" y="257.0">+1.000 €</text><line class="malla" x1="16.0" y1="195.2" x2="984.0" y2="195.2"/><text class="eje" x="18.0" y="188.2">+2.000 €</text><line class="malla" x1="16.0" y1="126.3" x2="984.0" y2="126.3"/><text class="eje" x="18.0" y="119.3">+3.000 €</text><line class="malla" x1="16.0" y1="57.5" x2="984.0" y2="57.5"/><text class="eje" x="18.0" y="50.5">+4.000 €</text>
+      <polygon fill="url(#dx-relleno)" points="16.0,332.8 16.0,332.8 33.0,324.7 50.0,330.0 66.9,289.9 83.9,286.9 100.9,257.9 117.9,248.2 134.9,254.8 151.9,249.1 168.8,212.1 185.8,227.1 202.8,248.2 219.8,233.5 236.8,243.7 253.8,219.0 270.7,199.0 287.7,186.9 304.7,216.8 321.7,206.1 338.7,201.1 355.6,227.9 372.6,241.5 389.6,221.8 406.6,194.0 423.6,160.8 440.6,161.2 457.5,168.5 474.5,170.0 491.5,202.3 508.5,187.5 525.5,174.4 542.5,152.8 559.4,171.2 576.4,147.4 593.4,168.5 610.4,153.1 627.4,164.9 644.4,142.7 661.3,153.4 678.3,161.5 695.3,140.9 712.3,132.9 729.3,146.6 746.2,147.9 763.2,124.8 780.2,133.6 797.2,105.3 814.2,97.6 831.2,100.1 848.1,106.1 865.1,100.2 882.1,70.2 899.1,61.5 916.1,69.4 933.1,73.3 950.0,86.4 967.0,75.0 984.0,68.2 984.0,332.8"/>
+      <polyline fill="none" stroke="#1544E0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="16.0,332.8 33.0,324.7 50.0,330.0 66.9,289.9 83.9,286.9 100.9,257.9 117.9,248.2 134.9,254.8 151.9,249.1 168.8,212.1 185.8,227.1 202.8,248.2 219.8,233.5 236.8,243.7 253.8,219.0 270.7,199.0 287.7,186.9 304.7,216.8 321.7,206.1 338.7,201.1 355.6,227.9 372.6,241.5 389.6,221.8 406.6,194.0 423.6,160.8 440.6,161.2 457.5,168.5 474.5,170.0 491.5,202.3 508.5,187.5 525.5,174.4 542.5,152.8 559.4,171.2 576.4,147.4 593.4,168.5 610.4,153.1 627.4,164.9 644.4,142.7 661.3,153.4 678.3,161.5 695.3,140.9 712.3,132.9 729.3,146.6 746.2,147.9 763.2,124.8 780.2,133.6 797.2,105.3 814.2,97.6 831.2,100.1 848.1,106.1 865.1,100.2 882.1,70.2 899.1,61.5 916.1,69.4 933.1,73.3 950.0,86.4"/>
+      <polyline fill="none" stroke="#047857" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="950.0,86.4 967.0,75.0 984.0,68.2"/>
+      <circle cx="984.0" cy="68.2" r="4.5" fill="#047857"/>
+      <text class="eje fin" x="976.0" y="56.2" text-anchor="end">ago–sep</text>
+      <text class="eje" x="16.0" y="384" text-anchor="start">2022</text><text class="eje" x="236.8" y="384" text-anchor="middle">2023</text><text class="eje" x="440.6" y="384" text-anchor="middle">2024</text><text class="eje" x="644.4" y="384" text-anchor="middle">2025</text><text class="eje" x="848.1" y="384" text-anchor="middle">2026</text>
+    </svg>
+  <div class="leyenda">
+    <span><i style="background:#1544E0"></i>enero de 2022 – julio de 2026</span>
+    <span><i style="background:#047857"></i>agosto y septiembre de 2026</span>
+  </div>
+  <p class="tiny">De enero de 2022 a septiembre de 2026: <b>+3.845 €</b>. El peor bache fue de
+  <b>−915 €</b>, entre abril y septiembre de 2023. Es un robot de ventaja pequeña: lo que decide el
+  resultado es el control del riesgo y el programa que elijas, no acertar el mercado.</p>
+</section>
+
+<section class="vs reciente" aria-labelledby="meses-h">
+  <div class="cab-reciente"><h2 id="meses-h">Agosto y septiembre de 2026, mes a mes</h2><span class="badge-reciente">Últimos dos meses</span></div>
+  <p class="tiny">En porcentaje de una cuenta que arriesga el 2 % por operación, lo recomendado.</p>
+  <div class="meses">
+    <div class="mes">
+      <div class="t">Agosto 2026</div>
+      <div class="res">
+        <div class="cell"><div class="k">Resultado</div><div class="v">+3,3 %</div><span class="u">de la cuenta, con el 2 % por operación</span></div>
+        <div class="cell"><div class="k">Operaciones</div><div class="v">21</div><span class="u">del 3 al 31</span></div>
+        <div class="cell"><div class="k">Ganadoras</div><div class="v">16</div><span class="u">76 % del total</span></div>
+        <div class="cell"><div class="k">Peor caída</div><div class="v">−1,9 %</div><span class="u">desde el máximo del mes</span></div>
+      </div>
+    </div>
+    <div class="mes">
+      <div class="t">Septiembre 2026 · hasta el 24</div>
+      <div class="res">
+        <div class="cell"><div class="k">Resultado</div><div class="v">+2,0 %</div><span class="u">de la cuenta, con el 2 % por operación</span></div>
+        <div class="cell"><div class="k">Operaciones</div><div class="v">17</div><span class="u">del 1 al 24</span></div>
+        <div class="cell"><div class="k">Ganadoras</div><div class="v">7</div><span class="u">41 % del total</span></div>
+        <div class="cell"><div class="k">Peor caída</div><div class="v">−2,9 %</div><span class="u">desde el máximo del mes</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="tiny" style="margin-top:10px">Casi todas las cerró el reloj de la noche: en los dos meses, un solo stop y
+  ningún objetivo. Julio, en cambio, cerró en <b>−3,8 %</b>.</p>
+</section>
+
+<div class="intro">
   <p class="lead">Antes de pagar una cuota, mira lo que hace tu combinación:
   <b>cuántos fondeos saca al año</b>, cuántos intentos necesita para lograr uno
   y cuánto te cuesta llegar. Son <b>estimaciones</b> salidas de simular el
@@ -394,7 +468,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:9999px;
     <li><b>Contrástalo con la tabla</b> — abajo están los ajustes que más fondeos
       sacan; pulsa una fila y se carga entera en tu setup.</li>
   </ol>
-</header>
+</div>
 
 <div class="scene">
   <svg id="orb" viewBox="0 0 900 200" preserveAspectRatio="xMidYMid meet" role="img"
@@ -438,61 +512,6 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:9999px;
     <tbody id="top"></tbody>
   </table></div>
 </div>
-
-<section class="vs curva" aria-labelledby="curva-h">
-  <h2 id="curva-h">La curva, 2022–2026</h2>
-  <p class="tiny">Backtest de <b>DUAL XAU 2.3</b> en MT5 con ticks reales: oro y DAX, una operación al día,
-  1.210 operaciones. Resultado acumulado <b>arriesgando 100 € en cada operación</b>, al cierre de cada mes.</p>
-  <svg viewBox="0 0 1000 400" role="img" aria-label="Resultado acumulado de DUAL XAU 2.3 en oro y DAX arriesgando 100 euros por operación, cierre de cada mes, de enero de 2022 a septiembre de 2026: de 0 a 3.845 €. Agosto y septiembre de 2026, en verde.">
-      <defs>
-        <linearGradient id="dx-relleno" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#1544E0" stop-opacity=".16"/>
-          <stop offset="100%" stop-color="#1544E0" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <line class="cero" x1="16.0" y1="332.8" x2="984.0" y2="332.8"/><text class="eje" x="18.0" y="325.8">0 €</text><line class="malla" x1="16.0" y1="264.0" x2="984.0" y2="264.0"/><text class="eje" x="18.0" y="257.0">+1.000 €</text><line class="malla" x1="16.0" y1="195.2" x2="984.0" y2="195.2"/><text class="eje" x="18.0" y="188.2">+2.000 €</text><line class="malla" x1="16.0" y1="126.3" x2="984.0" y2="126.3"/><text class="eje" x="18.0" y="119.3">+3.000 €</text><line class="malla" x1="16.0" y1="57.5" x2="984.0" y2="57.5"/><text class="eje" x="18.0" y="50.5">+4.000 €</text>
-      <polygon fill="url(#dx-relleno)" points="16.0,332.8 16.0,332.8 33.0,324.7 50.0,330.0 66.9,289.9 83.9,286.9 100.9,257.9 117.9,248.2 134.9,254.8 151.9,249.1 168.8,212.1 185.8,227.1 202.8,248.2 219.8,233.5 236.8,243.7 253.8,219.0 270.7,199.0 287.7,186.9 304.7,216.8 321.7,206.1 338.7,201.1 355.6,227.9 372.6,241.5 389.6,221.8 406.6,194.0 423.6,160.8 440.6,161.2 457.5,168.5 474.5,170.0 491.5,202.3 508.5,187.5 525.5,174.4 542.5,152.8 559.4,171.2 576.4,147.4 593.4,168.5 610.4,153.1 627.4,164.9 644.4,142.7 661.3,153.4 678.3,161.5 695.3,140.9 712.3,132.9 729.3,146.6 746.2,147.9 763.2,124.8 780.2,133.6 797.2,105.3 814.2,97.6 831.2,100.1 848.1,106.1 865.1,100.2 882.1,70.2 899.1,61.5 916.1,69.4 933.1,73.3 950.0,86.4 967.0,75.0 984.0,68.2 984.0,332.8"/>
-      <polyline fill="none" stroke="#1544E0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="16.0,332.8 33.0,324.7 50.0,330.0 66.9,289.9 83.9,286.9 100.9,257.9 117.9,248.2 134.9,254.8 151.9,249.1 168.8,212.1 185.8,227.1 202.8,248.2 219.8,233.5 236.8,243.7 253.8,219.0 270.7,199.0 287.7,186.9 304.7,216.8 321.7,206.1 338.7,201.1 355.6,227.9 372.6,241.5 389.6,221.8 406.6,194.0 423.6,160.8 440.6,161.2 457.5,168.5 474.5,170.0 491.5,202.3 508.5,187.5 525.5,174.4 542.5,152.8 559.4,171.2 576.4,147.4 593.4,168.5 610.4,153.1 627.4,164.9 644.4,142.7 661.3,153.4 678.3,161.5 695.3,140.9 712.3,132.9 729.3,146.6 746.2,147.9 763.2,124.8 780.2,133.6 797.2,105.3 814.2,97.6 831.2,100.1 848.1,106.1 865.1,100.2 882.1,70.2 899.1,61.5 916.1,69.4 933.1,73.3 950.0,86.4"/>
-      <polyline fill="none" stroke="#047857" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="950.0,86.4 967.0,75.0 984.0,68.2"/>
-      <circle cx="984.0" cy="68.2" r="4.5" fill="#047857"/>
-      <text class="eje fin" x="976.0" y="56.2" text-anchor="end">ago–sep</text>
-      <text class="eje" x="16.0" y="384" text-anchor="start">2022</text><text class="eje" x="236.8" y="384" text-anchor="middle">2023</text><text class="eje" x="440.6" y="384" text-anchor="middle">2024</text><text class="eje" x="644.4" y="384" text-anchor="middle">2025</text><text class="eje" x="848.1" y="384" text-anchor="middle">2026</text>
-    </svg>
-  <div class="leyenda">
-    <span><i style="background:#1544E0"></i>enero de 2022 – julio de 2026</span>
-    <span><i style="background:#047857"></i>agosto y septiembre de 2026</span>
-  </div>
-  <p class="tiny">De enero de 2022 a septiembre de 2026: <b>+3.845 €</b>. El peor bache fue de
-  <b>−915 €</b>, entre abril y septiembre de 2023. Es un robot de ventaja pequeña: lo que decide el
-  resultado es el control del riesgo y el programa que elijas, no acertar el mercado.</p>
-</section>
-
-<section class="vs" aria-labelledby="meses-h">
-  <h2 id="meses-h">Agosto y septiembre de 2026, mes a mes</h2>
-  <p class="tiny">En porcentaje de una cuenta que arriesga el 2 % por operación, lo recomendado.</p>
-  <div class="meses">
-    <div class="mes">
-      <div class="t">Agosto 2026</div>
-      <div class="res">
-        <div class="cell"><div class="k">Resultado</div><div class="v">+3,3 %</div><span class="u">de la cuenta, con el 2 % por operación</span></div>
-        <div class="cell"><div class="k">Operaciones</div><div class="v">21</div><span class="u">del 3 al 31</span></div>
-        <div class="cell"><div class="k">Ganadoras</div><div class="v">16</div><span class="u">76 % del total</span></div>
-        <div class="cell"><div class="k">Peor caída</div><div class="v">−1,9 %</div><span class="u">desde el máximo del mes</span></div>
-      </div>
-    </div>
-    <div class="mes">
-      <div class="t">Septiembre 2026 · hasta el 24</div>
-      <div class="res">
-        <div class="cell"><div class="k">Resultado</div><div class="v">+2,0 %</div><span class="u">de la cuenta, con el 2 % por operación</span></div>
-        <div class="cell"><div class="k">Operaciones</div><div class="v">17</div><span class="u">del 1 al 24</span></div>
-        <div class="cell"><div class="k">Ganadoras</div><div class="v">7</div><span class="u">41 % del total</span></div>
-        <div class="cell"><div class="k">Peor caída</div><div class="v">−2,9 %</div><span class="u">desde el máximo del mes</span></div>
-      </div>
-    </div>
-  </div>
-  <p class="tiny" style="margin-top:10px">Casi todas las cerró el reloj de la noche: en los dos meses, un solo stop y
-  ningún objetivo. Julio, en cambio, cerró en <b>−3,8 %</b>.</p>
-</section>
 
 <div class="aviso">
   <div class="k">Aviso importante · cómo leer estas cifras</div>
