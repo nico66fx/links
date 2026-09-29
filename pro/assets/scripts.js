@@ -397,3 +397,57 @@
         mostrarBanner();
     }
 })();
+
+/* -------------------------------------------------------------------
+   Menú «Más» (escritorio) y grupo «Más» del menú móvil.
+   Va en su propio bloque: un error aquí no debe parar las pestañas,
+   el FAQ, el CTA fijo ni las cookies del bloque de arriba.
+   ------------------------------------------------------------------- */
+(function () {
+    'use strict';
+
+    const btn = document.getElementById('nav-mas-btn');
+    const panel = document.getElementById('nav-mas-panel');
+
+    function abrir(si) {
+        if (!btn || !panel) return;
+        panel.hidden = !si;
+        btn.setAttribute('aria-expanded', String(si));
+    }
+
+    if (btn && panel) {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            abrir(panel.hidden);
+        });
+        panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => abrir(false)));
+        // al salir con el tabulador (hacia delante o hacia atrás) se cierra
+        const envoltorio = btn.parentElement;
+        envoltorio.addEventListener('focusout', (e) => {
+            if (e.relatedTarget && !envoltorio.contains(e.relatedTarget)) abrir(false);
+        });
+        document.addEventListener('click', (e) => {
+            if (!panel.hidden && !panel.contains(e.target)) abrir(false);
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !panel.hidden) {
+                abrir(false);
+                btn.focus();
+            }
+        });
+        window.addEventListener('resize', () => {
+            if (!panel.hidden && window.innerWidth < 768) abrir(false);
+        });
+    }
+
+    const mBtn = document.getElementById('mobile-mas-btn');
+    const mPanel = document.getElementById('mobile-mas');
+    if (mBtn && mPanel) {
+        // sin la clase mobile-link: abrir el grupo no debe cerrar el menú
+        mBtn.addEventListener('click', () => {
+            const si = mPanel.hidden;
+            mPanel.hidden = !si;
+            mBtn.setAttribute('aria-expanded', String(si));
+        });
+    }
+})();
