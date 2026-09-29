@@ -65,8 +65,8 @@ El consentimiento vive en `localStorage` bajo `nico66fx_consentimiento_v2`.
 
 Están escritos a mano en `index.html` y envejecen solos:
 
-- Rendimiento y drawdown de Myfxbook (`data-counter`) — actualizados el 2/8/2026:
-  RAW XAU +567,04 % / 23,42 % · Axi Select +16,01 % / 5,32 % · Portfolio PRO +200,89 % / 14,17 %.
+- Rendimiento y drawdown de Myfxbook (`data-counter`) — actualizados el 15/9/2026:
+  RAW XAU +563,61 % / 23,42 % · Axi Select +15,94 % / 5,32 % · Portfolio PRO +210,73 % / 14,17 %.
   Al cambiarlos, actualiza también la fecha visible en la sección `#resultados`.
-- Número de alumnos (181) y de miembros del Telegram gratuito (7.415) — actualizados el 2 de agosto de 2026
-- Precios (49 € / 249 €) y la aritmética asociada: 588 € al año y 339 € de diferencia
+- Número de miembros (200+) y del Telegram gratuito (9.000+), tal como aparecen en la página
+- Precios (49,99 €/mes · 199 € de por vida, con 249 € tachado y la oferta de 3 accesos) y la aritmética asociada: 599,88 € al año y 400,88 € de diferencia

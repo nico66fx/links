@@ -27,7 +27,7 @@ const ambar = {
 }
 
 module.exports = {
-  content: ["./*.html", "./tools/**/*.html", "./assets/**/*.js"],
+  content: ["./*.html", "./fondeo/**/*.html", "./rawnasdaq/**/*.html", "./assets/**/*.js"],
   theme: {
     extend: {
       fontFamily: {
