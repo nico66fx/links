@@ -69,4 +69,4 @@ Están escritos a mano en `index.html` y envejecen solos:
   RAW XAU +563,61 % / 23,42 % · Axi Select +15,94 % / 5,32 % · Portfolio PRO +210,73 % / 14,17 %.
   Al cambiarlos, actualiza también la fecha visible en la sección `#resultados`.
 - Número de miembros (200+) y del Telegram gratuito (9.000+), tal como aparecen en la página
-- Precios (49,99 €/mes · 199 € de por vida, con 249 € tachado y la oferta de 3 accesos) y la aritmética asociada: 599,88 € al año y 400,88 € de diferencia
+- Precios (49,99 €/mes · 249 € de por vida) y la aritmética asociada: 599,88 € al año y 350,88 € de diferencia
