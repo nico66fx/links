@@ -1003,7 +1003,7 @@
              única: el muro (CSS) y el visor (galeria.js) leen de aquí. Para
              añadir otro testimonio se copia un <li>, se cambian las dos rutas
              y el alt. Nada más: ni layout, ni contadores, ni JS. -->
-        <section id="social" class="py-14 md:py-20 relative overflow-hidden bg-gray-900/40">
+        <section id="social" class="py-14 md:py-20 relative overflow-hidden bg-gray-900/40" style="scroll-margin-top: 80px">
             <div class="field" aria-hidden="true">
                 <span class="field-luz-b"></span>
                 <span class="field-lineas"></span>
@@ -2063,5 +2063,21 @@
 
     <script src="./assets/scripts.js" defer></script>
     <script src="./assets/galeria.js" defer></script>
+    <script>
+        /* Llegar por enlace a un ancla profunda (#social desde la home): el salto
+           nativo se queda arriba del todo, porque <html> lleva
+           scroll-behavior:smooth y las 24 capturas son lazy, asi que el alto de
+           la pagina cambia justo despues del salto. Reposicionamos cuando el
+           layout ya esta estable, sin animacion para no recorrer 7.000 px. */
+        (function () {
+            if (!location.hash) return;
+            var destino = document.getElementById(location.hash.slice(1));
+            if (!destino) return;
+            var ir = function () {
+                destino.scrollIntoView({ block: 'start', behavior: 'instant' });
+            };
+            addEventListener('load', function () { ir(); setTimeout(ir, 300); });
+        })();
+    </script>
 </body>
 </html>
