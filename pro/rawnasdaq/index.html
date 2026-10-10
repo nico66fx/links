@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RAW NASDAQ · informe de investigación cuantitativa | nico66fx PRO</title>
-<meta name="description" content="Estudio de una estrategia de momentum en el NASDAQ: 12 años de ticks reales, 2.697 operaciones y pruebas de robustez. Resultados de backtest, no una previsión.">
+<title>RAW NASDAQ · de la investigación a operar en real | nico66fx PRO</title>
+<meta name="description" content="Estrategia de momentum en el NASDAQ estudiada con 12 años de ticks reales, 2.697 operaciones y pruebas de robustez. Ya opera en real: el bot, el manual y la configuración están en nico66fx PRO.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#F2F5FA">
 <link rel="canonical" href="https://nico66fx.com/pro/rawnasdaq/">
@@ -12,12 +12,12 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="nico66fx PRO">
 <meta property="og:locale" content="es_ES">
-<meta property="og:title" content="RAW NASDAQ · informe de investigación">
+<meta property="og:title" content="RAW NASDAQ · de la investigación a operar en real">
 <meta property="og:description" content="12 años de datos, 2.697 operaciones y pruebas de robustez para estudiar si existe un comportamiento estadísticamente consistente.">
 <meta property="og:url" content="https://nico66fx.com/pro/rawnasdaq/">
 <meta property="og:image" content="https://nico66fx.com/pro/assets/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="RAW NASDAQ · informe de investigación">
+<meta name="twitter:title" content="RAW NASDAQ · de la investigación a operar en real">
 <meta name="twitter:description" content="12 años de datos, 2.697 operaciones y pruebas de robustez.">
 <meta name="twitter:image" content="https://nico66fx.com/pro/assets/og-cover.png">
 
@@ -209,6 +209,38 @@
   .rawnas.anim .sube{opacity:1;transform:none;transition:none}
   .rawnas .pista i{transition:none}
 }
+
+/* --- de investigacion a "en real": CTA, Telegram y metodologia plegada --- */
+.rawnas .marca--real span{background:#0b7a52}
+.rawnas .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem;margin-top:1.6rem}
+.rawnas .cta-pro{display:inline-flex;align-items:center;gap:.55rem;min-height:48px;padding:.8rem 1.5rem;border-radius:9999px;
+  background:var(--brand);color:#fff;font-weight:600;font-size:1rem;text-decoration:none;
+  box-shadow:0 1px 2px rgba(8,17,31,.06),0 8px 20px -12px rgba(21,68,224,.55);
+  touch-action:manipulation;-webkit-user-select:none;user-select:none;
+  transition:transform 160ms cubic-bezier(.23,1,.32,1),background-color 180ms ease}
+.rawnas .cta-pro:active{transform:scale(.97)}
+.rawnas .cta-tg{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;font-size:.9rem;font-weight:500;color:var(--ink-2);
+  text-decoration:underline;text-decoration-color:rgba(8,17,31,.2);text-underline-offset:3px;transition:color 180ms ease}
+.rawnas .cta-tg svg{flex:none;color:var(--brand)}
+.rawnas .ctas--noche .cta-tg{color:#C7D3E4;text-decoration-color:rgba(255,255,255,.25)}
+.rawnas .ctas--noche .cta-tg svg{color:#8AA8FF}
+@media (hover:hover) and (pointer:fine){
+  .rawnas .cta-pro:hover{background:var(--brand-600)}
+  .rawnas .cta-tg:hover{color:var(--ink)}
+  .rawnas .ctas--noche .cta-tg:hover{color:#fff}
+}
+.rawnas .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.rawnas .metodo{margin-top:1.4rem;border-radius:18px;background:var(--surface);box-shadow:0 1px 2px rgba(8,17,31,.04),0 10px 28px -18px rgba(8,17,31,.14)}
+.rawnas .metodo>summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:56px;padding:0 1.25rem;
+  cursor:pointer;list-style:none;font-weight:600;color:var(--ink);touch-action:manipulation}
+.rawnas .metodo>summary::-webkit-details-marker{display:none}
+.rawnas .metodo__chev{flex:none;color:var(--ink-3);transition:transform 200ms cubic-bezier(.77,0,.175,1)}
+.rawnas .metodo[open] .metodo__chev{transform:rotate(180deg)}
+.rawnas .metodo__bloque{padding:1.25rem;border-top:1px solid rgba(8,17,31,.08)}
+.rawnas .metodo__h{font-size:1.25rem;margin:0 0 .6rem}
+.rawnas .hero .ctas{margin:1.4rem 0 1.6rem}
+.rawnas .aviso-final{margin-top:1.2rem;text-align:center}
+@media (prefers-reduced-motion:reduce){.rawnas .cta-pro,.rawnas .metodo__chev{transition:none}}
 </style>
 </head>
 <body>
@@ -234,9 +266,13 @@
     <span class="field-grid"></span><span class="field-banda"></span>
   </div>
   <div class="env">
-    <span class="marca"><span></span>Informe de investigación</span>
+    <span class="marca marca--real"><span></span>En real · dentro de nico66fx PRO</span>
     <h1>RAW NASDAQ</h1>
-    <p class="lema">Una estrategia de momentum estudiada con datos históricos y validada bajo distintas condiciones.</p>
+    <p class="lema">Empezó como investigación y ya opera en real. El bot, su manual y la configuración están dentro de la comunidad nico66fx PRO.</p>
+    <div class="ctas">
+      <a href="../?src=rawnasdaq" class="cta-pro">Entrar en nico66fx PRO <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+      <a href="https://t.me/cfcommfree" target="_blank" rel="noopener" class="cta-tg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg><span>Únete al canal de Telegram para no perderte novedades</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </div>
     <p class="entradilla">12 años de datos, 2.697 operaciones y pruebas de robustez para estudiar si existe un comportamiento estadísticamente consistente.</p>
 
     <div class="metricas">
@@ -251,6 +287,7 @@
       La implementación propia, RAW NASDAQ, tiene sus propias cifras verificadas
       <a href="#implementacion" style="color:var(--brand);text-decoration:underline;text-underline-offset:2px">más abajo</a>.
     </p>
+  
   </div>
 </section>
 
@@ -404,6 +441,54 @@
   </div>
 </section>
 
+
+<!-- ======================= RAW NASDAQ ============================ -->
+<section id="implementacion">
+  <div class="env">
+    <div class="noche sube">
+      <span class="marca" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#8AA8FF">
+        <span style="background:#8AA8FF"></span>Implementación propia
+      </span>
+      <h2>RAW NASDAQ</h2>
+      <p style="max-width:62ch">RAW NASDAQ es nuestra implementación propia, desarrollada desde cero a partir de la investigación de la estrategia. Código escrito íntegramente por nosotros, con su propia gestión de riesgo y su propia documentación técnica.</p>
+      <p style="max-width:62ch">Hacerlo así tiene un motivo práctico: <strong>solo con código propio se pueden contar las variantes probadas</strong>, y sin ese recuento las pruebas formales de sobreajuste no se pueden calcular.</p>
+
+      <div class="metricas" style="margin-top:2.2rem">
+        <div class="met"><div class="cifra">3.020</div><span class="et">Operaciones propias</span></div>
+        <div class="met"><div class="cifra">1,19</div><span class="et">Profit factor</span></div>
+        <div class="met"><div class="cifra">51,1 %</div><span class="et">Ganadoras</span></div>
+        <div class="met"><div class="cifra up">99,5 %</div><span class="et">Señales coincidentes</span></div>
+      </div>
+
+      <p class="apunte" style="margin-top:1.4rem;max-width:72ch">
+Backtest propio sobre el mismo periodo y los mismos ticks reales. Comparando las entradas en la
+        apertura de sesión, hubo <strong>2.578 días</strong> en que ambos abrieron posición, y la dirección elegida
+        coincidió en <strong>2.564 de ellos</strong>: un 99,46 %, con 14 discrepancias. La hipótesis se sostiene en una
+        implementación independiente.
+      </p>
+      <p class="apunte" style="margin-top:.7rem;max-width:72ch">
+        Sobre el mismo periodo y los mismos ticks reales, su resultado propio es una caída máxima del <strong>29,3 %</strong>
+        con un profit factor de 1,19. Lleva incorporados el ajuste de riesgo por volatilidad y un límite de tiempo en
+        posición, los dos medidos y validados: el detalle está más abajo.
+      </p>
+      <p class="apunte" style="margin-top:.7rem;max-width:72ch">
+        Comparado con el estudio, extrae <strong>el 95 % de los mismos puntos del mercado</strong>. Lo que no iguala es
+        la caída: <strong>29,3 % frente al 20,3 %</strong>. Consigue prácticamente lo mismo pasando por más sobresaltos,
+        y no hemos encontrado a qué se debe. Se probaron cinco explicaciones y las cinco resultaron falsas. Queda
+        anotado como pendiente en vez de inventar una sexta.
+      </p>
+
+      <div class="paso sube">
+        <p><strong>RAW NASDAQ ya opera en real.</strong> El bot, su manual y la configuración están dentro de nico66fx PRO.</p>
+        <a href="../?src=rawnasdaq" class="cta-pro">Entrar en nico66fx PRO <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 <!-- =========================== ROBUSTEZ =========================== -->
 <section>
   <div class="env">
@@ -524,23 +609,104 @@ Backtest propio sobre el mismo periodo y los mismos ticks reales. Comparando las
       </p>
 
       <div class="paso sube">
-        <p>RAW NASDAQ estará disponible en el <strong>Experimental Hub</strong> de nico66fx PRO, con su documentación técnica.</p>
-        <a href="../#pricing" class="on-brand bg-brand-500 hover:bg-brand-600 text-white inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all shadow-lg">
-          Acceder a PRO
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
-        </a>
+        <p><strong>RAW NASDAQ ya opera en real.</strong> El bot, su manual y la configuración están dentro de nico66fx PRO.</p>
+        <a href="../?src=rawnasdaq" class="cta-pro">Entrar en nico66fx PRO <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======================= VALIDACION ============================ -->
-<section>
+<!-- ===================== METODOLOGIA (compacta) =================== -->
+<section id="metodologia">
   <div class="env">
-    <h2 class="sube">Cómo se ha validado</h2>
-    <p class="entradilla sube" style="margin-top:.6rem">Un resultado bueno no demuestra nada por sí solo. Estas son las pruebas que se le han hecho, y lo que han dicho.</p>
+    <h2 class="sube">Metodología, datos y limitaciones</h2>
+    <p class="sube">En resumen: 12 años de ticks reales (2015–2026), pruebas de robustez en condiciones que no son perfectas, validación sin tocar las reglas para mejorar el resultado, y lo que todavía falta por validar, dicho. El detalle completo, sin recortar:</p>
+    <details class="metodo">
+      <summary>Ver metodología completa <svg class="metodo__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <div class="metodo__bloque">
+    <h3 class="metodo__h" >¿Funciona únicamente en condiciones perfectas?</h3>
+    <p >Un backtest sale bien con costes de laboratorio. La pregunta útil es qué queda cuando se ponen condiciones peores que las reales.</p>
 
-    <div class="lienzo sube" style="margin-top:2rem">
+    <div class="rejilla c2" style="margin-top:2rem">
+      <div class="lienzo">
+        <div class="cab"><h3>Encareciendo la ejecución</h3><span class="apunte">Profit factor resultante</span></div>
+
+        <div class="barra">
+          <div class="fila"><span class="nom">Condiciones del estudio</span><span class="val">1,211 · positivo</span></div>
+          <div class="pista"><i style="--f:1"></i></div>
+        </div>
+        <div class="barra">
+          <div class="fila"><span class="nom">Spread ×1,5</span><span class="val">1,183 · positivo</span></div>
+          <div class="pista"><i style="--f:.87"></i></div>
+        </div>
+        <div class="barra">
+          <div class="fila"><span class="nom">Spread ×2</span><span class="val">1,157 · positivo</span></div>
+          <div class="pista"><i style="--f:.74"></i></div>
+        </div>
+        <div class="barra">
+          <div class="fila"><span class="nom">Spread ×2 + 2 puntos de deslizamiento</span><span class="val">1,105 · positivo</span></div>
+          <div class="pista"><i style="--f:.50"></i></div>
+        </div>
+        <div class="barra">
+          <div class="fila"><span class="nom">Spread ×2 + 5 puntos</span><span class="val">1,032 · al límite</span></div>
+          <div class="pista"><i class="flojo" style="--f:.16"></i></div>
+        </div>
+        <p class="apunte" style="margin:1rem 0 0">Aguanta el doble de spread y dos puntos de deslizamiento. En el escenario más adverso se queda <strong>a cero</strong>: ni gana ni pierde. Eso también se dice.</p>
+      </div>
+
+      <div class="lienzo">
+        <div class="cab"><h3>Reordenando la historia</h3><span class="apunte">10.000 simulaciones</span></div>
+        <p>Se reordenan las operaciones al azar miles de veces, manteniendo bloques para no romper las rachas. Sirve para ver cuánto del resultado depende del orden en que llegaron las cosas.</p>
+        <div class="marco-tabla">
+        <table class="tabla">
+          <thead><tr><th>Escenario</th><th>Resultado</th><th>Peor bache</th></tr></thead>
+          <tbody>
+            <tr><td>Malo (percentil 5)</td><td>219 R</td><td>—</td></tr>
+            <tr><td>Central (mediana)</td><td>428 R</td><td>66 R</td></tr>
+            <tr><td>Bueno (percentil 95)</td><td>646 R</td><td>112 R</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="apunte" style="margin:1rem 0 0">En <strong>el 99,99 % de las simulaciones el resultado es positivo</strong>. Pero fíjate en la última columna: el bache puede llegar a ser <strong>más del doble</strong> del que marcó el histórico.</p>
+      </div>
+    </div>
+
+    <div class="lienzo" style="margin-top:1rem">
+      <div class="cab"><h3>En trozos de tiempo distintos</h3><span class="apunte">Sin reajustar nada entre periodos</span></div>
+      <div class="rejilla c3" style="margin-top:.25rem">
+        <div>
+          <div class="fila" style="display:flex;justify-content:space-between;align-items:baseline">
+            <span class="nom" style="font-weight:500">2015 – 2018</span><span class="pill ok">positivo</span>
+          </div>
+          <p class="apunte" style="margin:.4rem 0 0">Profit factor 1,141 · 52,4 % de acierto</p>
+        </div>
+        <div>
+          <div class="fila" style="display:flex;justify-content:space-between;align-items:baseline">
+            <span class="nom" style="font-weight:500">2019 – 2022</span><span class="pill ok">positivo</span>
+          </div>
+          <p class="apunte" style="margin:.4rem 0 0">Profit factor 1,238 · 55,9 % de acierto</p>
+        </div>
+        <div>
+          <div class="fila" style="display:flex;justify-content:space-between;align-items:baseline">
+            <span class="nom" style="font-weight:500">2023 – 2026</span><span class="pill ok">positivo</span>
+          </div>
+          <p class="apunte" style="margin:.4rem 0 0">Profit factor 1,263 · 56,9 % de acierto</p>
+        </div>
+      </div>
+      <p class="apunte" style="margin:1.2rem 0 0">Los tres tramos salen positivos y el comportamiento <strong>no se degrada con el tiempo</strong>. Y hay una comprobación más: repartiendo la serie en 24 ventanas consecutivas, 19 son rentables.</p>
+    </div>
+
+    <div class="lienzo" style="margin-top:1rem">
+      <div class="cab"><h3>¿Podría ser simplemente suerte?</h3><span class="apunte">Contraste contra el azar</span></div>
+      <p>Se repitió el historial 10.000 veces con las mismas fechas y los mismos tamaños, pero <strong>decidiendo la dirección con una moneda</strong>. Si las decisiones del sistema no aportaran nada, su resultado caería dentro de esa nube.</p>
+      <p style="margin-bottom:0">El resultado real queda en el <strong>percentil 99,90</strong>: solo <strong>1 de cada 1.000</strong> historiales aleatorios lo iguala.</p>
+    </div>
+  </div>
+      <div class="metodo__bloque">
+    <h3 class="metodo__h" >Cómo se ha validado</h3>
+    <p class="entradilla" style="margin-top:.6rem">Un resultado bueno no demuestra nada por sí solo. Estas son las pruebas que se le han hecho, y lo que han dicho.</p>
+
+    <div class="lienzo" style="margin-top:2rem">
       <div class="cab">
         <h3>El resultado según cuánto se mantiene la posición</h3>
         <span>2015-2026 · ticks reales · diez configuraciones</span>
@@ -586,21 +752,21 @@ Backtest propio sobre el mismo periodo y los mismos ticks reales. Comparando las
     </div>
 
     <div class="rejilla c3" style="margin-top:2rem">
-      <div class="tarjeta sube">
+      <div class="tarjeta">
         <h3>Walk-forward</h3>
         <p>Ocho ventanas. En cada una el parámetro se elige <strong>solo con los datos antiguos</strong> y se aplica a ciegas al año siguiente. Eficiencia de 0,92 a 1,06 y degradación prácticamente nula.</p>
       </div>
-      <div class="tarjeta sube">
+      <div class="tarjeta">
         <h3>Deflated Sharpe: 0,999</h3>
         <p>Descuenta el resultado por el número de configuraciones probadas. Por encima de 0,9 se considera que el nivel de rendimiento no es fruto de haber buscado mucho.</p>
       </div>
-      <div class="tarjeta sube">
+      <div class="tarjeta">
         <h3>PBO: 0,54 &ndash; 0,71</h3>
         <p>Esta <strong>no</strong> la pasa. Significa que dentro de la banda que funciona no se puede saber qué valor exacto es el mejor: elegirlo es cara o cruz. Por eso se usa el que tiene una justificación de mercado y no el que ganó la prueba.</p>
       </div>
     </div>
 
-    <div class="marco-tabla sube" style="margin-top:2rem">
+    <div class="marco-tabla" style="margin-top:2rem">
       <table class="tabla">
         <thead><tr><th>Escenario</th><th>Rentabilidad anual</th><th>Caída máxima</th><th>Ratio</th></tr></thead>
         <tbody>
@@ -610,44 +776,57 @@ Backtest propio sobre el mismo periodo y los mismos ticks reales. Comparando las
         </tbody>
       </table>
     </div>
-    <p class="apunte sube" style="margin-top:1rem;max-width:78ch">
+    <p class="apunte" style="margin-top:1rem;max-width:78ch">
       La tercera fila es la única no contaminada: se construye encadenando solo los tramos que el sistema nunca vio al
       decidir. <strong>De la mejora en rentabilidad sobrevive aproximadamente la mitad</strong>. Lo que sí aguanta entero
       es la reducción de la caída, del 37,1 % al 28,7 %, que es donde está la ganancia real.
     </p>
   </div>
-</section>
-
-<!-- ======================== METODOLOGIA ========================== -->
-<section>
-  <div class="env">
-    <h2 class="sube">Cómo se ha medido</h2>
+      <div class="metodo__bloque">
+    <h3 class="metodo__h" >Cómo se ha medido</h3>
     <div class="rejilla c3" style="margin-top:2rem">
-      <div class="tarjeta sube">
+      <div class="tarjeta">
         <h3>Datos propios, tick a tick</h3>
         <p>656 millones de ticks reales reconstruidos y verificados uno a uno. MT5 los reconoce como 100 % ticks reales, el modelado más exigente que existe.</p>
       </div>
-      <div class="tarjeta sube">
+      <div class="tarjeta">
         <h3>Cada cifra reconcilia</h3>
         <p>Ningún número de esta página se publica sin cuadrar contra una fuente independiente. Las cifras que no reconciliaron se descartaron.</p>
       </div>
-      <div class="tarjeta sube">
+      <div class="tarjeta">
         <h3>Costes incluidos</h3>
         <p>El coste de financiación por mantener posiciones abiertas está descontado del resultado, no añadido después como estimación.</p>
       </div>
-      <div class="tarjeta sube">
+      <div class="tarjeta">
         <h3>Periodo elegido por el dato</h3>
         <p>El estudio arranca en 2015 porque antes la densidad de ticks del índice es demasiado baja: un backtest anterior mediría los huecos del proveedor, no la estrategia.</p>
       </div>
-      <div class="tarjeta sube">
+      <div class="tarjeta">
         <h3>Sin optimizar durante la validación</h3>
         <p>Las reglas no se tocaron para mejorar ningún resultado. Las pruebas sirven para validar, no para maquillar.</p>
       </div>
-      <div class="tarjeta sube">
+      <div class="tarjeta">
         <h3>Lo que falta, dicho</h3>
         <p>Solo se ha validado así el límite de tiempo en posición. El resto de parámetros no ha pasado por estas pruebas. Cuando lo hagan, se publicará con el mismo detalle.</p>
       </div>
     </div>
+  </div>
+    </details>
+  </div>
+</section>
+
+<!-- ========================= ENTRAR =============================== -->
+<section id="entrar">
+  <div class="env">
+    <div class="noche sube">
+      <h2>RAW NASDAQ está dentro de nico66fx PRO</h2>
+      <p style="max-width:60ch">El bot, el manual y la configuración, junto al resto de bots, los cursos y la comunidad.</p>
+      <div class="ctas ctas--noche">
+      <a href="../?src=rawnasdaq" class="cta-pro">Entrar en nico66fx PRO <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+      <a href="https://t.me/cfcommfree" target="_blank" rel="noopener" class="cta-tg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg><span>Únete al canal de Telegram para no perderte novedades</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </div>
+    </div>
+    <p class="apunte aviso-final">Resultados pasados no garantizan resultados futuros. Este contenido no es asesoramiento financiero. Operar con apalancamiento conlleva un riesgo elevado de pérdida de capital.</p>
   </div>
 </section>
 
