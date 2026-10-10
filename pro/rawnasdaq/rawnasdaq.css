@@ -1,0 +1,92 @@
+/* RAW NASDAQ · pagina de producto. Se apoya en ../assets/v2.css (tokens,
+   botones, cristal, barra superior y pie) y solo anade lo propio: el hero con
+   la curva de balance, los datos, los hechos y el panel del robot. */
+
+.rn-hero{
+  position:relative;isolation:isolate;
+  padding:calc(var(--topbar-h) + env(safe-area-inset-top) + 28px) 0 clamp(48px,8vw,96px);
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%,rgba(21,68,224,.10),transparent 70%),
+    var(--canvas);
+}
+.rn-estado{
+  display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .8rem;border-radius:9999px;
+  background:var(--surface);box-shadow:inset 0 0 0 1px var(--hair-strong);
+  font-family:var(--font-mono);font-size:.6875rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);
+}
+.rn-punto{width:8px;height:8px;border-radius:9999px;background:var(--ok);box-shadow:0 0 0 3px rgba(11,122,82,.16)}
+.rn-h1{margin-top:14px;font-family:var(--font-display);font-size:clamp(2.5rem,1.6rem + 4.6vw,4.5rem);line-height:1;letter-spacing:-.035em;font-weight:700;color:var(--ink)}
+.rn-lema{margin-top:12px;max-width:44ch;font-size:clamp(1.0625rem,1rem + .4vw,1.25rem);line-height:1.5;color:var(--ink-2)}
+
+/* --- la curva, lo primero que se ve ---------------------------------------- */
+.curva{margin-top:22px;padding:18px 16px 14px}
+.curva__cab{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:8px}
+.curva__cifra{font-family:var(--font-display);font-size:clamp(2rem,1.5rem + 2.6vw,3.25rem);line-height:1;letter-spacing:-.03em;font-weight:700;color:var(--ok);white-space:nowrap}
+.curva__sub{text-align:right;font-size:.8125rem;line-height:1.35;color:var(--ink-2)}
+.curva__svg{display:block;width:100%;height:auto;aspect-ratio:1000/360;overflow:visible}
+.c-rej{stroke:rgba(8,17,31,.08);stroke-width:1;vector-effect:non-scaling-stroke}
+.c-ey,.c-ex{font-family:var(--font-mono);font-size:13px;fill:var(--ink-3)}
+.c-lin{fill:none;stroke:var(--brand);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.c-fin{fill:var(--brand);stroke:#fff;stroke-width:3;vector-effect:non-scaling-stroke}
+.curva__pie{margin-top:8px;font-size:.75rem;line-height:1.5;color:var(--ink-3)}
+/* la linea se dibuja una vez al cargar; sin movimiento reducido */
+@media (prefers-reduced-motion:no-preference){
+  .c-lin{stroke-dasharray:1;stroke-dashoffset:1;animation:rn-trazo 1.4s cubic-bezier(.77,0,.175,1) .15s forwards}
+  .c-fin{opacity:0;animation:rn-aparece 300ms cubic-bezier(.23,1,.32,1) 1.45s forwards}
+}
+@keyframes rn-trazo{to{stroke-dashoffset:0}}
+@keyframes rn-aparece{to{opacity:1}}
+
+.rn-datos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.rn-datos li{display:flex;flex-direction:column;gap:2px;padding:12px 10px;border-radius:var(--radio);background:var(--surface);box-shadow:var(--sh-1);text-align:center}
+.rn-datos strong{font-family:var(--font-display);font-size:1.3rem;line-height:1.1;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.rn-datos span{font-size:.75rem;color:var(--ink-2)}
+
+.rn-ctas{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:22px}
+.rn-ctas .btn{width:min(100%,360px)}
+.rn-tg{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;font-size:.9375rem;font-weight:500;color:var(--ink-2);
+  text-decoration:underline;text-decoration-color:rgba(8,17,31,.2);text-underline-offset:3px;transition:color 180ms ease}
+.rn-tg .ico{width:18px;height:18px;flex:none;color:var(--brand)}
+.rn-nota{margin-top:8px;font-size:.875rem;color:var(--ink-2)}
+
+/* --- hechos -------------------------------------------------------------------- */
+.rn-hechos{padding:6px 20px}
+.rn-hechos li{display:flex;gap:12px;padding:14px 0;box-shadow:inset 0 1px 0 var(--hair);font-size:1rem;line-height:1.55;color:var(--ink-2)}
+.rn-hechos li:first-child{box-shadow:none}
+.rn-hechos li strong{color:var(--ink)}
+.rn-hechos .ico,.rn-lista .ico{flex:none;width:18px;height:18px;margin-top:3px;color:var(--ok);stroke-width:2.4}
+.rn-hechos--aviso .ico{color:var(--ink-3)}
+
+.rn-dos{display:grid;gap:28px;align-items:center}
+.rn-h3{margin-top:24px;font-size:1.0625rem;color:var(--ink)}
+.rn-lista{margin-top:10px;display:grid;gap:10px}
+.rn-lista li{display:flex;gap:10px;font-size:1rem;line-height:1.5;color:var(--ink-2)}
+.rn-panel{margin:0;padding:16px;justify-self:center;max-width:420px;width:100%}
+.rn-panel img{display:block;width:100%;height:auto;border-radius:10px}
+.rn-panel figcaption{margin-top:10px;text-align:center;font-size:.8125rem;color:var(--ink-3)}
+
+/* --- cierre ---------------------------------------------------------------------- */
+.rn-final{border-radius:22px;padding:clamp(28px,5vw,48px);background:var(--noche,linear-gradient(155deg,#101e38,#0a1424 52%,#0d1a2e));color:#f1f5f9}
+.rn-final .h2{color:#fff}
+.rn-final p{margin-top:12px;max-width:56ch;color:#c7d3e4;line-height:1.55}
+.rn-ctas--noche .rn-tg{color:#c7d3e4;text-decoration-color:rgba(255,255,255,.25)}
+.rn-ctas--noche .rn-tg .ico{color:#8aa8ff}
+.rn-legal{margin-top:18px;text-align:center;font-size:.8125rem;line-height:1.55;color:var(--ink-3)}
+
+@media (hover:hover) and (pointer:fine){
+  .rn-tg:hover{color:var(--ink)}
+  .rn-ctas--noche .rn-tg:hover{color:#fff}
+}
+@media (min-width:768px){
+  .curva{padding:24px 26px 18px}
+  .rn-datos{gap:14px}
+  .rn-datos strong{font-size:1.6rem}
+  .rn-datos span{font-size:.8125rem}
+  .rn-ctas{flex-direction:row;align-items:center;gap:22px}
+  .rn-ctas .btn{width:auto}
+  .rn-hechos{padding:8px 32px}
+  .rn-dos{grid-template-columns:1.1fr .9fr;gap:48px}
+}
+@media (prefers-reduced-motion:reduce){.rn-tg{transition:none}}
+/* en movil el SVG se reduce a ~1/3: las etiquetas de los ejes se compensan */
+@media (max-width:767px){.c-ey,.c-ex{font-size:30px}}
