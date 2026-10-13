@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/output.css">
+<link rel="stylesheet" href="../assets/v2.css">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <style>
 /* ==================================================================
@@ -64,7 +64,7 @@
 /* ---------- tipografía ---------- */
 /* La familia de h1-h3 la pone output.css; el peso NO, porque su preflight
    deja h1..h6 en font-weight:inherit. Sin esto el titular sale en 400. */
-.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 18px 70px}
+.fx-wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 18px 70px}
 .fondeo h1{font-size:clamp(28px,4.6vw,44px);font-weight:700;line-height:1.05;margin:10px 0}
 .fondeo h2{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:0 0 4px}
 .fondeo p{color:var(--ink-2);margin:0 0 10px;max-width:64ch}
@@ -367,22 +367,71 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:9999px;
   border-radius:9999px;padding:5px 10px;white-space:nowrap}
 .reciente .mes .t{color:#047857}
 .intro{margin-top:26px}
+
+/* ===== estetica de la nueva /pro (v2.css) ================================== */
+.fondeo{padding-top:calc(var(--topbar-h) + env(safe-area-inset-top))}
+/* v2.css tambien define .chip y .lead: aqui mandan los de la calculadora */
+.fondeo .chip{display:block;gap:0;white-space:normal;text-transform:none;letter-spacing:normal;line-height:1.2;box-shadow:none}
+.fondeo .lead{margin-top:0}
+.fondeo header{padding:30px 0 14px}
+.fondeo h1{font-family:var(--font-display);font-size:clamp(2.1rem,1.4rem + 3.4vw,3.75rem);line-height:1.02;letter-spacing:-.035em;color:var(--ink)}
+.tag{background:var(--surface);color:var(--ink-2);box-shadow:inset 0 0 0 1px var(--hair-strong);padding:.3rem .8rem}
+.tag .dot{background:var(--ok);box-shadow:0 0 0 3px rgba(11,122,82,.16)}
+.fx-ctas{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:20px}
+.fx-ctas .btn{width:min(100%,360px)}
+.fx-tg{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;font-size:.9375rem;font-weight:500;color:var(--ink-2);text-decoration:underline;text-decoration-color:rgba(8,17,31,.2);text-underline-offset:3px;transition:color 180ms ease}
+.fx-tg .ico{width:18px;height:18px;flex:none;color:var(--brand)}
+.fx-nota{margin:6px 0 26px;font-size:.875rem;color:var(--ink-2)}
+@media (hover:hover) and (pointer:fine){.fx-tg:hover{color:var(--ink)}}
+@media (min-width:768px){.fx-ctas{flex-direction:row;align-items:center;gap:22px}.fx-ctas .btn{width:auto}}
+@media (prefers-reduced-motion:reduce){.fx-tg{transition:none}}
+/* en movil el aviso obligatorio no puede comerse la primera pantalla:
+   mismo texto, letra mas pequena */
+@media (max-width:767px){
+  .aviso-riesgo-top{font-size:.8125rem;line-height:1.5;padding:10px 16px;font-weight:400}
+  .aviso-riesgo-top b{font-weight:600}
+  .fondeo header{padding-top:20px}
+  .tag{font-size:.625rem}
+}
 </style>
 </head>
 <body>
-    <a href="#contenido" class="skip-link">Saltar al contenido</a>
-    <nav class="fixed w-full z-50 top-0 left-0 glass-bar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <a href="../" class="flex items-center gap-3">
-                    <span class="font-bold text-lg tracking-tight">nico66fx <span class="text-brand-400">PRO</span></span>
-                </a>
-                <a href="../" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Volver al inicio</a>
-            </div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-abajo" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+        <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+        <symbol id="i-descarga" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+        <symbol id="i-externo" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+        <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></symbol>
+        <symbol id="i-izq" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+        <symbol id="i-der" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+        <symbol id="i-mensaje" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></symbol>
+        <symbol id="i-enviar" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+        <symbol id="i-candado" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+        <symbol id="i-calendario" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></symbol>
+        <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+        <symbol id="i-diana" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+        <symbol id="i-capas" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+        <symbol id="i-rejilla" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></symbol>
+        <symbol id="i-fabrica" viewBox="0 0 24 24"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></symbol>
+        <symbol id="i-usuarios" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+        <symbol id="i-chispa" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></symbol>
+        <symbol id="i-llave" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+        <symbol id="i-pulso" viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></symbol>
+        <symbol id="i-cookie" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></symbol>
+        <symbol id="i-codigo" viewBox="0 0 24 24"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></symbol>
+    </svg>
+    <a href="#contenido" class="saltar">Saltar al contenido</a>
+    <header class="topbar">
+        <div class="wrap topbar__in">
+            <a href="../" class="marca"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>nico66fx <b>PRO</b></span></a>
+            <a href="../?src=fondeo" class="btn btn-secondary btn--sm">Entrar en PRO</a>
         </div>
-    </nav>
+    </header>
 
-<main id="contenido" class="fondeo pt-16">
+<main id="contenido" tabindex="-1" class="fondeo">
 
 <div class="aviso-riesgo-top" role="note"><div>
   <b>Las cifras de esta página son estimaciones de una simulación, no resultados de cuentas reales
@@ -392,7 +441,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:9999px;
   asesoramiento financiero. <a href="../divulgacion-de-riesgo.html">Divulgación de riesgo completa</a>.
 </div></div>
 
-<div class="wrap">
+<div class="fx-wrap">
 
 <header>
   <div class="tag"><span class="dot"></span>DUAL XAU 2.3 · simulación sobre histórico 2022–2026</div>
@@ -426,6 +475,13 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:9999px;
   <b>−915 €</b>, entre abril y septiembre de 2023. Es un robot de ventaja pequeña: lo que decide el
   resultado es el control del riesgo y el programa que elijas, no acertar el mercado.</p>
 </section>
+
+<div class="fx-ctas">
+  <a href="../?src=fondeo" class="btn btn-primary btn--lg">Entrar en nico66fx PRO <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></a>
+  <a href="https://t.me/cfcommfree" class="fx-tg" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg><span>Únete al canal de Telegram para no perderte novedades</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+</div>
+<p class="fx-nota">DUAL XAU 2.3, la instalación y los ajustes de cada programa están dentro de la comunidad.</p>
+
 
 <section class="vs reciente" aria-labelledby="meses-h">
   <div class="cab-reciente"><h2 id="meses-h">Agosto y septiembre de 2026, mes a mes</h2><span class="badge-reciente">Últimos dos meses</span></div>
@@ -538,7 +594,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:9999px;
   </ul>
 </div>
 
-<a class="cta" href="../#pricing">
+<a class="cta" href="../?src=fondeo">
   <div class="txt">
     <div class="k">¿Aún no lo tienes?</div>
     <h2>DUAL XAU 2.3 está dentro de la comunidad</h2>
@@ -546,7 +602,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:9999px;
     programa. Si ya estás dentro, esto ya lo tienes: sáltatelo y ve a montar tu
     cuenta.</p>
   </div>
-  <span class="btn">Ver planes y precios <span class="ar" aria-hidden="true">→</span></span>
+  <span class="btn">Entrar en nico66fx PRO <span class="ar" aria-hidden="true">→</span></span>
 </a>
 
 <details>
@@ -587,33 +643,31 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:9999px;
 </div>
 </main>
 
-    <footer class="bg-gray-950 border-t border-gray-800 pt-16 pb-8 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
-                <div class="flex items-center gap-2 mb-4 md:mb-0">
-                    <span class="font-bold text-lg">nico66fx <span class="text-brand-400">PRO</span></span>
+    <footer class="pie">
+        <div class="wrap">
+            <div class="pie__top">
+                <a href="../" class="marca"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>nico66fx <b>PRO</b></span></a>
+                <div class="pie__redes">
+                    <a href="https://wa.link/md9s5v" target="_blank" rel="noopener" aria-label="WhatsApp (se abre en una pestaña nueva)"><svg class="ico" aria-hidden="true"><use href="#i-mensaje"/></svg></a>
+                    <a href="https://t.me/cfcommfree" target="_blank" rel="noopener" aria-label="Telegram (se abre en una pestaña nueva)"><svg class="ico" aria-hidden="true"><use href="#i-enviar"/></svg></a>
                 </div>
             </div>
-
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                <p>&copy; 2026 nico66fx PRO. Todos los derechos reservados.</p>
-                <div class="flex flex-wrap justify-center gap-4 mt-4 md:mt-0">
-                    <a href="../terminos.html" class="hover:text-gray-300 transition-colors">Términos y Condiciones</a>
-                    <a href="../privacidad.html" class="hover:text-gray-300 transition-colors">Política de Privacidad</a>
-                    <a href="../cookies.html" class="hover:text-gray-300 transition-colors">Política de Cookies</a>
-                    <a href="../politica-de-reembolso.html" class="hover:text-gray-300 transition-colors">Política de Reembolso</a>
-                    <a href="../divulgacion-de-riesgo.html" class="hover:text-gray-300 transition-colors">Divulgación de Riesgo</a>
-                    <a href="../disclaimer.html" class="hover:text-gray-300 transition-colors">Descargo de Responsabilidad</a>
-                    <a href="../aviso-legal.html" class="hover:text-gray-300 transition-colors">Aviso Legal</a>
-                </div>
-            </div>
-
-            <!-- text-gray-300 y no el gray-600 de terminos.html: sobre este pie
-                 blanco el 600 se queda en 2,56:1 y estos descargos se tienen que leer -->
-            <div class="mt-8 text-xs text-gray-300 text-center max-w-4xl mx-auto space-y-2">
+            <nav class="pie__legal" aria-label="Legal">
+                <a href="../terminos.html">Términos y Condiciones</a>
+                <a href="../privacidad.html">Privacidad</a>
+                <a href="../cookies.html">Cookies</a>
+                <a href="../politica-de-reembolso.html">Política de Reembolso</a>
+                <a href="../divulgacion-de-riesgo.html">Divulgación de Riesgo</a>
+                <a href="../disclaimer.html">Disclaimer</a>
+                <a href="../aviso-legal.html">Aviso Legal</a>
+            </nav>
+            <div class="pie__avisos">
                 <p><strong>Cifras estimadas mediante simulación</strong> sobre datos propios reconstruidos tick a tick, periodo 2022–2026. No constituyen una previsión de resultados ni garantía de ningún tipo. Las condiciones y cuotas de las firmas son orientativas y cambian: consulta siempre su contrato.</p>
-                <p>Contenido educativo y tecnológico. No constituye asesoramiento financiero. Operar con apalancamiento conlleva un riesgo elevado de pérdida de capital.</p>
+                <p>Contenido educativo y tecnológico. No constituye asesoramiento financiero. El trading implica riesgo elevado de pérdida de capital.</p>
                 <p>Exclusivo para mayores de 18 años. Los resultados pasados no garantizan resultados futuros.</p>
+            </div>
+            <div class="pie__base">
+                <p>&copy; 2026 nico66fx PRO. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
