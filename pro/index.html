@@ -183,7 +183,8 @@
 
         <!-- 1 · HERO: cabe en una pantalla de móvil, un solo botón -->
         <section id="inicio" class="hero" aria-labelledby="titulo">
-            <div class="wrap hero__centro">
+            <div class="wrap hero__centro hero__grid">
+              <div class="hero__texto">
                 <!-- Foto: halo azul suave detrás, aro claro e insignia verde. Quieta:
                      nada de flotar ni parallax (nada decorativo en bucle). -->
                 <div class="avatar">
@@ -210,6 +211,17 @@
                     <p class="hero__precio">Desde <strong class="nw">49,99&nbsp;€/mes</strong> o <strong class="nw">249&nbsp;€</strong> de por vida</p>
                     <a class="btn-wa" href="https://wa.link/md9s5v" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-mensaje"/></svg><span>Resolver dudas antes de entrar</span><span class="sr"> (WhatsApp, se abre en una pestaña nueva)</span></a>
                 </div>
+              </div>
+
+              <!-- Vídeo «por dentro»: en ordenador va a la derecha del eslogan; en móvil, en la sección siguiente -->
+              <div class="hero__video">
+                <div class="video-card ">
+                    <video playsinline preload="none" poster="assets/video/nico66fx_PRO_por_dentro.jpg" aria-label="Vídeo: la comunidad nico66fx PRO por dentro">
+                        <source src="assets/video/nico66fx_PRO_por_dentro.mp4" type="video/mp4">
+                    </video>
+                    <button type="button" class="video-play" aria-label="Reproducir el vídeo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                </div>
+              </div>
             </div>
 
             <div class="wrap plataformas">
@@ -262,6 +274,19 @@
                         Claude
                     </li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- 1b · VÍDEO (solo móvil: justo después del hero) -->
+        <section id="video" class="video-movil" aria-label="La comunidad por dentro, en vídeo">
+            <div class="wrap">
+                <p class="video-movil__t">La comunidad por dentro · 1:34</p>
+                <div class="video-card ">
+                    <video playsinline preload="none" poster="assets/video/nico66fx_PRO_por_dentro.jpg" aria-label="Vídeo: la comunidad nico66fx PRO por dentro">
+                        <source src="assets/video/nico66fx_PRO_por_dentro.mp4" type="video/mp4">
+                    </video>
+                    <button type="button" class="video-play" aria-label="Reproducir el vídeo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                </div>
             </div>
         </section>
 
@@ -826,5 +851,13 @@
             </div>
         </div>
     </div>
+<script>
+document.querySelectorAll('.video-card').forEach(function(c){
+  var v=c.querySelector('video'),b=c.querySelector('.video-play');
+  b.addEventListener('click',function(){v.controls=true;v.play();});
+  v.addEventListener('play',function(){c.classList.add('is-playing');document.querySelectorAll('.video-card video').forEach(function(o){if(o!==v)o.pause();});});
+  v.addEventListener('pause',function(){if(v.ended)c.classList.remove('is-playing');});
+});
+</script>
 </body>
 </html>
