@@ -426,6 +426,13 @@ html.menu-abierto .topbar{z-index:65}
   .hero__grid h1{font-size:clamp(2rem,1rem + 1.9vw,3rem)}
   .hero__video{display:block}
   .video-movil{display:none}
+  /* En ordenador el texto va alineado a la izquierda, junto al vídeo */
+  .hero__grid .hero__texto{align-items:flex-start;text-align:left}
+  .hero__grid .hero__sub{text-wrap:pretty}
+  .hero__grid .hero__datos li{align-items:flex-start;padding-inline:18px 6px}
+  .hero__grid .hero__datos li:first-child{padding-left:0}
+  .hero__grid .hero__cta{align-items:flex-start}
+  .hero__grid .avatar{width:120px;height:120px;margin-bottom:22px}
 }
 
 /* --- Bloque 2 · Lo que tienes al entrar ---------------------------------- */
