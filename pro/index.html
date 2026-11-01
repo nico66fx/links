@@ -282,14 +282,6 @@
                     <p class="lead">Lo mismo en cualquier plan. Solo cambia cómo pagas.</p>
                 </header>
 
-                <figure class="eco-captura card-glass">
-                    <picture>
-                        <source type="image/webp" srcset="assets/mt5-raw-nasdaq-sm.webp 800w, assets/mt5-raw-nasdaq.webp 1280w" sizes="(min-width: 1100px) 1052px, 100vw">
-                        <img src="assets/mt5-raw-nasdaq-sm.jpg" srcset="assets/mt5-raw-nasdaq-sm.jpg 800w, assets/mt5-raw-nasdaq.jpg 1280w" sizes="(min-width: 1100px) 1052px, 100vw" width="1280" height="688" loading="lazy" decoding="async" alt="MetaTrader 5 con RAW NASDAQ cargado en el gráfico del Nasdaq: su panel con la hora de apertura, el riesgo por operación y la caducidad, y abajo la pestaña Expertos con los mensajes del bot">
-                    </picture>
-                    <figcaption><strong>RAW NASDAQ en MetaTrader 5, en una cuenta demo.</strong> Así llega cada bot: compilado, con su panel y su manual.</figcaption>
-                </figure>
-
                 <ul class="tarjetas eco" data-revelar="tarjetas">
                     <li class="tarjeta card-glass" style="--i:0">
                         <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-bot"/></svg></span>
@@ -327,6 +319,71 @@
                 </ul>
             </div>
         </section>
+        <!-- B2 · BACKTEST: banda oscura con las curvas ya publicadas en /rawnasdaq y /helios -->
+        <section id="backtest" class="seccion lab" aria-labelledby="lab-titulo">
+            <div class="wrap">
+                <header class="cabecera cabecera--centro">
+                    <p class="eyebrow lab__eyebrow">Primero los datos</p>
+                    <h2 id="lab-titulo" class="h2">Cada bot llega con su backtest</h2>
+                    <p class="lead">Antes de activar nada, ves cómo se ha comportado con años de datos: la curva, las caídas y los meses malos. Y en el aula aprendes a repetir la prueba tú.</p>
+                </header>
+
+                <div class="lab__grid">
+                    <figure class="lab-curva">
+                        <div class="lab-curva__cab">
+                            <div>
+                                <p class="lab-curva__bot">RAW NASDAQ</p>
+                                <p class="lab-curva__sub">NASDAQ 100 · M5 · backtest 2015–2026</p>
+                            </div>
+                            <p class="lab-curva__cifra">+228,6&nbsp;%</p>
+                        </div>
+                        <svg class="curva__svg" viewBox="0 0 1000 360" role="img" aria-labelledby="lab-rn-tit lab-rn-desc" preserveAspectRatio="none">
+          <title id="lab-rn-tit">Curva de balance de RAW NASDAQ, 2015 a 2026</title>
+          <desc id="lab-rn-desc">Balance a cierre de mes de una cuenta de 10.000 USD en el backtest de la versión 1.21: de 10.000 a 32.858,76 USD en 141 meses, con 51 meses en negativo.</desc>
+          <defs><linearGradient id="lab-rn-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b82ff" stop-opacity=".22"/><stop offset="1" stop-color="#5b82ff" stop-opacity="0"/></linearGradient></defs>
+          <line x1="58" x2="982" y1="302.3" y2="302.3" class="c-rej"/><text x="48" y="306.3" class="c-ey" text-anchor="end">10k</text><line x1="58" x2="982" y1="183.8" y2="183.8" class="c-rej"/><text x="48" y="187.8" class="c-ey" text-anchor="end">20k</text><line x1="58" x2="982" y1="65.4" y2="65.4" class="c-rej"/><text x="48" y="69.4" class="c-ey" text-anchor="end">30k</text><text x="58.0" y="350" class="c-ex" text-anchor="middle">2015</text><text x="293.9" y="350" class="c-ex" text-anchor="middle">2018</text><text x="529.8" y="350" class="c-ex" text-anchor="middle">2021</text><text x="765.7" y="350" class="c-ex" text-anchor="middle">2024</text><text x="982.0" y="350" class="c-ex" text-anchor="end">sep 2026</text>
+          <path d="M58.0 302.3 L64.6 307.7 L71.1 310.5 L77.7 306.0 L84.2 304.9 L90.8 305.4 L97.3 305.2 L103.9 304.7 L110.4 304.8 L117.0 304.0 L123.5 306.0 L130.1 306.0 L136.6 305.6 L143.2 303.5 L149.7 302.1 L156.3 299.1 L162.9 298.2 L169.4 296.6 L176.0 298.7 L182.5 299.5 L189.1 301.3 L195.6 296.6 L202.2 296.9 L208.7 293.0 L215.3 288.9 L221.8 289.8 L228.4 290.0 L234.9 294.4 L241.5 294.6 L248.0 294.5 L254.6 288.2 L261.1 287.0 L267.7 286.5 L274.3 286.0 L280.8 287.4 L287.4 288.1 L293.9 285.5 L300.5 287.9 L307.0 286.0 L313.6 285.9 L320.1 283.5 L326.7 283.4 L333.2 281.3 L339.8 274.4 L346.3 271.1 L352.9 269.4 L359.4 254.7 L366.0 250.6 L372.6 248.5 L379.1 244.6 L385.7 249.8 L392.2 256.5 L398.8 257.6 L405.3 259.0 L411.9 258.6 L418.4 248.7 L425.0 248.2 L431.5 244.2 L438.1 248.6 L444.6 251.7 L451.2 245.8 L457.7 237.3 L464.3 233.2 L470.9 229.6 L477.4 229.5 L484.0 222.6 L490.5 218.0 L497.1 212.5 L503.6 202.5 L510.2 195.2 L516.7 192.6 L523.3 198.9 L529.8 203.9 L536.4 201.1 L542.9 201.3 L549.5 201.7 L556.0 184.3 L562.6 170.3 L569.1 176.4 L575.7 174.5 L582.3 170.5 L588.8 183.5 L595.4 183.5 L601.9 189.2 L608.5 181.1 L615.0 178.4 L621.6 178.0 L628.1 174.0 L634.7 165.2 L641.2 154.9 L647.8 155.5 L654.3 163.1 L660.9 163.6 L667.4 166.5 L674.0 168.3 L680.6 163.2 L687.1 161.0 L693.7 159.3 L700.2 164.2 L706.8 162.1 L713.3 160.8 L719.9 159.5 L726.4 161.5 L733.0 167.3 L739.5 154.3 L746.1 162.6 L752.6 170.3 L759.2 173.4 L765.7 169.8 L772.3 173.3 L778.9 185.4 L785.4 184.8 L792.0 181.2 L798.5 170.7 L805.1 174.1 L811.6 163.9 L818.2 169.2 L824.7 171.3 L831.3 173.4 L837.8 168.1 L844.4 150.2 L850.9 143.4 L857.5 134.3 L864.0 130.6 L870.6 127.4 L877.1 127.5 L883.7 139.7 L890.3 137.9 L896.8 126.2 L903.4 120.3 L909.9 117.3 L916.5 107.5 L923.0 97.7 L929.6 98.3 L936.1 81.8 L942.7 70.9 L949.2 69.5 L955.8 59.4 L962.3 53.6 L968.9 52.5 L975.4 51.0 L982.0 31.5 L982.0 326 L58.0 326 Z" fill="url(#lab-rn-grad)"/>
+          <path d="M58.0 302.3 L64.6 307.7 L71.1 310.5 L77.7 306.0 L84.2 304.9 L90.8 305.4 L97.3 305.2 L103.9 304.7 L110.4 304.8 L117.0 304.0 L123.5 306.0 L130.1 306.0 L136.6 305.6 L143.2 303.5 L149.7 302.1 L156.3 299.1 L162.9 298.2 L169.4 296.6 L176.0 298.7 L182.5 299.5 L189.1 301.3 L195.6 296.6 L202.2 296.9 L208.7 293.0 L215.3 288.9 L221.8 289.8 L228.4 290.0 L234.9 294.4 L241.5 294.6 L248.0 294.5 L254.6 288.2 L261.1 287.0 L267.7 286.5 L274.3 286.0 L280.8 287.4 L287.4 288.1 L293.9 285.5 L300.5 287.9 L307.0 286.0 L313.6 285.9 L320.1 283.5 L326.7 283.4 L333.2 281.3 L339.8 274.4 L346.3 271.1 L352.9 269.4 L359.4 254.7 L366.0 250.6 L372.6 248.5 L379.1 244.6 L385.7 249.8 L392.2 256.5 L398.8 257.6 L405.3 259.0 L411.9 258.6 L418.4 248.7 L425.0 248.2 L431.5 244.2 L438.1 248.6 L444.6 251.7 L451.2 245.8 L457.7 237.3 L464.3 233.2 L470.9 229.6 L477.4 229.5 L484.0 222.6 L490.5 218.0 L497.1 212.5 L503.6 202.5 L510.2 195.2 L516.7 192.6 L523.3 198.9 L529.8 203.9 L536.4 201.1 L542.9 201.3 L549.5 201.7 L556.0 184.3 L562.6 170.3 L569.1 176.4 L575.7 174.5 L582.3 170.5 L588.8 183.5 L595.4 183.5 L601.9 189.2 L608.5 181.1 L615.0 178.4 L621.6 178.0 L628.1 174.0 L634.7 165.2 L641.2 154.9 L647.8 155.5 L654.3 163.1 L660.9 163.6 L667.4 166.5 L674.0 168.3 L680.6 163.2 L687.1 161.0 L693.7 159.3 L700.2 164.2 L706.8 162.1 L713.3 160.8 L719.9 159.5 L726.4 161.5 L733.0 167.3 L739.5 154.3 L746.1 162.6 L752.6 170.3 L759.2 173.4 L765.7 169.8 L772.3 173.3 L778.9 185.4 L785.4 184.8 L792.0 181.2 L798.5 170.7 L805.1 174.1 L811.6 163.9 L818.2 169.2 L824.7 171.3 L831.3 173.4 L837.8 168.1 L844.4 150.2 L850.9 143.4 L857.5 134.3 L864.0 130.6 L870.6 127.4 L877.1 127.5 L883.7 139.7 L890.3 137.9 L896.8 126.2 L903.4 120.3 L909.9 117.3 L916.5 107.5 L923.0 97.7 L929.6 98.3 L936.1 81.8 L942.7 70.9 L949.2 69.5 L955.8 59.4 L962.3 53.6 L968.9 52.5 L975.4 51.0 L982.0 31.5" class="c-lin" pathLength="1"/>
+          <circle cx="982.0" cy="31.5" r="5" class="c-fin"/>
+        </svg>
+                        <ul class="lab-curva__datos">
+                            <li><strong>3.021</strong><span>operaciones</span></li>
+                            <li><strong>1,20</strong><span>profit factor</span></li>
+                            <li><strong>14,4&nbsp;%</strong><span>caída máxima</span></li>
+                        </ul>
+                        <figcaption>Balance a cierre de mes de una cuenta de 10.000&nbsp;USD, v1.21, 100&nbsp;% ticks reales, sin comisión. <a href="rawnasdaq/">Ver la ficha</a></figcaption>
+                    </figure>
+
+                    <figure class="lab-curva">
+                        <div class="lab-curva__cab">
+                            <div>
+                                <p class="lab-curva__bot">HELIOS H1</p>
+                                <p class="lab-curva__sub">Portafolio de 10 estrategias · 2018–2025</p>
+                            </div>
+                            <p class="lab-curva__cifra">+28.753&nbsp;$</p>
+                        </div>
+                        <svg class="curva__svg" viewBox="0 0 1000 360" role="img" aria-labelledby="lab-he-tit lab-he-desc" preserveAspectRatio="none">
+          <title id="lab-he-tit">Beneficio acumulado de HELIOS H1, 2018 a 2025</title>
+          <desc id="lab-he-desc">Beneficio acumulado de la cartera completa en la simulación de enero de 2018 a julio de 2025: de 0 a +28.753 dólares, con una caída máxima de 523 dólares.</desc>
+          <defs><linearGradient id="lab-he-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b82ff" stop-opacity=".22"/><stop offset="1" stop-color="#5b82ff" stop-opacity="0"/></linearGradient></defs>
+          <line x1="58" x2="982" y1="311.8" y2="311.8" class="c-rej"/><text x="48" y="315.8" class="c-ey" text-anchor="end">0</text><line x1="58" x2="982" y1="217.0" y2="217.0" class="c-rej"/><text x="48" y="221.0" class="c-ey" text-anchor="end">10k</text><line x1="58" x2="982" y1="122.2" y2="122.2" class="c-rej"/><text x="48" y="126.2" class="c-ey" text-anchor="end">20k</text><line x1="58" x2="982" y1="27.5" y2="27.5" class="c-rej"/><text x="48" y="31.5" class="c-ey" text-anchor="end">30k</text><text x="181.2" y="350" class="c-ex" text-anchor="middle">2019</text><text x="427.6" y="350" class="c-ex" text-anchor="middle">2021</text><text x="674.0" y="350" class="c-ex" text-anchor="middle">2023</text><text x="58.0" y="350" class="c-ex" text-anchor="start">2018</text><text x="982.0" y="350" class="c-ex" text-anchor="end">jul 2025</text>
+          <path d="M58.0 311.8 L60.6 311.8 L63.1 310.8 L65.7 310.3 L68.2 310.7 L70.8 310.7 L73.3 309.2 L75.8 308.8 L78.4 308.9 L80.9 308.9 L83.5 307.6 L86.1 307.2 L88.6 307.6 L91.1 308.1 L93.7 306.0 L96.2 305.6 L98.8 305.7 L101.2 305.9 L103.8 303.8 L106.3 303.2 L108.9 303.3 L111.4 303.6 L113.9 303.8 L116.5 304.0 L119.1 304.1 L121.6 304.3 L124.1 302.5 L126.7 302.0 L129.2 302.7 L131.8 303.2 L134.4 300.6 L136.9 300.1 L139.4 300.8 L142.0 301.2 L144.6 298.9 L147.1 298.4 L149.6 298.9 L152.2 299.2 L154.8 297.6 L157.3 297.1 L159.9 297.3 L162.4 297.4 L164.9 295.5 L167.5 294.9 L170.1 295.0 L172.6 295.0 L175.1 293.9 L177.7 293.4 L180.2 293.4 L182.8 293.4 L185.2 290.6 L187.8 289.3 L190.3 289.3 L192.9 289.3 L195.4 287.7 L198.0 287.0 L200.5 287.2 L203.0 287.2 L205.6 284.8 L208.1 283.8 L210.7 285.1 L213.2 286.1 L215.8 281.1 L218.4 279.9 L220.9 281.3 L223.5 282.4 L226.0 277.0 L228.5 275.7 L231.1 275.9 L233.7 276.0 L236.2 274.4 L238.8 273.8 L241.3 275.4 L243.8 276.5 L246.4 270.8 L249.0 269.3 L251.5 269.8 L254.0 270.1 L256.6 270.4 L259.1 270.6 L261.7 270.8 L264.2 270.8 L266.8 268.8 L269.2 268.0 L271.8 268.2 L274.3 268.4 L276.9 266.4 L279.4 265.8 L282.0 267.2 L284.5 268.5 L287.0 262.5 L289.6 261.0 L292.1 261.2 L294.7 261.3 L297.2 257.8 L299.8 256.4 L302.4 256.6 L304.9 256.7 L307.4 254.5 L310.0 253.7 L312.5 254.3 L315.1 255.0 L317.6 252.1 L320.2 251.3 L322.8 251.9 L325.3 252.4 L327.9 252.7 L330.4 253.2 L333.0 253.2 L335.5 253.2 L338.1 250.3 L340.6 249.2 L343.1 249.2 L345.7 249.2 L348.2 247.0 L350.8 246.2 L353.2 246.2 L355.8 246.2 L358.3 244.4 L360.8 243.6 L363.4 243.6 L365.9 243.6 L368.5 241.7 L371.0 240.9 L373.6 240.9 L376.2 240.9 L378.7 238.7 L381.2 237.7 L383.8 238.8 L386.3 239.6 L388.9 235.6 L391.5 234.7 L394.0 234.7 L396.6 234.8 L399.1 232.8 L401.7 231.8 L404.2 232.9 L406.8 233.7 L409.3 229.7 L411.8 228.9 L414.4 230.1 L416.9 230.9 L419.5 226.5 L422.0 225.4 L424.6 226.7 L427.2 227.8 L429.7 222.7 L432.2 221.6 L434.8 221.8 L437.2 221.8 L439.8 220.0 L442.3 219.4 L444.8 220.5 L447.4 221.3 L450.0 217.1 L452.5 216.2 L455.1 216.3 L457.6 216.5 L460.2 213.1 L462.7 211.9 L465.2 211.9 L467.8 212.0 L470.3 209.5 L472.9 208.5 L475.4 208.5 L478.0 208.7 L480.5 205.6 L483.1 204.4 L485.7 204.5 L488.2 204.7 L490.8 202.8 L493.3 202.0 L495.8 202.1 L498.4 202.3 L501.0 200.0 L503.5 199.2 L506.1 199.4 L508.6 199.4 L511.2 197.6 L513.7 197.0 L516.2 197.2 L518.8 197.2 L521.2 194.9 L523.8 194.1 L526.3 194.3 L528.9 194.5 L531.4 194.6 L534.0 194.8 L536.5 194.8 L539.0 194.9 L541.6 193.3 L544.1 192.7 L546.7 193.5 L549.2 194.1 L551.8 189.5 L554.3 188.2 L556.9 188.4 L559.5 188.4 L562.0 186.3 L564.5 185.5 L567.1 185.7 L569.7 185.8 L572.2 182.3 L574.8 180.9 L577.3 181.7 L579.8 182.3 L582.4 177.5 L585.0 176.1 L587.5 176.4 L590.0 176.7 L592.6 176.9 L595.1 177.2 L597.7 177.4 L600.2 177.5 L602.8 173.1 L605.2 171.3 L607.8 171.3 L610.3 171.5 L612.8 167.2 L615.4 165.4 L617.9 165.4 L620.5 165.4 L623.0 162.4 L625.6 161.1 L628.1 162.2 L630.7 163.3 L633.2 158.5 L635.8 157.4 L638.3 157.6 L640.9 157.7 L643.5 154.5 L646.0 153.3 L648.5 153.4 L651.1 153.6 L653.7 151.5 L656.2 150.7 L658.8 150.9 L661.3 151.0 L663.8 148.0 L666.4 146.7 L669.0 148.3 L671.5 149.8 L674.0 143.2 L676.6 141.6 L679.2 141.8 L681.7 141.9 L684.2 138.7 L686.8 137.5 L689.2 137.6 L691.8 137.6 L694.3 135.2 L696.8 134.3 L699.4 134.4 L702.0 134.4 L704.5 131.9 L707.0 130.9 L709.6 130.9 L712.2 131.1 L714.7 128.8 L717.2 128.0 L719.8 129.2 L722.4 130.1 L724.9 125.7 L727.5 124.7 L730.0 124.9 L732.5 124.9 L735.1 121.2 L737.7 119.6 L740.2 119.7 L742.8 119.7 L745.3 116.1 L747.9 114.5 L750.4 114.6 L753.0 114.6 L755.5 112.7 L758.1 111.9 L760.6 112.1 L763.1 112.2 L765.7 110.2 L768.2 109.2 L770.8 110.3 L773.2 111.3 L775.8 107.0 L778.3 105.9 L780.9 107.3 L783.4 108.4 L785.9 102.8 L788.5 101.6 L791.1 101.6 L793.6 101.7 L796.2 97.9 L798.7 96.3 L801.2 97.2 L803.8 98.0 L806.4 91.3 L808.9 89.3 L811.4 89.4 L814.0 89.6 L816.6 85.7 L819.1 84.2 L821.6 85.9 L824.2 87.2 L826.8 80.5 L829.3 78.9 L831.8 80.3 L834.4 81.6 L836.9 75.8 L839.5 74.4 L842.1 75.8 L844.6 77.0 L847.1 70.4 L849.7 68.7 L852.2 68.7 L854.8 68.8 L857.2 65.6 L859.8 64.2 L862.3 65.0 L864.9 65.6 L867.4 61.0 L869.9 59.7 L872.5 60.5 L875.1 61.3 L877.6 61.8 L880.1 62.3 L882.7 62.9 L885.2 63.7 L887.8 64.2 L890.3 64.7 L892.9 64.7 L895.4 64.7 L898.0 62.3 L900.6 61.2 L903.1 61.3 L905.6 61.3 L908.2 58.0 L910.8 56.5 L913.3 56.5 L915.8 56.7 L918.4 54.6 L920.9 53.8 L923.5 53.8 L926.1 53.8 L928.6 52.5 L931.2 52.1 L933.7 52.2 L936.2 52.2 L938.8 49.5 L941.2 48.6 L943.8 49.4 L946.3 50.0 L948.8 46.8 L951.4 46.2 L953.9 46.2 L956.5 46.3 L959.1 44.1 L961.6 43.3 L964.1 43.3 L966.7 43.4 L969.2 42.2 L971.8 41.7 L974.3 41.7 L976.9 41.7 L979.4 39.9 L982.0 39.3 L982.0 311.8 L58.0 311.8 Z" fill="url(#lab-he-grad)"/>
+          <path d="M58.0 311.8 L60.6 311.8 L63.1 310.8 L65.7 310.3 L68.2 310.7 L70.8 310.7 L73.3 309.2 L75.8 308.8 L78.4 308.9 L80.9 308.9 L83.5 307.6 L86.1 307.2 L88.6 307.6 L91.1 308.1 L93.7 306.0 L96.2 305.6 L98.8 305.7 L101.2 305.9 L103.8 303.8 L106.3 303.2 L108.9 303.3 L111.4 303.6 L113.9 303.8 L116.5 304.0 L119.1 304.1 L121.6 304.3 L124.1 302.5 L126.7 302.0 L129.2 302.7 L131.8 303.2 L134.4 300.6 L136.9 300.1 L139.4 300.8 L142.0 301.2 L144.6 298.9 L147.1 298.4 L149.6 298.9 L152.2 299.2 L154.8 297.6 L157.3 297.1 L159.9 297.3 L162.4 297.4 L164.9 295.5 L167.5 294.9 L170.1 295.0 L172.6 295.0 L175.1 293.9 L177.7 293.4 L180.2 293.4 L182.8 293.4 L185.2 290.6 L187.8 289.3 L190.3 289.3 L192.9 289.3 L195.4 287.7 L198.0 287.0 L200.5 287.2 L203.0 287.2 L205.6 284.8 L208.1 283.8 L210.7 285.1 L213.2 286.1 L215.8 281.1 L218.4 279.9 L220.9 281.3 L223.5 282.4 L226.0 277.0 L228.5 275.7 L231.1 275.9 L233.7 276.0 L236.2 274.4 L238.8 273.8 L241.3 275.4 L243.8 276.5 L246.4 270.8 L249.0 269.3 L251.5 269.8 L254.0 270.1 L256.6 270.4 L259.1 270.6 L261.7 270.8 L264.2 270.8 L266.8 268.8 L269.2 268.0 L271.8 268.2 L274.3 268.4 L276.9 266.4 L279.4 265.8 L282.0 267.2 L284.5 268.5 L287.0 262.5 L289.6 261.0 L292.1 261.2 L294.7 261.3 L297.2 257.8 L299.8 256.4 L302.4 256.6 L304.9 256.7 L307.4 254.5 L310.0 253.7 L312.5 254.3 L315.1 255.0 L317.6 252.1 L320.2 251.3 L322.8 251.9 L325.3 252.4 L327.9 252.7 L330.4 253.2 L333.0 253.2 L335.5 253.2 L338.1 250.3 L340.6 249.2 L343.1 249.2 L345.7 249.2 L348.2 247.0 L350.8 246.2 L353.2 246.2 L355.8 246.2 L358.3 244.4 L360.8 243.6 L363.4 243.6 L365.9 243.6 L368.5 241.7 L371.0 240.9 L373.6 240.9 L376.2 240.9 L378.7 238.7 L381.2 237.7 L383.8 238.8 L386.3 239.6 L388.9 235.6 L391.5 234.7 L394.0 234.7 L396.6 234.8 L399.1 232.8 L401.7 231.8 L404.2 232.9 L406.8 233.7 L409.3 229.7 L411.8 228.9 L414.4 230.1 L416.9 230.9 L419.5 226.5 L422.0 225.4 L424.6 226.7 L427.2 227.8 L429.7 222.7 L432.2 221.6 L434.8 221.8 L437.2 221.8 L439.8 220.0 L442.3 219.4 L444.8 220.5 L447.4 221.3 L450.0 217.1 L452.5 216.2 L455.1 216.3 L457.6 216.5 L460.2 213.1 L462.7 211.9 L465.2 211.9 L467.8 212.0 L470.3 209.5 L472.9 208.5 L475.4 208.5 L478.0 208.7 L480.5 205.6 L483.1 204.4 L485.7 204.5 L488.2 204.7 L490.8 202.8 L493.3 202.0 L495.8 202.1 L498.4 202.3 L501.0 200.0 L503.5 199.2 L506.1 199.4 L508.6 199.4 L511.2 197.6 L513.7 197.0 L516.2 197.2 L518.8 197.2 L521.2 194.9 L523.8 194.1 L526.3 194.3 L528.9 194.5 L531.4 194.6 L534.0 194.8 L536.5 194.8 L539.0 194.9 L541.6 193.3 L544.1 192.7 L546.7 193.5 L549.2 194.1 L551.8 189.5 L554.3 188.2 L556.9 188.4 L559.5 188.4 L562.0 186.3 L564.5 185.5 L567.1 185.7 L569.7 185.8 L572.2 182.3 L574.8 180.9 L577.3 181.7 L579.8 182.3 L582.4 177.5 L585.0 176.1 L587.5 176.4 L590.0 176.7 L592.6 176.9 L595.1 177.2 L597.7 177.4 L600.2 177.5 L602.8 173.1 L605.2 171.3 L607.8 171.3 L610.3 171.5 L612.8 167.2 L615.4 165.4 L617.9 165.4 L620.5 165.4 L623.0 162.4 L625.6 161.1 L628.1 162.2 L630.7 163.3 L633.2 158.5 L635.8 157.4 L638.3 157.6 L640.9 157.7 L643.5 154.5 L646.0 153.3 L648.5 153.4 L651.1 153.6 L653.7 151.5 L656.2 150.7 L658.8 150.9 L661.3 151.0 L663.8 148.0 L666.4 146.7 L669.0 148.3 L671.5 149.8 L674.0 143.2 L676.6 141.6 L679.2 141.8 L681.7 141.9 L684.2 138.7 L686.8 137.5 L689.2 137.6 L691.8 137.6 L694.3 135.2 L696.8 134.3 L699.4 134.4 L702.0 134.4 L704.5 131.9 L707.0 130.9 L709.6 130.9 L712.2 131.1 L714.7 128.8 L717.2 128.0 L719.8 129.2 L722.4 130.1 L724.9 125.7 L727.5 124.7 L730.0 124.9 L732.5 124.9 L735.1 121.2 L737.7 119.6 L740.2 119.7 L742.8 119.7 L745.3 116.1 L747.9 114.5 L750.4 114.6 L753.0 114.6 L755.5 112.7 L758.1 111.9 L760.6 112.1 L763.1 112.2 L765.7 110.2 L768.2 109.2 L770.8 110.3 L773.2 111.3 L775.8 107.0 L778.3 105.9 L780.9 107.3 L783.4 108.4 L785.9 102.8 L788.5 101.6 L791.1 101.6 L793.6 101.7 L796.2 97.9 L798.7 96.3 L801.2 97.2 L803.8 98.0 L806.4 91.3 L808.9 89.3 L811.4 89.4 L814.0 89.6 L816.6 85.7 L819.1 84.2 L821.6 85.9 L824.2 87.2 L826.8 80.5 L829.3 78.9 L831.8 80.3 L834.4 81.6 L836.9 75.8 L839.5 74.4 L842.1 75.8 L844.6 77.0 L847.1 70.4 L849.7 68.7 L852.2 68.7 L854.8 68.8 L857.2 65.6 L859.8 64.2 L862.3 65.0 L864.9 65.6 L867.4 61.0 L869.9 59.7 L872.5 60.5 L875.1 61.3 L877.6 61.8 L880.1 62.3 L882.7 62.9 L885.2 63.7 L887.8 64.2 L890.3 64.7 L892.9 64.7 L895.4 64.7 L898.0 62.3 L900.6 61.2 L903.1 61.3 L905.6 61.3 L908.2 58.0 L910.8 56.5 L913.3 56.5 L915.8 56.7 L918.4 54.6 L920.9 53.8 L923.5 53.8 L926.1 53.8 L928.6 52.5 L931.2 52.1 L933.7 52.2 L936.2 52.2 L938.8 49.5 L941.2 48.6 L943.8 49.4 L946.3 50.0 L948.8 46.8 L951.4 46.2 L953.9 46.2 L956.5 46.3 L959.1 44.1 L961.6 43.3 L964.1 43.3 L966.7 43.4 L969.2 42.2 L971.8 41.7 L974.3 41.7 L976.9 41.7 L979.4 39.9 L982.0 39.3" class="c-lin" pathLength="1"/>
+          <circle cx="982.0" cy="39.3" r="5" class="c-fin"/>
+        </svg>
+                        <ul class="lab-curva__datos">
+                            <li><strong>1,73</strong><span>profit factor</span></li>
+                            <li><strong>5,2&nbsp;%</strong><span>caída máxima</span></li>
+                            <li><strong>84 de 91</strong><span>meses en positivo</span></li>
+                        </ul>
+                        <figcaption>Simulación de la cartera completa con 0,3&nbsp;% de riesgo por operación sobre 10.000&nbsp;$. <a href="helios/">Ver la ficha</a></figcaption>
+                    </figure>
+                </div>
+
+                <p class="lab__aviso">Son simulaciones con datos históricos, no cuentas reales. Resultados pasados no garantizan resultados futuros.</p>
+            </div>
+        </section>
+
 
         <!-- C · HERRAMIENTAS Y PRODUCTOS: cuatro bots y el resto plegado -->
         <section id="productos" class="seccion seccion--alt" aria-labelledby="prod-titulo">
@@ -474,6 +531,28 @@
                     <li><strong>~7&nbsp;días</strong><span>entre novedades</span></li>
                     <li><strong>22</strong><span>cursos en el aula</span></li>
                 </ul>
+                <div class="testimonios" aria-label="Experiencias de miembros">
+                    <figure class="testimonio card-glass">
+                        <blockquote>
+                            <p>«Los cursos son muy fáciles de entender y directos […] Para mí lo más valioso ha sido aprender a hacer backtest para comprobar la solidez de los bots por mí mismo […] La ayuda de Nico es súper rápida y resuelve cualquier duda al momento. Cursos muy útiles, prácticos y sin rellenos absurdos.»</p>
+                        </blockquote>
+                        <figcaption class="testimonio__autor">
+                            <span class="testimonio__avatar" aria-hidden="true">DT</span>
+                            <span><strong>Dani Trader</strong><span>Miembro de PRO · post «Experiencia en la comunidad», 27&nbsp;oct&nbsp;2026</span></span>
+                        </figcaption>
+                    </figure>
+                    <figure class="testimonio card-glass">
+                        <blockquote>
+                            <p>«Lo que ha hecho en un día y lo que va de semana, en demo ya lleva más de 1000 en un mes.»</p>
+                        </blockquote>
+                        <p class="testimonio__resp"><strong>Nico:</strong> «Buen arranque Lenny, ve apuntando también el drawdown máximo de ese mes para compararlo con el backtest del bot.»</p>
+                        <figcaption class="testimonio__autor">
+                            <span class="testimonio__avatar testimonio__avatar--b" aria-hidden="true">LC</span>
+                            <span><strong>Lenny Carta</strong><span>Portafolio Helios en cuenta demo · post del 29&nbsp;oct&nbsp;2026</span></span>
+                        </figcaption>
+                    </figure>
+                </div>
+
 
                 <div class="capturas" id="capturas">
                     <div class="capturas__cab">
@@ -735,7 +814,7 @@
         <!-- H · CTA FINAL -->
         <section id="empezar" class="seccion seccion--alt" aria-labelledby="cta-titulo">
             <div class="wrap">
-                <div class="cta-final card-glass card-glass--lg destacada">
+                <div class="cta-final cta-final--noche">
                     <p class="eyebrow">Empieza hoy</p>
                     <h2 id="cta-titulo" class="h2">Entra con el anual y monta tu primer bot esta semana</h2>
                     <p class="lead">199&nbsp;€ al año con todo incluido. Si no te encaja, lo cancelas y no se renueva.</p>
