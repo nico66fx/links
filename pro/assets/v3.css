@@ -1,0 +1,259 @@
+/* ==========================================================================
+   nico66fx PRO v3 · solo lo que añade la página de planes 99/199/349.
+   Se carga DESPUÉS de v2.css y reutiliza sus tokens y componentes.
+   Tema claro, como v2: no añadir reglas de esquema oscuro.
+   ========================================================================== */
+
+/* --- Hero: precio y enlace secundario ------------------------------------ */
+.hero__alt{display:inline-flex;align-items:center;gap:.4rem;font-size:.9375rem;font-weight:600;color:var(--brand-600);text-decoration:none}
+.hero__alt .ico{width:1em;height:1em}
+@media (hover:hover) and (pointer:fine){.hero__alt:hover{text-decoration:underline;text-underline-offset:3px}}
+
+/* --- Ecosistema: cinco piezas ------------------------------------------- */
+.eco{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.eco .tarjeta{gap:8px}
+@media (min-width:600px){.eco{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:900px){
+  .eco{grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+  .eco .tarjeta{grid-column:span 2}
+  .eco .tarjeta:nth-child(4),.eco .tarjeta:nth-child(5){grid-column:span 3}
+}
+
+/* --- Productos ------------------------------------------------------------ */
+.productos{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+@media (min-width:600px){.productos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:768px){.productos{gap:18px}}
+@media (min-width:1024px){.productos{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}}
+.productos .tarjeta__dato{margin-top:auto}
+
+/* --- Cómo funciona: cuatro pasos numerados --------------------------------- */
+.pasos{display:grid;gap:12px;counter-reset:paso;margin-bottom:clamp(28px,5vw,48px)}
+.paso{counter-increment:paso;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:start;padding:18px}
+.paso{position:relative}
+.paso__n{grid-row:span 2;display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:linear-gradient(150deg,var(--brand-tint-2),var(--brand-tint));box-shadow:inset 0 0 0 1px rgba(21,68,224,.12);color:var(--brand-600)}
+.paso__n .ico{width:18px;height:18px;stroke-width:1.9}
+.paso::after{content:"0" counter(paso);position:absolute;top:16px;right:18px;z-index:2;font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.12em;color:var(--ink-3);opacity:.75}
+.paso h3{font-size:1.05rem;line-height:1.3}
+.paso p{font-size:.9375rem;line-height:1.5;color:var(--ink-2)}
+@media (min-width:768px){
+  .pasos{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .paso{padding:24px}
+}
+@media (min-width:1024px){
+  .pasos{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+  .paso{grid-template-columns:1fr;gap:10px}
+  .paso__n{grid-row:auto}
+}
+
+/* --- Comunidad: cifras compactas ------------------------------------------ */
+.com-datos--v3{margin-bottom:clamp(20px,4vw,32px)}
+
+/* --- Precios: tres tarjetas, el anual en el centro y primero en móvil ------- */
+.planes--v3{max-width:1080px}
+.planes--v3 .plan{background:var(--surface)}
+.planes--v3 .plan__cifra{font-size:clamp(2.3rem,1.9rem + 1.6vw,3rem)}
+.planes--v3 .plan--anual .plan__cifra{font-size:clamp(2.6rem,2.1rem + 2vw,3.5rem)}
+.plan--anual{background:var(--metal)!important}
+.plan__mes{font-size:.875rem;color:var(--ink-3)}
+.plan__chip{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .65rem;border-radius:9999px;background:var(--brand-tint);color:var(--brand-600);font-family:var(--font-mono);font-size:.6875rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase}
+.plan__chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.plan--anual{order:-1}
+@media (min-width:900px){
+  .planes--v3{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+  .plan--anual{order:0}
+  .planes--v3 .plan,.planes--v3 .plan--vida{padding:30px 26px 26px}
+  .planes--v3 .plan--anual{padding:34px 28px 28px;transform:translateY(-8px)}
+}
+/* Ventana de lifetime cerrada: <section id="precio" data-ventana="cerrada"> */
+[data-ventana="cerrada"] .plan--vida{display:none}
+@media (min-width:900px){[data-ventana="cerrada"] .planes--v3{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px}}
+.planes__legal{max-width:760px;margin:20px auto 0;font-size:.8125rem;line-height:1.55;color:var(--ink-2);text-align:center}
+.planes__legal a{color:var(--ink-2)}
+
+/* --- CTA final -------------------------------------------------------------- */
+.cta-final{max-width:760px;margin-inline:auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.cta-final .h2{max-width:22ch}
+.cta-final .lead{margin-top:0;max-width:52ch}
+.cta-final__btns{display:flex;flex-direction:column;align-items:stretch;gap:10px;width:100%;max-width:360px}
+@media (min-width:600px){.cta-final__btns{flex-direction:row;max-width:none;justify-content:center;align-items:center}}
+
+/* --- Banda oscura «Primero los datos»: curvas de backtest ya publicadas ------ */
+.lab{background:var(--canvas);padding-top:clamp(24px,5vw,64px)}
+.lab__grid{display:grid;gap:16px;margin-top:clamp(28px,5vw,48px)}
+@media (min-width:900px){.lab__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}}
+.lab-curva{margin:0;padding:20px 18px 16px;border-radius:var(--radio-l);background:var(--noche);color:#e6edfb;box-shadow:inset 0 0 0 1px rgba(138,168,255,.14),0 1px 2px rgba(8,17,31,.06),0 18px 40px -22px rgba(8,17,31,.38)}
+@media (min-width:768px){.lab-curva{padding:26px 26px 20px}}
+.lab-curva__cab{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:10px}
+.lab-curva__bot{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.16em;color:#8aa8ff}
+.lab-curva__sub{margin-top:4px;font-size:.8125rem;color:#a9b6cc}
+.lab-curva__cifra{font-family:var(--font-display);font-weight:700;font-size:clamp(1.9rem,1.5rem + 1.8vw,2.75rem);line-height:1;letter-spacing:-.03em;color:#3ddc97;white-space:nowrap;font-variant-numeric:tabular-nums}
+.lab .curva__svg{display:block;width:100%;height:auto;aspect-ratio:1000/360;overflow:visible}
+.lab .c-rej{stroke:rgba(230,237,251,.09);stroke-width:1;vector-effect:non-scaling-stroke}
+.lab .c-ey,.lab .c-ex{font-family:var(--font-mono);font-size:22px;fill:#7f8ea6}
+.lab .c-lin{fill:none;stroke:#7b9bff;stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.lab .c-fin{fill:#7b9bff;stroke:#0a1424;stroke-width:3;vector-effect:non-scaling-stroke}
+.lab-curva__datos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0 0;padding:14px 0 0;list-style:none;border-top:1px solid rgba(138,168,255,.14)}
+.lab-curva__datos li{display:flex;flex-direction:column;gap:2px}
+.lab-curva__datos strong{font-family:var(--font-display);font-size:1.25rem;color:#fff;font-variant-numeric:tabular-nums}
+.lab-curva__datos span{font-size:.75rem;color:#a9b6cc}
+.lab-curva figcaption{margin-top:12px;font-size:.75rem;line-height:1.5;color:#7f8ea6}
+.lab-curva figcaption a{color:#a9c0ff;font-weight:600}
+.lab__aviso{margin-top:20px;text-align:center;font-size:.8125rem;color:var(--ink-3)}
+
+/* --- Testimonios con nombre (posts públicos dentro de la Skool) ------------ */
+.testimonios{display:grid;gap:14px;margin-bottom:clamp(24px,4vw,40px)}
+@media (min-width:900px){.testimonios{grid-template-columns:1.25fr 1fr;gap:20px}}
+.testimonio{margin:0;display:flex;flex-direction:column;gap:14px;padding:24px}
+.testimonio blockquote{margin:0;position:relative}
+.testimonio blockquote p{font-size:1.0625rem;line-height:1.6;color:var(--ink);text-wrap:pretty}
+.testimonio::before{content:"“";position:absolute;top:6px;right:20px;font-family:Georgia,serif;font-size:5rem;line-height:1;color:var(--brand);opacity:.14}
+.testimonio__resp{padding:10px 12px;border-radius:var(--radio-s);background:var(--brand-tint);font-size:.875rem;line-height:1.5;color:var(--ink-2)}
+.testimonio__resp strong{color:var(--brand-600)}
+.testimonio__autor{display:flex;align-items:center;gap:12px;margin-top:auto}
+.testimonio__autor>span:last-child{display:flex;flex-direction:column;gap:2px;font-size:.8125rem;color:var(--ink-3)}
+.testimonio__autor strong{font-size:.9375rem;color:var(--ink)}
+.testimonio__avatar{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:50%;background:linear-gradient(140deg,#1544e0,#5b82ff);color:#fff;font-family:var(--font-mono);font-size:.8125rem;font-weight:500}
+.testimonio__avatar--b{background:linear-gradient(140deg,#0b7a52,#3ddc97)}
+
+/* --- CTA final en oscuro --------------------------------------------------- */
+.cta-final--noche{position:relative;overflow:hidden;padding:clamp(32px,6vw,56px) clamp(20px,4vw,48px);border-radius:var(--radio-l);background:var(--noche);box-shadow:0 30px 70px -36px rgba(8,17,31,.6)}
+.cta-final--noche::before{content:"";position:absolute;inset:-40% -20% auto;height:80%;background:radial-gradient(50% 60% at 50% 0,rgba(91,130,255,.28),transparent 70%);pointer-events:none}
+.cta-final--noche>*{position:relative}
+.cta-final--noche .h2{color:#fff}
+.cta-final--noche .lead{color:#a9b6cc}
+.cta-final--noche .eyebrow{color:#8aa8ff}
+.cta-final--noche .eyebrow::after{content:none}
+.cta-final--noche .btn-secondary{background:rgba(255,255,255,.06);color:#fff;box-shadow:inset 0 0 0 1px rgba(230,237,251,.22)}
+.cta-final--noche .btn-wa{color:#e6edfb}
+
+/* ==========================================================================
+   Refinamiento visual (iconos Lucide y microdetalles). Solo presentación.
+   ========================================================================== */
+
+/* Mosaico de icono común: fondo suave azulado, trazo fino y coherente */
+.ico-tile,.tarjeta__ico{display:inline-grid;place-items:center;flex:none;border-radius:10px;background:linear-gradient(150deg,var(--brand-tint-2),var(--brand-tint));box-shadow:inset 0 0 0 1px rgba(21,68,224,.12);color:var(--brand-600)}
+.ico-tile .ico,.tarjeta__ico .ico{stroke-width:1.9}
+
+/* Hero: rejilla técnica muy tenue detrás y datos con icono */
+.hero{position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(21,68,224,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(21,68,224,.055) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(60% 55% at 30% 35%,#000,transparent 75%);mask-image:radial-gradient(60% 55% at 30% 35%,#000,transparent 75%)}
+.hd-ico{display:grid;place-items:center;width:26px;height:26px;margin-bottom:4px;border-radius:8px;background:var(--brand-tint);color:var(--brand)}
+.hd-ico .ico{width:14px;height:14px;stroke-width:2}
+
+/* Ecosistema: icono distinto por pieza, visible también en móvil */
+#ecosistema{background:radial-gradient(70% 50% at 100% 0,rgba(21,68,224,.06),transparent 70%)}
+.eco .tarjeta{overflow:hidden}
+.eco .tarjeta__ico{width:40px;height:40px;border-radius:12px;margin-bottom:6px}
+.eco .tarjeta__ico .ico{width:20px;height:20px}
+.eco .tarjeta::after{content:"";position:absolute;top:-60px;right:-60px;width:160px;height:160px;border-radius:50%;background:radial-gradient(closest-side,rgba(21,68,224,.07),transparent);pointer-events:none}
+@media (max-width:767px){.eco .tarjeta__ico{display:inline-grid;width:36px;height:36px}}
+
+/* Catálogo: categoría con icono pequeño */
+.prod__k{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.prod__k .ico-tile{width:30px;height:30px;border-radius:9px}
+.prod__k .ico-tile .ico{width:16px;height:16px}
+.productos .tarjeta::after{content:"";position:absolute;left:24px;right:24px;top:0;height:2px;border-radius:0 0 2px 2px;background:linear-gradient(90deg,var(--brand),rgba(91,130,255,0));opacity:.55}
+.catalogo .bot{position:relative}
+.catalogo .bot__meta{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.02em}
+
+/* Cómo funciona: línea de puntos que une los pasos en escritorio */
+@media (min-width:1024px){
+  .pasos{position:relative}
+  .pasos::before{content:"";position:absolute;left:12%;right:12%;top:43px;height:0;border-top:1px dashed rgba(21,68,224,.22);z-index:0}
+  .paso{z-index:1}
+}
+
+/* Comunidad: icono discreto en cada cifra */
+.com-datos li{position:relative}
+.cd-ico{width:16px;height:16px;margin-bottom:4px;color:var(--brand);stroke-width:1.9;opacity:.85}
+.testimonio{position:relative}
+
+/* Para quién: check-circle / x-circle */
+.pq__ico{border-radius:9px}
+.pq__ico .ico{width:16px;height:16px;stroke-width:2}
+.pq li .ico{stroke-width:1.9;width:17px;height:17px;top:12px}
+.pq--si{background:linear-gradient(160deg,rgba(11,122,82,.045),transparent 45%),var(--metal)}
+
+/* Precios: iconos secundarios, el precio manda */
+.plan h3{display:flex;align-items:center;gap:9px}
+.plan__ico{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:rgba(8,17,31,.05);color:var(--ink-3)}
+.plan__ico .ico{width:14px;height:14px;stroke-width:2}
+.plan--anual .plan__ico{background:var(--brand-tint-2);color:var(--brand-600)}
+
+.plan__cab{flex-wrap:wrap;row-gap:8px}
+.plan h3{white-space:nowrap}
+@media (min-width:1024px){.paso h3{min-height:2.6em}}
+
+/* ==========================================================================
+   Dirección de arte · 2.ª pasada: composición, producto real, profundidad.
+   ========================================================================== */
+
+/* 1 · Catálogo asimétrico: HELIOS como superficie grande, el resto en horizontal */
+#productos{background:radial-gradient(55% 45% at 0 30%,rgba(21,68,224,.07),transparent 70%),var(--canvas-alt)}
+.prod--destacado{order:-1}
+.prod__ficha{display:grid;gap:14px;margin-top:6px;padding-top:16px;border-top:1px solid var(--hair)}
+.prod__num{display:flex;align-items:center;gap:12px}
+.prod__num strong{font-family:var(--font-display);font-size:3rem;line-height:.9;letter-spacing:-.04em;color:var(--brand)}
+.prod__num span{font-size:.8125rem;line-height:1.35;color:var(--ink-2)}
+.prod__activos{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.prod__activos li{padding:.28rem .6rem;border-radius:7px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--hair-strong);font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.04em;color:var(--ink-2)}
+@media (min-width:1024px){
+  .productos{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-auto-flow:row dense;gap:16px}
+  .prod--destacado{grid-column:1;grid-row:1 / span 3;padding:32px;background:radial-gradient(80% 60% at 100% 0,rgba(21,68,224,.08),transparent 70%),var(--metal)}
+  .prod--destacado h3{font-size:clamp(1.6rem,1.2rem + 1vw,2.1rem)}
+  .prod--destacado>p:not(.tarjeta__k){font-size:1.0625rem;max-width:40ch}
+  .prod--destacado .tarjeta__enlace{margin-top:18px}
+  .prod--destacado .prod__ficha{margin-top:auto;gap:18px}
+  .productos .tarjeta:not(.prod--destacado){grid-column:2;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:16px;row-gap:4px;align-content:center;padding:20px 22px}
+  .productos .tarjeta:not(.prod--destacado) .prod__k{grid-column:1 / -1}
+  .productos .tarjeta:not(.prod--destacado)>*:not(.prod__k){grid-column:1 / -1}
+  .productos .tarjeta:not(.prod--destacado)::after{left:0;right:auto;top:20px;bottom:20px;width:2px;height:auto;background:linear-gradient(180deg,var(--brand),rgba(91,130,255,0))}
+}
+
+/* 2 · Cómo funciona: línea de tiempo abierta en lugar de cuatro tarjetas */
+#como-funciona .pasos .paso{background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;display:block;padding:0 0 0 54px}
+#como-funciona .pasos .paso::before{display:none}
+#como-funciona .pasos .paso::after{top:11px;right:auto;left:54px;opacity:1;color:var(--brand)}
+#como-funciona .pasos .paso h3{margin-top:18px;margin-bottom:6px}
+#como-funciona .pasos .paso::after{top:0}
+#como-funciona .paso__n{position:absolute;left:0;top:0;background:var(--surface);box-shadow:inset 0 0 0 1px rgba(21,68,224,.18),0 6px 16px -10px rgba(21,68,224,.5)}
+#como-funciona .pasos{position:relative;gap:28px}
+#como-funciona .pasos::before{content:"";position:absolute;left:19px;top:38px;bottom:24px;border-left:1px dashed rgba(21,68,224,.28);border-top:0;right:auto;height:auto}
+@media (min-width:1024px){
+  #como-funciona .pasos{gap:28px}
+  #como-funciona .pasos .paso{padding:58px 8px 0 0}
+  #como-funciona .pasos .paso::after{top:12px;left:52px}
+  #como-funciona .pasos .paso h3{margin-top:0;min-height:0}
+  #como-funciona .pasos::before{left:19px;right:calc(25% - 8px);top:19px;bottom:auto;border-left:0;border-top:1px dashed rgba(21,68,224,.28)}
+}
+@media (min-width:768px) and (max-width:1023px){
+  #como-funciona .pasos::before{display:none}
+}
+
+/* 3 · Comunidad: las capturas reales mandan; cifras en una sola franja */
+.com-datos--v3{gap:0;padding:6px;border-radius:var(--radio-l);background:var(--surface);box-shadow:var(--sh-2)}
+.com-datos--v3 li{background:none;box-shadow:none;padding:14px 10px}
+@media (min-width:768px){.com-datos--v3 li+li{box-shadow:inset 1px 0 0 var(--hair)}}
+@media (max-width:767px){.com-datos--v3 li:nth-child(n+3){box-shadow:inset 0 1px 0 var(--hair)}.com-datos--v3 li:nth-child(even){box-shadow:inset 1px 0 0 var(--hair)}.com-datos--v3 li:nth-child(4){box-shadow:inset 1px 0 0 var(--hair),inset 0 1px 0 var(--hair)}}
+#comunidad .capturas{margin-top:clamp(28px,5vw,48px)}
+.captura{--h:min(240px,58vw)}
+@media (min-width:768px){.captura{--h:360px}}
+#comunidad .testimonios{margin:clamp(28px,5vw,48px) 0 0}
+
+/* Ecosistema: las dos piezas anchas, en horizontal (icono a la izquierda) */
+@media (min-width:900px){
+  .eco .tarjeta:nth-child(4),.eco .tarjeta:nth-child(5){display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:18px;row-gap:6px;align-content:start}
+  .eco .tarjeta:nth-child(4) .tarjeta__ico,.eco .tarjeta:nth-child(5) .tarjeta__ico{grid-row:1 / span 4;margin:0}
+}
+
+/* Microinteracciones: elevación y borde suaves, solo con ratón */
+@media (hover:hover) and (pointer:fine){
+  .tarjeta,.testimonio,.lab-curva,.bot,.captura figure,.com-datos--v3{transition:transform 220ms cubic-bezier(.23,1,.32,1),box-shadow 220ms cubic-bezier(.23,1,.32,1)}
+  .eco .tarjeta:hover,.productos .tarjeta:hover,.testimonio:hover,.bot:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(21,68,224,.18),var(--sh-3)}
+  .lab-curva:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px rgba(138,168,255,.28),0 22px 46px -22px rgba(8,17,31,.45)}
+  .captura figure:hover{transform:translateY(-3px);box-shadow:var(--sh-3)}
+}
+@media (prefers-reduced-motion:reduce){
+  .tarjeta,.testimonio,.lab-curva,.bot,.captura figure{transition:none}
+  .eco .tarjeta:hover,.productos .tarjeta:hover,.testimonio:hover,.bot:hover,.lab-curva:hover,.captura figure:hover{transform:none}
+}
