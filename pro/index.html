@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>nico66fx PRO · Bots de trading para MT4 y MT5</title>
-    <meta name="description" content="Bots de trading para MetaTrader, cada uno con su backtest, su manual y soporte, y cursos para aprender a crear los tuyos. Desde 49,99 €/mes o 249 € de por vida.">
+    <title>nico66fx PRO · Bots de trading para MetaTrader</title>
+    <meta name="description" content="Todos mis bots de trading para MetaTrader con su backtest, su manual y soporte, cursos para crear los tuyos y una comunidad privada en Skool. Anual por 199 € o trimestral por 99 €.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://nico66fx.com/pro/">
     <meta property="og:site_name" content="nico66fx PRO">
@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
 
     <link rel="stylesheet" href="assets/v2.css">
+    <link rel="stylesheet" href="assets/v3.css">
     <script src="assets/v2.js" defer></script>
     <!-- la foto del hero es lo primero que se ve: se pide cuanto antes -->
     <link rel="preload" as="image" href="assets/profile.webp" type="image/webp">
@@ -42,26 +43,58 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿El mensual incluye todo? ¿Recibo bots nuevos?",
+      "name": "¿En qué plataformas funcionan los bots?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Los dos planes incluyen todos los bots, los cursos y las actualizaciones, también los bots nuevos que salgan. Lo único que cambia es cómo pagas."
+        "text": "En MetaTrader 4 y MetaTrader 5: cada bot indica en su lección para cuál es. Funcionan en cualquier bróker que permita bots, y dentro tienes la guía para tenerlos 24 horas en un VPS. Las herramientas de análisis y los indicadores usan TradingView y el navegador."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Puedo ver un manual antes de comprar?",
+      "name": "¿Cómo se instalan?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Puedes descargar el manual de RAW NASDAQ en PDF desde esta misma página, sin dejar tu email: ver el manual de muestra."
+        "text": "Cada bot tiene su lección con vídeo y manual: copias el archivo del bot en la carpeta de MetaTrader, cargas su configuración y listo. Si te atascas, te ayudo en la comunidad o por mensaje hasta que esté corriendo."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Aprendo a crear mis propios bots?",
+      "name": "¿Cuándo tengo acceso?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Tienes el curso de creación de estrategias con IA, el curso de MutationForge y backtesting con datos tick. Aprendes a generar millones de estrategias y a quedarte solo con las poquísimas que sobreviven a costes reales, sin programar."
+        "text": "Después del pago te llega a tu email la invitación a la Skool en menos de 24 horas, con todos los cursos abiertos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo funcionan las renovaciones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El trimestral se cobra cada 3 meses y el anual cada año, en la misma fecha y por el mismo importe, hasta que lo canceles. El lifetime es un pago único sin renovaciones. Todos los planes dan acceso a lo mismo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo cancelo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cuando quieras, desde el portal de cliente de Stripe (el enlace viene en el email del pago) o escribiéndome. La cancelación vale al final del periodo pagado: conservas el acceso hasta esa fecha y no se te vuelve a cobrar. Ojo: salir de la Skool no cancela el pago."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué soporte tengo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Preguntas en la comunidad y mensajes directos para la instalación y la configuración de los bots. No es asesoramiento financiero ni gestión de tu dinero: tú decides qué activas y con qué riesgo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué condiciones de uso tienen los bots?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La licencia es personal e intransferible y los bots se entregan compilados. Se actualizan mientras tu plan esté activo; en el lifetime, siempre. No se garantizan beneficios ni resultados."
       }
     },
     {
@@ -74,10 +107,18 @@
     },
     {
       "@type": "Question",
-      "name": "¿Con cuánto empiezo y funciona en MetaTrader?",
+      "name": "¿Con cuánto empiezo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Desde 50 € en cuenta cent con el bot de oro (RAW XAU 3.3, para MT5). Los bots funcionan en MetaTrader 4 y en MetaTrader 5. Opera solo con capital que puedas permitirte perder."
+        "text": "Desde 50 € en cuenta cent con el bot de oro (RAW XAU 3.3, para MT5). Opera solo con capital que puedas permitirte perder."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ya soy miembro con el mensual o el lifetime. ¿Cambia algo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Conservas tu plan, tu precio y tu acceso tal y como los tienes."
       }
     }
   ]
@@ -117,20 +158,15 @@
 
     <a href="#contenido" class="saltar">Saltar al contenido</a>
 
-    <!-- 0 · BARRA SUPERIOR: logo + menú + Entrar.
-         Sin JS, el desplegable «Robots» y el panel móvil son <details> nativos:
-         se abren y se cierran solos y todos sus enlaces funcionan. Con JS, v2.js
-         los cambia por botones con aria-expanded y aria-controls (animación,
-         Escape, clic fuera y fondo bloqueado con el panel móvil abierto). -->
+    <!-- 0 · BARRA SUPERIOR: logo + menú + Entrar (misma lógica que v2) -->
     <header class="topbar">
         <div class="wrap topbar__in">
             <a href="#inicio" class="marca"><img src="assets/favicon.svg" alt="" width="28" height="28"><span>nico66fx <b>PRO</b></span></a>
             <nav class="nav" aria-label="Principal">
                 <!-- escritorio (>= 1024 px) -->
                 <ul class="nav__lista">
-                    <li><a class="nav__a" href="#dentro">Qué incluye</a></li>
-                    <li><a class="nav__a" href="#prueba">Manual</a></li>
-                    <li><a class="nav__a" href="#fabrica">La fábrica</a></li>
+                    <li><a class="nav__a" href="#ecosistema">Qué incluye</a></li>
+                    <li><a class="nav__a" href="#como-funciona">Cómo funciona</a></li>
                     <li><a class="nav__a" href="#comunidad">Comunidad</a></li>
                     <li><a class="nav__a" href="#precio">Precio</a></li>
                     <li><a class="nav__a" href="#preguntas">Preguntas</a></li>
@@ -147,7 +183,7 @@
                     <li><a class="nav__a" href="../tools/">Herramientas</a></li>
                 </ul>
 
-                <a href="#precio" class="btn btn-secondary btn--sm nav__entrar">Entrar</a>
+                <a href="#precio" class="btn btn-secondary btn--sm nav__entrar">Ver planes</a>
 
                 <!-- móvil y tableta (< 1024 px) -->
                 <div class="menu-movil" data-desplegable="movil">
@@ -156,9 +192,9 @@
                         <div class="menu-movil__panel" id="menu-movil">
                             <p class="menu__grupo" id="mm-pagina">En esta página</p>
                             <ul aria-labelledby="mm-pagina">
-                                <li><a href="#dentro">Qué incluye</a></li>
-                                <li><a href="#prueba">Manual</a></li>
-                                <li><a href="#fabrica">La fábrica</a></li>
+                                <li><a href="#ecosistema">Qué incluye</a></li>
+                                <li><a href="#productos">Los bots</a></li>
+                                <li><a href="#como-funciona">Cómo funciona</a></li>
                                 <li><a href="#comunidad">Comunidad</a></li>
                                 <li><a href="#precio">Precio</a></li>
                                 <li><a href="#preguntas">Preguntas</a></li>
@@ -181,12 +217,10 @@
 
     <main id="contenido" tabindex="-1">
 
-        <!-- 1 · HERO: cabe en una pantalla de móvil, un solo botón -->
+        <!-- A · HERO: qué es PRO, en una pantalla de móvil, un botón principal -->
         <section id="inicio" class="hero" aria-labelledby="titulo">
             <div class="wrap hero__centro hero__grid">
               <div class="hero__texto">
-                <!-- Foto: halo azul suave detrás, aro claro e insignia verde. Quieta:
-                     nada de flotar ni parallax (nada decorativo en bucle). -->
                 <div class="avatar">
                     <div class="avatar__foto">
                         <picture>
@@ -197,23 +231,23 @@
                     <span class="avatar__ok" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
                 </div>
 
-                <h1 id="titulo">Bots de trading para MetaTrader. <span>Y aprende a crear los tuyos.</span></h1>
-                <p class="hero__sub">Cada bot con su backtest, su manual y soporte.</p>
+                <h1 id="titulo">Bots de trading para MetaTrader. <span>Con su backtest, su manual y soporte.</span></h1>
+                <p class="hero__sub">nico66fx PRO es una comunidad privada en Skool: todos mis bots para MT4 y MT5, cursos para crear los tuyos y ayuda para instalarlos.</p>
 
                 <ul class="hero__datos">
-                    <li><strong>200+</strong> <span>alumnos</span></li>
+                    <li><strong>230+</strong> <span>miembros</span></li>
                     <li><strong>10K</strong> <span>en Telegram</span></li>
                     <li><strong>2,7&nbsp;M</strong> <span>de estrategias probadas</span></li>
                 </ul>
 
                 <div class="hero__cta">
-                    <a href="#dentro" class="btn btn-primary btn--lg">Ver qué hay dentro <svg class="ico" aria-hidden="true"><use href="#i-abajo"/></svg></a>
-                    <p class="hero__precio">Desde <strong class="nw">49,99&nbsp;€/mes</strong> o <strong class="nw">249&nbsp;€</strong> de por vida</p>
-                    <a class="btn-wa" href="https://wa.link/md9s5v" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-mensaje"/></svg><span>Resolver dudas antes de entrar</span><span class="sr"> (WhatsApp, se abre en una pestaña nueva)</span></a>
+                    <a href="#precio" class="btn btn-primary btn--lg">Ver planes <svg class="ico" aria-hidden="true"><use href="#i-abajo"/></svg></a>
+                    <p class="hero__precio">Anual <strong class="nw">199&nbsp;€</strong>&nbsp;· trimestral <strong class="nw">99&nbsp;€</strong></p>
+                    <a class="hero__alt" href="#ecosistema">Ver qué hay dentro <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></a>
                 </div>
               </div>
 
-              <!-- Vídeo «por dentro»: en ordenador va a la derecha del eslogan; en móvil, en la sección siguiente -->
+              <!-- Vídeo «por dentro»: en ordenador va a la derecha; en móvil, en la sección siguiente -->
               <div class="hero__video">
                 <div class="video-card ">
                     <video playsinline preload="none" poster="assets/video/nico66fx_PRO_por_dentro.jpg" aria-label="Vídeo: la comunidad nico66fx PRO por dentro">
@@ -223,61 +257,9 @@
                 </div>
               </div>
             </div>
-
-            <div class="wrap plataformas">
-                <p class="plataformas__t">Trabajamos con</p>
-                <ul aria-label="Plataformas y herramientas con las que trabajamos">
-                    <li>
-                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <rect x="6" y="10" width="52" height="44" rx="6" fill="none" stroke="currentColor" stroke-width="3"/>
-                            <path d="M14 42 L24 28 L34 36 L52 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="52" cy="18" r="3.5" fill="currentColor"/>
-                        </svg>
-                        MetaTrader 4
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <rect x="6" y="10" width="52" height="44" rx="6" fill="none" stroke="currentColor" stroke-width="3"/>
-                            <rect x="14" y="34" width="6" height="14" fill="currentColor"/>
-                            <rect x="24" y="26" width="6" height="22" fill="currentColor"/>
-                            <rect x="34" y="18" width="6" height="30" fill="currentColor"/>
-                            <rect x="44" y="28" width="6" height="20" fill="currentColor"/>
-                        </svg>
-                        MetaTrader 5
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="14" cy="48" r="6" fill="currentColor"/>
-                            <path d="M20 12 H44 V22 H36 V52 H24 V22 H20 Z" fill="currentColor"/>
-                            <path d="M40 28 L52 52 H40 L34 38 Z" fill="currentColor"/>
-                        </svg>
-                        TradingView
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" stroke-width="3"/>
-                            <circle cx="32" cy="32" r="3" fill="currentColor"/>
-                            <path d="M32 18 V14 M32 50 V46 M18 32 H14 M50 32 H46 M22 22 L19 19 M42 42 L45 45" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
-                        Tick Data Suite
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M6 20 H48 V28 H40 C37 31 35 34 35 38 H42 V46 H22 V38 H29 C29 34 27 31 24 28 H14 C9 28 6 25 6 20 Z" fill="currentColor"/><rect x="18" y="49" width="28" height="6" rx="2" fill="currentColor"/><path d="M53 8 V16 M49 12 H57 M56 21 L59 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                        </svg>
-                        MutationForge
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M32 8 V25 M32 39 V56 M8 32 H25 M39 32 H56 M15 15 L27 27 M37 37 L49 49 M49 15 L37 27 M27 37 L15 49" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-                        </svg>
-                        Claude
-                    </li>
-                </ul>
-            </div>
         </section>
 
-        <!-- 1b · VÍDEO (solo móvil: justo después del hero) -->
+        <!-- A2 · VÍDEO (solo móvil: justo después del hero) -->
         <section id="video" class="video-movil" aria-label="La comunidad por dentro, en vídeo">
             <div class="wrap">
                 <p class="video-movil__t">La comunidad por dentro · 1:34</p>
@@ -290,60 +272,96 @@
             </div>
         </section>
 
-        <!-- 2 · LO QUE TIENES AL ENTRAR -->
-        <section id="dentro" class="seccion" aria-labelledby="dentro-titulo">
+        <!-- B · EL ECOSISTEMA PRO: una captura real y las cinco piezas -->
+        <section id="ecosistema" class="seccion" aria-labelledby="eco-titulo">
+            <span id="dentro" class="ancla-antigua" aria-hidden="true"></span>
             <div class="wrap">
                 <header class="cabecera">
-                    <p class="eyebrow">Dentro de PRO</p>
-                    <h2 id="dentro-titulo" class="h2">Lo que tienes al entrar</h2>
-                    <p class="lead">Los bots, los cursos y la comunidad. Lo mismo en los dos planes.</p>
+                    <p class="eyebrow">El ecosistema PRO</p>
+                    <h2 id="eco-titulo" class="h2">Todo lo que tienes al entrar</h2>
+                    <p class="lead">Lo mismo en cualquier plan. Solo cambia cómo pagas.</p>
                 </header>
 
-                <ul class="tarjetas" data-revelar="tarjetas">
+                <figure class="eco-captura card-glass">
+                    <picture>
+                        <source type="image/webp" srcset="assets/mt5-raw-nasdaq-sm.webp 800w, assets/mt5-raw-nasdaq.webp 1280w" sizes="(min-width: 1100px) 1052px, 100vw">
+                        <img src="assets/mt5-raw-nasdaq-sm.jpg" srcset="assets/mt5-raw-nasdaq-sm.jpg 800w, assets/mt5-raw-nasdaq.jpg 1280w" sizes="(min-width: 1100px) 1052px, 100vw" width="1280" height="688" loading="lazy" decoding="async" alt="MetaTrader 5 con RAW NASDAQ cargado en el gráfico del Nasdaq: su panel con la hora de apertura, el riesgo por operación y la caducidad, y abajo la pestaña Expertos con los mensajes del bot">
+                    </picture>
+                    <figcaption><strong>RAW NASDAQ en MetaTrader 5, en una cuenta demo.</strong> Así llega cada bot: compilado, con su panel y su manual.</figcaption>
+                </figure>
+
+                <ul class="tarjetas eco" data-revelar="tarjetas">
                     <li class="tarjeta card-glass" style="--i:0">
                         <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-bot"/></svg></span>
-                        <p class="tarjeta__k">Bot de oro</p>
-                        <h3>RAW XAU 3.3</h3>
-                        <p>Oro (XAUUSD) en MetaTrader 5.</p>
-                        <p class="tarjeta__dato">Desde 50&nbsp;€ en cuenta cent</p>
+                        <p class="tarjeta__k">Robots</p>
+                        <h3>10 bots para MT4 y MT5</h3>
+                        <p>Oro, Nasdaq, fondeo y un portafolio de 10 estrategias. Cada uno con su manual, sus .set y su backtest.</p>
+                        <p class="tarjeta__dato">Se actualizan mientras eres miembro</p>
                     </li>
                     <li class="tarjeta card-glass" style="--i:1">
-                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-diana"/></svg></span>
-                        <p class="tarjeta__k">Fondeo</p>
-                        <h3>DUAL XAU 2.3</h3>
-                        <p>El pensado y probado para evaluaciones de prop firm.</p>
-                        <p class="tarjeta__dato">FTMO o FundedNext</p>
-                        <a class="tarjeta__enlace" href="fondeo/">Configura tu <span class="nw">fondeo <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
+                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-pulso"/></svg></span>
+                        <p class="tarjeta__k">Indicadores y herramientas</p>
+                        <h3>Para analizar antes de activar</h3>
+                        <p>Indicadores para TradingView y herramientas para leer un backtest, simular rachas con Monte Carlo y comparar bots.</p>
+                        <a class="tarjeta__enlace" href="../tools/">Ver las <span class="nw">herramientas <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
                     </li>
                     <li class="tarjeta card-glass" style="--i:2">
-                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-capas"/></svg></span>
-                        <p class="tarjeta__k">Portfolio</p>
-                        <h3>HELIOS H1</h3>
-                        <p>10 estrategias, versión clásica y MASTER en un solo robot.</p>
-                        <p class="tarjeta__dato">Beta, en demo</p>
-                        <a class="tarjeta__enlace" href="helios/">Ver <span class="nw">HELIOS H1 <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
+                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-llave"/></svg></span>
+                        <p class="tarjeta__k">Recursos y tutoriales</p>
+                        <h3>Paso a paso, en vídeo</h3>
+                        <p>Instalación de cada bot, guía de VPS, cuentas demo, bróker recomendado y solución de errores de MT4 y MT5.</p>
                     </li>
                     <li class="tarjeta card-glass" style="--i:3">
-                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-rejilla"/></svg></span>
-                        <p class="tarjeta__k">Catálogo</p>
-                        <h3>Más bots</h3>
-                        <!-- el enlace va en la propia lista y en primer lugar: así cada marca entre paréntesis queda pegada solo a su bot -->
-                        <p><a class="enlace" href="rawnasdaq/">RAW&nbsp;NASDAQ</a>, EURUSD&nbsp;Scalp (grid), Sniper&nbsp;XAU, Grid y RAW&nbsp;BTC (beta).</p>
-                        <p class="tarjeta__dato">Los beta, marcados</p>
+                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-fabrica"/></svg></span>
+                        <p class="tarjeta__k">Formación y documentación</p>
+                        <h3>Aprende a crear los tuyos</h3>
+                        <p>Curso de creación de estrategias con IA, curso de MutationForge y backtesting con datos tick. El proceso completo: de 2,7 millones de estrategias generadas a 12 graduadas.</p>
                     </li>
                     <li class="tarjeta card-glass" style="--i:4">
-                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-fabrica"/></svg></span>
-                        <p class="tarjeta__k">Formación</p>
-                        <h3>Crea los tuyos</h3>
-                        <p>Curso de creación de estrategias con IA y curso de MutationForge.</p>
-                        <p class="tarjeta__dato">Backtesting con datos tick</p>
-                    </li>
-                    <li class="tarjeta card-glass" style="--i:5">
                         <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-usuarios"/></svg></span>
-                        <p class="tarjeta__k">Soporte</p>
-                        <h3>Comunidad</h3>
-                        <p>Actualizaciones, masterclass grabadas y soporte 1 a 1.</p>
-                        <p class="tarjeta__dato">200+ alumnos</p>
+                        <p class="tarjeta__k">Comunidad privada en Skool</p>
+                        <h3>No te quedas solo con un PDF</h3>
+                        <p>Preguntas, novedades, directos y masterclass grabadas, y ayuda con la instalación hasta que el bot esté corriendo.</p>
+                        <p class="tarjeta__dato">230+ miembros</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- C · HERRAMIENTAS Y PRODUCTOS: cuatro bots y el resto plegado -->
+        <section id="productos" class="seccion seccion--alt" aria-labelledby="prod-titulo">
+            <span id="fabrica" class="ancla-antigua" aria-hidden="true"></span>
+            <div class="wrap">
+                <header class="cabecera">
+                    <p class="eyebrow">Los bots</p>
+                    <h2 id="prod-titulo" class="h2">Cuatro para empezar, el resto en el catálogo</h2>
+                    <p class="lead">Los que están en beta van marcados. Ninguno promete ganar todos los meses.</p>
+                </header>
+
+                <ul class="productos">
+                    <li class="tarjeta card-glass">
+                        <p class="tarjeta__k">Oro · MT5</p>
+                        <h3>RAW XAU 3.3</h3>
+                        <p>El bot de oro (XAUUSD) en M5. El más sencillo para empezar.</p>
+                        <p class="tarjeta__dato">Desde 50&nbsp;€ en cuenta cent</p>
+                    </li>
+                    <li class="tarjeta card-glass">
+                        <p class="tarjeta__k">Fondeo · MT5</p>
+                        <h3>DUAL XAU 2.3</h3>
+                        <p>Pensado y probado para evaluaciones de prop firm. Oro y DAX, cierra plano cada noche.</p>
+                        <a class="tarjeta__enlace" href="fondeo/">Configura tu <span class="nw">fondeo <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
+                    </li>
+                    <li class="tarjeta card-glass">
+                        <p class="tarjeta__k">Portfolio · MT5 · beta</p>
+                        <h3>HELIOS H1</h3>
+                        <p>10 estrategias sobre oro, EURUSD, DAX, petróleo y GBPJPY, en versión clásica y MASTER.</p>
+                        <a class="tarjeta__enlace" href="helios/">Ver <span class="nw">HELIOS H1 <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
+                    </li>
+                    <li class="tarjeta card-glass">
+                        <p class="tarjeta__k">Nasdaq · MT5</p>
+                        <h3>RAW NASDAQ 1.21</h3>
+                        <p>Una decisión al día, en la apertura de Nueva York. Stop por volatilidad, sin martingala ni grid.</p>
+                        <a class="tarjeta__enlace" href="rawnasdaq/">Ver <span class="nw">RAW NASDAQ <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
                     </li>
                 </ul>
 
@@ -352,42 +370,24 @@
                     <div>
                         <ul class="bots">
                             <li class="bot">
-                                <div class="bot__cab"><h3>RAW XAU 3.3</h3></div>
-                                <p class="bot__meta">Oro (XAUUSD)&nbsp;· MT5&nbsp;· M5</p>
-                                <p class="bot__txt">El bot de oro. Desde 50&nbsp;€ en cuenta cent.</p>
-                            </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>RAW NASDAQ 1.20</h3></div>
-                                <p class="bot__meta">Nasdaq 100 (NAS100)&nbsp;· MT5&nbsp;· M5</p>
-                                <p class="bot__txt">Una decisión al día, en la apertura de Nueva York. Stop calculado con la volatilidad (ATR) y una sola posición a la vez: sin martingala, sin grid y sin promediar. Su manual es el de muestra: <a class="enlace" href="#prueba">descárgalo más abajo</a>.</p>
-                                <a class="bot__enlace" href="rawnasdaq/">Ver <span class="nw">RAW NASDAQ <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
-                            </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>DUAL XAU 2.3</h3><span class="chip chip--marca">Fondeo</span></div>
-                                <p class="bot__meta">Oro y DAX (Nasdaq, opcional)&nbsp;· MT5</p>
-                                <p class="bot__txt">El pensado y probado para evaluaciones de prop firm. Cierra plano cada noche. Recomendado en FTMO o FundedNext.</p>
-                                <a class="bot__enlace" href="fondeo/">Configura tu <span class="nw">fondeo <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
-                            </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>HELIOS H1</h3><span class="chip">Beta · demo</span></div>
-                                <p class="bot__meta">Oro, EURUSD, DAX, petróleo y GBPJPY&nbsp;· H1&nbsp;· MT5</p>
-                                <p class="bot__txt">Portfolio de 10 estrategias, versión clásica y MASTER en un solo robot.</p>
-                                <a class="bot__enlace" href="helios/">Ver <span class="nw">HELIOS H1 <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
-                            </li>
-                            <li class="bot">
                                 <div class="bot__cab"><h3>EURUSD Scalp</h3><span class="chip chip--aviso">Grid</span></div>
                                 <p class="bot__meta">EURUSD&nbsp;· M1&nbsp;· MT4</p>
                                 <p class="bot__txt"><strong>Es un grid:</strong> promedia posiciones sin stop loss. Riesgo alto. No apto para fondeo.</p>
                             </li>
                             <li class="bot">
                                 <div class="bot__cab"><h3>Sniper XAU</h3></div>
-                                <p class="bot__meta">Oro (XAUUSD)</p>
+                                <p class="bot__meta">Oro (XAUUSD)&nbsp;· MT4</p>
                                 <p class="bot__txt">Tendencia y rebotes.</p>
                             </li>
                             <li class="bot">
                                 <div class="bot__cab"><h3>Grid</h3></div>
-                                <p class="bot__meta">Forex</p>
+                                <p class="bot__meta">Forex&nbsp;· MT4</p>
                                 <p class="bot__txt">Opera en rangos amplios.</p>
+                            </li>
+                            <li class="bot">
+                                <div class="bot__cab"><h3>BOT GPT</h3></div>
+                                <p class="bot__meta">MT4</p>
+                                <p class="bot__txt">Orientado a Axi Select.</p>
                             </li>
                             <li class="bot">
                                 <div class="bot__cab"><h3>RAW BTC</h3><span class="chip">Beta</span></div>
@@ -399,11 +399,6 @@
                                 <p class="bot__meta">Oro (XAUUSD)&nbsp;· MT4</p>
                                 <p class="bot__txt">Port a MQL4 de RAW XAU.</p>
                             </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>BOT GPT</h3></div>
-                                <p class="bot__meta">MT4</p>
-                                <p class="bot__txt">Orientado a Axi Select.</p>
-                            </li>
                         </ul>
                         <p class="catalogo__nota">RAW BTC y RAW XAU MT4 viven en el Experimental Hub: los pruebas antes que nadie, con lo que eso implica.</p>
                     </div>
@@ -411,39 +406,80 @@
             </div>
         </section>
 
-        <!-- 3 · PRUEBA: el manual de muestra es el protagonista -->
-        <section id="prueba" class="seccion seccion--alt" aria-labelledby="prueba-titulo">
-            <span id="social" class="ancla-antigua" aria-hidden="true"></span>
-            <div class="brillo" aria-hidden="true"></div>
+        <!-- D · CÓMO FUNCIONA: de la compra al primer bot, y el manual de muestra -->
+        <section id="como-funciona" class="seccion" aria-labelledby="cf-titulo">
+            <span id="prueba" class="ancla-antigua" aria-hidden="true"></span>
             <div class="wrap">
-                <header class="cabecera cabecera--centro">
-                    <p class="eyebrow">Antes de pagar</p>
-                    <h2 id="prueba-titulo" class="h2">Lee un manual por dentro</h2>
-                    <p class="lead">Es el manual real de RAW NASDAQ: qué es y cómo decide, qué necesitas, la instalación paso a paso, los parámetros, cómo gestiona el riesgo, sus resultados históricos y qué esperar en cuenta real.</p>
+                <header class="cabecera">
+                    <p class="eyebrow">Cómo funciona</p>
+                    <h2 id="cf-titulo" class="h2">De la compra a tu primer bot en demo</h2>
                 </header>
+
+                <ol class="pasos">
+                    <li class="paso card-glass">
+                        <span class="paso__n" aria-hidden="true"></span>
+                        <h3>Eliges plan y pagas</h3>
+                        <p>Pago seguro con Stripe. El lifetime, en España, también con Klarna en 3 plazos.</p>
+                    </li>
+                    <li class="paso card-glass">
+                        <span class="paso__n" aria-hidden="true"></span>
+                        <h3>Recibes el acceso a Skool</h3>
+                        <p>La invitación llega a tu email en menos de 24 horas, con todos los cursos abiertos.</p>
+                    </li>
+                    <li class="paso card-glass">
+                        <span class="paso__n" aria-hidden="true"></span>
+                        <h3>Empiezas por «Empieza aquí»</h3>
+                        <p>Eliges el bot según tu capital y tu objetivo, descargas el bot y su manual, y lo instalas con su vídeo.</p>
+                    </li>
+                    <li class="paso card-glass">
+                        <span class="paso__n" aria-hidden="true"></span>
+                        <h3>Pruebas en demo y preguntas</h3>
+                        <p>Primero en demo, con el mismo lote que usarías en real. Las dudas, en la comunidad o por mensaje.</p>
+                    </li>
+                </ol>
 
                 <div class="manual card-glass card-glass--lg destacada">
                     <div class="manual__portada" aria-hidden="true">
                         <div class="doc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
                     </div>
                     <div class="manual__cab">
-                        <h3>Manual de RAW NASDAQ</h3>
-                        <p>Documento en PDF, para leer sin dejar tu email.</p>
+                        <h3>Lee un manual antes de pagar</h3>
+                        <p>El manual real de RAW NASDAQ: cómo decide, la instalación, los parámetros, el riesgo y qué esperar en real. Sin dejar tu email.</p>
                     </div>
                     <div class="manual__cuerpo">
                         <a class="btn btn-primary btn--lg btn--block" href="assets/manual-muestra-raw-nasdaq.pdf" download="manual-muestra-raw-nasdaq.pdf" type="application/pdf" aria-describedby="manual-meta">
                             <svg class="ico" aria-hidden="true"><use href="#i-descarga"/></svg>
-                            Descargar un manual de muestra (PDF)
+                            Descargar el manual de muestra (PDF)
                         </a>
                         <p class="manual__meta" id="manual-meta">RAW NASDAQ v1.21&nbsp;· 11 páginas&nbsp;· 898&nbsp;KB</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- E · COMUNIDAD Y CONFIANZA: capturas reales del feed, sin cifras inventadas -->
+        <section id="comunidad" class="seccion seccion--alt" aria-labelledby="comunidad-titulo">
+            <span id="social" class="ancla-antigua" aria-hidden="true"></span>
+            <div class="brillo" aria-hidden="true"></div>
+            <div class="wrap">
+                <header class="cabecera cabecera--centro">
+                    <p class="eyebrow">Comunidad</p>
+                    <h2 id="comunidad-titulo" class="h2">Lo que comparten los miembros</h2>
+                    <p class="lead">Capturas reales del feed de la Skool. Cada experiencia es de su autor y no garantiza la tuya.</p>
+                </header>
+
+                <ul class="com-datos com-datos--v3" aria-label="La comunidad en cifras">
+                    <li><strong>230+</strong><span>miembros</span></li>
+                    <li><strong>1 de cada 2</strong><span>entra cada semana</span></li>
+                    <li><strong>~7&nbsp;días</strong><span>entre novedades</span></li>
+                    <li><strong>22</strong><span>cursos en el aula</span></li>
+                </ul>
 
                 <div class="capturas" id="capturas">
                     <div class="capturas__cab">
                         <div>
-                            <h3>Lo que comparten los alumnos</h3>
-                            <p>Capturas de la comunidad en Skool.</p>
+                            <h3>Del feed de la comunidad</h3>
+                            <p>Pulsa una captura para verla en grande.</p>
                             <p class="capturas__hint" aria-hidden="true">Desliza para ver más <svg class="ico"><use href="#i-der"/></svg></p>
                         </div>
                         <div class="capturas__nav" hidden>
@@ -451,14 +487,58 @@
                             <button type="button" class="btn btn-secondary" data-carrusel="next" aria-label="Captura siguiente"><svg class="ico" aria-hidden="true"><use href="#i-der"/></svg></button>
                         </div>
                     </div>
-                    <div class="carrusel" role="region" aria-label="Capturas de alumnos en la comunidad" tabindex="0">
+                    <div class="carrusel" role="region" aria-label="Capturas de miembros en la comunidad" tabindex="0">
                         <ul class="carrusel__pista">
                             <li class="captura">
                                 <figure>
-                                    <a class="captura__enlace" href="assets/skool7.jpg">
+                                    <a class="captura__enlace" href="assets/skool8.jpg">
                                         <picture>
-                                            <source type="image/webp" srcset="assets/skool7-sm.webp 640w, assets/skool7.webp 1240w" sizes="(min-width: 768px) 473px, 341px">
-                                            <img src="assets/skool7-sm.jpg" srcset="assets/skool7-sm.jpg 640w, assets/skool7.jpg 1240w" sizes="(min-width: 768px) 473px, 341px" width="640" height="379" loading="lazy" decoding="async" alt="Dany Fuentes comparte su primer pago: certificado de pago mensual de Axi Select por 289,80 $">
+                                            <source type="image/webp" srcset="assets/skool8-sm.webp 640w, assets/skool8.webp 1240w" sizes="(min-width: 768px) 369px, 266px">
+                                            <img src="assets/skool8-sm.jpg" srcset="assets/skool8-sm.jpg 640w, assets/skool8.jpg 1240w" sizes="(min-width: 768px) 369px, 266px" width="640" height="486" loading="lazy" decoding="async" alt="Dany Fuentes da las gracias tras pasar el 7 % de la cuenta fondeada de Axi con BOT GPT y SNIPER XAU, y cuenta que también ha aprendido a operar en manual">
+                                        </picture>
+                                        <span class="sr"> (ver la captura ampliada)</span>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li class="captura">
+                                <figure>
+                                    <a class="captura__enlace" href="assets/skool10.jpg">
+                                        <picture>
+                                            <source type="image/webp" srcset="assets/skool10-sm.webp 640w, assets/skool10.webp 1240w" sizes="(min-width: 768px) 473px, 341px">
+                                            <img src="assets/skool10-sm.jpg" srcset="assets/skool10-sm.jpg 640w, assets/skool10.jpg 1240w" sizes="(min-width: 768px) 473px, 341px" width="640" height="379" loading="lazy" decoding="async" alt="Jheyson Cuadrado cuenta que tuvo paciencia esperando los 30 días y que, para no arriesgar la ganancia, desinstaló el bot y siguió probando en demo">
+                                        </picture>
+                                        <span class="sr"> (ver la captura ampliada)</span>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li class="captura">
+                                <figure>
+                                    <a class="captura__enlace" href="assets/skool16.jpg">
+                                        <picture>
+                                            <source type="image/webp" srcset="assets/skool16-sm.webp 640w, assets/skool16.webp 1240w" sizes="(min-width: 768px) 448px, 323px">
+                                            <img src="assets/skool16-sm.jpg" srcset="assets/skool16-sm.jpg 640w, assets/skool16.jpg 1240w" sizes="(min-width: 768px) 448px, 323px" width="640" height="400" loading="lazy" decoding="async" alt="Angel Eduardo Vega comparte los paneles de RAW XAU de su día y dice que el bot le acompaña muy bien">
+                                        </picture>
+                                        <span class="sr"> (ver la captura ampliada)</span>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li class="captura">
+                                <figure>
+                                    <a class="captura__enlace" href="assets/skool14.jpg">
+                                        <picture>
+                                            <source type="image/webp" srcset="assets/skool14-sm.webp 640w, assets/skool14.webp 1240w" sizes="(min-width: 768px) 439px, 317px">
+                                            <img src="assets/skool14-sm.jpg" srcset="assets/skool14-sm.jpg 640w, assets/skool14.jpg 1240w" sizes="(min-width: 768px) 439px, 317px" width="640" height="408" loading="lazy" decoding="async" alt="Daniel Hernandez comparte su historial con RAW XAU: lento pero seguro">
+                                        </picture>
+                                        <span class="sr"> (ver la captura ampliada)</span>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li class="captura">
+                                <figure>
+                                    <a class="captura__enlace" href="assets/skool18.jpg">
+                                        <picture>
+                                            <source type="image/webp" srcset="assets/skool18-sm.webp 640w, assets/skool18.webp 1240w" sizes="(min-width: 768px) 439px, 317px">
+                                            <img src="assets/skool18-sm.jpg" srcset="assets/skool18-sm.jpg 640w, assets/skool18.jpg 1240w" sizes="(min-width: 768px) 439px, 317px" width="640" height="408" loading="lazy" decoding="async" alt="Lenny Carta cuenta que ya está en la fase semilla de Axi Select con BOT GPT">
                                         </picture>
                                         <span class="sr"> (ver la captura ampliada)</span>
                                     </a>
@@ -468,8 +548,8 @@
                                 <figure>
                                     <a class="captura__enlace" href="assets/skool6.jpg">
                                         <picture>
-                                            <source type="image/webp" srcset="assets/skool6-sm.webp 640w, assets/skool6.webp 1240w" sizes="(min-width: 768px) 422px, 303px">
-                                            <img src="assets/skool6-sm.jpg" srcset="assets/skool6-sm.jpg 640w, assets/skool6.jpg 1240w" sizes="(min-width: 768px) 422px, 303px" width="640" height="425" loading="lazy" decoding="async" alt="Ruben Ortega anuncia su primer retiro en la Skool: empezó con 50 $ el 6 de enero, retira de una cuenta de 1.700 $ y se lo ingresan en menos de 24 horas">
+                                            <source type="image/webp" srcset="assets/skool6-sm.webp 640w, assets/skool6.webp 1240w" sizes="(min-width: 768px) 422px, 304px">
+                                            <img src="assets/skool6-sm.jpg" srcset="assets/skool6-sm.jpg 640w, assets/skool6.jpg 1240w" sizes="(min-width: 768px) 422px, 304px" width="640" height="425" loading="lazy" decoding="async" alt="Ruben Ortega anuncia su primer retiro: empezó con 50 $ el 6 de enero y retira de una cuenta de 1.700 $">
                                         </picture>
                                         <span class="sr"> (ver la captura ampliada)</span>
                                     </a>
@@ -480,18 +560,7 @@
                                     <a class="captura__enlace" href="assets/skool13.jpg">
                                         <picture>
                                             <source type="image/webp" srcset="assets/skool13-sm.webp 640w, assets/skool13.webp 1168w" sizes="(min-width: 768px) 370px, 267px">
-                                            <img src="assets/skool13-sm.jpg" srcset="assets/skool13-sm.jpg 640w, assets/skool13.jpg 1168w" sizes="(min-width: 768px) 370px, 267px" width="640" height="484" loading="lazy" decoding="async" alt="Miguel Briones pasa la primera fase de una cuenta real de 10K con Dual Xau y 637,10 de beneficio">
-                                        </picture>
-                                        <span class="sr"> (ver la captura ampliada)</span>
-                                    </a>
-                                </figure>
-                            </li>
-                            <li class="captura">
-                                <figure>
-                                    <a class="captura__enlace" href="assets/skool14.jpg">
-                                        <picture>
-                                            <source type="image/webp" srcset="assets/skool14-sm.webp 640w, assets/skool14.webp 1240w" sizes="(min-width: 768px) 439px, 316px">
-                                            <img src="assets/skool14-sm.jpg" srcset="assets/skool14-sm.jpg 640w, assets/skool14.jpg 1240w" sizes="(min-width: 768px) 439px, 316px" width="640" height="408" loading="lazy" decoding="async" alt="Daniel Hernandez muestra el detalle de operaciones del bot Raw Xau con 284,90 de profit acumulado">
+                                            <img src="assets/skool13-sm.jpg" srcset="assets/skool13-sm.jpg 640w, assets/skool13.jpg 1168w" sizes="(min-width: 768px) 370px, 267px" width="640" height="484" loading="lazy" decoding="async" alt="Miguel Briones pasa la primera fase de una cuenta de 10K con Dual Xau">
                                         </picture>
                                         <span class="sr"> (ver la captura ampliada)</span>
                                     </a>
@@ -505,142 +574,10 @@
                     <a class="myfx" href="https://www.myfxbook.com/members/gatewaymt4" target="_blank" rel="noopener">Histórico público de las cuentas en Myfxbook<span class="sr"> (se abre en una pestaña nueva)</span> <svg class="ico" aria-hidden="true"><use href="#i-externo"/></svg></a>
                     <p class="aviso-corto">Resultados pasados no garantizan resultados futuros.</p>
                 </div>
-
-                <!--
-                    CUENTA AUDITADA EN GRANDE · construida pero OCULTA.
-                    Activarla (quitar el atributo hidden y cambiar cada «—» por el dato real)
-                    SOLO cuando haya cuentas configuradas con el riesgo del manual y con al
-                    menos 3 meses de histórico público en Myfxbook. Hasta entonces, oculta.
-                -->
-                <section id="auditada" class="auditada card-glass card-glass--lg" aria-labelledby="auditada-titulo" hidden>
-                    <div>
-                        <p class="eyebrow">Cuenta auditada en Myfxbook</p>
-                        <h3 id="auditada-titulo">—</h3>
-                        <p class="auditada__sub">Bróker: — · Plataforma: — · Desde: —</p>
-                    </div>
-                    <dl class="auditada__kpis">
-                        <div><dt>Rentabilidad</dt><dd>—</dd></div>
-                        <div><dt>Caída máxima</dt><dd>—</dd></div>
-                        <div><dt>Riesgo por operación</dt><dd>—</dd></div>
-                        <div><dt>Meses de histórico</dt><dd>—</dd></div>
-                    </dl>
-                    <p class="auditada__nota">Configurada con el riesgo del manual. Cifras a fecha de —. Resultados pasados no garantizan resultados futuros.</p>
-                    <a class="btn btn-secondary" href="https://www.myfxbook.com/members/gatewaymt4" target="_blank" rel="noopener">Ver la cuenta en Myfxbook<span class="sr"> (se abre en una pestaña nueva)</span> <svg class="ico" aria-hidden="true"><use href="#i-externo"/></svg></a>
-                </section>
             </div>
         </section>
 
-        <!-- 4 · LA FÁBRICA: el embudo real -->
-        <section id="fabrica" class="seccion" aria-labelledby="fabrica-titulo">
-            <div class="wrap fabrica">
-                <header class="cabecera">
-                    <p class="eyebrow">La fábrica</p>
-                    <h2 id="fabrica-titulo" class="h2">No te doy solo bots. Te enseño a fabricarlos.</h2>
-                    <p class="lead">Un bot que te regalan caduca. Saber fabricarlos y filtrarlos, no. Aprendes a generar millones de estrategias y a quedarte solo con las poquísimas que sobreviven a costes reales.</p>
-                    <ul class="fabrica__chips">
-                        <li><svg class="ico" aria-hidden="true"><use href="#i-chispa"/></svg>Curso de creación de estrategias con IA</li>
-                        <li><svg class="ico" aria-hidden="true"><use href="#i-llave"/></svg>Curso de MutationForge</li>
-                        <li><svg class="ico" aria-hidden="true"><use href="#i-pulso"/></svg>Backtesting con datos tick</li>
-                    </ul>
-                </header>
-
-                <figure class="embudo-card card-glass card-glass--lg" data-revelar="embudo">
-                    <figcaption class="embudo-card__cab">
-                        <p>Última corrida completa documentada en el curso</p>
-                        <span class="chip chip--marca">EURUSD H1</span>
-                    </figcaption>
-                    <ol class="embudo">
-                        <li class="etapa" style="--i:0">
-                            <span class="etapa__paso">1 · Generación</span>
-                            <strong class="etapa__cifra">2.700.000</strong>
-                            <span class="etapa__nota">estrategias, sobre 2015–2022</span>
-                        </li>
-                        <li class="etapa" style="--i:1">
-                            <span class="etapa__paso">2 · Filtro con costes dentro</span>
-                            <strong class="etapa__cifra">Descarta el 99,66&nbsp;%</strong>
-                            <span class="etapa__nota">comisión, swap, spread y slippage</span>
-                        </li>
-                        <li class="etapa" style="--i:2">
-                            <span class="etapa__paso">3 · Fuera de muestra</span>
-                            <strong class="etapa__cifra">Monte Carlo y <span class="nw">walk-forward</span></strong>
-                        </li>
-                        <li class="etapa" style="--i:3">
-                            <span class="etapa__paso"><span class="etapa__ok"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>4 · Graduadas</span>
-                            <strong class="etapa__cifra">12</strong>
-                        </li>
-                    </ol>
-                    <p class="embudo__frase">De 2,7 millones. Ese es el trabajo real.</p>
-                </figure>
-            </div>
-        </section>
-
-
-        <!-- 4b. COMUNIDAD + SKOOL. Cifras y areas literales de la /pro anterior. -->
-        <section id="comunidad" class="seccion seccion--alt" aria-labelledby="comunidad-titulo">
-            <div class="wrap">
-                <header class="cabecera cabecera--centro">
-                    <p class="eyebrow">Comunidad + Skool</p>
-                    <h2 id="comunidad-titulo" class="h2">No te quedas solo con un PDF</h2>
-                    <p class="lead">El curso completo vive en la Skool de nico66fx: lecciones por niveles, directos y la comunidad privada. Los bots se actualizan mientras eres miembro.</p>
-                </header>
-                <ul class="com-datos" aria-label="La comunidad en cifras">
-                    <li><strong>200+</strong><span>miembros</span></li>
-                    <li><strong>341</strong><span>posts en el feed</span></li>
-                    <li><strong>~7&nbsp;días</strong><span>entre novedades</span></li>
-                    <li><strong>18</strong><span>áreas en el aula</span></li>
-                </ul>
-                <div class="com-grid">
-                    <article class="com card-glass">
-                        <span class="com__ico"><svg class="ico" aria-hidden="true"><use href="#i-capas"/></svg></span>
-                        <h3>Bots que se actualizan contigo dentro</h3>
-                        <p>Cuando el mercado cambia, se ajustan los parámetros y la nueva versión se publica en la comunidad. Mientras seas miembro, recibes todas las actualizaciones.</p>
-                    </article>
-                    <article class="com card-glass">
-                        <span class="com__ico"><svg class="ico" aria-hidden="true"><use href="#i-calendario"/></svg></span>
-                        <h3>Directos y masterclass</h3>
-                        <p>Calendario de directos con Nico y masterclass grabadas en el aula. Preguntas cuando te atascas y compartes tus resultados.</p>
-                    </article>
-                    <article class="com card-glass">
-                        <span class="com__ico"><svg class="ico" aria-hidden="true"><use href="#i-usuarios"/></svg></span>
-                        <h3>Soporte 1 a 1</h3>
-                        <p>Soporte directo con la instalación y la configuración, hasta que el bot esté corriendo.</p>
-                    </article>
-                    <article class="com card-glass">
-                        <span class="com__ico"><svg class="ico" aria-hidden="true"><use href="#i-rejilla"/></svg></span>
-                        <h3>VPS guiado</h3>
-                        <p>Te decimos qué VPS elegir y cómo conectarlo, con una guía para instalar la plataforma y los bots. No dependes de tu ordenador.</p>
-                    </article>
-                </div>
-                <details class="catalogo">
-                    <summary><span class="t-abrir">Ver las 18 áreas del aula</span><span class="t-cerrar">Ocultar las áreas</span> <svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
-                    <div>
-                        <ul class="com-areas">
-                            <li class="chip">Empieza aquí</li>
-                            <li class="chip">Crea tus propios bots</li>
-                            <li class="chip">BOT RAW XAU</li>
-                            <li class="chip">BOT GPT · Axi Select</li>
-                            <li class="chip">BOT EURUSD SCALP</li>
-                            <li class="chip">BOT SNIPER XAU</li>
-                            <li class="chip">BOT GRID</li>
-                            <li class="chip">DUAL XAU · prop firms</li>
-                            <li class="chip">Experimental Hub</li>
-                            <li class="chip">Axi Select · fondeo</li>
-                            <li class="chip">Cuentas DEMO</li>
-                            <li class="chip">Solución errores MT4 y MT5</li>
-                            <li class="chip">Servidor en la nube (VPS)</li>
-                            <li class="chip">Backtesting y Tick Data</li>
-                            <li class="chip">Bróker recomendado</li>
-                            <li class="chip">Reuniones y Masterclass</li>
-                            <li class="chip">Curso básico de trading</li>
-                            <li class="chip">Estrategias manuales</li>
-                        </ul>
-                    </div>
-                </details>
-                <p class="com-nota">El acceso a la Skool se envía a tu email nada más confirmarse el pago.</p>
-            </div>
-        </section>
-
-        <!-- 5 · PARA QUIÉN ES / PARA QUIÉN NO -->
+        <!-- E2 · PARA QUIÉN ES / PARA QUIÉN NO (honestidad antes del precio) -->
         <section id="para-quien" class="seccion" aria-labelledby="pq-titulo">
             <div class="wrap">
                 <header class="cabecera cabecera--centro">
@@ -670,60 +607,77 @@
             </div>
         </section>
 
-        <!-- 6 · PRECIO: Lifetime destacado y primero en móvil -->
-        <section id="precio" class="seccion seccion--alt" aria-labelledby="precio-titulo">
+        <!-- F · PRECIOS. Anual protagonista. Lifetime solo en ventana:
+             para cerrarla, cambia data-ventana="abierta" por data-ventana="cerrada" en esta <section>. -->
+        <section id="precio" class="seccion seccion--alt" aria-labelledby="precio-titulo" data-ventana="abierta">
             <span id="pricing" class="ancla-antigua" aria-hidden="true"></span>
             <div class="brillo" aria-hidden="true"></div>
             <div class="wrap">
                 <header class="cabecera cabecera--centro">
                     <p class="eyebrow">Precio</p>
-                    <h2 id="precio-titulo" class="h2">Elige cómo entrar</h2>
-                    <p class="lead">El mismo contenido en los dos planes. Solo cambia cómo pagas.</p>
+                    <h2 id="precio-titulo" class="h2">Elige tu plan</h2>
+                    <p class="lead">Todo el contenido en cualquier plan. Precio final, impuestos incluidos.</p>
                 </header>
 
-                <div class="planes">
-                    <article class="plan plan--vida card-glass card-glass--lg destacada" aria-labelledby="plan-vida">
+                <div class="planes planes--v3">
+                    <article class="plan plan--trimestral card-glass" aria-labelledby="plan-trimestral">
                         <div class="plan__cab">
-                            <h3 id="plan-vida">De por vida</h3>
-                            <span class="plan__badge">Recomendado</span>
+                            <h3 id="plan-trimestral">Trimestral</h3>
                         </div>
-                        <p class="plan__nota">En la pantalla de pago aparece como «Lifetime».</p>
-                        <p class="plan__precio"><span class="plan__cifra">249&nbsp;€</span><span class="plan__per">pago único</span></p>
-                        <p class="plan__ahorro"><svg class="ico" aria-hidden="true"><use href="#i-calendario"/></svg>Se paga solo en 5 meses frente al mensual</p>
+                        <p class="plan__precio"><span class="plan__cifra">99&nbsp;€</span><span class="plan__per">cada 3 meses</span></p>
+                        <p class="plan__mes">Son 33&nbsp;€ al mes</p>
                         <ul class="plan__lista">
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Un solo pago: sin suscripción y sin renovación.</li>
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Todo lo del mensual, de por vida.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Todos los bots, cursos y la comunidad.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Se renueva cada 3 meses hasta que lo canceles.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Cancelas cuando quieras, sin permanencia.</li>
                         </ul>
                         <div class="plan__accion">
-                            <a class="btn btn-primary btn--lg btn--block" href="https://buy.stripe.com/7sY14pd2F85F1xD3Db3AY0X" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-candado"/></svg><span>Acceder de por vida&nbsp;· <span class="nw">249&nbsp;€</span></span><span class="sr"> (se abre en una pestaña nueva)</span></a>
-                            <p class="plan__klarna">En España también puedes pagarlo en 3 plazos con Klarna, eligiéndolo en la pantalla de pago. Sujeto a la aprobación de Klarna.</p>
-                            <p class="plan__legal">No se garantizan beneficios ni resultados. Al completar la compra solicitas el acceso inmediato y aceptas perder el derecho de desistimiento sobre el contenido digital ya entregado (art. 103.m RDL 1/2007). <a href="terminos.html">Ver condiciones</a>.</p>
-                            <a class="btn-wa" href="https://wa.link/md9s5v" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-mensaje"/></svg><span>Resolver dudas antes de entrar</span><span class="sr"> (WhatsApp, se abre en una pestaña nueva)</span></a>
+                            <a class="btn btn-secondary btn--lg btn--block" href="https://buy.stripe.com/6oUcN7e6Jfy73FLb5D3AY1v" target="_blank" rel="noopener"><span>Empezar con el trimestral</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
                         </div>
                     </article>
 
-                    <article class="plan plan--mes card-glass" aria-labelledby="plan-mes">
+                    <article class="plan plan--anual card-glass card-glass--lg destacada" aria-labelledby="plan-anual">
                         <div class="plan__cab">
-                            <h3 id="plan-mes">Mensual</h3>
+                            <h3 id="plan-anual">Anual</h3>
+                            <span class="plan__badge">Recomendado</span>
                         </div>
-                        <p class="plan__precio"><span class="plan__cifra">49,99&nbsp;€</span><span class="plan__per">/mes</span></p>
+                        <p class="plan__precio"><span class="plan__cifra">199&nbsp;€</span><span class="plan__per">al año</span></p>
+                        <p class="plan__ahorro"><svg class="ico" aria-hidden="true"><use href="#i-calendario"/></svg>Son 16,58&nbsp;€ al mes: la mitad que el trimestral</p>
                         <ul class="plan__lista">
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Cancelas cuando quieras.</li>
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Se renueva cada mes hasta que lo canceles.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Todos los bots, cursos y la comunidad.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Se renueva cada año hasta que lo canceles.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Cancelas cuando quieras y no se vuelve a cobrar.</li>
                         </ul>
                         <div class="plan__accion">
-                            <a class="btn btn-secondary btn--lg btn--block" href="https://buy.stripe.com/dRmeVfgeRfy7fotb5D3AY0W" target="_blank" rel="noopener">Empezar con el mensual<span class="sr"> (se abre en una pestaña nueva)</span></a>
-                            <p class="plan__legal">No se garantizan beneficios ni resultados. Al completar la compra solicitas el acceso inmediato y aceptas perder el derecho de desistimiento sobre el contenido digital ya entregado (art. 103.m RDL 1/2007). <a href="terminos.html">Ver condiciones</a>.</p>
-                            <a class="btn-wa" href="https://wa.link/md9s5v" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-mensaje"/></svg><span>Resolver dudas antes de entrar</span><span class="sr"> (WhatsApp, se abre en una pestaña nueva)</span></a>
+                            <a class="btn btn-primary btn--lg btn--block" href="https://buy.stripe.com/4gM5kFe6JgCbcch4Hf3AY1w" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-candado"/></svg><span>Empezar con el anual</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+                        </div>
+                    </article>
+
+                    <article class="plan plan--vida card-glass" aria-labelledby="plan-vida">
+                        <div class="plan__cab">
+                            <h3 id="plan-vida">De por vida</h3>
+                            <span class="plan__chip">Ventana abierta</span>
+                        </div>
+                        <p class="plan__nota">Solo en campañas puntuales. En la pantalla de pago aparece como «Lifetime».</p>
+                        <p class="plan__precio"><span class="plan__cifra">349&nbsp;€</span><span class="plan__per">pago único</span></p>
+                        <ul class="plan__lista">
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Un solo pago, sin renovaciones.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Todo PRO y sus actualizaciones, para siempre.</li>
+                        </ul>
+                        <div class="plan__accion">
+                            <a class="btn btn-secondary btn--lg btn--block" href="https://buy.stripe.com/14A8wRgeReu3b8da1z3AY1x" target="_blank" rel="noopener"><span>Acceso de por vida&nbsp;· <span class="nw">349&nbsp;€</span></span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+                            <p class="plan__klarna">En España también en 3 plazos con Klarna, eligiéndolo en la pantalla de pago. Sujeto a la aprobación de Klarna.</p>
                         </div>
                     </article>
                 </div>
 
-                <p class="planes__comun">Acceso inmediato&nbsp;· Todos los bots y cursos en los dos planes&nbsp;· Actualizaciones incluidas</p>
+                <p class="planes__comun">Acceso en menos de 24&nbsp;h&nbsp;· Todos los bots y cursos en cualquier plan&nbsp;· Si ya eres miembro, conservas tu plan y tu precio</p>
+                <p class="planes__legal">No se garantizan beneficios ni resultados. Al completar la compra solicitas el acceso inmediato y aceptas perder el derecho de desistimiento sobre el contenido digital ya entregado (art. 103.m RDL 1/2007). <a href="terminos.html">Ver condiciones</a>.</p>
+                <p class="planes__legal"><a class="btn-wa" href="https://wa.link/md9s5v" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-mensaje"/></svg><span>Resolver dudas antes de entrar</span><span class="sr"> (WhatsApp, se abre en una pestaña nueva)</span></a></p>
             </div>
         </section>
 
-        <!-- 7 · PREGUNTAS: 5, acordeón exclusivo nativo -->
+        <!-- G · PREGUNTAS: acordeón exclusivo nativo -->
         <section id="preguntas" class="seccion" aria-labelledby="preguntas-titulo">
             <div class="wrap">
                 <header class="cabecera cabecera--centro">
@@ -733,31 +687,68 @@
 
                 <div class="faq card-glass">
                     <details name="faq">
-                        <summary><span>¿El mensual incluye todo? ¿Recibo bots nuevos?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
-                        <p class="faq__resp">Sí. Los dos planes incluyen todos los bots, los cursos y las actualizaciones, también los bots nuevos que salgan. Lo único que cambia es cómo pagas.</p>
+                        <summary><span>¿En qué plataformas funcionan los bots?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">En MetaTrader 4 y MetaTrader 5: cada bot indica en su lección para cuál es. Funcionan en cualquier bróker que permita bots, y dentro tienes la guía para tenerlos 24 horas en un VPS. Las herramientas de análisis y los indicadores usan TradingView y el navegador.</p>
                     </details>
                     <details name="faq">
-                        <summary><span>¿Puedo ver un manual antes de comprar?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
-                        <p class="faq__resp">Sí. Puedes descargar el manual de RAW NASDAQ en PDF desde esta misma página, sin dejar tu email: <a class="enlace" href="#prueba">ver el manual de muestra</a>.</p>
+                        <summary><span>¿Cómo se instalan?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">Cada bot tiene su lección con vídeo y manual: copias el archivo del bot en la carpeta de MetaTrader, cargas su configuración y listo. Si te atascas, te ayudo en la comunidad o por mensaje hasta que esté corriendo.</p>
                     </details>
                     <details name="faq">
-                        <summary><span>¿Aprendo a crear mis propios bots?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
-                        <p class="faq__resp">Sí. Tienes el curso de creación de estrategias con IA, el curso de MutationForge y backtesting con datos tick. Aprendes a generar millones de estrategias y a quedarte solo con las poquísimas que sobreviven a costes reales, sin programar.</p>
+                        <summary><span>¿Cuándo tengo acceso?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">Después del pago te llega a tu email la invitación a la Skool en menos de 24 horas, con todos los cursos abiertos.</p>
+                    </details>
+                    <details name="faq">
+                        <summary><span>¿Cómo funcionan las renovaciones?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">El trimestral se cobra cada 3 meses y el anual cada año, en la misma fecha y por el mismo importe, hasta que lo canceles. El lifetime es un pago único sin renovaciones. Todos los planes dan acceso a lo mismo.</p>
+                    </details>
+                    <details name="faq">
+                        <summary><span>¿Cómo cancelo?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">Cuando quieras, desde el portal de cliente de Stripe (el enlace viene en el email del pago) o escribiéndome. La cancelación vale al final del periodo pagado: conservas el acceso hasta esa fecha y no se te vuelve a cobrar. Ojo: salir de la Skool no cancela el pago.</p>
+                    </details>
+                    <details name="faq">
+                        <summary><span>¿Qué soporte tengo?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">Preguntas en la comunidad y mensajes directos para la instalación y la configuración de los bots. No es asesoramiento financiero ni gestión de tu dinero: tú decides qué activas y con qué riesgo.</p>
+                    </details>
+                    <details name="faq">
+                        <summary><span>¿Qué condiciones de uso tienen los bots?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">La licencia es personal e intransferible y los bots se entregan compilados. Se actualizan mientras tu plan esté activo; en el lifetime, siempre. No se garantizan beneficios ni resultados. <a class="enlace" href="terminos.html">Ver condiciones</a>.</p>
                     </details>
                     <details name="faq">
                         <summary><span>¿Sirve para cuentas de fondeo?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
-                        <p class="faq__resp">Sí, con DUAL XAU 2.3: es el bot pensado y probado para evaluaciones de prop firm, y lo recomiendo en FTMO o FundedNext. EURUSD Scalp, al ser un grid, no es apto.</p>
+                        <p class="faq__resp">Sí, con DUAL XAU 2.3: es el bot pensado y probado para evaluaciones de prop firm, y lo recomiendo en FTMO o FundedNext. EURUSD Scalp, al ser un grid, no es apto. <a class="enlace" href="fondeo/">Configura tu fondeo</a>.</p>
                     </details>
                     <details name="faq">
-                        <summary><span>¿Con cuánto empiezo y funciona en MetaTrader?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
-                        <p class="faq__resp">Desde 50&nbsp;€ en cuenta cent con el bot de oro (RAW XAU 3.3, para MT5). Los bots funcionan en MetaTrader 4 y en MetaTrader 5. Opera solo con capital que puedas permitirte perder.</p>
+                        <summary><span>¿Con cuánto empiezo?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">Desde 50&nbsp;€ en cuenta cent con el bot de oro (RAW XAU 3.3, para MT5). Opera solo con capital que puedas permitirte perder.</p>
+                    </details>
+                    <details name="faq">
+                        <summary><span>Ya soy miembro con el mensual o el lifetime. ¿Cambia algo?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">No. Conservas tu plan, tu precio y tu acceso tal y como los tienes.</p>
                     </details>
                 </div>
 
                 <p class="faq__mas"><a class="enlace" href="ayuda/">Más preguntas frecuentes <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></a></p>
             </div>
         </section>
+
+        <!-- H · CTA FINAL -->
+        <section id="empezar" class="seccion seccion--alt" aria-labelledby="cta-titulo">
+            <div class="wrap">
+                <div class="cta-final card-glass card-glass--lg destacada">
+                    <p class="eyebrow">Empieza hoy</p>
+                    <h2 id="cta-titulo" class="h2">Entra con el anual y monta tu primer bot esta semana</h2>
+                    <p class="lead">199&nbsp;€ al año con todo incluido. Si no te encaja, lo cancelas y no se renueva.</p>
+                    <div class="cta-final__btns">
+                        <a class="btn btn-primary btn--lg" href="https://buy.stripe.com/4gM5kFe6JgCbcch4Hf3AY1w" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-candado"/></svg><span>Empezar con el anual</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+                        <a class="btn btn-secondary btn--lg" href="#precio">Ver todos los planes</a>
+                    </div>
+                    <a class="btn-wa" href="https://wa.link/md9s5v" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-mensaje"/></svg><span>¿Dudas? Escríbeme por WhatsApp</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+                </div>
+            </div>
+        </section>
     </main>
+
 
     <!-- PIE -->
     <footer class="pie">
@@ -803,8 +794,8 @@
     <!-- Barra fija inferior (solo móvil). Oculta: inert + aria-hidden. -->
     <div id="barra-movil" class="barra-movil" aria-hidden="true" inert>
         <div class="barra-movil__in">
-            <p>Acceso de por vida&nbsp;· <strong>249&nbsp;€</strong></p>
-            <a href="#precio" class="btn btn-primary btn--sm">Entrar</a>
+            <p>Anual&nbsp;· <strong>199&nbsp;€</strong> al año</p>
+            <a href="#precio" class="btn btn-primary btn--sm">Ver planes</a>
         </div>
     </div>
 
