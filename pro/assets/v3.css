@@ -183,3 +183,77 @@
 .plan__cab{flex-wrap:wrap;row-gap:8px}
 .plan h3{white-space:nowrap}
 @media (min-width:1024px){.paso h3{min-height:2.6em}}
+
+/* ==========================================================================
+   Dirección de arte · 2.ª pasada: composición, producto real, profundidad.
+   ========================================================================== */
+
+/* 1 · Catálogo asimétrico: HELIOS como superficie grande, el resto en horizontal */
+#productos{background:radial-gradient(55% 45% at 0 30%,rgba(21,68,224,.07),transparent 70%),var(--canvas-alt)}
+.prod--destacado{order:-1}
+.prod__ficha{display:grid;gap:14px;margin-top:6px;padding-top:16px;border-top:1px solid var(--hair)}
+.prod__num{display:flex;align-items:center;gap:12px}
+.prod__num strong{font-family:var(--font-display);font-size:3rem;line-height:.9;letter-spacing:-.04em;color:var(--brand)}
+.prod__num span{font-size:.8125rem;line-height:1.35;color:var(--ink-2)}
+.prod__activos{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.prod__activos li{padding:.28rem .6rem;border-radius:7px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--hair-strong);font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.04em;color:var(--ink-2)}
+@media (min-width:1024px){
+  .productos{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-auto-flow:row dense;gap:16px}
+  .prod--destacado{grid-column:1;grid-row:1 / span 3;padding:32px;background:radial-gradient(80% 60% at 100% 0,rgba(21,68,224,.08),transparent 70%),var(--metal)}
+  .prod--destacado h3{font-size:clamp(1.6rem,1.2rem + 1vw,2.1rem)}
+  .prod--destacado>p:not(.tarjeta__k){font-size:1.0625rem;max-width:40ch}
+  .prod--destacado .tarjeta__enlace{margin-top:18px}
+  .prod--destacado .prod__ficha{margin-top:auto;gap:18px}
+  .productos .tarjeta:not(.prod--destacado){grid-column:2;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:16px;row-gap:4px;align-content:center;padding:20px 22px}
+  .productos .tarjeta:not(.prod--destacado) .prod__k{grid-column:1 / -1}
+  .productos .tarjeta:not(.prod--destacado)>*:not(.prod__k){grid-column:1 / -1}
+  .productos .tarjeta:not(.prod--destacado)::after{left:0;right:auto;top:20px;bottom:20px;width:2px;height:auto;background:linear-gradient(180deg,var(--brand),rgba(91,130,255,0))}
+}
+
+/* 2 · Cómo funciona: línea de tiempo abierta en lugar de cuatro tarjetas */
+#como-funciona .pasos .paso{background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;display:block;padding:0 0 0 54px}
+#como-funciona .pasos .paso::before{display:none}
+#como-funciona .pasos .paso::after{top:11px;right:auto;left:54px;opacity:1;color:var(--brand)}
+#como-funciona .pasos .paso h3{margin-top:18px;margin-bottom:6px}
+#como-funciona .pasos .paso::after{top:0}
+#como-funciona .paso__n{position:absolute;left:0;top:0;background:var(--surface);box-shadow:inset 0 0 0 1px rgba(21,68,224,.18),0 6px 16px -10px rgba(21,68,224,.5)}
+#como-funciona .pasos{position:relative;gap:28px}
+#como-funciona .pasos::before{content:"";position:absolute;left:19px;top:38px;bottom:24px;border-left:1px dashed rgba(21,68,224,.28);border-top:0;right:auto;height:auto}
+@media (min-width:1024px){
+  #como-funciona .pasos{gap:28px}
+  #como-funciona .pasos .paso{padding:58px 8px 0 0}
+  #como-funciona .pasos .paso::after{top:12px;left:52px}
+  #como-funciona .pasos .paso h3{margin-top:0;min-height:0}
+  #como-funciona .pasos::before{left:19px;right:calc(25% - 8px);top:19px;bottom:auto;border-left:0;border-top:1px dashed rgba(21,68,224,.28)}
+}
+@media (min-width:768px) and (max-width:1023px){
+  #como-funciona .pasos::before{display:none}
+}
+
+/* 3 · Comunidad: las capturas reales mandan; cifras en una sola franja */
+.com-datos--v3{gap:0;padding:6px;border-radius:var(--radio-l);background:var(--surface);box-shadow:var(--sh-2)}
+.com-datos--v3 li{background:none;box-shadow:none;padding:14px 10px}
+@media (min-width:768px){.com-datos--v3 li+li{box-shadow:inset 1px 0 0 var(--hair)}}
+@media (max-width:767px){.com-datos--v3 li:nth-child(n+3){box-shadow:inset 0 1px 0 var(--hair)}.com-datos--v3 li:nth-child(even){box-shadow:inset 1px 0 0 var(--hair)}.com-datos--v3 li:nth-child(4){box-shadow:inset 1px 0 0 var(--hair),inset 0 1px 0 var(--hair)}}
+#comunidad .capturas{margin-top:clamp(28px,5vw,48px)}
+.captura{--h:min(240px,58vw)}
+@media (min-width:768px){.captura{--h:360px}}
+#comunidad .testimonios{margin:clamp(28px,5vw,48px) 0 0}
+
+/* Ecosistema: las dos piezas anchas, en horizontal (icono a la izquierda) */
+@media (min-width:900px){
+  .eco .tarjeta:nth-child(4),.eco .tarjeta:nth-child(5){display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:18px;row-gap:6px;align-content:start}
+  .eco .tarjeta:nth-child(4) .tarjeta__ico,.eco .tarjeta:nth-child(5) .tarjeta__ico{grid-row:1 / span 4;margin:0}
+}
+
+/* Microinteracciones: elevación y borde suaves, solo con ratón */
+@media (hover:hover) and (pointer:fine){
+  .tarjeta,.testimonio,.lab-curva,.bot,.captura figure,.com-datos--v3{transition:transform 220ms cubic-bezier(.23,1,.32,1),box-shadow 220ms cubic-bezier(.23,1,.32,1)}
+  .eco .tarjeta:hover,.productos .tarjeta:hover,.testimonio:hover,.bot:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(21,68,224,.18),var(--sh-3)}
+  .lab-curva:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px rgba(138,168,255,.28),0 22px 46px -22px rgba(8,17,31,.45)}
+  .captura figure:hover{transform:translateY(-3px);box-shadow:var(--sh-3)}
+}
+@media (prefers-reduced-motion:reduce){
+  .tarjeta,.testimonio,.lab-curva,.bot,.captura figure{transition:none}
+  .eco .tarjeta:hover,.productos .tarjeta:hover,.testimonio:hover,.bot:hover,.lab-curva:hover,.captura figure:hover{transform:none}
+}
