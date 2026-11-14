@@ -6,12 +6,12 @@
     <title>Nico Salmerón · nico66fx</title>
     <meta
       name="description"
-      content="Bienvenido a mi proyecto de trading algorítmico. Explora todas las opciones que te ofrezco para aprovecharte de la operativa de mis bots de trading."
+      content="Trading algorítmico sin humo. Empieza gratis con mi canal de Telegram y la comunidad LITE: herramientas para MT5 y TradingView y cursos paso a paso."
     />
     <meta name="theme-color" content="#F2F5FA" />
 
     <meta property="og:title" content="Nico Salmerón · nico66fx" />
-    <meta property="og:description" content="Trading algorítmico: comunidad de robots, herramientas, broker, cuentas auditadas y más." />
+    <meta property="og:description" content="Trading algorítmico sin humo: canal de Telegram gratis, comunidad LITE con herramientas y cursos, y los bots de nico66fx PRO." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nico66fx.com/" />
     <meta property="og:image" content="https://nico66fx.com/assets/profile.jpg" />
@@ -342,6 +342,38 @@
       }
       .cta svg { width: 14px; height: 14px; }
 
+      .cta.sec { background: #fff; color: var(--brand); box-shadow: inset 0 0 0 1.5px rgba(21, 68, 224, .45); }
+      .card:hover .cta.sec { background: rgba(21, 68, 224, .06); box-shadow: inset 0 0 0 1.5px var(--brand); }
+
+      /* Tarjeta destacada (Telegram): la primera puerta, gratis */
+      .card.destacada {
+        position: relative;
+        padding: 22px 16px 16px;
+        margin-top: 10px;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .85),
+                    0 0 0 2px rgba(21, 68, 224, .55),
+                    0 18px 36px -18px rgba(21, 68, 224, .45);
+      }
+      .card.destacada .thumb { width: 64px; height: 64px; }
+      .card.destacada .card-body h3 { font-size: 17px; }
+      .sello {
+        position: absolute;
+        top: -11px;
+        left: 16px;
+        z-index: 3;
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        background: #FFD60A;
+        color: #08111F;
+        border: 2px solid #fff;
+        box-shadow: 0 4px 10px -4px rgba(8, 17, 31, .35);
+      }
+
       /* En pantallas estrechas la columna de texto se queda en ~120 px y la
          tarjeta se dispara de alto. El botón baja a su propia línea: el texto
          gana el doble de ancho y la tarjeta encoge. */
@@ -520,8 +552,8 @@
         </div>
         <h1>Nico Salmerón</h1>
         <p class="bio">
-          Bienvenido a mi proyecto de trading algorítmico. Aquí encontrarás mis bots para MetaTrader,
-          la comunidad privada y el material de formación.
+          Trading algorítmico sin humo. Empieza gratis: mi canal de Telegram y la comunidad LITE,
+          con mis herramientas y cursos paso a paso.
         </p>
       </section>
 
@@ -540,25 +572,35 @@
 
       <!-- Tarjetas de enlace -->
       <section class="cards">
-        <a class="card cristal filete rise" style="animation-delay: 90ms" href="https://nico66fx.com/pro/" target="_blank" rel="noopener">
-          <img class="thumb" src="assets/icon-comunidad.webp" alt="" loading="lazy" />
-          <div class="card-body">
-            <h3>Comunidad de robots + Herramientas + Tutoriales + Soporte</h3>
-            <p>Acceso a TODOS los robots que yo uso desde 199 € al año. Cancela cuando quieras.</p>
-          </div>
-          <span class="cta">Acceder <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-
-        <a class="card cristal filete rise" style="animation-delay: 130ms" href="https://telegram.dog/cfcommfree" target="_blank" rel="noopener">
+        <a class="card destacada cristal filete rise" style="animation-delay: 90ms" href="https://telegram.dog/cfcommfree" target="_blank" rel="noopener">
+          <span class="sello">Gratis · empieza aquí</span>
           <img class="thumb" src="assets/icon-telegram.png" alt="" loading="lazy" />
           <div class="card-body">
             <h3>Canal de Telegram gratuito</h3>
-            <p>Por aquí comparto mi operativa, novedades y tips acerca de los bots. Únete para no perderte nada.</p>
+            <p>Mis entradas del día, herramientas gratis y novedades antes que en ningún sitio. Casi 11.000 traders dentro.</p>
           </div>
-          <span class="cta">Acceder <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="cta">Unirme gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
 
-        <a class="card cristal filete rise" style="animation-delay: 170ms" href="https://www.myfxbook.com/members/gatewaymt4" target="_blank" rel="noopener">
+        <a class="card cristal filete rise" style="animation-delay: 130ms" href="https://www.skool.com/nico66fx-lite-9298" target="_blank" rel="noopener">
+          <img class="thumb" src="assets/icon-lite.png" alt="" loading="lazy" />
+          <div class="card-body">
+            <h3>Comunidad gratuita nico66fx LITE</h3>
+            <p>RAW NASDAQ LITE, GUARDIAN, LOTE y MULTI BIAS con cursos paso a paso, y comunidad para resolver dudas.</p>
+          </div>
+          <span class="cta">Unirme gratis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="card cristal filete rise" style="animation-delay: 170ms" href="https://nico66fx.com/pro/" target="_blank" rel="noopener">
+          <img class="thumb" src="assets/icon-comunidad.webp" alt="" loading="lazy" />
+          <div class="card-body">
+            <h3>nico66fx PRO: los bots que uso yo</h3>
+            <p>Todos mis robots con manual, vídeo de instalación y soporte por privado. Para cuando quieras ir en serio.</p>
+          </div>
+          <span class="cta sec">Ver PRO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="card cristal filete rise" style="animation-delay: 210ms" href="https://www.myfxbook.com/members/gatewaymt4" target="_blank" rel="noopener">
           <img class="thumb" src="assets/icon-myfxbook.png" alt="" loading="lazy" />
           <div class="card-body">
             <h3>Mis cuentas auditadas (MyFXBook)</h3>
@@ -567,7 +609,7 @@
           <span class="cta">Acceder <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
 
-        <a class="card cristal filete rise" style="animation-delay: 210ms" href="https://netpika.com/aff.php?aff=6" target="_blank" rel="noopener">
+        <a class="card cristal filete rise" style="animation-delay: 250ms" href="https://netpika.com/aff.php?aff=6" target="_blank" rel="noopener">
           <img class="thumb" src="assets/icon-vps.png" alt="" loading="lazy" />
           <div class="card-body">
             <h3>VPS óptima para trading</h3>
