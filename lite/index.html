@@ -386,7 +386,7 @@
     <script>
         /* PLAZAS: sumar aquí cada venta de este precio (tope 2 por plan, solo en la web) */
         (function () {
-            var tope = 2, vendidas = {anual: 0, vida: 1};
+            var tope = 2, vendidas = {anual: 0, vida: 2};
             document.querySelectorAll('.plazas').forEach(function (p) {
                 var q = Math.max(0, tope - (vendidas[p.dataset.plan] || 0)), pts = p.querySelector('.plazas__pts');
                 for (var i = 0; i < tope; i++) { var d = document.createElement('i'); if (i >= q) d.className = 'off'; pts.appendChild(d); }
