@@ -221,7 +221,7 @@
 
                 <div class="planes">
                     <article class="plan plan--top" aria-labelledby="p-anual">
-                        <div class="plan__cab"><h3 id="p-anual">Anual</h3><span class="badge badge--plazas">2 plazas</span></div>
+                        <div class="plan__cab"><h3 id="p-anual">Anual</h3><span class="badge badge--plazas">Última tanda · 2 plazas</span></div>
                         <p class="plan__precio"><span class="plan__cifra">149&nbsp;€</span><span class="plan__per">al año</span></p>
                         <p class="plan__antes">Precio normal: <s>199&nbsp;€</s> al año</p>
                         <p class="plazas" data-plan="anual"><span>Quedan <b>2</b> de 2 plazas</span><span class="plazas__pts" aria-hidden="true"></span></p>
@@ -386,7 +386,7 @@
     <script>
         /* PLAZAS: sumar aquí cada venta de este precio (tope 2 por plan, solo en la web) */
         (function () {
-            var tope = 2, vendidas = {anual: 2, vida: 0};
+            var tope = 2, vendidas = {anual: 0, vida: 0};
             document.querySelectorAll('.plazas').forEach(function (p) {
                 var q = Math.max(0, tope - (vendidas[p.dataset.plan] || 0)), pts = p.querySelector('.plazas__pts');
                 for (var i = 0; i < tope; i++) { var d = document.createElement('i'); if (i >= q) d.className = 'off'; pts.appendChild(d); }
