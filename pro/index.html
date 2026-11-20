@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>nico66fx PRO · Bots de trading para MetaTrader</title>
-    <meta name="description" content="Todos mis bots de trading para MetaTrader con su backtest, su manual y soporte, cursos para crear los tuyos y una comunidad privada en Skool. Anual por 199 € o trimestral por 99 €.">
+    <meta name="description" content="Bots para MT4 y MT5 con su backtest y su manual, RAW NASDAQ PRO LIVE en directo, herramientas de análisis, 22 cursos y una comunidad privada en Skool. Sistemas automatizados reales.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://nico66fx.com/pro/">
     <meta property="og:site_name" content="nico66fx PRO">
@@ -32,15 +32,41 @@
 
     <link rel="stylesheet" href="assets/v2.css">
     <link rel="stylesheet" href="assets/v3.css">
+    <link rel="stylesheet" href="assets/v4.css">
+    <script src="assets/v4.js" defer></script>
     <script src="assets/v2.js" defer></script>
     <!-- la foto del hero es lo primero que se ve: se pide cuanto antes -->
-    <link rel="preload" as="image" href="assets/profile.webp" type="image/webp">
+    <link rel="preload" as="image" href="assets/proto/live_grafico.webp" type="image/webp">
 
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es RAW NASDAQ PRO LIVE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una aplicación privada para los miembros de PRO donde sigues en directo la operativa de RAW NASDAQ: el gráfico del NAS100 en 5 minutos, cada cambio de gestión del stop, el historial en puntos y una calculadora de contratos y lotes para MNQ y NQ. Entras con el email de tu cuenta de Skool."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo ver RAW NASDAQ PRO LIVE desde el móvil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Funciona en el navegador del móvil y del ordenador, y se puede instalar como app en la pantalla de inicio, en Android y en iPhone. Los avisos llegan mientras tienes la web abierta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre LITE y PRO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LITE es gratis: la comunidad abierta, el indicador RAW NASDAQ LITE para TradingView y la web RAW NASDAQ LITE LIVE con la compra o venta del día, la entrada y el historial en puntos. PRO incluye todo eso y además los bots para MT4 y MT5, RAW NASDAQ PRO LIVE con la gestión completa, los 22 cursos, las herramientas y el soporte por privado."
+      }
+    },
     {
       "@type": "Question",
       "name": "¿En qué plataformas funcionan los bots?",
@@ -59,6 +85,14 @@
     },
     {
       "@type": "Question",
+      "name": "¿Necesito un VPS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No es obligatorio para probar, pero para que los bots funcionen las 24 horas sin tener el ordenador encendido lo recomendable es un VPS. Dentro tienes la guía paso a paso."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "¿Cuándo tengo acceso?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -70,7 +104,7 @@
       "name": "¿Cómo funcionan las renovaciones?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El trimestral se cobra cada 3 meses y el anual cada año, en la misma fecha y por el mismo importe, hasta que lo canceles. El lifetime es un pago único sin renovaciones. Todos los planes dan acceso a lo mismo."
+        "text": "El trimestral se cobra cada 3 meses y el anual cada año, en la misma fecha y por el mismo importe, hasta que lo canceles. El de por vida es un pago único sin renovaciones. Todos los planes dan acceso a lo mismo."
       }
     },
     {
@@ -86,7 +120,7 @@
       "name": "¿Qué soporte tengo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Preguntas en la comunidad y mensajes directos para la instalación y la configuración de los bots. No es asesoramiento financiero ni gestión de tu dinero: tú decides qué activas y con qué riesgo."
+        "text": "Preguntas en la comunidad y mensajes directos para la instalación y la configuración de los bots, hasta que el bot esté corriendo. No es asesoramiento financiero ni gestión de tu dinero: tú decides qué activas y con qué riesgo."
       }
     },
     {
@@ -94,7 +128,7 @@
       "name": "¿Qué condiciones de uso tienen los bots?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La licencia es personal e intransferible y los bots se entregan compilados. Se actualizan mientras tu plan esté activo; en el lifetime, siempre. No se garantizan beneficios ni resultados."
+        "text": "La licencia es personal e intransferible y los bots se entregan compilados. Se actualizan mientras tu plan esté activo; en el lifetime, siempre. No se garantizan beneficios ni resultados. Ver condiciones."
       }
     },
     {
@@ -102,7 +136,7 @@
       "name": "¿Sirve para cuentas de fondeo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, con DUAL XAU 2.3: es el bot pensado y probado para evaluaciones de prop firm, y lo recomiendo en FTMO o FundedNext. EURUSD Scalp, al ser un grid, no es apto."
+        "text": "Sí, con DUAL XAU 2.3: es el bot pensado y probado para evaluaciones de prop firm, y lo recomiendo en FTMO o FundedNext. EURUSD Scalp, al ser un grid, no es apto. Configura tu fondeo."
       }
     },
     {
@@ -172,6 +206,16 @@
         <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
         <symbol id="i-chats" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></symbol>
         <symbol id="i-grafica" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+
+        <symbol id="i-movil" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+        <symbol id="i-campana" viewBox="0 0 24 24"><path d="M10.27 21a2 2 0 0 0 3.46 0"/><path d="M3.26 15.33A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.67C19.41 13.96 18 12.5 18 8A6 6 0 0 0 6 8c0 4.5-1.41 5.96-2.74 7.33"/></symbol>
+        <symbol id="i-calc" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
+        <symbol id="i-historial" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></symbol>
+        <symbol id="i-luna" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+        <symbol id="i-pasos" viewBox="0 0 24 24"><path d="M3 12h4l3-9 4 18 3-9h4"/></symbol>
+        <symbol id="i-lista" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+        <symbol id="i-ojo" viewBox="0 0 24 24"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></symbol>
+        <symbol id="i-regalo" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></symbol>
     </svg>
 
     <a href="#contenido" class="saltar">Saltar al contenido</a>
@@ -183,8 +227,10 @@
             <nav class="nav" aria-label="Principal">
                 <!-- escritorio (>= 1024 px) -->
                 <ul class="nav__lista">
-                    <li><a class="nav__a" href="#ecosistema">Qué incluye</a></li>
-                    <li><a class="nav__a" href="#como-funciona">Cómo funciona</a></li>
+                    <li><a class="nav__a" href="#inicio">Qué incluye</a></li>
+                    <li><a class="nav__a" href="#live">PRO LIVE</a></li>
+                    <li><a class="nav__a" href="#lite-pro">LITE vs PRO</a></li>
+                    <li><a class="nav__a" href="#productos">Bots</a></li>
                     <li><a class="nav__a" href="#comunidad">Comunidad</a></li>
                     <li><a class="nav__a" href="#precio">Precio</a></li>
                     <li><a class="nav__a" href="#preguntas">Preguntas</a></li>
@@ -198,7 +244,6 @@
                             </div>
                         </details>
                     </li>
-                    <li><a class="nav__a" href="../tools/">Herramientas</a></li>
                 </ul>
 
                 <a href="#precio" class="btn btn-secondary btn--sm nav__entrar">Ver planes</a>
@@ -211,8 +256,9 @@
                             <p class="menu__grupo" id="mm-pagina">En esta página</p>
                             <ul aria-labelledby="mm-pagina">
                                 <li><a href="#ecosistema">Qué incluye</a></li>
+                                <li><a href="#live">RAW NASDAQ PRO LIVE</a></li>
+                                <li><a href="#lite-pro">LITE vs PRO</a></li>
                                 <li><a href="#productos">Los bots</a></li>
-                                <li><a href="#como-funciona">Cómo funciona</a></li>
                                 <li><a href="#comunidad">Comunidad</a></li>
                                 <li><a href="#precio">Precio</a></li>
                                 <li><a href="#preguntas">Preguntas</a></li>
@@ -235,114 +281,153 @@
 
     <main id="contenido" tabindex="-1">
 
-        <!-- A · HERO: qué es PRO, en una pantalla de móvil, un botón principal -->
-        <section id="inicio" class="hero" aria-labelledby="titulo">
-            <div class="wrap hero__centro hero__grid">
-              <div class="hero__texto">
-                <div class="avatar">
-                    <div class="avatar__foto">
+        <!-- A · HERO v5: órbita con todo lo que incluye PRO, alrededor de un solo acceso -->
+        <section id="inicio" class="hero hero--v5" aria-labelledby="titulo" data-evt-view="pro_page_view">
+            <div class="wrap hero5">
+                <div class="hero5__texto">
+                    <p class="hero4__firma">
                         <picture>
                             <source srcset="assets/profile.webp" type="image/webp">
-                            <img src="assets/profile.jpg" alt="Nico — trader algorítmico" width="320" height="320" fetchpriority="high" decoding="async">
+                            <img src="assets/profile.jpg" alt="" width="40" height="40" decoding="async">
                         </picture>
+                        <span><strong>Nico</strong> · trader algorítmico</span>
+                    </p>
+                    <p class="eyebrow">nico66fx PRO</p>
+                    <h1 id="titulo">Mis bots de trading, <span>listos para tu MetaTrader.</span></h1>
+                    <p class="hero__sub">Descargas los bots que he creado yo, cada uno con su manual y su vídeo de instalación. Y además tienes la web en directo de RAW NASDAQ, indicadores, 22 cursos (también para crear tus propios bots) y la comunidad en Skool.</p>
+                    <div class="hero4__cta">
+                        <a href="#precio" class="btn btn-primary btn--lg" data-evt="pro_hero_click" data-evt-cta="planes">Ver planes <svg class="ico" aria-hidden="true"><use href="#i-abajo"/></svg></a>
+                        <a href="#productos" class="btn btn-secondary btn--lg" data-evt="pro_hero_click" data-evt-cta="bots">Ver los bots</a>
                     </div>
-                    <span class="avatar__ok" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+                    <p class="hero__precio">
+                        <span data-solo="normal">Anual <strong class="nw">199&nbsp;€</strong>&nbsp;· trimestral <strong class="nw">99&nbsp;€</strong></span>
+                        <span data-solo="bf"><span class="chip chip--bf">Black Friday</span> anual <strong class="nw">149&nbsp;€</strong>&nbsp;· de por vida <strong class="nw">249&nbsp;€</strong></span>
+                    </p>
                 </div>
 
-                <h1 id="titulo">Bots de trading para MetaTrader. <span>Con su backtest, su manual y soporte.</span></h1>
-                <p class="hero__sub">nico66fx PRO es una comunidad privada en Skool: todos mis bots para MT4 y MT5, cursos para crear los tuyos y ayuda para instalarlos.</p>
-
-                <ul class="hero__datos">
-                    <li><span class="hd-ico" aria-hidden="true"><svg class="ico"><use href="#i-usuarios"/></svg></span><strong>230+</strong> <span>miembros</span></li>
-                    <li><span class="hd-ico" aria-hidden="true"><svg class="ico"><use href="#i-enviar"/></svg></span><strong>10K</strong> <span>en Telegram</span></li>
-                    <li><span class="hd-ico" aria-hidden="true"><svg class="ico"><use href="#i-cpu"/></svg></span><strong>2,7&nbsp;M</strong> <span>de estrategias probadas</span></li>
-                </ul>
-
-                <div class="hero__cta">
-                    <a href="#precio" class="btn btn-primary btn--lg">Ver planes <svg class="ico" aria-hidden="true"><use href="#i-abajo"/></svg></a>
-                    <p class="hero__precio">Anual <strong class="nw">199&nbsp;€</strong>&nbsp;· trimestral <strong class="nw">99&nbsp;€</strong></p>
-                    <a class="hero__alt" href="#ecosistema">Ver qué hay dentro <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></a>
-                </div>
-              </div>
-
-              <!-- Vídeo «por dentro»: en ordenador va a la derecha; en móvil, en la sección siguiente -->
-              <div class="hero__video">
-                <div class="video-card ">
-                    <video playsinline preload="none" poster="assets/video/nico66fx_PRO_por_dentro.jpg" aria-label="Vídeo: la comunidad nico66fx PRO por dentro">
-                        <source src="assets/video/nico66fx_PRO_por_dentro.mp4" type="video/mp4">
-                    </video>
-                    <button type="button" class="video-play" aria-label="Reproducir el vídeo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
-                </div>
-              </div>
+                <!-- Órbita: cada nodo lleva a su sección. Los nodos no giran (se leen); solo gira el anillo exterior. -->
+                <nav class="orbita" aria-label="Todo lo que incluye PRO">
+                    <div class="orbita__anillo orbita__anillo--ext" aria-hidden="true"><i></i></div>
+                    <div class="orbita__anillo orbita__anillo--int" aria-hidden="true"></div>
+                    <div class="orbita__centro">
+                        <img src="assets/favicon.svg" alt="" width="40" height="40">
+                        <strong>nico66fx <b>PRO</b></strong>
+                        <span>un solo acceso</span>
+                    </div>
+                    <ul class="orbita__nodos">
+                        <li style="--a:-90deg"><a class="nodo nodo--fuerte" href="#productos"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-bot"/></svg></span><span class="nodo__t">10 bots listos</span><span class="nodo__d">MT4 y MT5</span></a></li>
+                        <li style="--a:-45deg"><a class="nodo nodo--live" href="#live"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-pulso"/></svg></span><span class="nodo__t">PRO LIVE</span><span class="nodo__d">El Nasdaq en directo</span></a></li>
+                        <li style="--a:0deg"><a class="nodo" href="#ecosistema"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-velas"/></svg></span><span class="nodo__t">Indicadores</span><span class="nodo__d">TradingView</span></a></li>
+                        <li style="--a:45deg"><a class="nodo" href="../tools/"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-medidor"/></svg></span><span class="nodo__t">Herramientas</span><span class="nodo__d">Para analizar backtests</span></a></li>
+                        <li style="--a:90deg"><a class="nodo" href="#comunidad"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-usuarios"/></svg></span><span class="nodo__t">Comunidad</span><span class="nodo__d">250 en Skool</span></a></li>
+                        <li style="--a:135deg"><a class="nodo" href="#ecosistema"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-birrete"/></svg></span><span class="nodo__t">22 cursos</span><span class="nodo__d">De instalar a crear bots</span></a></li>
+                        <li style="--a:180deg"><a class="nodo" href="fondeo/"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-escudo"/></svg></span><span class="nodo__t">Fondeo</span><span class="nodo__d">Bot para cuentas de fondeo</span></a></li>
+                        <li style="--a:225deg"><a class="nodo" href="helios/"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-capas"/></svg></span><span class="nodo__t">Cartera HELIOS</span><span class="nodo__d">10 estrategias en un bot</span></a></li>
+                    </ul>
+                </nav>
             </div>
-        </section>
 
-        <!-- A2 · VÍDEO (solo móvil: justo después del hero) -->
-        <section id="video" class="video-movil" aria-label="La comunidad por dentro, en vídeo">
+            <!-- Así se ve por dentro: capturas reales de cada pieza -->
             <div class="wrap">
-                <p class="video-movil__t">La comunidad por dentro · 1:34</p>
-                <div class="video-card ">
-                    <video playsinline preload="none" poster="assets/video/nico66fx_PRO_por_dentro.jpg" aria-label="Vídeo: la comunidad nico66fx PRO por dentro">
-                        <source src="assets/video/nico66fx_PRO_por_dentro.mp4" type="video/mp4">
-                    </video>
-                    <button type="button" class="video-play" aria-label="Reproducir el vídeo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
-                </div>
+                <ul class="dentro dentro--tiles" aria-label="Lo que tienes dentro de PRO">
+                    <li><a href="#productos"><img class="tile16" src="assets/proto/tiles/bots.webp" width="960" height="600" loading="lazy" decoding="async" alt="Bot RAW NASDAQ funcionando en MetaTrader 5"><span class="dentro__t">10 bots hechos por mí, para descargar</span></a></li>
+                    <li><a href="#live"><img class="tile16" src="assets/proto/tiles/live.webp" width="960" height="600" loading="lazy" decoding="async" alt="RAW NASDAQ PRO LIVE: la operación del Nasdaq en directo"><span class="dentro__t">La operación del Nasdaq, en directo</span></a></li>
+                    <li><a href="#ecosistema"><img class="tile16" src="assets/proto/tiles/tv.webp" width="960" height="600" loading="lazy" decoding="async" alt="Indicadores de nico66fx en TradingView"><span class="dentro__t">Indicadores para TradingView</span></a></li>
+                    <li><a href="#ecosistema"><img class="tile16" src="assets/proto/tiles/cursos.webp" width="960" height="600" loading="lazy" decoding="async" alt="El aula de PRO en Skool con los cursos de cada bot"><span class="dentro__t">22 cursos, también para crear tus bots</span></a></li>
+                </ul>
             </div>
         </section>
 
-        <!-- B · EL ECOSISTEMA PRO: una captura real y las cinco piezas -->
-        <section id="ecosistema" class="seccion" aria-labelledby="eco-titulo">
-            <span id="dentro" class="ancla-antigua" aria-hidden="true"></span>
+        <!-- C · HERRAMIENTAS Y PRODUCTOS: cuatro bots y el resto plegado -->
+        <section id="productos" class="seccion seccion--alt" aria-labelledby="prod-titulo">
+            <span id="fabrica" class="ancla-antigua" aria-hidden="true"></span>
             <div class="wrap">
                 <header class="cabecera">
-                    <p class="eyebrow">El ecosistema PRO</p>
-                    <h2 id="eco-titulo" class="h2">Todo lo que tienes al entrar</h2>
-                    <p class="lead">Lo mismo en cualquier plan. Solo cambia cómo pagas.</p>
+                    <p class="eyebrow">Los bots</p>
+                    <h2 id="prod-titulo" class="h2">Los bots que te descargas</h2>
+                    <p class="lead">Los he creado yo y te los descargas ya hechos, para MT4 y MT5. Cada uno trae su manual, su configuración y su backtest. Aquí tienes los cuatro principales; el resto, en el catálogo.</p>
                 </header>
 
-                <ul class="tarjetas eco" data-revelar="tarjetas">
-                    <li class="tarjeta card-glass" style="--i:0">
-                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-bot"/></svg></span>
-                        <p class="tarjeta__k">Robots</p>
-                        <h3>10 bots para MT4 y MT5</h3>
-                        <p>Oro, Nasdaq, fondeo y un portafolio de 10 estrategias. Cada uno con su manual, sus .set y su backtest.</p>
-                        <p class="tarjeta__dato">Se actualizan mientras eres miembro</p>
+                <ul class="productos">
+                    <li class="tarjeta card-glass">
+                        <p class="tarjeta__k prod__k"><span class="ico-tile" aria-hidden="true"><svg class="ico"><use href="#i-monedas"/></svg></span>Oro · MT5</p>
+                        <h3>RAW XAU 3.3</h3>
+                        <p>Oro (XAUUSD) en M5. El más sencillo para empezar.</p>
+                        <p class="tarjeta__dato">Desde 50&nbsp;€ en cuenta cent</p>
                     </li>
-                    <li class="tarjeta card-glass" style="--i:1">
-                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-medidor"/></svg></span>
-                        <p class="tarjeta__k">Indicadores y herramientas</p>
-                        <h3>Para analizar antes de activar</h3>
-                        <p>Indicadores para TradingView y herramientas para leer un backtest, simular rachas con Monte Carlo y comparar bots.</p>
-                        <a class="tarjeta__enlace" href="../tools/">Ver las <span class="nw">herramientas <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
+                    <li class="tarjeta card-glass">
+                        <p class="tarjeta__k prod__k"><span class="ico-tile" aria-hidden="true"><svg class="ico"><use href="#i-escudo"/></svg></span>Fondeo · MT5</p>
+                        <h3>DUAL XAU 2.3</h3>
+                        <p>Sistema orientado a fondeo. Oro y DAX, pensado y probado para evaluaciones de prop firm.</p>
+                        <a class="tarjeta__enlace" href="fondeo/">Configura tu <span class="nw">fondeo <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
                     </li>
-                    <li class="tarjeta card-glass" style="--i:2">
-                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span>
-                        <p class="tarjeta__k">Recursos y tutoriales</p>
-                        <h3>Paso a paso, en vídeo</h3>
-                        <p>Instalación de cada bot, guía de VPS, cuentas demo, bróker recomendado y solución de errores de MT4 y MT5.</p>
+                    <li class="tarjeta card-glass prod--destacado">
+                        <p class="tarjeta__k prod__k"><span class="ico-tile" aria-hidden="true"><svg class="ico"><use href="#i-capas"/></svg></span>Portfolio · MT5</p>
+                        <span class="chip chip--real"><span class="punto" aria-hidden="true"></span>En real desde el 14/11/2026</span>
+                        <h3>HELIOS H1</h3>
+                        <p>Cartera de 10 estrategias automatizadas sobre oro, EURUSD, DAX, petróleo y GBPJPY, en versión clásica y MASTER.</p>
+                        <div class="prod__ficha" aria-hidden="true">
+                            <p class="prod__num"><strong>10</strong><span>estrategias<br>en una cartera</span></p>
+                            <ul class="prod__activos"><li>XAUUSD</li><li>EURUSD</li><li>DAX</li><li>Petróleo</li><li>GBPJPY</li></ul>
+                        </div>
+                        <a class="tarjeta__enlace" href="helios/">Ver <span class="nw">HELIOS H1 <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
                     </li>
-                    <li class="tarjeta card-glass" style="--i:3">
-                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-birrete"/></svg></span>
-                        <p class="tarjeta__k">Formación y documentación</p>
-                        <h3>Aprende a crear los tuyos</h3>
-                        <p>Curso de creación de estrategias con IA, curso de MutationForge y backtesting con datos tick. El proceso completo: de 2,7 millones de estrategias generadas a 12 graduadas.</p>
-                    </li>
-                    <li class="tarjeta card-glass" style="--i:4">
-                        <span class="tarjeta__ico"><svg class="ico" aria-hidden="true"><use href="#i-chats"/></svg></span>
-                        <p class="tarjeta__k">Comunidad privada en Skool</p>
-                        <h3>No te quedas solo con un PDF</h3>
-                        <p>Preguntas, novedades, directos y masterclass grabadas, y ayuda con la instalación hasta que el bot esté corriendo.</p>
-                        <p class="tarjeta__dato">230+ miembros</p>
+                    <li class="tarjeta card-glass">
+                        <p class="tarjeta__k prod__k"><span class="ico-tile" aria-hidden="true"><svg class="ico"><use href="#i-velas"/></svg></span>Nasdaq · MT5</p>
+                        <h3>RAW NASDAQ 1.22</h3>
+                        <p>Centrado en la apertura de Nueva York. Una decisión al día. Sin martingala ni grid.</p>
+                        <p class="tarjeta__dato">En directo en RAW NASDAQ PRO LIVE</p>
+                        <a class="tarjeta__enlace" href="#live" data-evt="pro_live_click">Verlo en <span class="nw">directo <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
                     </li>
                 </ul>
+
+                <details class="catalogo">
+                    <summary><span class="t-abrir">Ver el catálogo completo</span><span class="t-cerrar">Ocultar el catálogo</span> <svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                    <div>
+                        <ul class="bots">
+                            <li class="bot">
+                                <div class="bot__cab"><h3>EURUSD Scalp</h3><span class="chip chip--aviso">Grid</span></div>
+                                <p class="bot__meta">EURUSD&nbsp;· M1&nbsp;· MT4</p>
+                                <p class="bot__txt"><strong>Es un grid:</strong> promedia posiciones sin stop loss. Riesgo alto. No apto para fondeo.</p>
+                            </li>
+                            <li class="bot">
+                                <div class="bot__cab"><h3>Sniper XAU</h3></div>
+                                <p class="bot__meta">Oro (XAUUSD)&nbsp;· MT4</p>
+                                <p class="bot__txt">Tendencia y rebotes.</p>
+                            </li>
+                            <li class="bot">
+                                <div class="bot__cab"><h3>Grid</h3></div>
+                                <p class="bot__meta">Forex&nbsp;· MT4</p>
+                                <p class="bot__txt">Opera en rangos amplios.</p>
+                            </li>
+                            <li class="bot">
+                                <div class="bot__cab"><h3>BOT GPT</h3></div>
+                                <p class="bot__meta">MT4</p>
+                                <p class="bot__txt">Orientado a Axi Select.</p>
+                            </li>
+                            <li class="bot">
+                                <div class="bot__cab"><h3>RAW BTC</h3><span class="chip">Beta</span></div>
+                                <p class="bot__meta">Bitcoin</p>
+                                <p class="bot__txt">Rupturas en Bitcoin.</p>
+                            </li>
+                            <li class="bot">
+                                <div class="bot__cab"><h3>RAW XAU MT4</h3><span class="chip">Beta</span></div>
+                                <p class="bot__meta">Oro (XAUUSD)&nbsp;· MT4</p>
+                                <p class="bot__txt">Port a MQL4 de RAW XAU.</p>
+                            </li>
+                        </ul>
+                        <p class="catalogo__nota">RAW BTC y RAW XAU MT4 viven en el Experimental Hub: los pruebas antes que nadie, con lo que eso implica.</p>
+                    </div>
+                </details>
             </div>
         </section>
+
         <!-- B2 · BACKTEST: sección clara, tarjetas oscuras con las curvas ya publicadas en /rawnasdaq y /helios -->
         <section id="backtest" class="seccion lab" aria-labelledby="lab-titulo">
             <div class="wrap">
                 <header class="cabecera cabecera--centro">
-                    <p class="eyebrow">Primero los datos</p>
-                    <h2 id="lab-titulo" class="h2">Cada bot llega con su backtest</h2>
+                    <p class="eyebrow">Backtests</p>
+                    <h2 id="lab-titulo" class="h2">Cada sistema llega con sus datos</h2>
                     <p class="lead">Antes de activar nada, ves cómo se ha comportado con años de datos: la curva, las caídas y los meses malos. Y en el aula aprendes a repetir la prueba tú.</p>
                 </header>
 
@@ -403,85 +488,140 @@
         </section>
 
 
-        <!-- C · HERRAMIENTAS Y PRODUCTOS: cuatro bots y el resto plegado -->
-        <section id="productos" class="seccion seccion--alt" aria-labelledby="prod-titulo">
-            <span id="fabrica" class="ancla-antigua" aria-hidden="true"></span>
+        <!-- A2 · RAW NASDAQ PRO LIVE: el software propio, con su sección -->
+        <section id="live" class="seccion live" aria-labelledby="live-titulo" data-evt-view="pro_live_view">
+            <div class="wrap">
+                <div class="live__grid">
+                    <div class="live__texto">
+                        <p class="eyebrow eyebrow--claro"><span class="punto" aria-hidden="true"></span>Solo en PRO · aplicación privada</p>
+                        <h2 id="live-titulo" class="h2">RAW NASDAQ PRO LIVE</h2>
+                        <p class="live__sub">Mira en directo lo que hace el bot RAW NASDAQ.</p>
+                        <p class="live__desc">Una web solo para miembros. Ves cuándo entra, cómo mueve el stop y cómo cierra, con el gráfico y el historial. Entras con tu email de PRO, desde el móvil o el ordenador.</p>
+
+                        <ul class="live__feat">
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-velas"/></svg>Gráfico del Nasdaq en directo</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-pasos"/></svg>Cada movimiento del stop</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-historial"/></svg>Historial en puntos</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-calc"/></svg>Calculadora de contratos y lotes</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-campana"/></svg>Avisos en el navegador</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-movil"/></svg>Se instala como app en el móvil</li>
+                        </ul>
+
+                        <div class="live__cta">
+                            <a href="#precio" class="btn btn-primary btn--lg" data-evt="pro_live_cta">Acceder con PRO <svg class="ico" aria-hidden="true"><use href="#i-abajo"/></svg></a>
+                            <a href="#lite-pro" class="live__alt">¿Qué ves gratis en LITE? <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></a>
+                        </div>
+                    </div>
+
+                    <div class="live__media">
+                        <figure class="live__principal">
+                            <img src="assets/proto/live_grafico.webp" width="900" height="1170" loading="lazy" decoding="async" alt="RAW NASDAQ PRO LIVE: gráfico del NAS100 en 5 minutos con la vela de las 15:30, la entrada y el trailing">
+                        </figure>
+                        <figure class="live__lateral">
+                            <img src="assets/proto/live_cierre.webp" width="760" height="611" loading="lazy" decoding="async" alt="Resumen de la operación cerrada en RAW NASDAQ PRO LIVE: +254,7 puntos">
+                            <figcaption>Resultado de cada operación, en puntos</figcaption>
+                        </figure>
+                        <figure class="live__lateral">
+                            <img src="assets/proto/live_cambios.webp" width="900" height="205" loading="lazy" decoding="async" alt="Registro de cambios de RAW NASDAQ PRO LIVE: stop a breakeven a las 21:00 y stop reducido a las 20:50">
+                            <figcaption>Cada movimiento del stop, con su hora</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <p class="live__nota">Capturas reales de la operación del lunes 16/11/2026. RAW NASDAQ PRO LIVE enseña lo que hace el sistema; no es asesoramiento ni garantiza resultados.</p>
+            </div>
+        </section>
+
+        <!-- B · EL ECOSISTEMA PRO v4: cinco piezas, con capturas reales donde las hay -->
+        <section id="ecosistema" class="seccion" aria-labelledby="eco-titulo">
+            <span id="dentro" class="ancla-antigua" aria-hidden="true"></span>
             <div class="wrap">
                 <header class="cabecera">
-                    <p class="eyebrow">Los bots</p>
-                    <h2 id="prod-titulo" class="h2">Cuatro para empezar, el resto en el catálogo</h2>
-                    <p class="lead">Los que están en beta van marcados. Ninguno promete ganar todos los meses.</p>
+                    <p class="eyebrow">Además de los bots</p>
+                    <h2 id="eco-titulo" class="h2">Qué más entra en PRO</h2>
+                    <p class="lead">Todos los planes tienen lo mismo. Solo cambia cómo pagas.</p>
                 </header>
 
-                <ul class="productos">
-                    <li class="tarjeta card-glass">
-                        <p class="tarjeta__k prod__k"><span class="ico-tile" aria-hidden="true"><svg class="ico"><use href="#i-monedas"/></svg></span>Oro · MT5</p>
-                        <h3>RAW XAU 3.3</h3>
-                        <p>El bot de oro (XAUUSD) en M5. El más sencillo para empezar.</p>
-                        <p class="tarjeta__dato">Desde 50&nbsp;€ en cuenta cent</p>
+                <ul class="eco4" data-revelar="tarjetas">
+                                        <li class="tarjeta card-glass" style="--i:0">
+                        <div class="eco4__media eco4__media--tile"><img class="tile16" src="assets/proto/tiles/bots.webp" width="960" height="600" loading="lazy" decoding="async" alt="Bot de nico66fx funcionando en MetaTrader 5"></div>
+                        <p class="tarjeta__k">Bots para MT4 y MT5</p>
+                        <h3>10 bots hechos por mí, listos para descargar</h3>
+                        <p>Cada uno con su manual, su configuración y su backtest. Oro, Nasdaq, divisas y fondeo.</p>
+                        <p class="tarjeta__dato">Las versiones nuevas te llegan sin pagar más</p>
                     </li>
-                    <li class="tarjeta card-glass">
-                        <p class="tarjeta__k prod__k"><span class="ico-tile" aria-hidden="true"><svg class="ico"><use href="#i-escudo"/></svg></span>Fondeo · MT5</p>
-                        <h3>DUAL XAU 2.3</h3>
-                        <p>Pensado y probado para evaluaciones de prop firm. Oro y DAX, cierra plano cada noche.</p>
-                        <a class="tarjeta__enlace" href="fondeo/">Configura tu <span class="nw">fondeo <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
+                    <li class="tarjeta card-glass" style="--i:1">
+                        <div class="eco4__media eco4__media--tile"><img class="tile16" src="assets/proto/tiles/tv.webp" width="960" height="600" loading="lazy" decoding="async" alt="Indicadores de nico66fx en TradingView"></div>
+                        <p class="tarjeta__k">Indicadores y herramientas</p>
+                        <h3>Para mirar antes de activar un bot</h3>
+                        <p>Indicadores para TradingView y herramientas web para leer un backtest y ver cuánto puede caer una estrategia.</p>
+                        <a class="tarjeta__enlace" href="../tools/">Ver las <span class="nw">herramientas <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
                     </li>
-                    <li class="tarjeta card-glass prod--destacado">
-                        <p class="tarjeta__k prod__k"><span class="ico-tile" aria-hidden="true"><svg class="ico"><use href="#i-capas"/></svg></span>Portfolio · MT5 · beta</p>
-                        <h3>HELIOS H1</h3>
-                        <p>10 estrategias sobre oro, EURUSD, DAX, petróleo y GBPJPY, en versión clásica y MASTER.</p>
-                        <div class="prod__ficha" aria-hidden="true">
-                            <p class="prod__num"><strong>10</strong><span>estrategias<br>en una cartera</span></p>
-                            <ul class="prod__activos"><li>XAUUSD</li><li>EURUSD</li><li>DAX</li><li>Petróleo</li><li>GBPJPY</li></ul>
-                        </div>
-                        <a class="tarjeta__enlace" href="helios/">Ver <span class="nw">HELIOS H1 <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
+                    <li class="tarjeta card-glass" style="--i:2">
+                        <div class="eco4__media eco4__media--tile"><img class="tile16" src="assets/proto/tiles/cursos.webp" width="960" height="600" loading="lazy" decoding="async" alt="El aula de PRO en Skool"></div>
+                        <p class="tarjeta__k">Formación práctica</p>
+                        <h3>22 cursos, de instalar un bot a crear el tuyo</h3>
+                        <ul class="eco4__lista">
+                            <li>Instalar robots y configurar MetaTrader</li>
+                            <li>VPS, backtesting y datos tick</li>
+                            <li>Crear estrategias con IA y StrategyQuant</li>
+                        </ul>
                     </li>
-                    <li class="tarjeta card-glass">
-                        <p class="tarjeta__k prod__k"><span class="ico-tile" aria-hidden="true"><svg class="ico"><use href="#i-velas"/></svg></span>Nasdaq · MT5</p>
-                        <h3>RAW NASDAQ 1.21</h3>
-                        <p>Una decisión al día, en la apertura de Nueva York. Stop por volatilidad, sin martingala ni grid.</p>
-                        <a class="tarjeta__enlace" href="rawnasdaq/">Ver <span class="nw">RAW NASDAQ <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
+                    <li class="tarjeta card-glass" style="--i:3">
+                        <div class="eco4__media eco4__media--tile"><img class="tile16" src="assets/proto/tiles/com.webp" width="960" height="600" loading="lazy" decoding="async" alt="La comunidad PRO en Skool"></div>
+                        <p class="tarjeta__k">Comunidad privada en Skool</p>
+                        <h3>No te quedas solo con el archivo</h3>
+                        <p>Preguntas, ayuda con la instalación, novedades y directos grabados. Y lo que comparten otros miembros.</p>
+                        <p class="tarjeta__dato">250 miembros</p>
                     </li>
                 </ul>
+            </div>
+        </section>
 
-                <details class="catalogo">
-                    <summary><span class="t-abrir">Ver el catálogo completo</span><span class="t-cerrar">Ocultar el catálogo</span> <svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
-                    <div>
-                        <ul class="bots">
-                            <li class="bot">
-                                <div class="bot__cab"><h3>EURUSD Scalp</h3><span class="chip chip--aviso">Grid</span></div>
-                                <p class="bot__meta">EURUSD&nbsp;· M1&nbsp;· MT4</p>
-                                <p class="bot__txt"><strong>Es un grid:</strong> promedia posiciones sin stop loss. Riesgo alto. No apto para fondeo.</p>
-                            </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>Sniper XAU</h3></div>
-                                <p class="bot__meta">Oro (XAUUSD)&nbsp;· MT4</p>
-                                <p class="bot__txt">Tendencia y rebotes.</p>
-                            </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>Grid</h3></div>
-                                <p class="bot__meta">Forex&nbsp;· MT4</p>
-                                <p class="bot__txt">Opera en rangos amplios.</p>
-                            </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>BOT GPT</h3></div>
-                                <p class="bot__meta">MT4</p>
-                                <p class="bot__txt">Orientado a Axi Select.</p>
-                            </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>RAW BTC</h3><span class="chip">Beta</span></div>
-                                <p class="bot__meta">Bitcoin</p>
-                                <p class="bot__txt">Rupturas en Bitcoin.</p>
-                            </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>RAW XAU MT4</h3><span class="chip">Beta</span></div>
-                                <p class="bot__meta">Oro (XAUUSD)&nbsp;· MT4</p>
-                                <p class="bot__txt">Port a MQL4 de RAW XAU.</p>
-                            </li>
+<!-- A3 · DE LITE A PRO: dos columnas con capturas reales de cada versión -->
+        <section id="lite-pro" class="seccion seccion--alt" aria-labelledby="lp-titulo" data-evt-view="pro_lite_compare_view">
+            <div class="wrap">
+                <header class="cabecera cabecera--centro">
+                    <p class="eyebrow">De LITE a PRO</p>
+                    <h2 id="lp-titulo" class="h2">LITE es gratis. PRO lo tiene todo.</h2>
+                    <p class="lead">LITE es la comunidad gratis para empezar. PRO es la comunidad privada con los bots, los cursos y el soporte.</p>
+                </header>
+
+                <div class="lp">
+                    <article class="lp-col card-glass" aria-labelledby="lp-lite">
+                        <div class="lp-col__cab">
+                            <h3 id="lp-lite">Comunidad LITE</h3>
+                            <span class="chip chip--gratis">Gratis</span>
+                        </div>
+                        <div class="lp-col__media lp-col__media--tile"><img class="tile16" src="assets/proto/tiles/litecom.webp" width="960" height="600" loading="lazy" decoding="async" alt="Los cursos gratis de la comunidad nico66fx LITE en Skool"></div>
+                        <ul class="lp-col__lista">
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Comunidad en Skool, con las dudas resueltas en abierto</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Cursos gratis de MT5, VPS, lotaje y gestión del riesgo</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>GUARDIAN, el gestor de riesgo para MT5</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Indicador RAW NASDAQ LITE para TradingView</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Web LITE LIVE: si hoy compra o vende, a qué hora y a qué precio</li>
                         </ul>
-                        <p class="catalogo__nota">RAW BTC y RAW XAU MT4 viven en el Experimental Hub: los pruebas antes que nadie, con lo que eso implica.</p>
-                    </div>
-                </details>
+                        <a class="btn btn-secondary btn--block" href="../lite/">Entrar gratis en LITE</a>
+                    </article>
+
+                    <article class="lp-col lp-col--pro card-glass card-glass--lg destacada" aria-labelledby="lp-pro">
+                        <div class="lp-col__cab">
+                            <h3 id="lp-pro">Comunidad PRO</h3>
+                            <span class="chip chip--pro">PRO</span>
+                        </div>
+                        <div class="lp-col__media lp-col__media--tile"><img class="tile16" src="assets/proto/tiles/procom.webp" width="960" height="600" loading="lazy" decoding="async" alt="El aula de la comunidad nico66fx PRO en Skool con los bots"></div>
+                        <ul class="lp-col__lista">
+                            <li class="lp-todo"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><strong>Todo lo de LITE, y además</strong></li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>10 bots listos para descargar, con su manual y su vídeo</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Web PRO LIVE: la operación entera y cada movimiento del stop</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>22 cursos, también para crear tus propios bots</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Soporte por privado hasta que tu bot esté funcionando</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Versiones nuevas de los bots sin pagar más</li>
+                        </ul>
+                        <a class="btn btn-primary btn--block" href="#precio" data-evt="pro_compare_cta">Ver planes de PRO</a>
+                    </article>
+                </div>
+
+                
             </div>
         </section>
 
@@ -491,7 +631,7 @@
             <div class="wrap">
                 <header class="cabecera">
                     <p class="eyebrow">Cómo funciona</p>
-                    <h2 id="cf-titulo" class="h2">De la compra a tu primer bot en demo</h2>
+                    <h2 id="cf-titulo" class="h2">Del pago a tu primer bot funcionando</h2>
                 </header>
 
                 <ol class="pasos">
@@ -543,16 +683,29 @@
             <div class="wrap">
                 <header class="cabecera cabecera--centro">
                     <p class="eyebrow">Comunidad</p>
-                    <h2 id="comunidad-titulo" class="h2">Lo que comparten los miembros</h2>
-                    <p class="lead">Capturas reales del feed de la Skool. Cada experiencia es de su autor y no garantiza la tuya.</p>
+                    <h2 id="comunidad-titulo" class="h2">La comunidad en Skool</h2>
+                    <p class="lead">Preguntas, novedades, recursos y soporte. Capturas reales del feed de la Skool: cada experiencia es de su autor y no garantiza la tuya.</p>
                 </header>
 
                 <ul class="com-datos com-datos--v3" aria-label="La comunidad en cifras">
-                    <li><svg class="ico cd-ico" aria-hidden="true"><use href="#i-usuarios"/></svg><strong>230+</strong><span>miembros</span></li>
-                    <li><svg class="ico cd-ico" aria-hidden="true"><use href="#i-pulso"/></svg><strong>1 de cada 2</strong><span>entra cada semana</span></li>
-                    <li><svg class="ico cd-ico" aria-hidden="true"><use href="#i-refrescar"/></svg><strong>~7&nbsp;días</strong><span>entre novedades</span></li>
+                    <li><svg class="ico cd-ico" aria-hidden="true"><use href="#i-usuarios"/></svg><strong>250</strong><span>miembros PRO</span></li>
                     <li><svg class="ico cd-ico" aria-hidden="true"><use href="#i-birrete"/></svg><strong>22</strong><span>cursos en el aula</span></li>
+                    <li><svg class="ico cd-ico" aria-hidden="true"><use href="#i-refrescar"/></svg><strong>~7&nbsp;días</strong><span>entre novedades</span></li>
+                    <li><svg class="ico cd-ico" aria-hidden="true"><use href="#i-mensaje"/></svg><strong>Soporte</strong><span>en la comunidad y por privado</span></li>
                 </ul>
+                <div class="com-video">
+                    <div class="com-video__txt">
+                        <p class="eyebrow">Por dentro · 1:34</p>
+                        <h3>Así es la comunidad PRO por dentro</h3>
+                        <p>El aula con los 22 cursos, los bots con su manual y su vídeo de instalación, las novedades y el feed donde se comparten pruebas y dudas.</p>
+                    </div>
+                    <div class="video-card">
+                        <video playsinline preload="none" poster="assets/video/nico66fx_PRO_por_dentro.jpg" aria-label="Vídeo: la comunidad nico66fx PRO por dentro">
+                            <source src="assets/video/nico66fx_PRO_por_dentro.mp4" type="video/mp4">
+                        </video>
+                        <button type="button" class="video-play" aria-label="Reproducir el vídeo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+                    </div>
+                </div>
                 <div class="capturas" id="capturas">
                     <div class="capturas__cab">
                         <div>
@@ -567,6 +720,61 @@
                     </div>
                     <div class="carrusel" role="region" aria-label="Capturas de miembros en la comunidad" tabindex="0">
                         <ul class="carrusel__pista">
+                            <li class="captura">
+                                <figure>
+                                    <a class="captura__enlace" href="assets/skool22.jpg">
+                                        <picture>
+                                            <source type="image/webp" srcset="assets/skool22-sm.webp 640w, assets/skool22.webp 763w" sizes="(min-width: 768px) 369px, 266px">
+                                            <img src="assets/skool22-sm.jpg" srcset="assets/skool22-sm.jpg 640w, assets/skool22.jpg 763w" sizes="(min-width: 768px) 369px, 266px" width="640" height="416" loading="lazy" decoding="async" alt="Marc Enfedaque pasa la fase 1 de The5ers con DUAL XAU: un 8 % en 4 operaciones en el DAX esta semana">
+                                        </picture>
+                                        <span class="sr"> (ver la captura ampliada)</span>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li class="captura">
+                                <figure>
+                                    <a class="captura__enlace" href="assets/skool24.jpg">
+                                        <picture>
+                                            <source type="image/webp" srcset="assets/skool24-sm.webp 640w, assets/skool24.webp 763w" sizes="(min-width: 768px) 369px, 266px">
+                                            <img src="assets/skool24-sm.jpg" srcset="assets/skool24-sm.jpg 640w, assets/skool24.jpg 763w" sizes="(min-width: 768px) 369px, 266px" width="640" height="354" loading="lazy" decoding="async" alt="Roberto Carlos López con el indicador ORB NY: dos días seguidos llegando al objetivo">
+                                        </picture>
+                                        <span class="sr"> (ver la captura ampliada)</span>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li class="captura">
+                                <figure>
+                                    <a class="captura__enlace" href="assets/skool25.jpg">
+                                        <picture>
+                                            <source type="image/webp" srcset="assets/skool25-sm.webp 640w, assets/skool25.webp 763w" sizes="(min-width: 768px) 369px, 266px">
+                                            <img src="assets/skool25-sm.jpg" srcset="assets/skool25-sm.jpg 640w, assets/skool25.jpg 763w" sizes="(min-width: 768px) 369px, 266px" width="640" height="375" loading="lazy" decoding="async" alt="Lenny Carta comparte su semana con la cartera HELIOS en demo">
+                                        </picture>
+                                        <span class="sr"> (ver la captura ampliada)</span>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li class="captura">
+                                <figure>
+                                    <a class="captura__enlace" href="assets/skool26.jpg">
+                                        <picture>
+                                            <source type="image/webp" srcset="assets/skool26-sm.webp 640w, assets/skool26.webp 763w" sizes="(min-width: 768px) 369px, 266px">
+                                            <img src="assets/skool26-sm.jpg" srcset="assets/skool26-sm.jpg 640w, assets/skool26.jpg 763w" sizes="(min-width: 768px) 369px, 266px" width="640" height="364" loading="lazy" decoding="async" alt="José Luis Moreno lleva tres semanas con HELIOS y ya en positivo">
+                                        </picture>
+                                        <span class="sr"> (ver la captura ampliada)</span>
+                                    </a>
+                                </figure>
+                            </li>
+                            <li class="captura">
+                                <figure>
+                                    <a class="captura__enlace" href="assets/skool27.jpg">
+                                        <picture>
+                                            <source type="image/webp" srcset="assets/skool27-sm.webp 640w, assets/skool27.webp 763w" sizes="(min-width: 768px) 369px, 266px">
+                                            <img src="assets/skool27-sm.jpg" srcset="assets/skool27-sm.jpg 640w, assets/skool27.jpg 763w" sizes="(min-width: 768px) 369px, 266px" width="640" height="334" loading="lazy" decoding="async" alt="Miguel Briones va pasando dos cuentas poco a poco con DUAL XAU">
+                                        </picture>
+                                        <span class="sr"> (ver la captura ampliada)</span>
+                                    </a>
+                                </figure>
+                            </li>
                             <li class="captura">
                                 <figure>
                                     <a class="captura__enlace" href="assets/skool8.jpg">
@@ -689,38 +897,44 @@
                     <div class="pq pq--si card-glass">
                         <h3><span class="pq__ico"><svg class="ico" aria-hidden="true"><use href="#i-circ-check"/></svg></span>Es para ti si…</h3>
                         <ul>
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-circ-check"/></svg>Quieres bots que se puedan comprobar: <strong>con su backtest y su manual</strong>.</li>
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-circ-check"/></svg>Quieres aprender a crear y filtrar tus propios bots.</li>
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-circ-check"/></svg>Buscas fondeo: tu bot es <strong>DUAL XAU 2.3</strong>, en FTMO o FundedNext.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-circ-check"/></svg>Quieres trabajar con sistemas automatizados que se puedan comprobar: <strong>con su backtest y su manual</strong>.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-circ-check"/></svg>Quieres estudiar backtests y estrategias, y aprender a construir tus propios bots.</li>
                             <li><svg class="ico" aria-hidden="true"><use href="#i-circ-check"/></svg>Usas MetaTrader 4 o 5, o quieres empezar con poco: desde 50&nbsp;€ en cuenta cent con el bot de oro.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-circ-check"/></svg>Buscas herramientas, formación y una comunidad especializada, no un PDF suelto.</li>
                         </ul>
                     </div>
                     <div class="pq pq--no card-glass">
                         <h3><span class="pq__ico"><svg class="ico" aria-hidden="true"><use href="#i-circ-x"/></svg></span>No es para ti si…</h3>
                         <ul>
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-circ-x"/></svg>Esperas ganar todos los meses: hasta un buen bot tiene rachas y meses en negativo.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-circ-x"/></svg>Esperas ganar todos los meses: hasta un buen sistema tiene rachas y meses en negativo.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-circ-x"/></svg>Buscas beneficios garantizados: el trading implica riesgo elevado de pérdida de capital.</li>
                             <li><svg class="ico" aria-hidden="true"><use href="#i-circ-x"/></svg>Quieres que alguien opere tu dinero: <strong>no es gestión de dinero</strong>.</li>
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-circ-x"/></svg>Esperas beneficios garantizados: el trading implica riesgo elevado de pérdida de capital.</li>
                             <li><svg class="ico" aria-hidden="true"><use href="#i-circ-x"/></svg>Vas a operar con dinero que no puedes permitirte perder.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- F · PRECIOS. Anual protagonista. Lifetime solo en ventana:
-             para cerrarla, cambia data-ventana="abierta" por data-ventana="cerrada" en esta <section>. -->
+</section>
+
+        <!-- F · PRECIOS v4 + BLACK FRIDAY.
+             Estado de la campaña: data-bf en <html> (antes | anticipado | abierta | fin), lo pone v4.js según la fecha de Madrid.
+             [data-solo="normal"] se ve fuera de campaña y [data-solo="bf"] durante el 25–30/11. -->
         <section id="precio" class="seccion seccion--alt" aria-labelledby="precio-titulo" data-ventana="abierta">
             <span id="pricing" class="ancla-antigua" aria-hidden="true"></span>
             <div class="brillo" aria-hidden="true"></div>
             <div class="wrap">
+
+                <!-- Banner de campaña: un texto por estado -->
+                
+
                 <header class="cabecera cabecera--centro">
                     <p class="eyebrow">Precio</p>
                     <h2 id="precio-titulo" class="h2">Elige tu plan</h2>
-                    <p class="lead">Todo el contenido en cualquier plan. Precio final, impuestos incluidos.</p>
+                    <p class="lead">Todo el contenido en cualquier plan: bots, RAW NASDAQ PRO LIVE, cursos, herramientas y comunidad. Precio final, impuestos incluidos.</p>
                 </header>
 
-                <div class="planes planes--v3">
+                <div class="planes planes--v3 planes--v4">
                     <article class="plan plan--trimestral card-glass" aria-labelledby="plan-trimestral">
                         <div class="plan__cab">
                             <h3 id="plan-trimestral"><span class="plan__ico" aria-hidden="true"><svg class="ico"><use href="#i-cal-dias"/></svg></span>Trimestral</h3>
@@ -728,12 +942,12 @@
                         <p class="plan__precio"><span class="plan__cifra">99&nbsp;€</span><span class="plan__per">cada 3 meses</span></p>
                         <p class="plan__mes">Son 33&nbsp;€ al mes</p>
                         <ul class="plan__lista">
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Todos los bots, cursos y la comunidad.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Todo PRO: bots, LIVE, cursos y comunidad.</li>
                             <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Se renueva cada 3 meses hasta que lo canceles.</li>
                             <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Cancelas cuando quieras, sin permanencia.</li>
                         </ul>
                         <div class="plan__accion">
-                            <a class="btn btn-secondary btn--lg btn--block" href="https://buy.stripe.com/6oUcN7e6Jfy73FLb5D3AY1v" target="_blank" rel="noopener"><span>Empezar con el trimestral</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+                            <a class="btn btn-secondary btn--lg btn--block" href="https://buy.stripe.com/6oUcN7e6Jfy73FLb5D3AY1v" target="_blank" rel="noopener" data-evt="pro_checkout_click" data-evt-plan="trimestral"><span>Empezar con el trimestral</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
                         </div>
                     </article>
 
@@ -742,34 +956,63 @@
                             <h3 id="plan-anual"><span class="plan__ico" aria-hidden="true"><svg class="ico"><use href="#i-calendario"/></svg></span>Anual</h3>
                             <span class="plan__badge">Recomendado</span>
                         </div>
-                        <p class="plan__precio"><span class="plan__cifra">199&nbsp;€</span><span class="plan__per">al año</span></p>
-                        <p class="plan__ahorro"><svg class="ico" aria-hidden="true"><use href="#i-calendario"/></svg>Son 16,58&nbsp;€ al mes: la mitad que el trimestral</p>
+                        <!-- fuera de campaña -->
+                        <div data-solo="normal">
+                            <p class="plan__precio"><span class="plan__cifra">199&nbsp;€</span><span class="plan__per">al año</span></p>
+                            <p class="plan__ahorro"><svg class="ico" aria-hidden="true"><use href="#i-calendario"/></svg>Son 16,58&nbsp;€ al mes: la mitad que el trimestral</p>
+                        </div>
+                        <!-- Black Friday -->
+                        <div data-solo="bf">
+                            <p class="plan__precio"><span class="plan__cifra">149&nbsp;€</span><span class="plan__per">al año</span></p>
+                            <p class="plan__ref">Precio normal: 199&nbsp;€ al año</p>
+                            <p class="plan__ahorro"><svg class="ico" aria-hidden="true"><use href="#i-candado"/></svg>Precio congelado mientras sigas suscrito</p>
+                        </div>
                         <ul class="plan__lista">
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Todos los bots, cursos y la comunidad.</li>
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Se renueva cada año hasta que lo canceles.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Todo PRO: bots, LIVE, cursos y comunidad.</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Se renueva cada año hasta que lo canceles<span data-solo="bf">, siempre a 149&nbsp;€</span>.</li>
                             <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Cancelas cuando quieras y no se vuelve a cobrar.</li>
                         </ul>
                         <div class="plan__accion">
-                            <a class="btn btn-primary btn--lg btn--block" href="https://buy.stripe.com/4gM5kFe6JgCbcch4Hf3AY1w" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-candado"/></svg><span>Empezar con el anual</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+                            <a data-solo="normal" class="btn btn-primary btn--lg btn--block" href="https://buy.stripe.com/4gM5kFe6JgCbcch4Hf3AY1w" target="_blank" rel="noopener" data-evt="pro_annual_click" data-evt-plan="anual-199"><svg class="ico" aria-hidden="true"><use href="#i-candado"/></svg><span>Empezar con el anual</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+                            <!-- Enlace de Stripe de BF (canal web_pro, creado el 17/11). Revisar antes de publicar. -->
+                            <a data-solo="bf" class="btn btn-primary btn--lg btn--block" href="https://buy.stripe.com/3cIfZjfaN99Ja493Db3AY1E" target="_blank" rel="noopener" data-evt="pro_annual_click" data-evt-plan="anual-149-bf"><svg class="ico" aria-hidden="true"><use href="#i-candado"/></svg><span>Anual a 149&nbsp;€</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
                         </div>
                     </article>
 
                     <article class="plan plan--vida card-glass" aria-labelledby="plan-vida">
                         <div class="plan__cab">
                             <h3 id="plan-vida"><span class="plan__ico" aria-hidden="true"><svg class="ico"><use href="#i-infinito"/></svg></span>De por vida</h3>
-                            <span class="plan__chip">Ventana abierta</span>
+                            <span class="plan__chip">Pago único</span>
                         </div>
-                        <p class="plan__nota">Solo en campañas puntuales. En la pantalla de pago aparece como «Lifetime».</p>
-                        <p class="plan__precio"><span class="plan__cifra">349&nbsp;€</span><span class="plan__per">pago único</span></p>
+                        <div data-solo="normal">
+                            <p class="plan__nota">Solo en campañas puntuales. En la pantalla de pago aparece como «Lifetime».</p>
+                            <p class="plan__precio"><span class="plan__cifra">349&nbsp;€</span><span class="plan__per">pago único</span></p>
+                        </div>
+                        <div data-solo="bf">
+                            <p class="plan__precio"><span class="plan__cifra">249&nbsp;€</span><span class="plan__per">pago único</span></p>
+                            <p class="plan__ref">Precio normal: 349&nbsp;€</p>
+                            <p class="plan__extra"><svg class="ico" aria-hidden="true"><use href="#i-regalo"/></svg><span><strong>Incluye onboarding 1&nbsp;a&nbsp;1 de 30 minutos con Nico</strong> para resolver tus dudas y dejarlo todo en marcha.</span></p>
+                        </div>
                         <ul class="plan__lista">
                             <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Un solo pago, sin renovaciones.</li>
                             <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Todo PRO y sus actualizaciones, para siempre.</li>
                         </ul>
                         <div class="plan__accion">
-                            <a class="btn btn-secondary btn--lg btn--block" href="https://buy.stripe.com/14A8wRgeReu3b8da1z3AY1x" target="_blank" rel="noopener"><span>Acceso de por vida&nbsp;· <span class="nw">349&nbsp;€</span></span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+                            <a data-solo="normal" class="btn btn-secondary btn--lg btn--block" href="https://buy.stripe.com/14A8wRgeReu3b8da1z3AY1x" target="_blank" rel="noopener" data-evt="pro_lifetime_click" data-evt-plan="vida-349"><span>Acceso de por vida&nbsp;· <span class="nw">349&nbsp;€</span></span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+                            <!-- Enlace de Stripe de BF (canal web_pro, creado el 17/11). Revisar antes de publicar. -->
+                            <a data-solo="bf" class="btn btn-secondary btn--lg btn--block" href="https://buy.stripe.com/4gM7sN1jX4Tt7W17Tr3AY1J" target="_blank" rel="noopener" data-evt="pro_lifetime_click" data-evt-plan="vida-249-bf"><span>De por vida&nbsp;· <span class="nw">249&nbsp;€</span></span><span class="sr"> (se abre en una pestaña nueva)</span></a>
                             <p class="plan__klarna">En España también en 3 plazos con Klarna, eligiéndolo en la pantalla de pago. Sujeto a la aprobación de Klarna.</p>
                         </div>
                     </article>
+                </div>
+
+                <!-- Gancho extra de BF: se enciende/apaga con BF_MASTERCLASS en assets/v4.js. Sin fecha hasta que Nico la decida. -->
+                <div class="bf-extra card-glass" data-bf-masterclass data-solo="bf" hidden>
+                    <span class="bf-extra__ico" aria-hidden="true"><svg class="ico"><use href="#i-play"/></svg></span>
+                    <div>
+                        <p class="bf-extra__t">Masterclass privada de puesta en marcha</p>
+                        <p>Para los nuevos miembros de Black Friday: una sesión en directo para dejar tu primer sistema funcionando. La fecha se anuncia dentro de la comunidad.</p>
+                    </div>
                 </div>
 
                 <p class="planes__comun">Acceso en menos de 24&nbsp;h&nbsp;· Todos los bots y cursos en cualquier plan&nbsp;· Si ya eres miembro, conservas tu plan y tu precio</p>
@@ -778,7 +1021,7 @@
             </div>
         </section>
 
-        <!-- G · PREGUNTAS: acordeón exclusivo nativo -->
+<!-- G · PREGUNTAS: acordeón exclusivo nativo -->
         <section id="preguntas" class="seccion" aria-labelledby="preguntas-titulo">
             <div class="wrap">
                 <header class="cabecera cabecera--centro">
@@ -788,6 +1031,18 @@
 
                 <div class="faq card-glass">
                     <details name="faq">
+                        <summary><span>¿Qué es RAW NASDAQ PRO LIVE?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">Una aplicación privada para los miembros de PRO donde sigues en directo la operativa de RAW NASDAQ: el gráfico del NAS100 en 5 minutos, cada cambio de gestión del stop, el historial en puntos y una calculadora de contratos y lotes para MNQ y NQ. Entras con el email de tu cuenta de Skool.</p>
+                    </details>
+                    <details name="faq">
+                        <summary><span>¿Puedo ver RAW NASDAQ PRO LIVE desde el móvil?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">Sí. Funciona en el navegador del móvil y del ordenador, y se puede instalar como app en la pantalla de inicio, en Android y en iPhone. Los avisos llegan mientras tienes la web abierta.</p>
+                    </details>
+                    <details name="faq">
+                        <summary><span>¿Qué diferencia hay entre LITE y PRO?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">LITE es gratis: la comunidad abierta, el indicador RAW NASDAQ LITE para TradingView y la web RAW NASDAQ LITE LIVE con la compra o venta del día, la entrada y el historial en puntos. PRO incluye todo eso y además los bots para MT4 y MT5, RAW NASDAQ PRO LIVE con la gestión completa, los 22 cursos, las herramientas y el soporte por privado.</p>
+                    </details>
+                    <details name="faq">
                         <summary><span>¿En qué plataformas funcionan los bots?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
                         <p class="faq__resp">En MetaTrader 4 y MetaTrader 5: cada bot indica en su lección para cuál es. Funcionan en cualquier bróker que permita bots, y dentro tienes la guía para tenerlos 24 horas en un VPS. Las herramientas de análisis y los indicadores usan TradingView y el navegador.</p>
                     </details>
@@ -796,12 +1051,16 @@
                         <p class="faq__resp">Cada bot tiene su lección con vídeo y manual: copias el archivo del bot en la carpeta de MetaTrader, cargas su configuración y listo. Si te atascas, te ayudo en la comunidad o por mensaje hasta que esté corriendo.</p>
                     </details>
                     <details name="faq">
+                        <summary><span>¿Necesito un VPS?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+                        <p class="faq__resp">No es obligatorio para probar, pero para que los bots funcionen las 24 horas sin tener el ordenador encendido lo recomendable es un VPS. Dentro tienes la guía paso a paso.</p>
+                    </details>
+                    <details name="faq">
                         <summary><span>¿Cuándo tengo acceso?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
                         <p class="faq__resp">Después del pago te llega a tu email la invitación a la Skool en menos de 24 horas, con todos los cursos abiertos.</p>
                     </details>
                     <details name="faq">
                         <summary><span>¿Cómo funcionan las renovaciones?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
-                        <p class="faq__resp">El trimestral se cobra cada 3 meses y el anual cada año, en la misma fecha y por el mismo importe, hasta que lo canceles. El lifetime es un pago único sin renovaciones. Todos los planes dan acceso a lo mismo.</p>
+                        <p class="faq__resp">El trimestral se cobra cada 3 meses y el anual cada año, en la misma fecha y por el mismo importe, hasta que lo canceles. El de por vida es un pago único sin renovaciones. Todos los planes dan acceso a lo mismo.</p>
                     </details>
                     <details name="faq">
                         <summary><span>¿Cómo cancelo?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
@@ -809,7 +1068,7 @@
                     </details>
                     <details name="faq">
                         <summary><span>¿Qué soporte tengo?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
-                        <p class="faq__resp">Preguntas en la comunidad y mensajes directos para la instalación y la configuración de los bots. No es asesoramiento financiero ni gestión de tu dinero: tú decides qué activas y con qué riesgo.</p>
+                        <p class="faq__resp">Preguntas en la comunidad y mensajes directos para la instalación y la configuración de los bots, hasta que el bot esté corriendo. No es asesoramiento financiero ni gestión de tu dinero: tú decides qué activas y con qué riesgo.</p>
                     </details>
                     <details name="faq">
                         <summary><span>¿Qué condiciones de uso tienen los bots?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
@@ -833,22 +1092,23 @@
             </div>
         </section>
 
-        <!-- H · CTA FINAL -->
+        <!-- H · CTA FINAL v4 -->
         <section id="empezar" class="seccion seccion--alt" aria-labelledby="cta-titulo">
             <div class="wrap">
                 <div class="cta-final cta-final--noche">
                     <p class="eyebrow">Empieza hoy</p>
-                    <h2 id="cta-titulo" class="h2">Entra con el anual y monta tu primer bot esta semana</h2>
-                    <p class="lead">199&nbsp;€ al año con todo incluido. Si no te encaja, lo cancelas y no se renueva.</p>
+                    <h2 id="cta-titulo" class="h2">Entra en PRO y pon tu primer bot a funcionar</h2>
+                    <p class="lead">Los bots, la web en directo, los cursos y la comunidad. Todo en el mismo acceso.</p>
                     <div class="cta-final__btns">
-                        <a class="btn btn-primary btn--lg" href="https://buy.stripe.com/4gM5kFe6JgCbcch4Hf3AY1w" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-candado"/></svg><span>Empezar con el anual</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+                        <a data-solo="normal" class="btn btn-primary btn--lg" href="https://buy.stripe.com/4gM5kFe6JgCbcch4Hf3AY1w" target="_blank" rel="noopener" data-evt="pro_annual_click" data-evt-plan="anual-199"><svg class="ico" aria-hidden="true"><use href="#i-candado"/></svg><span>Empezar con el anual</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+                        <a data-solo="bf" class="btn btn-primary btn--lg" href="https://buy.stripe.com/3cIfZjfaN99Ja493Db3AY1E" target="_blank" rel="noopener" data-evt="pro_annual_click" data-evt-plan="anual-149-bf"><svg class="ico" aria-hidden="true"><use href="#i-candado"/></svg><span>Anual a 149&nbsp;€</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
                         <a class="btn btn-secondary btn--lg" href="#precio">Ver todos los planes</a>
                     </div>
                     <a class="btn-wa" href="https://wa.link/md9s5v" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-mensaje"/></svg><span>¿Dudas? Escríbeme por WhatsApp</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
                 </div>
             </div>
         </section>
-    </main>
+</main>
 
 
     <!-- PIE -->
@@ -895,7 +1155,7 @@
     <!-- Barra fija inferior (solo móvil). Oculta: inert + aria-hidden. -->
     <div id="barra-movil" class="barra-movil" aria-hidden="true" inert>
         <div class="barra-movil__in">
-            <p>Anual&nbsp;· <strong>199&nbsp;€</strong> al año</p>
+            <p><span data-solo="normal">Anual&nbsp;· <strong>199&nbsp;€</strong> al año</span><span data-solo="bf">Black Friday&nbsp;· anual <strong>149&nbsp;€</strong></span></p>
             <a href="#precio" class="btn btn-primary btn--sm">Ver planes</a>
         </div>
     </div>
