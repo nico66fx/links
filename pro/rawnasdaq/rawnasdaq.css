@@ -90,3 +90,12 @@
 @media (prefers-reduced-motion:reduce){.rn-tg{transition:none}}
 /* en movil el SVG se reduce a ~1/3: las etiquetas de los ejes se compensan */
 @media (max-width:767px){.c-ey,.c-ex{font-size:30px}}
+
+/* 20/11 · sección en directo */
+.curva__cifra--live{color:var(--ok)}
+.c-lin--live{stroke:var(--ok)}
+.c-fin--live{fill:var(--ok)}
+.rn-datos--4{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:640px){.rn-datos--4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+#en-directo .eyebrow{display:inline-flex;align-items:center;gap:8px}
+#en-directo .rn-nota a{color:var(--brand)}
