@@ -13,13 +13,12 @@
 
     /* Fechas de la campaña, en hora de Madrid (UTC+1 en noviembre). */
     var BF = {
-        anticipado: Date.parse('2026-11-25T00:00:00+01:00'),
+        anticipado: Date.parse('2026-11-27T00:00:00+01:00'),   /* 26/11: la lista prioritaria compra por Telegram; la web cambia sola el 27 a las 00:00 */
         abierta:    Date.parse('2026-11-27T00:00:00+01:00'),
         fin:        Date.parse('2026-12-01T00:00:00+01:00')   /* lunes 30 a las 23:59 */
     };
 
     function estadoPorFecha(t) {
-        return 'antes'; /* v6: sin campaña */
         if (t >= BF.fin) return 'fin';
         if (t >= BF.abierta) return 'abierta';
         if (t >= BF.anticipado) return 'anticipado';
