@@ -100,5 +100,24 @@
         }
     }
 
-    if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', init); else init();
+
+    /* Cuenta atrás de la banda de Black Friday (hasta BF.fin) */
+    function cuentaAtras() {
+        var els = doc.querySelectorAll('[data-bf-cd]');
+        if (!els.length) return;
+        function pinta() {
+            var ms = BF.fin - Date.now();
+            var txt = '';
+            if (ms > 0 && root.getAttribute('data-precios') === 'bf') {
+                var m = Math.floor(ms / 60000), d = Math.floor(m / 1440), h = Math.floor((m % 1440) / 60), mi = m % 60;
+                txt = 'Quedan ' + (d ? d + ' d ' : '') + h + ' h ' + mi + ' min';
+            }
+            els.forEach(function (e) { e.textContent = txt; });
+        }
+        pinta();
+        setInterval(pinta, 30000);
+    }
+
+    function arranca() { init(); cuentaAtras(); }
+    if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', arranca); else arranca();
 })();

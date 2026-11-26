@@ -259,3 +259,20 @@ body{background:var(--canvas);color:var(--ink)}
 .eco4__media--tile img{height:auto;object-fit:cover}
 .lp-col__media--tile{height:auto;background:none!important}
 .lp-col__media--tile img{position:static;width:100%;border-radius:var(--radio)}
+
+/* --- Banda Black Friday (27–30/11) ---------------------------------------- */
+.bfband{position:relative;overflow:hidden;background:#05070b;color:#fff;padding-block:clamp(28px,4.5vw,52px);border-bottom:3px solid #39ff88;box-shadow:inset 0 -60px 120px -60px rgba(57,255,136,.25)}
+.bfband:before{content:"";position:absolute;inset:-40% -10% auto auto;width:60%;height:180%;background:radial-gradient(closest-side,rgba(21,68,224,.45),transparent 70%);pointer-events:none}
+.bfband__in{position:relative;text-align:center}
+.bfband__k{display:inline-block;font-family:var(--font-mono);font-weight:700;font-size:clamp(.78rem,.7rem + .4vw,1rem);letter-spacing:.14em;text-transform:uppercase;color:#05070b;background:#ffd60a;padding:8px 16px;border-radius:999px}
+.bfband__t{display:flex;flex-wrap:wrap;justify-content:center;gap:.2em .9em;margin-top:16px;font-family:var(--font-display);font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:clamp(1.9rem,1.1rem + 3.6vw,3.9rem);text-wrap:balance}
+.bfband__p{white-space:nowrap}
+.bfband__t s{font-weight:600;font-size:.55em;color:#8b93a1;text-decoration-color:#ff3b4e;text-decoration-thickness:.12em;margin:0 .15em}
+.bfband__t strong{color:#39ff88;text-shadow:0 0 18px rgba(57,255,136,.55),0 0 50px rgba(57,255,136,.3)}
+.bfband__s{max-width:62ch;margin:14px auto 0;font-size:clamp(.95rem,.9rem + .3vw,1.125rem);line-height:1.55;color:#cdd8f3}
+.bfband__cta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 18px;margin-top:20px}
+.bfband__cd{font-family:var(--font-mono);font-weight:700;font-size:clamp(.85rem,.8rem + .3vw,1.05rem);letter-spacing:.06em;color:#ffd60a}
+.bfband__cd:empty{display:none}
+html[data-precios="bf"] .hero__precio{font-size:1.15rem}
+html[data-precios="bf"] .bfband{padding-top:calc(var(--topbar-h) + env(safe-area-inset-top) + clamp(18px,3vw,34px))}
+html[data-precios="bf"] .hero{padding-top:clamp(8px,2vw,24px)}

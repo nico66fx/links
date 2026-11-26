@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>nico66fx PRO · Bots de trading para MetaTrader</title>
-    <meta name="description" content="Bots para MT4 y MT5 con su backtest y su manual, RAW NASDAQ PRO LIVE en directo, herramientas de análisis, 22 cursos y una comunidad privada en Skool. Sistemas automatizados reales.">
+    <meta name="description" content="Bots para MT4 y MT5 con su backtest y su manual, RAW NASDAQ PRO LIVE en directo, herramientas de análisis, 19 cursos y una comunidad privada en Skool. Sistemas automatizados reales.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://nico66fx.com/pro/">
     <meta property="og:site_name" content="nico66fx PRO">
@@ -32,8 +32,8 @@
 
     <link rel="stylesheet" href="assets/v2.css">
     <link rel="stylesheet" href="assets/v3.css">
-    <link rel="stylesheet" href="assets/v4.css?v=bf1">
-    <script src="assets/v4.js?v=bf1" defer></script>
+    <link rel="stylesheet" href="assets/v4.css?v=bf2">
+    <script src="assets/v4.js?v=bf2" defer></script>
     <script src="assets/v2.js" defer></script>
     <!-- la foto del hero es lo primero que se ve: se pide cuanto antes -->
     <link rel="preload" as="image" href="assets/proto/live_grafico.webp" type="image/webp">
@@ -64,7 +64,7 @@
       "name": "¿Qué diferencia hay entre LITE y PRO?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "LITE es gratis: la comunidad abierta, el indicador RAW NASDAQ LITE para TradingView y la web RAW NASDAQ LITE LIVE con la compra o venta del día, la entrada y el historial en puntos. PRO incluye todo eso y además los bots para MT4 y MT5, RAW NASDAQ PRO LIVE con la gestión completa, los 22 cursos, las herramientas y el soporte por privado."
+        "text": "LITE es gratis: la comunidad abierta, el indicador RAW NASDAQ LITE para TradingView y la web RAW NASDAQ LITE LIVE con la compra o venta del día, la entrada y el historial en puntos. PRO incluye todo eso y además los bots para MT4 y MT5, RAW NASDAQ PRO LIVE con la gestión completa, los 19 cursos, las herramientas y el soporte por privado."
       }
     },
     {
@@ -281,6 +281,19 @@
 
     <main id="contenido" tabindex="-1">
 
+        <!-- Banda Black Friday: solo se ve del 27/11 00:00 al 30/11 23:59 (html[data-precios="bf"], lo pone v4.js) -->
+        <section class="bfband" data-solo="bf" aria-label="Black Friday">
+            <div class="wrap bfband__in">
+                <p class="bfband__k">Black Friday&nbsp;· hasta el lunes 30 a las 23:59</p>
+                <p class="bfband__t"><span class="bfband__p">Anual <s>199&nbsp;€</s> <strong>149&nbsp;€</strong></span><span class="bfband__p">De por vida <s>349&nbsp;€</s> <strong>249&nbsp;€</strong></span></p>
+                <p class="bfband__s">El anual, con el precio congelado mientras sigas. El de por vida, con llamada 1&nbsp;a&nbsp;1 conmigo para dejarlo todo montado. Plazas limitadas.</p>
+                <div class="bfband__cta">
+                    <a class="btn btn-primary btn--lg" href="#precio" data-evt="pro_hero_click" data-evt-cta="bf_banda">Ver planes del Black Friday</a>
+                    <span class="bfband__cd" data-bf-cd aria-live="off"></span>
+                </div>
+            </div>
+        </section>
+
         <!-- A · HERO v5: órbita con todo lo que incluye PRO, alrededor de un solo acceso -->
         <section id="inicio" class="hero hero--v5" aria-labelledby="titulo" data-evt-view="pro_page_view">
             <div class="wrap hero5">
@@ -294,7 +307,7 @@
                     </p>
                     <p class="eyebrow">nico66fx PRO</p>
                     <h1 id="titulo">Mis bots de trading, <span>listos para tu MetaTrader.</span></h1>
-                    <p class="hero__sub">Descargas los bots que he creado yo, cada uno con su manual y su vídeo de instalación. Y además tienes la web en directo de RAW NASDAQ, indicadores, 22 cursos (también para crear tus propios bots) y la comunidad en Skool.</p>
+                    <p class="hero__sub">Descargas los bots que he creado yo, cada uno con su manual y su vídeo de instalación. Y además tienes la web en directo de RAW NASDAQ, indicadores, 19 cursos (también para crear tus propios bots) y la comunidad en Skool.</p>
                     <div class="hero4__cta">
                         <a href="#precio" class="btn btn-primary btn--lg" data-evt="pro_hero_click" data-evt-cta="planes">Ver planes <svg class="ico" aria-hidden="true"><use href="#i-abajo"/></svg></a>
                         <a href="#productos" class="btn btn-secondary btn--lg" data-evt="pro_hero_click" data-evt-cta="bots">Ver los bots</a>
@@ -315,12 +328,12 @@
                         <span>un solo acceso</span>
                     </div>
                     <ul class="orbita__nodos">
-                        <li style="--a:-90deg"><a class="nodo nodo--fuerte" href="#productos"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-bot"/></svg></span><span class="nodo__t">10 bots listos</span><span class="nodo__d">MT4 y MT5</span></a></li>
+                        <li style="--a:-90deg"><a class="nodo nodo--fuerte" href="#productos"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-bot"/></svg></span><span class="nodo__t">7 bots listos</span><span class="nodo__d">MT4 y MT5</span></a></li>
                         <li style="--a:-45deg"><a class="nodo nodo--live" href="#live"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-pulso"/></svg></span><span class="nodo__t">PRO LIVE</span><span class="nodo__d">El Nasdaq en directo</span></a></li>
                         <li style="--a:0deg"><a class="nodo" href="#ecosistema"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-velas"/></svg></span><span class="nodo__t">Indicadores</span><span class="nodo__d">TradingView</span></a></li>
                         <li style="--a:45deg"><a class="nodo" href="../tools/"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-medidor"/></svg></span><span class="nodo__t">Herramientas</span><span class="nodo__d">Para analizar backtests</span></a></li>
                         <li style="--a:90deg"><a class="nodo" href="#comunidad"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-usuarios"/></svg></span><span class="nodo__t">Comunidad</span><span class="nodo__d">250 en Skool</span></a></li>
-                        <li style="--a:135deg"><a class="nodo" href="#ecosistema"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-birrete"/></svg></span><span class="nodo__t">22 cursos</span><span class="nodo__d">De instalar a crear bots</span></a></li>
+                        <li style="--a:135deg"><a class="nodo" href="#ecosistema"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-birrete"/></svg></span><span class="nodo__t">19 cursos</span><span class="nodo__d">De instalar a crear bots</span></a></li>
                         <li style="--a:180deg"><a class="nodo" href="fondeo/"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-escudo"/></svg></span><span class="nodo__t">Fondeo</span><span class="nodo__d">Bot para cuentas de fondeo</span></a></li>
                         <li style="--a:225deg"><a class="nodo" href="helios/"><span class="nodo__ico"><svg class="ico" aria-hidden="true"><use href="#i-capas"/></svg></span><span class="nodo__t">Cartera HELIOS</span><span class="nodo__d">10 estrategias en un bot</span></a></li>
                     </ul>
@@ -330,10 +343,10 @@
             <!-- Así se ve por dentro: capturas reales de cada pieza -->
             <div class="wrap">
                 <ul class="dentro dentro--tiles" aria-label="Lo que tienes dentro de PRO">
-                    <li><a href="#productos"><img class="tile16" src="assets/proto/tiles/bots.webp" width="960" height="600" loading="lazy" decoding="async" alt="Bot RAW NASDAQ funcionando en MetaTrader 5"><span class="dentro__t">10 bots hechos por mí, para descargar</span></a></li>
+                    <li><a href="#productos"><img class="tile16" src="assets/proto/tiles/bots.webp" width="960" height="600" loading="lazy" decoding="async" alt="Bot RAW NASDAQ funcionando en MetaTrader 5"><span class="dentro__t">7 bots hechos por mí, para descargar</span></a></li>
                     <li><a href="#live"><img class="tile16" src="assets/proto/tiles/live.webp" width="960" height="600" loading="lazy" decoding="async" alt="RAW NASDAQ PRO LIVE: la operación del Nasdaq en directo"><span class="dentro__t">La operación del Nasdaq, en directo</span></a></li>
                     <li><a href="#ecosistema"><img class="tile16" src="assets/proto/tiles/tv.webp" width="960" height="600" loading="lazy" decoding="async" alt="Indicadores de nico66fx en TradingView"><span class="dentro__t">Indicadores para TradingView</span></a></li>
-                    <li><a href="#ecosistema"><img class="tile16" src="assets/proto/tiles/cursos.webp" width="960" height="600" loading="lazy" decoding="async" alt="El aula de PRO en Skool con los cursos de cada bot"><span class="dentro__t">22 cursos, también para crear tus bots</span></a></li>
+                    <li><a href="#ecosistema"><img class="tile16" src="assets/proto/tiles/cursos.webp?v=2" width="960" height="600" loading="lazy" decoding="async" alt="El aula de PRO en Skool con los cursos de cada bot"><span class="dentro__t">19 cursos, también para crear tus bots</span></a></li>
                 </ul>
             </div>
         </section>
@@ -389,21 +402,6 @@
                                 <div class="bot__cab"><h3>EURUSD Scalp</h3><span class="chip chip--aviso">Grid</span></div>
                                 <p class="bot__meta">EURUSD&nbsp;· M1&nbsp;· MT4</p>
                                 <p class="bot__txt"><strong>Es un grid:</strong> promedia posiciones sin stop loss. Riesgo alto. No apto para fondeo.</p>
-                            </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>Sniper XAU</h3></div>
-                                <p class="bot__meta">Oro (XAUUSD)&nbsp;· MT4</p>
-                                <p class="bot__txt">Tendencia y rebotes.</p>
-                            </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>Grid</h3></div>
-                                <p class="bot__meta">Forex&nbsp;· MT4</p>
-                                <p class="bot__txt">Opera en rangos amplios.</p>
-                            </li>
-                            <li class="bot">
-                                <div class="bot__cab"><h3>BOT GPT</h3></div>
-                                <p class="bot__meta">MT4</p>
-                                <p class="bot__txt">Orientado a Axi Select.</p>
                             </li>
                             <li class="bot">
                                 <div class="bot__cab"><h3>RAW BTC</h3><span class="chip">Beta</span></div>
@@ -545,7 +543,7 @@
                                         <li class="tarjeta card-glass" style="--i:0">
                         <div class="eco4__media eco4__media--tile"><img class="tile16" src="assets/proto/tiles/bots.webp" width="960" height="600" loading="lazy" decoding="async" alt="Bot de nico66fx funcionando en MetaTrader 5"></div>
                         <p class="tarjeta__k">Bots para MT4 y MT5</p>
-                        <h3>10 bots hechos por mí, listos para descargar</h3>
+                        <h3>7 bots hechos por mí, listos para descargar</h3>
                         <p>Cada uno con su manual, su configuración y su backtest. Oro, Nasdaq, divisas y fondeo.</p>
                         <p class="tarjeta__dato">Las versiones nuevas te llegan sin pagar más</p>
                     </li>
@@ -557,9 +555,9 @@
                         <a class="tarjeta__enlace" href="../tools/">Ver las <span class="nw">herramientas <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></span></a>
                     </li>
                     <li class="tarjeta card-glass" style="--i:2">
-                        <div class="eco4__media eco4__media--tile"><img class="tile16" src="assets/proto/tiles/cursos.webp" width="960" height="600" loading="lazy" decoding="async" alt="El aula de PRO en Skool"></div>
+                        <div class="eco4__media eco4__media--tile"><img class="tile16" src="assets/proto/tiles/cursos.webp?v=2" width="960" height="600" loading="lazy" decoding="async" alt="El aula de PRO en Skool"></div>
                         <p class="tarjeta__k">Formación práctica</p>
-                        <h3>22 cursos, de instalar un bot a crear el tuyo</h3>
+                        <h3>19 cursos, de instalar un bot a crear el tuyo</h3>
                         <ul class="eco4__lista">
                             <li>Instalar robots y configurar MetaTrader</li>
                             <li>VPS, backtesting y datos tick</li>
@@ -567,7 +565,7 @@
                         </ul>
                     </li>
                     <li class="tarjeta card-glass" style="--i:3">
-                        <div class="eco4__media eco4__media--tile"><img class="tile16" src="assets/proto/tiles/com.webp" width="960" height="600" loading="lazy" decoding="async" alt="La comunidad PRO en Skool"></div>
+                        <div class="eco4__media eco4__media--tile"><img class="tile16" src="assets/proto/tiles/com.webp?v=2" width="960" height="600" loading="lazy" decoding="async" alt="La comunidad PRO en Skool"></div>
                         <p class="tarjeta__k">Comunidad privada en Skool</p>
                         <h3>No te quedas solo con el archivo</h3>
                         <p>Preguntas, ayuda con la instalación, novedades y directos grabados. Y lo que comparten otros miembros.</p>
@@ -608,12 +606,12 @@
                             <h3 id="lp-pro">Comunidad PRO</h3>
                             <span class="chip chip--pro">PRO</span>
                         </div>
-                        <div class="lp-col__media lp-col__media--tile"><img class="tile16" src="assets/proto/tiles/procom.webp" width="960" height="600" loading="lazy" decoding="async" alt="El aula de la comunidad nico66fx PRO en Skool con los bots"></div>
+                        <div class="lp-col__media lp-col__media--tile"><img class="tile16" src="assets/proto/tiles/procom.webp?v=2" width="960" height="600" loading="lazy" decoding="async" alt="El aula de la comunidad nico66fx PRO en Skool con los bots"></div>
                         <ul class="lp-col__lista">
                             <li class="lp-todo"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><strong>Todo lo de LITE, y además</strong></li>
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>10 bots listos para descargar, con su manual y su vídeo</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>7 bots listos para descargar, con su manual y su vídeo</li>
                             <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Web PRO LIVE: la operación entera y cada movimiento del stop</li>
-                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>22 cursos, también para crear tus propios bots</li>
+                            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>19 cursos, también para crear tus propios bots</li>
                             <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Soporte por privado hasta que tu bot esté funcionando</li>
                             <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Versiones nuevas de los bots sin pagar más</li>
                         </ul>
@@ -697,7 +695,7 @@
                     <div class="com-video__txt">
                         <p class="eyebrow">Por dentro · 1:34</p>
                         <h3>Así es la comunidad PRO por dentro</h3>
-                        <p>El aula con los 22 cursos, los bots con su manual y su vídeo de instalación, las novedades y el feed donde se comparten pruebas y dudas.</p>
+                        <p>El aula con los 19 cursos, los bots con su manual y su vídeo de instalación, las novedades y el feed donde se comparten pruebas y dudas.</p>
                     </div>
                     <div class="video-card">
                         <video playsinline preload="none" poster="assets/video/nico66fx_PRO_por_dentro.jpg" aria-label="Vídeo: la comunidad nico66fx PRO por dentro">
@@ -777,17 +775,6 @@
                             </li>
                             <li class="captura">
                                 <figure>
-                                    <a class="captura__enlace" href="assets/skool8.jpg">
-                                        <picture>
-                                            <source type="image/webp" srcset="assets/skool8-sm.webp 640w, assets/skool8.webp 1240w" sizes="(min-width: 768px) 369px, 266px">
-                                            <img src="assets/skool8-sm.jpg" srcset="assets/skool8-sm.jpg 640w, assets/skool8.jpg 1240w" sizes="(min-width: 768px) 369px, 266px" width="640" height="486" loading="lazy" decoding="async" alt="Dany Fuentes da las gracias tras pasar el 7 % de la cuenta fondeada de Axi con BOT GPT y SNIPER XAU, y cuenta que también ha aprendido a operar en manual">
-                                        </picture>
-                                        <span class="sr"> (ver la captura ampliada)</span>
-                                    </a>
-                                </figure>
-                            </li>
-                            <li class="captura">
-                                <figure>
                                     <a class="captura__enlace" href="assets/skool10.jpg">
                                         <picture>
                                             <source type="image/webp" srcset="assets/skool10-sm.webp 640w, assets/skool10.webp 1240w" sizes="(min-width: 768px) 473px, 341px">
@@ -814,17 +801,6 @@
                                         <picture>
                                             <source type="image/webp" srcset="assets/skool14-sm.webp 640w, assets/skool14.webp 1240w" sizes="(min-width: 768px) 439px, 317px">
                                             <img src="assets/skool14-sm.jpg" srcset="assets/skool14-sm.jpg 640w, assets/skool14.jpg 1240w" sizes="(min-width: 768px) 439px, 317px" width="640" height="408" loading="lazy" decoding="async" alt="Daniel Hernandez comparte su historial con RAW XAU: lento pero seguro">
-                                        </picture>
-                                        <span class="sr"> (ver la captura ampliada)</span>
-                                    </a>
-                                </figure>
-                            </li>
-                            <li class="captura">
-                                <figure>
-                                    <a class="captura__enlace" href="assets/skool18.jpg">
-                                        <picture>
-                                            <source type="image/webp" srcset="assets/skool18-sm.webp 640w, assets/skool18.webp 1240w" sizes="(min-width: 768px) 439px, 317px">
-                                            <img src="assets/skool18-sm.jpg" srcset="assets/skool18-sm.jpg 640w, assets/skool18.jpg 1240w" sizes="(min-width: 768px) 439px, 317px" width="640" height="408" loading="lazy" decoding="async" alt="Lenny Carta cuenta que ya está en la fase semilla de Axi Select con BOT GPT">
                                         </picture>
                                         <span class="sr"> (ver la captura ampliada)</span>
                                     </a>
@@ -1041,7 +1017,7 @@
                     </details>
                     <details name="faq">
                         <summary><span>¿Qué diferencia hay entre LITE y PRO?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
-                        <p class="faq__resp">LITE es gratis: la comunidad abierta, el indicador RAW NASDAQ LITE para TradingView y la web RAW NASDAQ LITE LIVE con la compra o venta del día, la entrada y el historial en puntos. PRO incluye todo eso y además los bots para MT4 y MT5, RAW NASDAQ PRO LIVE con la gestión completa, los 22 cursos, las herramientas y el soporte por privado.</p>
+                        <p class="faq__resp">LITE es gratis: la comunidad abierta, el indicador RAW NASDAQ LITE para TradingView y la web RAW NASDAQ LITE LIVE con la compra o venta del día, la entrada y el historial en puntos. PRO incluye todo eso y además los bots para MT4 y MT5, RAW NASDAQ PRO LIVE con la gestión completa, los 19 cursos, las herramientas y el soporte por privado.</p>
                     </details>
                     <details name="faq">
                         <summary><span>¿En qué plataformas funcionan los bots?</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
